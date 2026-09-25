@@ -28,12 +28,11 @@ body {
 
 
 /* =====================================================
-   FOLLOW GATE
+   FOLLOW TIKTOK
 ===================================================== */
 
 #followGate {
     min-height: calc(100vh - 50px);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,15 +47,15 @@ body {
     border-radius: 20px;
 
     padding: 30px 24px;
-
     text-align: center;
 
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
 
-/* LOGO TIKTOK */
+/* =====================================================
+   LOGO TIKTOK
+===================================================== */
 
 .follow-icon {
     width: 85px;
@@ -72,31 +71,25 @@ body {
 .follow-icon svg {
     width: 78px;
     height: 78px;
-
     display: block;
 }
 
 
-/* TITLE */
+/* =====================================================
+   FOLLOW
+===================================================== */
 
 .follow-card h1 {
     margin: 0 0 10px;
-
     color: #ffd900;
-
     font-size: 28px;
 }
 
 .follow-card p {
     color: #aaa;
-
     line-height: 1.6;
-
     margin: 8px 0;
 }
-
-
-/* ACCOUNT */
 
 .tiktok-account {
     margin: 20px 0;
@@ -104,35 +97,31 @@ body {
     padding: 16px;
 
     background: #11111c;
-
     border: 1px solid #454565;
-
     border-radius: 12px;
 
     font-size: 20px;
     font-weight: bold;
-
-    color: white;
 }
 
 
-/* FOLLOW BUTTON */
+/* =====================================================
+   BUTTON FOLLOW
+===================================================== */
 
 .follow-btn {
     width: 100%;
 
-    border: none;
-
-    border-radius: 12px;
-
     padding: 15px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #25f4ee,
-            #fe2c55
-        );
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #25f4ee,
+        #fe2c55
+    );
 
     color: white;
 
@@ -140,39 +129,34 @@ body {
     font-weight: bold;
 
     cursor: pointer;
-
     transition: 0.2s;
 }
 
 .follow-btn:hover {
     transform: translateY(-2px);
-
-    opacity: 0.93;
 }
 
 .follow-btn:disabled {
-    cursor: not-allowed;
-
     opacity: 0.6;
-
+    cursor: not-allowed;
     transform: none;
 }
 
 
-/* COUNTDOWN */
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 
 .countdown-box {
-    margin-top: 18px;
+    display: none;
 
+    margin-top: 18px;
     padding: 15px;
 
     border-radius: 12px;
 
     background: #11111c;
-
     color: #aaa;
-
-    display: none;
 }
 
 .countdown-number {
@@ -183,14 +167,17 @@ body {
     color: #ffd900;
 
     font-size: 30px;
-
     font-weight: bold;
 }
 
 
-/* CONTINUE */
+/* =====================================================
+   CONTINUE
+===================================================== */
 
 .continue-btn {
+    display: none;
+
     width: 100%;
 
     margin-top: 15px;
@@ -198,33 +185,25 @@ body {
     padding: 15px;
 
     border: none;
-
     border-radius: 12px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #16a34a,
-            #00c853
-        );
+    background: linear-gradient(
+        90deg,
+        #16a34a,
+        #00c853
+    );
 
     color: white;
 
     font-size: 17px;
-
     font-weight: bold;
 
     cursor: pointer;
-
-    display: none;
 }
 
 .continue-btn:hover {
     opacity: 0.9;
-
-    transform: translateY(-2px);
 }
-
 
 .follow-note {
     margin-top: 15px;
@@ -232,7 +211,6 @@ body {
     color: #777;
 
     font-size: 12px;
-
     line-height: 1.5;
 }
 
@@ -245,10 +223,7 @@ body {
     display: none;
 }
 
-
-/* TITLE */
-
-h1.main-title {
+.main-title {
     text-align: center;
 
     color: #ffd900;
@@ -256,7 +231,6 @@ h1.main-title {
     margin: 0 0 8px;
 
     font-size: 31px;
-
     line-height: 1.2;
 }
 
@@ -271,7 +245,9 @@ h1.main-title {
 }
 
 
-/* CARD */
+/* =====================================================
+   CARD
+===================================================== */
 
 .card {
     background: #19192d;
@@ -289,7 +265,9 @@ h1.main-title {
 }
 
 
-/* INPUT */
+/* =====================================================
+   INPUT
+===================================================== */
 
 label {
     display: block;
@@ -328,53 +306,11 @@ input::placeholder {
 }
 
 
-/* BUTTON CALCULATOR */
-
-.calculate-btn {
-    width: 100%;
-
-    padding: 16px;
-
-    margin-top: 25px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #7c3aed,
-            #ec4899
-        );
-
-    color: white;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.calculate-btn:hover {
-    transform: translateY(-2px);
-
-    opacity: 0.92;
-}
-
-
 /* =====================================================
    HASIL
 ===================================================== */
 
-.result {
-    display: none;
-}
-
-.result h2 {
+.result-title {
     text-align: center;
 
     color: #00ff88;
@@ -415,12 +351,14 @@ input::placeholder {
 }
 
 
-/* STATUS */
+/* =====================================================
+   STATUS
+===================================================== */
 
 .status {
     margin-top: 12px;
 
-    padding: 11px 13px;
+    padding: 10px;
 
     border-radius: 10px;
 
@@ -435,13 +373,13 @@ input::placeholder {
 
 
 /* =====================================================
-   WAKTU
+   TOTAL
 ===================================================== */
 
-.time-box {
+.final {
     margin-top: 20px;
 
-    padding: 22px 18px;
+    padding: 25px;
 
     text-align: center;
 
@@ -452,22 +390,19 @@ input::placeholder {
     background: #21133d;
 }
 
-.time-title {
+.final-title {
     color: #aaa;
-
-    font-size: 14px;
-
-    margin-bottom: 10px;
+    font-size: 15px;
 }
 
-.time-value {
+.total {
+    margin-top: 8px;
+
     color: #ffd900;
 
-    font-size: 28px;
+    font-size: 42px;
 
     font-weight: bold;
-
-    line-height: 1.35;
 
     word-break: break-word;
 }
@@ -509,26 +444,13 @@ input::placeholder {
     font-size: 18px;
 
     font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.tiktok-link:hover {
-    transform: scale(1.04);
 }
 
 .tiktok-logo {
     width: 30px;
-
     height: 34px;
 
     display: block;
-}
-
-.tiktok-name {
-    color: white;
-
-    letter-spacing: 0.5px;
 }
 
 
@@ -553,7 +475,7 @@ input::placeholder {
 
 @media (max-width: 500px) {
 
-    h1.main-title {
+    .main-title {
         font-size: 25px;
     }
 
@@ -567,30 +489,26 @@ input::placeholder {
 
     .row {
         padding: 12px;
-
         font-size: 14px;
     }
 
-    .time-value {
-        font-size: 22px;
+    .total {
+        font-size: 34px;
     }
-
 }
 </style>
 </head>
-
 
 <body>
 
 
 <!-- =====================================================
-     HALAMAN FOLLOW TIKTOK
+     FOLLOW TIKTOK
 ===================================================== -->
 
 <div id="followGate">
 
     <div class="follow-card">
-
 
         <!-- LOGO TIKTOK -->
 
@@ -599,26 +517,19 @@ input::placeholder {
             <svg
                 viewBox="0 0 48 48"
                 xmlns="http://www.w3.org/2000/svg"
-                aria-label="TikTok"
             >
 
-                <!-- Cyan -->
+                <!-- CYAN -->
 
                 <path
                     fill="#25F4EE"
                     d="
                     M34.2 6.3
-                    C35.9 8.7
-                    38.4 10.6
-                    41.4 11.7
+                    C35.9 8.7 38.4 10.6 41.4 11.7
                     V18.8
-                    C38.3 18.7
-                    35.4 17.8
-                    32.9 16.3
+                    C38.3 18.7 35.4 17.8 32.9 16.3
                     V29.6
-                    C32.9 36.7
-                    27.2 42.4
-                    20.1 42.4
+                    C32.9 36.7 27.2 42.4 20.1 42.4
                     C13 42.4 7.3 36.7 7.3 29.6
                     C7.3 22.5 13 16.8 20.1 16.8
                     C20.9 16.8 21.6 16.9 22.4 17.1
@@ -634,7 +545,7 @@ input::placeholder {
                 />
 
 
-                <!-- Pink -->
+                <!-- PINK -->
 
                 <path
                     fill="#FE2C55"
@@ -660,7 +571,7 @@ input::placeholder {
                 />
 
 
-                <!-- Putih -->
+                <!-- PUTIH -->
 
                 <path
                     fill="#FFFFFF"
@@ -710,7 +621,7 @@ input::placeholder {
             id="followButton"
             onclick="mulaiFollow()"
         >
-            🎵 FOLLOW @SYADZZ011
+            FOLLOW @SYADZZ011
         </button>
 
 
@@ -723,7 +634,7 @@ input::placeholder {
 
             <br>
 
-            Kalkulator akan terbuka setelah:
+            Tunggu:
 
             <span
                 class="countdown-number"
@@ -745,11 +656,8 @@ input::placeholder {
 
 
         <div class="follow-note">
-
             Setelah timer selesai,
-            tekan tombol "Saya Sudah Follow"
-            untuk membuka kalkulator.
-
+            tekan tombol "Saya Sudah Follow".
         </div>
 
     </div>
@@ -767,16 +675,17 @@ input::placeholder {
     class="container"
 >
 
-
     <h1 class="main-title">
         ⚡ Calculator Speed Steal An Egg
     </h1>
 
 
     <div class="subtitle">
-        Hitung waktu sampai speed target
+        Hitung hasil AFK kamu
     </div>
 
+
+    <!-- INPUT -->
 
     <div class="card">
 
@@ -899,38 +808,66 @@ input::placeholder {
 
         <select id="multiplier">
 
-            <option value="1">x1</option>
+            <option value="1">
+                x1
+            </option>
 
-            <option value="2">x2</option>
+            <option value="2">
+                x2
+            </option>
 
-            <option value="4">x4</option>
+            <option value="4">
+                x4
+            </option>
 
-            <option value="8">x8</option>
+            <option value="8">
+                x8
+            </option>
 
-            <option value="16">x16</option>
+            <option value="16">
+                x16
+            </option>
 
-            <option value="32">x32</option>
+            <option value="32">
+                x32
+            </option>
 
-            <option value="64">x64</option>
+            <option value="64">
+                x64
+            </option>
 
-            <option value="128">x128</option>
+            <option value="128">
+                x128
+            </option>
 
-            <option value="256">x256</option>
+            <option value="256">
+                x256
+            </option>
 
-            <option value="512">x512</option>
+            <option value="512">
+                x512
+            </option>
 
-            <option value="1000">x1K</option>
+            <option value="1000">
+                x1K
+            </option>
 
-            <option value="2000">x2K</option>
+            <option value="2000">
+                x2K
+            </option>
 
-            <option value="3000">x3K</option>
+            <option value="3000">
+                x3K
+            </option>
 
-            <option value="4000">x4K</option>
+            <option value="4000">
+                x4K
+            </option>
 
         </select>
 
 
-        <!-- CURRENT SPEED -->
+        <!-- SPEED SEKARANG -->
 
         <label>
             ⚡ Speed Sekarang
@@ -944,26 +881,20 @@ input::placeholder {
         >
 
 
-        <!-- TARGET -->
+        <!-- AFK -->
 
         <label>
-            🎯 Speed Target
+            ⏰ AFK Berapa Jam?
         </label>
 
         <input
-            type="text"
-            id="targetSpeed"
-            placeholder="Contoh: 500T, 1Qa, 2Qi"
-            autocomplete="off"
+            type="number"
+            id="hours"
+            min="0"
+            step="0.01"
+            value="1"
+            placeholder="Contoh: 8"
         >
-
-
-        <button
-            class="calculate-btn"
-            onclick="hitung()"
-        >
-            ⚡ HITUNG SEKARANG
-        </button>
 
     </div>
 
@@ -971,102 +902,164 @@ input::placeholder {
 
     <!-- HASIL -->
 
-    <div
-        class="card result"
-        id="result"
-    >
+    <div class="card">
 
-
-        <h2>
-            📊 HASIL SPEED
+        <h2 class="result-title">
+            📊 HASIL AFK
         </h2>
 
 
         <div class="row">
-            <span>⚡ Speed Sekarang</span>
-            <span id="outCurrent"></span>
+
+            <span>
+                ⚡ Speed Sekarang
+            </span>
+
+            <span id="outCurrent">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>🎯 Speed Target</span>
-            <span id="outTarget"></span>
+
+            <span>
+                🏃 Treadmill
+            </span>
+
+            <span id="outTreadmill">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>📈 Speed Tersisa</span>
-            <span id="outRemaining"></span>
+
+            <span>
+                ✨ Trail
+            </span>
+
+            <span id="outTrail">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>🏃 Treadmill</span>
-            <span id="outTreadmill"></span>
+
+            <span>
+                🚀 Multiplier
+            </span>
+
+            <span id="outMultiplier">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>✨ Trail</span>
-            <span id="outTrail"></span>
+
+            <span>
+                ⏱️ Step / Detik
+            </span>
+
+            <span id="outSteps">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>🚀 Multiplier</span>
-            <span id="outMultiplier"></span>
+
+            <span>
+                💰 Gain / Step
+            </span>
+
+            <span id="outStep">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>⏱️ Step / Detik</span>
-            <span id="outSteps"></span>
+
+            <span>
+                ⚡ Gain / Detik
+            </span>
+
+            <span id="outSecond">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>💰 Gain / Step</span>
-            <span id="outStep"></span>
+
+            <span>
+                🔥 Gain / Menit
+            </span>
+
+            <span id="outMinute">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>⚡ Gain / Detik</span>
-            <span id="outSecond"></span>
+
+            <span>
+                💎 Gain / Jam
+            </span>
+
+            <span id="outHour">
+            </span>
+
         </div>
 
 
         <div class="row">
-            <span>🔥 Gain / Menit</span>
-            <span id="outMinute"></span>
+
+            <span>
+                ⏰ Waktu AFK
+            </span>
+
+            <span id="outHours">
+            </span>
+
         </div>
 
+
+        <!-- HASIL MURNI DARI AFK -->
 
         <div class="row">
-            <span>💎 Gain / Jam</span>
-            <span id="outHour"></span>
+
+            <span>
+                📈 Yang Didapat Saat AFK
+            </span>
+
+            <span id="outGain">
+            </span>
+
         </div>
 
 
-        <div
-            class="status"
-            id="dataStatus"
-        ></div>
+        <div class="status" id="dataStatus">
+        </div>
 
 
-        <!-- WAKTU -->
+        <!-- TOTAL DENGAN SPEED AWAL -->
 
-        <div class="time-box">
+        <div class="final">
 
-            <div class="time-title">
-                ⏰ WAKTU NONSTOP SAMPAI TARGET
+            <div class="final-title">
+                🏆 TOTAL HASIL AFK
             </div>
 
             <div
-                class="time-value"
-                id="outTime"
+                class="total"
+                id="outTotal"
             >
-                -
+                0
             </div>
 
         </div>
@@ -1108,7 +1101,7 @@ input::placeholder {
 
                 </svg>
 
-                <span class="tiktok-name">
+                <span>
                     syadzz011
                 </span>
 
@@ -1130,13 +1123,11 @@ input::placeholder {
 <script>
 
 /* =====================================================
-   FOLLOW TIMER
+   FOLLOW TIKTOK
 ===================================================== */
 
 let countdownStarted = false;
-
-let countdownTime = 10;
-
+let countdown = 10;
 let countdownInterval = null;
 
 
@@ -1146,13 +1137,8 @@ function mulaiFollow() {
         return;
     }
 
-
     countdownStarted = true;
 
-
-    /*
-       Buka TikTok
-    */
 
     window.open(
         "https://www.tiktok.com/@syadzz011",
@@ -1160,64 +1146,48 @@ function mulaiFollow() {
     );
 
 
-    /*
-       Ubah tombol
-    */
-
-    const followButton =
+    const button =
         document.getElementById(
             "followButton"
         );
 
-
-    followButton.disabled = true;
-
-
-    followButton.innerText =
-        "⏳ TUNGGU 10 DETIK";
-
-
-    /*
-       Tampilkan countdown
-    */
-
-    const countdownBox =
+    const box =
         document.getElementById(
             "countdownBox"
         );
 
-
-    const countdownNumber =
+    const number =
         document.getElementById(
             "countdownNumber"
         );
 
 
-    countdownBox.style.display =
+    button.disabled = true;
+
+    button.innerText =
+        "⏳ TUNGGU 10 DETIK";
+
+
+    box.style.display =
         "block";
 
 
-    countdownNumber.innerText =
-        countdownTime;
+    number.innerText =
+        countdown;
 
-
-    /*
-       Mulai timer
-    */
 
     countdownInterval =
         setInterval(
             function() {
 
-                countdownTime--;
+                countdown--;
 
-
-                countdownNumber.innerText =
-                    countdownTime;
+                number.innerText =
+                    countdown;
 
 
                 if (
-                    countdownTime <= 0
+                    countdown <= 0
                 ) {
 
                     clearInterval(
@@ -1225,11 +1195,11 @@ function mulaiFollow() {
                     );
 
 
-                    countdownNumber.innerText =
+                    number.innerText =
                         "SELESAI";
 
 
-                    followButton.innerText =
+                    button.innerText =
                         "✅ TIMER SELESAI";
 
 
@@ -1265,6 +1235,9 @@ function bukaCalculator() {
         "block";
 
 
+    hitung();
+
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -1274,7 +1247,7 @@ function bukaCalculator() {
 
 
 /* =====================================================
-   SPEED CONFIG
+   KONFIGURASI
 ===================================================== */
 
 const STEPS_PER_SECOND = 22;
@@ -1393,49 +1366,32 @@ const measuredData = [
 
 function parseSpeed(input) {
 
-    if (
-        input === null ||
-        input === undefined
-    ) {
-        return NaN;
-    }
-
-
-    let text =
-        String(input)
-            .trim()
-            .toUpperCase()
-            .replace(/,/g, "")
-            .replace(/\s+/g, "");
+    const text =
+        String(input || "")
+        .trim()
+        .toUpperCase()
+        .replace(/,/g, "")
+        .replace(/\s+/g, "");
 
 
     if (text === "") {
-        return NaN;
+        return 0;
     }
 
 
     const units = {
 
         K: 1e3,
-
         M: 1e6,
-
         B: 1e9,
-
         T: 1e12,
 
         QA: 1e15,
-
         QI: 1e18,
-
         SX: 1e21,
-
         SP: 1e24,
-
         OC: 1e27,
-
         NO: 1e30,
-
         DC: 1e33
 
     };
@@ -1443,7 +1399,7 @@ function parseSpeed(input) {
 
     const match =
         text.match(
-            /^([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:E[+-]?\d+)?)(K|M|B|T|QA|QI|SX|SP|OC|NO|DC)?$/
+            /^([+-]?(?:\d+(?:\.\d*)?|\.\d+))(K|M|B|T|QA|QI|SX|SP|OC|NO|DC)?$/
         );
 
 
@@ -1452,37 +1408,19 @@ function parseSpeed(input) {
     }
 
 
-    const numberPart =
+    const number =
         Number(match[1]);
 
 
-    const unitPart =
+    const unit =
         match[2] || "";
 
 
-    if (
-        !Number.isFinite(
-            numberPart
-        )
-    ) {
-        return NaN;
-    }
+    return (
+        number *
+        (units[unit] || 1)
+    );
 
-
-    const multiplier =
-        unitPart
-            ? units[unitPart]
-            : 1;
-
-
-    const result =
-        numberPart *
-        multiplier;
-
-
-    return Number.isFinite(result)
-        ? result
-        : NaN;
 }
 
 
@@ -1569,12 +1507,12 @@ function formatNumber(number) {
     ];
 
 
-    const absolute =
-        Math.abs(number);
-
-
     let selected =
         units[0];
+
+
+    const absolute =
+        Math.abs(number);
 
 
     for (
@@ -1601,54 +1539,33 @@ function formatNumber(number) {
         selected.value;
 
 
-    let decimals;
+    /*
+       Sampai 3 angka desimal
+       supaya speed awal tetap
+       terlihat pada total.
+
+       Contoh:
+       100.003M
+       6.18M
+       6.2M
+    */
+
+    let result =
+        value.toFixed(3);
 
 
-    if (
-        Math.abs(value) >= 100
-    ) {
-
-        decimals = 0;
-
-    }
-
-    else if (
-        Math.abs(value) >= 10
-    ) {
-
-        decimals = 1;
-
-    }
-
-    else {
-
-        decimals = 2;
-
-    }
-
-
-    let text =
-        value.toFixed(
-            decimals
-        );
-
-
-    text =
-        text
-            .replace(
-                /\.00$/,
-                ""
-            )
-            .replace(
-                /(\.\d)0$/,
-                ""
-            );
+    result =
+        result
+        .replace(/\.000$/, "")
+        .replace(/(\.\d)00$/, "")
+        .replace(/(\.\d\d)0$/, "");
 
 
     return (
-        text +
+        result +
         selected.name
     );
+
 }
 
 
@@ -1666,14 +1583,9 @@ function getMeasuredGain(
         function(item) {
 
             return (
-                item.treadmill ===
-                treadmill &&
-
-                item.trail ===
-                trail &&
-
-                item.multiplier ===
-                multiplier
+                item.treadmill === treadmill &&
+                item.trail === trail &&
+                item.multiplier === multiplier
             );
 
         }
@@ -1683,7 +1595,7 @@ function getMeasuredGain(
 
 
 /* =====================================================
-   DATA ESTIMASI
+   ESTIMASI DATA YANG BELUM DIUKUR
 ===================================================== */
 
 function estimateGain(
@@ -1692,12 +1604,10 @@ function estimateGain(
     multiplier
 ) {
 
-    const targetValues = [
-
+    const target = [
         treadmill,
         trail,
         multiplier
-
     ];
 
 
@@ -1705,39 +1615,35 @@ function estimateGain(
         measuredData.map(
             function(item) {
 
+                const source = [
+                    item.treadmill,
+                    item.trail,
+                    item.multiplier
+                ];
+
+
                 let distance = 0;
 
 
                 for (
                     let i = 0;
-                    i < targetValues.length;
+                    i < 3;
                     i++
                 ) {
 
                     const a =
                         Math.log10(
                             Math.max(
-                                targetValues[i],
+                                target[i],
                                 0.000001
                             )
                         );
 
 
-                    const values = [
-
-                        item.treadmill,
-
-                        item.trail,
-
-                        item.multiplier
-
-                    ];
-
-
                     const b =
                         Math.log10(
                             Math.max(
-                                values[i],
+                                source[i],
                                 0.000001
                             )
                         );
@@ -1782,10 +1688,7 @@ function estimateGain(
     const nearest =
         scored.slice(
             0,
-            Math.min(
-                5,
-                scored.length
-            )
+            5
         );
 
 
@@ -1817,272 +1720,14 @@ function estimateGain(
     );
 
 
-    let estimated =
+    /*
+       Sedikit konservatif
+    */
+
+    return (
         weightedGain /
-        totalWeight;
-
-
-    estimated *= 0.98;
-
-
-    return estimated;
-}
-
-
-/* =====================================================
-   GAIN STEP
-===================================================== */
-
-function getGainPerStep(
-    treadmill,
-    trail,
-    multiplier
-) {
-
-    const exact =
-        getMeasuredGain(
-            treadmill,
-            trail,
-            multiplier
-        );
-
-
-    if (exact) {
-
-        return {
-
-            gain:
-                exact.gain,
-
-            exact: true
-
-        };
-
-    }
-
-
-    return {
-
-        gain:
-            estimateGain(
-                treadmill,
-                trail,
-                multiplier
-            ),
-
-        exact: false
-
-    };
-
-}
-
-
-/* =====================================================
-   WAKTU
-===================================================== */
-
-function formatTime(
-    totalSeconds
-) {
-
-    if (
-        !Number.isFinite(
-            totalSeconds
-        )
-    ) {
-        return "-";
-    }
-
-
-    if (
-        totalSeconds < 0
-    ) {
-        return "-";
-    }
-
-
-    if (
-        totalSeconds < 1
-    ) {
-
-        let tiny =
-            totalSeconds
-                .toFixed(3)
-                .replace(
-                    /0+$/,
-                    ""
-                )
-                .replace(
-                    /\.$/,
-                    ""
-                );
-
-
-        return (
-            tiny +
-            " detik"
-        );
-
-    }
-
-
-    let remaining =
-        totalSeconds;
-
-
-    let days =
-        Math.floor(
-            remaining /
-            86400
-        );
-
-
-    remaining -=
-        days *
-        86400;
-
-
-    let hours =
-        Math.floor(
-            remaining /
-            3600
-        );
-
-
-    remaining -=
-        hours *
-        3600;
-
-
-    let minutes =
-        Math.floor(
-            remaining /
-            60
-        );
-
-
-    remaining -=
-        minutes *
-        60;
-
-
-    let seconds =
-        Math.round(
-            remaining *
-            1000
-        ) / 1000;
-
-
-    if (
-        seconds >= 60
-    ) {
-
-        seconds -= 60;
-
-        minutes++;
-
-    }
-
-
-    if (
-        minutes >= 60
-    ) {
-
-        minutes -= 60;
-
-        hours++;
-
-    }
-
-
-    if (
-        hours >= 24
-    ) {
-
-        hours -= 24;
-
-        days++;
-
-    }
-
-
-    const parts = [];
-
-
-    if (
-        days > 0
-    ) {
-
-        parts.push(
-            days + " hari"
-        );
-
-    }
-
-
-    if (
-        hours > 0
-    ) {
-
-        parts.push(
-            hours + " jam"
-        );
-
-    }
-
-
-    if (
-        minutes > 0 ||
-        days > 0 ||
-        hours > 0
-    ) {
-
-        parts.push(
-            minutes +
-            " menit"
-        );
-
-    }
-
-
-    let secondsText;
-
-
-    if (
-        Number.isInteger(
-            seconds
-        )
-    ) {
-
-        secondsText =
-            seconds.toString();
-
-    }
-
-    else {
-
-        secondsText =
-            seconds
-                .toFixed(3)
-                .replace(
-                    /0+$/,
-                    ""
-                )
-                .replace(
-                    /\.$/,
-                    ""
-                );
-
-    }
-
-
-    parts.push(
-        secondsText +
-        " detik"
-    );
-
-
-    return parts.join(" ");
+        totalWeight
+    ) * 0.98;
 
 }
 
@@ -2125,13 +1770,17 @@ function hitung() {
         );
 
 
-    const targetSpeed =
-        parseSpeed(
+    const hours =
+        Number(
             document.getElementById(
-                "targetSpeed"
+                "hours"
             ).value
         );
 
+
+    /*
+       Validasi
+    */
 
     if (
         !Number.isFinite(
@@ -2140,100 +1789,112 @@ function hitung() {
         currentSpeed < 0
     ) {
 
-        alert(
-            "Speed Sekarang tidak valid.\n\nContoh:\n3K\n900M\n1.5T"
-        );
+        document.getElementById(
+            "dataStatus"
+        ).innerText =
+            "⚠️ Speed Sekarang tidak valid.";
 
         return;
     }
 
 
     if (
-        !Number.isFinite(
-            targetSpeed
-        ) ||
-        targetSpeed < 0
+        !Number.isFinite(hours) ||
+        hours < 0
     ) {
 
-        alert(
-            "Speed Target tidak valid.\n\nContoh:\n500T\n1Qa\n2Qi"
-        );
+        document.getElementById(
+            "dataStatus"
+        ).innerText =
+            "⚠️ Waktu AFK tidak valid.";
 
         return;
     }
 
 
-    const gainInfo =
-        getGainPerStep(
+    /*
+       Cari data yang sudah
+       pernah diukur.
+    */
+
+    const exact =
+        getMeasuredGain(
             treadmill,
             trail,
             multiplier
         );
 
 
-    const gainPerStep =
-        gainInfo.gain;
+    /*
+       Gain / Step
+    */
 
+    const gainPerStep =
+        exact
+            ? exact.gain
+            : estimateGain(
+                treadmill,
+                trail,
+                multiplier
+            );
+
+
+    /*
+       Gain / Detik
+    */
 
     const gainPerSecond =
         gainPerStep *
         STEPS_PER_SECOND;
 
 
+    /*
+       Gain / Menit
+    */
+
     const gainPerMinute =
         gainPerSecond *
         60;
 
+
+    /*
+       Gain / Jam
+    */
 
     const gainPerHour =
         gainPerSecond *
         3600;
 
 
-    const remaining =
-        Math.max(
-            targetSpeed -
-            currentSpeed,
-            0
-        );
+    /*
+       YANG DIDAPAT SELAMA AFK
+       Hanya hasil tambahan.
+    */
+
+    const gainFromAFK =
+        gainPerHour *
+        hours;
 
 
-    let timeSeconds = 0;
+    /*
+       TOTAL HASIL AFK
+       Speed awal + hasil AFK.
+    */
+
+    const totalAfterAFK =
+        currentSpeed +
+        gainFromAFK;
 
 
-    if (
-        targetSpeed >
-        currentSpeed
-    ) {
-
-        timeSeconds =
-            remaining /
-            gainPerSecond;
-
-    }
-
+    /*
+       Tampilkan hasil
+    */
 
     document.getElementById(
         "outCurrent"
     ).innerText =
         formatNumber(
             currentSpeed
-        );
-
-
-    document.getElementById(
-        "outTarget"
-    ).innerText =
-        formatNumber(
-            targetSpeed
-        );
-
-
-    document.getElementById(
-        "outRemaining"
-    ).innerText =
-        formatNumber(
-            remaining
         );
 
 
@@ -2301,9 +1962,42 @@ function hitung() {
         );
 
 
-    if (
-        gainInfo.exact
-    ) {
+    document.getElementById(
+        "outHours"
+    ).innerText =
+        hours +
+        " jam";
+
+
+    /*
+       INI MURNI HASIL AFK
+    */
+
+    document.getElementById(
+        "outGain"
+    ).innerText =
+        formatNumber(
+            gainFromAFK
+        );
+
+
+    /*
+       INI SPEED AWAL + HASIL AFK
+    */
+
+    document.getElementById(
+        "outTotal"
+    ).innerText =
+        formatNumber(
+            totalAfterAFK
+        );
+
+
+    /*
+       Status data
+    */
+
+    if (exact) {
 
         document.getElementById(
             "dataStatus"
@@ -2317,85 +2011,50 @@ function hitung() {
         document.getElementById(
             "dataStatus"
         ).innerText =
-            "ℹ️ Gain/Step adalah perkiraan karena kombinasi ini belum diukur.";
+            "ℹ️ Kombinasi ini belum diukur, jadi Gain/Step adalah perkiraan.";
 
     }
-
-
-    if (
-        currentSpeed >=
-        targetSpeed
-    ) {
-
-        document.getElementById(
-            "outTime"
-        ).innerText =
-            "✅ Target sudah tercapai";
-
-    }
-
-    else {
-
-        document.getElementById(
-            "outTime"
-        ).innerText =
-            formatTime(
-                timeSeconds
-            );
-
-    }
-
-
-    document.getElementById(
-        "result"
-    ).style.display =
-        "block";
 
 }
 
 
 /* =====================================================
-   ENTER = HITUNG
+   AUTO UPDATE
 ===================================================== */
 
-document
-    .getElementById(
-        "currentSpeed"
-    )
-    .addEventListener(
-        "keydown",
-        function(event) {
+[
+    "treadmill",
+    "trail",
+    "multiplier",
+    "currentSpeed",
+    "hours"
+].forEach(
+    function(id) {
 
-            if (
-                event.key === "Enter"
-            ) {
-
-                hitung();
-
-            }
-
-        }
-    );
+        document
+            .getElementById(id)
+            .addEventListener(
+                "input",
+                hitung
+            );
 
 
-document
-    .getElementById(
-        "targetSpeed"
-    )
-    .addEventListener(
-        "keydown",
-        function(event) {
+        document
+            .getElementById(id)
+            .addEventListener(
+                "change",
+                hitung
+            );
 
-            if (
-                event.key === "Enter"
-            ) {
+    }
+);
 
-                hitung();
 
-            }
+/* =====================================================
+   HASIL AWAL
+===================================================== */
 
-        }
-    );
+hitung();
 
 </script>
 
