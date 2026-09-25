@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulator Speed Steal an Egg by Syad</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #080812, #241044);
+    color: white;
+    padding: 25px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* =========================
+   JUDUL
+========================= */
+
+h1 {
+    text-align: center;
+    color: #ffd900;
+    margin-bottom: 8px;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: #19192d;
+    border: 1px solid #454565;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 14px;
+    background: #11111c;
+    color: white;
+    border: 2px solid #44445c;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+select:focus,
+input:focus {
+    border-color: #8b5cf6;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+
+/* =========================
+   HASIL
+========================= */
+
+.result {
+    display: none;
+}
+
+.result h2 {
+    text-align: center;
+    color: #00ff88;
+    margin-top: 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px;
+    margin-top: 9px;
+
+    border-radius: 10px;
+    background: #11111c;
+}
+
+.row span:first-child {
+    color: #ccc;
+}
+
+.row span:last-child {
+    color: #00ff88;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.final {
+    margin-top: 20px;
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    border: 2px solid #8b5cf6;
+
+    background: #21133d;
+}
+
+.final-title {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.total {
+    margin-top: 8px;
+
+    color: #ffd900;
+
+    font-size: 42px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   TIKTOK
+========================= */
+
+.tiktok-box {
+    margin-top: 20px;
+
+    padding: 15px 20px;
+
+    background: #11111c;
+
+    border: 1px solid #454565;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+/* Link TikTok */
+
+.tiktok-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.tiktok-link:hover {
+    transform: scale(1.04);
+}
+
+
+/* Logo TikTok */
+
+.tiktok-logo {
+    width: 30px;
+    height: 34px;
+
+    display: block;
+}
+
+
+/* Nama TikTok */
+
+.tiktok-name {
+    color: white;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .total {
+        font-size: 36px;
+    }
+
+    .row {
+        padding: 13px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================
+         JUDUL
+    ========================== -->
+
+    <h1>
+        ⚡ KALKULATOR SPEED
+    </h1>
+
+    <div class="subtitle">
+        Steal an Egg by Syad
+    </div>
+
+
+
+    <!-- =========================
+         INPUT CARD
+    ========================== -->
+
+    <div class="card">
+
+
+        <!-- TREADMILL -->
+
+        <label>
+            🏃 Treadmill
+        </label>
+
+        <select id="treadmill">
+
+            <option value="2">
+                Treadmill — +2
+            </option>
+
+            <option value="5">
+                Sci-Fi Treadmill — +5
+            </option>
+
+            <option value="12">
+                Flame Treadmill — +12
+            </option>
+
+            <option value="30">
+                Celebrity Treadmill — +30
+            </option>
+
+            <option value="80">
+                Golden Treadmill — +80
+            </option>
+
+            <option value="100">
+                Mythic Treadmill — +100
+            </option>
+
+            <option value="200">
+                Lucky Block Treadmill — +200
+            </option>
+
+            <option value="500" selected>
+                Hacker Treadmill — +500
+            </option>
+
+            <option value="1000">
+                Demonic Treadmill — +1K
+            </option>
+
+            <option value="2000">
+                Angelic Treadmill — +2K
+            </option>
+
+            <option value="3000">
+                Astral Treadmill — +3K
+            </option>
+
+        </select>
+
+
+
+        <!-- TRAIL -->
+
+        <label>
+            ✨ Trail
+        </label>
+
+        <select id="trail">
+
+            <option value="1.5">
+                Abu-abu — x1.5
+            </option>
+
+            <option value="2">
+                Hijau — x2
+            </option>
+
+            <option value="2.5">
+                Biru — x2.5
+            </option>
+
+            <option value="3">
+                Ungu — x3
+            </option>
+
+            <option value="3.5">
+                Emas — x3.5
+            </option>
+
+            <option value="4">
+                Merah — x4
+            </option>
+
+            <option value="5">
+                Galaksi — x5
+            </option>
+
+            <option value="7">
+                Rahasia — x7
+            </option>
+
+            <option value="10" selected>
+                Abadi — x10
+            </option>
+
+            <option value="14">
+                Ilahi — x14
+            </option>
+
+            <option value="20">
+                Bunga Bulan — x20
+            </option>
+
+        </select>
+
+
+
+        <!-- MULTIPLIER -->
+
+        <label>
+            🚀 Multiplier
+        </label>
+
+        <select id="multiplier">
+
+            <option value="1">
+                x1
+            </option>
+
+            <option value="2">
+                x2
+            </option>
+
+            <option value="4">
+                x4
+            </option>
+
+            <option value="8">
+                x8
+            </option>
+
+            <option value="16">
+                x16
+            </option>
+
+            <option value="32" selected>
+                x32
+            </option>
+
+            <option value="64">
+                x64
+            </option>
+
+            <option value="128">
+                x128
+            </option>
+
+            <option value="256">
+                x256
+            </option>
+
+            <option value="512">
+                x512
+            </option>
+
+            <option value="1000">
+                x1K
+            </option>
+
+            <option value="2000">
+                x2K
+            </option>
+
+            <option value="3000">
+                x3K
+            </option>
+
+            <option value="4000">
+                x4K
+            </option>
+
+        </select>
+
+
+
+        <!-- JAM AFK -->
+
+        <label>
+            ⏰ AFK Berapa Jam?
+        </label>
+
+        <input
+            type="number"
+            id="hours"
+            min="0.01"
+            step="0.01"
+            value="1"
+            placeholder="Contoh: 1"
+        >
+
+
+
+        <!-- BUTTON -->
+
+        <button onclick="hitung()">
+            ⚡ HITUNG SEKARANG
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         HASIL
+    ========================== -->
+
+    <div class="card result" id="result">
+
+        <h2>
+            📊 HASIL SPEED
+        </h2>
+
+
+        <div class="row">
+
+            <span>
+                🏃 Treadmill
+            </span>
+
+            <span id="outTreadmill">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                ✨ Trail
+            </span>
+
+            <span id="outTrail">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                🚀 Multiplier
+            </span>
+
+            <span id="outMultiplier">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                ⏱️ Step / Detik
+            </span>
+
+            <span id="outSteps">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                💰 Gain / Step
+            </span>
+
+            <span id="outStep">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                ⚡ Gain / Detik
+            </span>
+
+            <span id="outSecond">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                🔥 Gain / Menit
+            </span>
+
+            <span id="outMinute">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                💎 Gain / Jam
+            </span>
+
+            <span id="outHour">
+            </span>
+
+        </div>
+
+
+        <div class="row">
+
+            <span>
+                ⏰ Waktu AFK
+            </span>
+
+            <span id="outHours">
+            </span>
+
+        </div>
+
+
+
+        <!-- TOTAL -->
+
+        <div class="final">
+
+            <div class="final-title">
+                TOTAL HASIL AFK
+            </div>
+
+            <div class="total" id="outTotal">
+                0
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             TIKTOK
+        ========================== -->
+
+        <div class="tiktok-box">
+
+            <a
+                class="tiktok-link"
+                href="https://www.tiktok.com/@syadzz011"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <!-- TikTok SVG Logo -->
+
+                <svg
+                    class="tiktok-logo"
+                    viewBox="0 0 24 24"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 1 1-2-2.77V9.38a6.27 6.27 0 1 0 5.48 6.29V8.41a8.16 8.16 0 0 0 4.79 1.52V6.5a4.84 4.84 0 0 1-1.05-.1z"
+                    />
+
+                </svg>
+
+
+                <span class="tiktok-name">
+                    syadzz011
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        Kalkulator Speed • Steal an Egg by Syad
+    </div>
+
+</div>
+
+
+
+<script>
+
+/*
+=========================================
+KECEPATAN STEP
+=========================================
+*/
+
+const STEPS_PER_SECOND = 22;
+
+
+
+/*
+=========================================
+FORMAT ANGKA
+=========================================
+*/
+
+function formatNumber(number) {
+
+    if (!Number.isFinite(number)) {
+        return "0";
+    }
+
+
+    const units = [
+
+        "",
+
+        "K",
+
+        "M",
+
+        "B",
+
+        "T",
+
+        "Qa",
+
+        "Qi",
+
+        "Sx",
+
+        "Sp",
+
+        "Oc",
+
+        "No",
+
+        "Dc"
+
+    ];
+
+
+    let unit = 0;
+
+    let value = Math.abs(number);
+
+
+    while (
+        value >= 1000 &&
+        unit < units.length - 1
+    ) {
+
+        value /= 1000;
+
+        unit++;
+
+    }
+
+
+    /*
+    Angka tanpa satuan
+    */
+
+    if (unit === 0) {
+
+        return Math.round(number)
+            .toLocaleString("id-ID");
+
+    }
+
+
+    let result;
+
+
+    if (value >= 100) {
+
+        result = value.toFixed(0);
+
+    }
+
+    else if (value >= 10) {
+
+        result = value.toFixed(1);
+
+    }
+
+    else {
+
+        result = value.toFixed(2);
+
+    }
+
+
+    /*
+    Hilangkan nol berlebih
+    */
+
+    result = result
+        .replace(/\.00$/, "")
+        .replace(/(\.\d)0$/, "");
+
+
+    if (number < 0) {
+
+        result = "-" + result;
+
+    }
+
+
+    return result + units[unit];
+
+}
+
+
+
+/*
+=========================================
+HITUNG
+=========================================
+*/
+
+function hitung() {
+
+
+    /*
+    Ambil nilai input
+    */
+
+    const treadmill =
+        Number(
+            document.getElementById("treadmill").value
+        );
+
+
+    const trail =
+        Number(
+            document.getElementById("trail").value
+        );
+
+
+    const multiplier =
+        Number(
+            document.getElementById("multiplier").value
+        );
+
+
+    const hours =
+        Number(
+            document.getElementById("hours").value
+        );
+
+
+
+    /*
+    Cek input
+    */
+
+    if (
+        isNaN(hours) ||
+        hours <= 0
+    ) {
+
+        alert(
+            "Masukkan jumlah jam AFK yang benar!"
+        );
+
+        return;
+
+    }
+
+
+
+    /*
+    ======================================
+    GAIN PER STEP
+    ======================================
+    */
+
+    const gainPerStep =
+        treadmill *
+        trail *
+        multiplier;
+
+
+
+    /*
+    ======================================
+    GAIN PER DETIK
+    ======================================
+    */
+
+    const gainPerSecond =
+        gainPerStep *
+        STEPS_PER_SECOND;
+
+
+
+    /*
+    ======================================
+    GAIN PER MENIT
+    ======================================
+    */
+
+    const gainPerMinute =
+        gainPerSecond *
+        60;
+
+
+
+    /*
+    ======================================
+    GAIN PER JAM
+    ======================================
+    */
+
+    const gainPerHour =
+        gainPerSecond *
+        3600;
+
+
+
+    /*
+    ======================================
+    TOTAL AFK
+    ======================================
+    */
+
+    const total =
+        gainPerHour *
+        hours;
+
+
+
+    /*
+    ======================================
+    TAMPILKAN
+    ======================================
+    */
+
+    document.getElementById("outTreadmill").innerText =
+        "+" + formatNumber(treadmill);
+
+
+    document.getElementById("outTrail").innerText =
+        "x" + trail;
+
+
+    document.getElementById("outMultiplier").innerText =
+        "x" + formatNumber(multiplier);
+
+
+    document.getElementById("outSteps").innerText =
+        STEPS_PER_SECOND + " step";
+
+
+    document.getElementById("outStep").innerText =
+        formatNumber(gainPerStep);
+
+
+    document.getElementById("outSecond").innerText =
+        formatNumber(gainPerSecond);
+
+
+    document.getElementById("outMinute").innerText =
+        formatNumber(gainPerMinute);
+
+
+    document.getElementById("outHour").innerText =
+        formatNumber(gainPerHour);
+
+
+    document.getElementById("outHours").innerText =
+        hours + " jam";
+
+
+    document.getElementById("outTotal").innerText =
+        formatNumber(total);
+
+
+
+    /*
+    Tampilkan card hasil
+    */
+
+    document.getElementById("result").style.display =
+        "block";
+
+}
+
+
+
+/*
+=========================================
+HITUNG OTOMATIS
+=========================================
+*/
+
+window.addEventListener(
+    "load",
+    function() {
+
+        hitung();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
