@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kalkulator Speed Steal an Egg by Syad</title>
+<title>Kalkulator Speed Steal an Egg</title>
 
 <style>
 * {
@@ -56,7 +56,7 @@ h1 {
     border-radius: 18px;
     padding: 22px;
     margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 
@@ -125,6 +125,26 @@ button:hover {
     color: #00ff88;
     margin-top: 0;
 }
+
+.status {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.status.exact {
+    color: #00ff88;
+}
+
+.status.estimate {
+    color: #ffd900;
+}
+
+
+/* =========================
+   ROW
+========================= */
 
 .row {
     display: flex;
@@ -206,9 +226,6 @@ button:hover {
     gap: 12px;
 }
 
-
-/* Link TikTok */
-
 .tiktok-link {
     display: flex;
 
@@ -231,22 +248,14 @@ button:hover {
     transform: scale(1.04);
 }
 
-
-/* Logo TikTok */
-
 .tiktok-logo {
     width: 30px;
     height: 34px;
-
     display: block;
 }
 
-
-/* Nama TikTok */
-
 .tiktok-name {
     color: white;
-
     letter-spacing: 0.5px;
 }
 
@@ -293,7 +302,6 @@ button:hover {
 
 <div class="container">
 
-
     <!-- =========================
          JUDUL
     ========================== -->
@@ -303,17 +311,15 @@ button:hover {
     </h1>
 
     <div class="subtitle">
-        Steal an Egg by Syad
+        Steal an Egg
     </div>
 
 
-
     <!-- =========================
-         INPUT CARD
+         INPUT
     ========================== -->
 
     <div class="card">
-
 
         <!-- TREADMILL -->
 
@@ -351,7 +357,7 @@ button:hover {
                 Lucky Block Treadmill — +200
             </option>
 
-            <option value="500" selected>
+            <option value="500">
                 Hacker Treadmill — +500
             </option>
 
@@ -363,12 +369,11 @@ button:hover {
                 Angelic Treadmill — +2K
             </option>
 
-            <option value="3000">
+            <option value="3000" selected>
                 Astral Treadmill — +3K
             </option>
 
         </select>
-
 
 
         <!-- TRAIL -->
@@ -411,7 +416,7 @@ button:hover {
                 Rahasia — x7
             </option>
 
-            <option value="10" selected>
+            <option value="10">
                 Abadi — x10
             </option>
 
@@ -419,12 +424,11 @@ button:hover {
                 Ilahi — x14
             </option>
 
-            <option value="20">
+            <option value="20" selected>
                 Bunga Bulan — x20
             </option>
 
         </select>
-
 
 
         <!-- MULTIPLIER -->
@@ -455,7 +459,7 @@ button:hover {
                 x16
             </option>
 
-            <option value="32" selected>
+            <option value="32">
                 x32
             </option>
 
@@ -494,8 +498,7 @@ button:hover {
         </select>
 
 
-
-        <!-- JAM AFK -->
+        <!-- AFK -->
 
         <label>
             ⏰ AFK Berapa Jam?
@@ -511,7 +514,6 @@ button:hover {
         >
 
 
-
         <!-- BUTTON -->
 
         <button onclick="hitung()">
@@ -519,7 +521,6 @@ button:hover {
         </button>
 
     </div>
-
 
 
     <!-- =========================
@@ -531,6 +532,14 @@ button:hover {
         <h2>
             📊 HASIL SPEED
         </h2>
+
+
+        <div
+            class="status"
+            id="status"
+        >
+            -
+        </div>
 
 
         <div class="row">
@@ -641,7 +650,6 @@ button:hover {
         </div>
 
 
-
         <!-- TOTAL -->
 
         <div class="final">
@@ -650,12 +658,14 @@ button:hover {
                 TOTAL HASIL AFK
             </div>
 
-            <div class="total" id="outTotal">
+            <div
+                class="total"
+                id="outTotal"
+            >
                 0
             </div>
 
         </div>
-
 
 
         <!-- =========================
@@ -671,8 +681,6 @@ button:hover {
                 rel="noopener noreferrer"
             >
 
-                <!-- TikTok SVG Logo -->
-
                 <svg
                     class="tiktok-logo"
                     viewBox="0 0 24 24"
@@ -686,7 +694,6 @@ button:hover {
 
                 </svg>
 
-
                 <span class="tiktok-name">
                     syadzz011
                 </span>
@@ -698,11 +705,10 @@ button:hover {
     </div>
 
 
-
     <!-- FOOTER -->
 
     <div class="footer">
-        Kalkulator Speed • Steal an Egg by Syad
+        Kalkulator Speed • Steal an Egg
     </div>
 
 </div>
@@ -712,19 +718,114 @@ button:hover {
 <script>
 
 /*
-=========================================
+====================================================
 KECEPATAN STEP
-=========================================
+====================================================
 */
 
 const STEPS_PER_SECOND = 22;
 
 
+/*
+====================================================
+DATA ASLI DARI GAME
+====================================================
+*/
+
+const GAME_DATA = [
+
+    {
+        treadmill: 1000,
+        trail: 10,
+        multiplier: 4,
+        gain: 13000
+    },
+
+    {
+        treadmill: 1000,
+        trail: 10,
+        multiplier: 8,
+        gain: 17000
+    },
+
+    {
+        treadmill: 1000,
+        trail: 10,
+        multiplier: 128,
+        gain: 137000
+    },
+
+    {
+        treadmill: 1000,
+        trail: 14,
+        multiplier: 8,
+        gain: 21000
+    },
+
+    {
+        treadmill: 2000,
+        trail: 14,
+        multiplier: 8,
+        gain: 42000
+    },
+
+    {
+        treadmill: 2000,
+        trail: 14,
+        multiplier: 32,
+        gain: 90000
+    },
+
+    {
+        treadmill: 3000,
+        trail: 20,
+        multiplier: 32,
+        gain: 153000
+    }
+
+];
+
 
 /*
-=========================================
+====================================================
+FAKTOR TRAIL
+====================================================
+*/
+
+const TRAIL_FACTORS = {
+
+    10: 1,
+
+    14: 21 / 17,
+
+    20: 1.4
+
+};
+
+
+/*
+====================================================
+FAKTOR MULTIPLIER
+====================================================
+*/
+
+const MULTIPLIER_FACTORS = {
+
+    4: 13000 / 17000,
+
+    8: 1,
+
+    32: 90000 / 42000,
+
+    128: 137000 / 17000
+
+};
+
+
+/*
+====================================================
 FORMAT ANGKA
-=========================================
+====================================================
 */
 
 function formatNumber(number) {
@@ -733,40 +834,23 @@ function formatNumber(number) {
         return "0";
     }
 
-
     const units = [
-
         "",
-
         "K",
-
         "M",
-
         "B",
-
         "T",
-
         "Qa",
-
         "Qi",
-
         "Sx",
-
         "Sp",
-
         "Oc",
-
         "No",
-
         "Dc"
-
     ];
 
-
     let unit = 0;
-
     let value = Math.abs(number);
-
 
     while (
         value >= 1000 &&
@@ -774,15 +858,9 @@ function formatNumber(number) {
     ) {
 
         value /= 1000;
-
         unit++;
 
     }
-
-
-    /*
-    Angka tanpa satuan
-    */
 
     if (unit === 0) {
 
@@ -791,37 +869,27 @@ function formatNumber(number) {
 
     }
 
-
     let result;
-
 
     if (value >= 100) {
 
         result = value.toFixed(0);
 
     }
-
     else if (value >= 10) {
 
         result = value.toFixed(1);
 
     }
-
     else {
 
         result = value.toFixed(2);
 
     }
 
-
-    /*
-    Hilangkan nol berlebih
-    */
-
     result = result
         .replace(/\.00$/, "")
         .replace(/(\.\d)0$/, "");
-
 
     if (number < 0) {
 
@@ -829,25 +897,240 @@ function formatNumber(number) {
 
     }
 
-
     return result + units[unit];
 
 }
 
 
-
 /*
-=========================================
-HITUNG
-=========================================
+====================================================
+INTERPOLASI
+====================================================
 */
 
-function hitung() {
+function logInterpolate(
+    x,
+    points
+) {
+
+    const keys =
+        Object.keys(points)
+            .map(Number)
+            .sort(function(a, b) {
+                return a - b;
+            });
+
+
+    if (
+        Object.prototype.hasOwnProperty.call(
+            points,
+            x
+        )
+    ) {
+
+        return points[x];
+
+    }
+
+
+    if (x < keys[0]) {
+
+        const a = keys[0];
+        const b = keys[1];
+
+        const factor =
+            Math.log(points[b] / points[a]) /
+            Math.log(b / a);
+
+        return points[a] *
+            Math.pow(x / a, factor);
+
+    }
+
+
+    if (x > keys[keys.length - 1]) {
+
+        const a =
+            keys[keys.length - 2];
+
+        const b =
+            keys[keys.length - 1];
+
+        const factor =
+            Math.log(points[b] / points[a]) /
+            Math.log(b / a);
+
+        return points[b] *
+            Math.pow(x / b, factor);
+
+    }
+
+
+    for (
+        let i = 0;
+        i < keys.length - 1;
+        i++
+    ) {
+
+        const a = keys[i];
+        const b = keys[i + 1];
+
+        if (
+            x > a &&
+            x < b
+        ) {
+
+            const factor =
+                Math.log(points[b] / points[a]) /
+                Math.log(b / a);
+
+            return points[a] *
+                Math.pow(x / a, factor);
+
+        }
+
+    }
+
+    return 1;
+}
+
+
+/*
+====================================================
+TRAIL
+====================================================
+*/
+
+function getTrailFactor(trail) {
+
+    return logInterpolate(
+        trail,
+        TRAIL_FACTORS
+    );
+
+}
+
+
+/*
+====================================================
+MULTIPLIER
+====================================================
+*/
+
+function getMultiplierFactor(multiplier) {
+
+    return logInterpolate(
+        multiplier,
+        MULTIPLIER_FACTORS
+    );
+
+}
+
+
+/*
+====================================================
+DATA PERSIS
+====================================================
+*/
+
+function findExactData(
+    treadmill,
+    trail,
+    multiplier
+) {
+
+    return GAME_DATA.find(function(data) {
+
+        return (
+            data.treadmill === treadmill &&
+            data.trail === trail &&
+            data.multiplier === multiplier
+        );
+
+    });
+
+}
+
+
+/*
+====================================================
+HITUNG GAIN / STEP
+====================================================
+*/
+
+function calculateGainPerStep(
+    treadmill,
+    trail,
+    multiplier
+) {
+
+    /*
+    Cari data asli terlebih dahulu.
+    */
+
+    const exact =
+        findExactData(
+            treadmill,
+            trail,
+            multiplier
+        );
+
+
+    if (exact) {
+
+        return {
+
+            gain: exact.gain,
+
+            exact: true
+
+        };
+
+    }
 
 
     /*
-    Ambil nilai input
+    Jika belum ada data asli,
+    gunakan estimasi.
     */
+
+    const BASE_GAIN = 17000;
+
+    const treadmillFactor =
+        treadmill / 1000;
+
+    const trailFactor =
+        getTrailFactor(trail);
+
+    const multiplierFactor =
+        getMultiplierFactor(multiplier);
+
+
+    const gain =
+        BASE_GAIN *
+        treadmillFactor *
+        trailFactor *
+        multiplierFactor;
+
+
+    return {
+
+        gain: gain,
+
+        exact: false
+
+    };
+
+}
+
+
+/*
+====================================================
+HITUNG
+====================================================
+*/
+
+function hitung() {
 
     const treadmill =
         Number(
@@ -873,11 +1156,6 @@ function hitung() {
         );
 
 
-
-    /*
-    Cek input
-    */
-
     if (
         isNaN(hours) ||
         hours <= 0
@@ -892,24 +1170,24 @@ function hitung() {
     }
 
 
-
     /*
-    ======================================
-    GAIN PER STEP
-    ======================================
+    Gain / Step
     */
 
-    const gainPerStep =
-        treadmill *
-        trail *
-        multiplier;
+    const result =
+        calculateGainPerStep(
+            treadmill,
+            trail,
+            multiplier
+        );
 
+
+    const gainPerStep =
+        result.gain;
 
 
     /*
-    ======================================
-    GAIN PER DETIK
-    ======================================
+    Gain / Detik
     */
 
     const gainPerSecond =
@@ -917,11 +1195,8 @@ function hitung() {
         STEPS_PER_SECOND;
 
 
-
     /*
-    ======================================
-    GAIN PER MENIT
-    ======================================
+    Gain / Menit
     */
 
     const gainPerMinute =
@@ -929,11 +1204,8 @@ function hitung() {
         60;
 
 
-
     /*
-    ======================================
-    GAIN PER JAM
-    ======================================
+    Gain / Jam
     */
 
     const gainPerHour =
@@ -941,11 +1213,8 @@ function hitung() {
         3600;
 
 
-
     /*
-    ======================================
-    TOTAL AFK
-    ======================================
+    Total AFK
     */
 
     const total =
@@ -953,69 +1222,114 @@ function hitung() {
         hours;
 
 
-
     /*
-    ======================================
-    TAMPILKAN
-    ======================================
+    Status
     */
 
-    document.getElementById("outTreadmill").innerText =
+    const status =
+        document.getElementById("status");
+
+
+    if (result.exact) {
+
+        status.innerText =
+            "✅ Data asli dari game";
+
+        status.className =
+            "status exact";
+
+    }
+    else {
+
+        status.innerText =
+            "≈ Perkiraan berdasarkan data game";
+
+        status.className =
+            "status estimate";
+
+    }
+
+
+    /*
+    Output
+    */
+
+    document.getElementById(
+        "outTreadmill"
+    ).innerText =
         "+" + formatNumber(treadmill);
 
 
-    document.getElementById("outTrail").innerText =
+    document.getElementById(
+        "outTrail"
+    ).innerText =
         "x" + trail;
 
 
-    document.getElementById("outMultiplier").innerText =
+    document.getElementById(
+        "outMultiplier"
+    ).innerText =
         "x" + formatNumber(multiplier);
 
 
-    document.getElementById("outSteps").innerText =
+    document.getElementById(
+        "outSteps"
+    ).innerText =
         STEPS_PER_SECOND + " step";
 
 
-    document.getElementById("outStep").innerText =
+    document.getElementById(
+        "outStep"
+    ).innerText =
         formatNumber(gainPerStep);
 
 
-    document.getElementById("outSecond").innerText =
+    document.getElementById(
+        "outSecond"
+    ).innerText =
         formatNumber(gainPerSecond);
 
 
-    document.getElementById("outMinute").innerText =
+    document.getElementById(
+        "outMinute"
+    ).innerText =
         formatNumber(gainPerMinute);
 
 
-    document.getElementById("outHour").innerText =
+    document.getElementById(
+        "outHour"
+    ).innerText =
         formatNumber(gainPerHour);
 
 
-    document.getElementById("outHours").innerText =
+    document.getElementById(
+        "outHours"
+    ).innerText =
         hours + " jam";
 
 
-    document.getElementById("outTotal").innerText =
+    document.getElementById(
+        "outTotal"
+    ).innerText =
         formatNumber(total);
 
 
-
     /*
-    Tampilkan card hasil
+    Tampilkan hasil
     */
 
-    document.getElementById("result").style.display =
+    document.getElementById(
+        "result"
+    ).style.display =
         "block";
 
 }
 
 
-
 /*
-=========================================
+====================================================
 HITUNG OTOMATIS
-=========================================
+====================================================
 */
 
 window.addEventListener(
