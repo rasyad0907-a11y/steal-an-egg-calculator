@@ -26,7 +26,6 @@ body {
     margin: auto;
 }
 
-
 /* =====================================================
    FOLLOW TIKTOK
 ===================================================== */
@@ -52,7 +51,6 @@ body {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
-
 /* =====================================================
    LOGO TIKTOK
 ===================================================== */
@@ -73,7 +71,6 @@ body {
     height: 78px;
     display: block;
 }
-
 
 /* =====================================================
    FOLLOW
@@ -104,9 +101,8 @@ body {
     font-weight: bold;
 }
 
-
 /* =====================================================
-   BUTTON FOLLOW
+   FOLLOW BUTTON
 ===================================================== */
 
 .follow-btn {
@@ -142,7 +138,6 @@ body {
     transform: none;
 }
 
-
 /* =====================================================
    COUNTDOWN
 ===================================================== */
@@ -169,7 +164,6 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
-
 
 /* =====================================================
    CONTINUE
@@ -214,7 +208,6 @@ body {
     line-height: 1.5;
 }
 
-
 /* =====================================================
    CALCULATOR
 ===================================================== */
@@ -231,6 +224,7 @@ body {
     margin: 0 0 8px;
 
     font-size: 31px;
+
     line-height: 1.2;
 }
 
@@ -243,7 +237,6 @@ body {
 
     font-size: 15px;
 }
-
 
 /* =====================================================
    CARD
@@ -263,7 +256,6 @@ body {
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.25);
 }
-
 
 /* =====================================================
    INPUT
@@ -304,7 +296,6 @@ input:focus {
 input::placeholder {
     color: #666;
 }
-
 
 /* =====================================================
    HASIL
@@ -350,7 +341,6 @@ input::placeholder {
     word-break: break-word;
 }
 
-
 /* =====================================================
    STATUS
 ===================================================== */
@@ -370,7 +360,6 @@ input::placeholder {
 
     text-align: center;
 }
-
 
 /* =====================================================
    TOTAL
@@ -407,9 +396,8 @@ input::placeholder {
     word-break: break-word;
 }
 
-
 /* =====================================================
-   TIKTOK BAWAH
+   TIKTOK
 ===================================================== */
 
 .tiktok-box {
@@ -453,7 +441,6 @@ input::placeholder {
     display: block;
 }
 
-
 /* =====================================================
    FOOTER
 ===================================================== */
@@ -467,7 +454,6 @@ input::placeholder {
 
     margin-top: 20px;
 }
-
 
 /* =====================================================
    MOBILE
@@ -501,6 +487,26 @@ input::placeholder {
 
 <body>
 
+<!-- =====================================================
+     🎵 BACKGROUND MUSIC
+     
+     FILE LAGU:
+     Taruh file "teh-hijau.mp3" SATU FOLDER
+     dengan file index.html
+===================================================== -->
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+    <!-- 🎵 FILE LAGU YANG HARUS DIMASUKKAN DI SINI -->
+    <source
+        src="teh-hijau.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
 
 <!-- =====================================================
      FOLLOW TIKTOK
@@ -518,8 +524,6 @@ input::placeholder {
                 viewBox="0 0 48 48"
                 xmlns="http://www.w3.org/2000/svg"
             >
-
-                <!-- CYAN -->
 
                 <path
                     fill="#25F4EE"
@@ -544,9 +548,6 @@ input::placeholder {
                     transform="translate(-2 2)"
                 />
 
-
-                <!-- PINK -->
-
                 <path
                     fill="#FE2C55"
                     d="
@@ -569,9 +570,6 @@ input::placeholder {
                     "
                     transform="translate(2 -2)"
                 />
-
-
-                <!-- PUTIH -->
 
                 <path
                     fill="#FFFFFF"
@@ -808,61 +806,30 @@ input::placeholder {
 
         <select id="multiplier">
 
-            <option value="1">
-                x1
-            </option>
+            <option value="1">x1</option>
+            <option value="2">x2</option>
+            <option value="4">x4</option>
+            <option value="8">x8</option>
+            <option value="16">x16</option>
+            <option value="32">x32</option>
+            <option value="64">x64</option>
+            <option value="128">x128</option>
+            <option value="256">x256</option>
+            <option value="512">x512</option>
 
-            <option value="2">
-                x2
-            </option>
+            <!-- ==========================
+                 MULTIPLIER 1K - 4K
 
-            <option value="4">
-                x4
-            </option>
+                 1K = 1024
+                 2K = 2048
+                 3K = 3072
+                 4K = 4096
+            =========================== -->
 
-            <option value="8">
-                x8
-            </option>
-
-            <option value="16">
-                x16
-            </option>
-
-            <option value="32">
-                x32
-            </option>
-
-            <option value="64">
-                x64
-            </option>
-
-            <option value="128">
-                x128
-            </option>
-
-            <option value="256">
-                x256
-            </option>
-
-            <option value="512">
-                x512
-            </option>
-
-            <option value="1000">
-                x1K
-            </option>
-
-            <option value="2000">
-                x2K
-            </option>
-
-            <option value="3000">
-                x3K
-            </option>
-
-            <option value="4000">
-                x4K
-            </option>
+            <option value="1024">x1K</option>
+            <option value="2048">x2K</option>
+            <option value="3072">x3K</option>
+            <option value="4096">x4K</option>
 
         </select>
 
@@ -910,144 +877,76 @@ input::placeholder {
 
 
         <div class="row">
-
-            <span>
-                ⚡ Speed Sekarang
-            </span>
-
-            <span id="outCurrent">
-            </span>
-
+            <span>⚡ Speed Sekarang</span>
+            <span id="outCurrent"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                🏃 Treadmill
-            </span>
-
-            <span id="outTreadmill">
-            </span>
-
+            <span>🏃 Treadmill</span>
+            <span id="outTreadmill"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                ✨ Trail
-            </span>
-
-            <span id="outTrail">
-            </span>
-
+            <span>✨ Trail</span>
+            <span id="outTrail"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                🚀 Multiplier
-            </span>
-
-            <span id="outMultiplier">
-            </span>
-
+            <span>🚀 Multiplier</span>
+            <span id="outMultiplier"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                ⏱️ Step / Detik
-            </span>
-
-            <span id="outSteps">
-            </span>
-
+            <span>⏱️ Step / Detik</span>
+            <span id="outSteps"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                💰 Gain / Step
-            </span>
-
-            <span id="outStep">
-            </span>
-
+            <span>💰 Gain / Step</span>
+            <span id="outStep"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                ⚡ Gain / Detik
-            </span>
-
-            <span id="outSecond">
-            </span>
-
+            <span>⚡ Gain / Detik</span>
+            <span id="outSecond"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                🔥 Gain / Menit
-            </span>
-
-            <span id="outMinute">
-            </span>
-
+            <span>🔥 Gain / Menit</span>
+            <span id="outMinute"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                💎 Gain / Jam
-            </span>
-
-            <span id="outHour">
-            </span>
-
+            <span>💎 Gain / Jam</span>
+            <span id="outHour"></span>
         </div>
 
 
         <div class="row">
-
-            <span>
-                ⏰ Waktu AFK
-            </span>
-
-            <span id="outHours">
-            </span>
-
+            <span>⏰ Waktu AFK</span>
+            <span id="outHours"></span>
         </div>
 
-
-        <!-- HASIL MURNI DARI AFK -->
 
         <div class="row">
-
-            <span>
-                📈 Yang Didapat Saat AFK
-            </span>
-
-            <span id="outGain">
-            </span>
-
+            <span>📈 Yang Didapat Saat AFK</span>
+            <span id="outGain"></span>
         </div>
 
 
-        <div class="status" id="dataStatus">
+        <div class="status">
+            ℹ️ Hasil ini adalah perkiraan,
+            kurang lebih mendekati hasil di dalam game.
         </div>
 
-
-        <!-- TOTAL DENGAN SPEED AWAL -->
 
         <div class="final">
 
@@ -1123,11 +1022,34 @@ input::placeholder {
 <script>
 
 /* =====================================================
+   MUSIC
+===================================================== */
+
+const bgMusic =
+    document.getElementById("bgMusic");
+
+
+/*
+   Volume 30%.
+   Silakan ubah:
+
+   0.1 = pelan
+   0.3 = sedang
+   0.5 = cukup keras
+   1.0 = maksimal
+*/
+
+bgMusic.volume = 0.3;
+
+
+/* =====================================================
    FOLLOW TIKTOK
 ===================================================== */
 
 let countdownStarted = false;
+
 let countdown = 10;
+
 let countdownInterval = null;
 
 
@@ -1140,9 +1062,29 @@ function mulaiFollow() {
     countdownStarted = true;
 
 
+    /*
+       Buka TikTok
+    */
+
     window.open(
         "https://www.tiktok.com/@syadzz011",
         "_blank"
+    );
+
+
+    /*
+       🎵 MULAI LAGU
+    */
+
+    bgMusic.play().catch(
+        function(error) {
+
+            console.log(
+                "Musik tidak dapat diputar:",
+                error
+            );
+
+        }
     );
 
 
@@ -1151,10 +1093,12 @@ function mulaiFollow() {
             "followButton"
         );
 
+
     const box =
         document.getElementById(
             "countdownBox"
         );
+
 
     const number =
         document.getElementById(
@@ -1247,117 +1191,10 @@ function bukaCalculator() {
 
 
 /* =====================================================
-   KONFIGURASI
+   STEP / DETIK
 ===================================================== */
 
 const STEPS_PER_SECOND = 22;
-
-
-/* =====================================================
-   DATA HASIL PENGUKURAN
-===================================================== */
-
-const measuredData = [
-
-    {
-        treadmill: 1000,
-        trail: 10,
-        multiplier: 1,
-        gain: 10000
-    },
-
-    {
-        treadmill: 1000,
-        trail: 10,
-        multiplier: 4,
-        gain: 13000
-    },
-
-    {
-        treadmill: 1000,
-        trail: 10,
-        multiplier: 8,
-        gain: 17000
-    },
-
-    {
-        treadmill: 1000,
-        trail: 10,
-        multiplier: 128,
-        gain: 137000
-    },
-
-    {
-        treadmill: 1000,
-        trail: 14,
-        multiplier: 8,
-        gain: 21000
-    },
-
-    {
-        treadmill: 2000,
-        trail: 14,
-        multiplier: 1,
-        gain: 28000
-    },
-
-    {
-        treadmill: 2000,
-        trail: 14,
-        multiplier: 8,
-        gain: 42000
-    },
-
-    {
-        treadmill: 2000,
-        trail: 14,
-        multiplier: 32,
-        gain: 90000
-    },
-
-    {
-        treadmill: 2000,
-        trail: 14,
-        multiplier: 128,
-        gain: 282000
-    },
-
-    {
-        treadmill: 2000,
-        trail: 14,
-        multiplier: 256,
-        gain: 538000
-    },
-
-    {
-        treadmill: 2000,
-        trail: 20,
-        multiplier: 1,
-        gain: 40000
-    },
-
-    {
-        treadmill: 3000,
-        trail: 20,
-        multiplier: 32,
-        gain: 153000
-    },
-
-    {
-        treadmill: 3000,
-        trail: 14,
-        multiplier: 2000,
-        gain: 6180000
-    },
-
-    {
-        treadmill: 3000,
-        trail: 20,
-        multiplier: 2000,
-        gain: 6200000
-    }
-
-];
 
 
 /* =====================================================
@@ -1416,11 +1253,14 @@ function parseSpeed(input) {
         match[2] || "";
 
 
-    return (
+    const result =
         number *
-        (units[unit] || 1)
-    );
+        (units[unit] || 1);
 
+
+    return Number.isFinite(result)
+        ? result
+        : NaN;
 }
 
 
@@ -1430,9 +1270,7 @@ function parseSpeed(input) {
 
 function formatNumber(number) {
 
-    if (
-        !Number.isFinite(number)
-    ) {
+    if (!Number.isFinite(number)) {
         return "0";
     }
 
@@ -1444,75 +1282,39 @@ function formatNumber(number) {
 
     const units = [
 
-        {
-            name: "",
-            value: 1
-        },
+        { name: "", value: 1 },
 
-        {
-            name: "K",
-            value: 1e3
-        },
+        { name: "K", value: 1e3 },
 
-        {
-            name: "M",
-            value: 1e6
-        },
+        { name: "M", value: 1e6 },
 
-        {
-            name: "B",
-            value: 1e9
-        },
+        { name: "B", value: 1e9 },
 
-        {
-            name: "T",
-            value: 1e12
-        },
+        { name: "T", value: 1e12 },
 
-        {
-            name: "Qa",
-            value: 1e15
-        },
+        { name: "Qa", value: 1e15 },
 
-        {
-            name: "Qi",
-            value: 1e18
-        },
+        { name: "Qi", value: 1e18 },
 
-        {
-            name: "Sx",
-            value: 1e21
-        },
+        { name: "Sx", value: 1e21 },
 
-        {
-            name: "Sp",
-            value: 1e24
-        },
+        { name: "Sp", value: 1e24 },
 
-        {
-            name: "Oc",
-            value: 1e27
-        },
+        { name: "Oc", value: 1e27 },
 
-        {
-            name: "No",
-            value: 1e30
-        },
+        { name: "No", value: 1e30 },
 
-        {
-            name: "Dc",
-            value: 1e33
-        }
+        { name: "Dc", value: 1e33 }
 
     ];
 
 
-    let selected =
-        units[0];
-
-
     const absolute =
         Math.abs(number);
+
+
+    let selected =
+        units[0];
 
 
     for (
@@ -1534,201 +1336,72 @@ function formatNumber(number) {
     }
 
 
-    let value =
+    const value =
         number /
         selected.value;
 
 
-    /*
-       Sampai 3 angka desimal
-       supaya speed awal tetap
-       terlihat pada total.
+    let decimals;
 
-       Contoh:
-       100.003M
-       6.18M
-       6.2M
-    */
+
+    if (
+        Math.abs(value) >= 100
+    ) {
+
+        decimals = 0;
+
+    }
+
+    else {
+
+        decimals = 2;
+
+    }
+
 
     let result =
-        value.toFixed(3);
+        value.toFixed(
+            decimals
+        );
 
 
     result =
         result
-        .replace(/\.000$/, "")
-        .replace(/(\.\d)00$/, "")
-        .replace(/(\.\d\d)0$/, "");
+        .replace(/\.00$/, "")
+        .replace(/(\.\d)0$/, "");
 
 
     return (
         result +
         selected.name
     );
-
 }
 
 
 /* =====================================================
-   DATA EXACT
+   FORMAT MULTIPLIER
 ===================================================== */
 
-function getMeasuredGain(
-    treadmill,
-    trail,
-    multiplier
-) {
+function formatMultiplier(value) {
 
-    return measuredData.find(
-        function(item) {
+    if (value === 1024) {
+        return "1K";
+    }
 
-            return (
-                item.treadmill === treadmill &&
-                item.trail === trail &&
-                item.multiplier === multiplier
-            );
+    if (value === 2048) {
+        return "2K";
+    }
 
-        }
-    );
+    if (value === 3072) {
+        return "3K";
+    }
 
-}
+    if (value === 4096) {
+        return "4K";
+    }
 
 
-/* =====================================================
-   ESTIMASI DATA YANG BELUM DIUKUR
-===================================================== */
-
-function estimateGain(
-    treadmill,
-    trail,
-    multiplier
-) {
-
-    const target = [
-        treadmill,
-        trail,
-        multiplier
-    ];
-
-
-    const scored =
-        measuredData.map(
-            function(item) {
-
-                const source = [
-                    item.treadmill,
-                    item.trail,
-                    item.multiplier
-                ];
-
-
-                let distance = 0;
-
-
-                for (
-                    let i = 0;
-                    i < 3;
-                    i++
-                ) {
-
-                    const a =
-                        Math.log10(
-                            Math.max(
-                                target[i],
-                                0.000001
-                            )
-                        );
-
-
-                    const b =
-                        Math.log10(
-                            Math.max(
-                                source[i],
-                                0.000001
-                            )
-                        );
-
-
-                    distance +=
-                        Math.pow(
-                            a - b,
-                            2
-                        );
-
-                }
-
-
-                return {
-
-                    ...item,
-
-                    distance:
-                        Math.sqrt(
-                            distance
-                        )
-
-                };
-
-            }
-        );
-
-
-    scored.sort(
-        function(a, b) {
-
-            return (
-                a.distance -
-                b.distance
-            );
-
-        }
-    );
-
-
-    const nearest =
-        scored.slice(
-            0,
-            5
-        );
-
-
-    let weightedGain = 0;
-
-    let totalWeight = 0;
-
-
-    nearest.forEach(
-        function(item) {
-
-            const weight =
-                1 /
-                (
-                    0.25 +
-                    item.distance
-                );
-
-
-            weightedGain +=
-                item.gain *
-                weight;
-
-
-            totalWeight +=
-                weight;
-
-        }
-    );
-
-
-    /*
-       Sedikit konservatif
-    */
-
-    return (
-        weightedGain /
-        totalWeight
-    ) * 0.98;
-
+    return formatNumber(value);
 }
 
 
@@ -1778,10 +1451,6 @@ function hitung() {
         );
 
 
-    /*
-       Validasi
-    */
-
     if (
         !Number.isFinite(
             currentSpeed
@@ -1813,53 +1482,32 @@ function hitung() {
 
 
     /*
-       Cari data yang sudah
-       pernah diukur.
-    */
-
-    const exact =
-        getMeasuredGain(
-            treadmill,
-            trail,
-            multiplier
-        );
-
-
-    /*
        Gain / Step
+
+       Pola yang digunakan:
+
+       Treadmill ×
+       (Trail + Multiplier - 1)
     */
 
     const gainPerStep =
-        exact
-            ? exact.gain
-            : estimateGain(
-                treadmill,
-                trail,
-                multiplier
-            );
+        treadmill *
+        (
+            trail +
+            multiplier -
+            1
+        );
 
-
-    /*
-       Gain / Detik
-    */
 
     const gainPerSecond =
         gainPerStep *
         STEPS_PER_SECOND;
 
 
-    /*
-       Gain / Menit
-    */
-
     const gainPerMinute =
         gainPerSecond *
         60;
 
-
-    /*
-       Gain / Jam
-    */
 
     const gainPerHour =
         gainPerSecond *
@@ -1867,8 +1515,8 @@ function hitung() {
 
 
     /*
-       YANG DIDAPAT SELAMA AFK
-       Hanya hasil tambahan.
+       Yang benar-benar didapat
+       selama AFK
     */
 
     const gainFromAFK =
@@ -1877,8 +1525,8 @@ function hitung() {
 
 
     /*
-       TOTAL HASIL AFK
-       Speed awal + hasil AFK.
+       Speed awal +
+       hasil selama AFK
     */
 
     const totalAfterAFK =
@@ -1918,7 +1566,7 @@ function hitung() {
         "outMultiplier"
     ).innerText =
         "x" +
-        formatNumber(
+        formatMultiplier(
             multiplier
         );
 
@@ -1970,7 +1618,7 @@ function hitung() {
 
 
     /*
-       INI MURNI HASIL AFK
+       HANYA HASIL AFK
     */
 
     document.getElementById(
@@ -1982,7 +1630,7 @@ function hitung() {
 
 
     /*
-       INI SPEED AWAL + HASIL AFK
+       SPEED AWAL + HASIL AFK
     */
 
     document.getElementById(
@@ -1993,27 +1641,10 @@ function hitung() {
         );
 
 
-    /*
-       Status data
-    */
-
-    if (exact) {
-
-        document.getElementById(
-            "dataStatus"
-        ).innerText =
-            "✅ Gain/Step menggunakan data pengukuran game.";
-
-    }
-
-    else {
-
-        document.getElementById(
-            "dataStatus"
-        ).innerText =
-            "ℹ️ Kombinasi ini belum diukur, jadi Gain/Step adalah perkiraan.";
-
-    }
+    document.getElementById(
+        "dataStatus"
+    ).innerText =
+        "ℹ️ Hasil ini adalah perkiraan, kurang lebih mendekati hasil di dalam game.";
 
 }
 
@@ -2051,7 +1682,7 @@ function hitung() {
 
 
 /* =====================================================
-   HASIL AWAL
+   HITUNG AWAL
 ===================================================== */
 
 hitung();
