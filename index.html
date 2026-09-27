@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SYADZZ STORE</title>
 
 <style>
 *{
     box-sizing:border-box;
-    font-family:Arial,sans-serif
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -16,30 +17,32 @@ body{
     min-height:100vh;
     padding:20px 15px;
     background:linear-gradient(135deg,#080812,#241044);
-    color:#fff
+    color:#fff;
 }
 
 .container{
     width:100%;
     max-width:760px;
-    margin:auto
+    margin:auto;
 }
 
 .page{
-    display:none
+    display:none;
 }
 
 .page.active{
-    display:block
+    display:block;
 }
 
-/* ================= HOME ================= */
+/* =========================
+   HOME
+========================= */
 
 .home-card{
     min-height:90vh;
     display:flex;
     flex-direction:column;
-    justify-content:center
+    justify-content:center;
 }
 
 .main-title{
@@ -47,20 +50,20 @@ body{
     color:#ffd900;
     font-size:36px;
     margin:0 0 8px;
-    font-weight:800
+    font-weight:800;
 }
 
 .subtitle{
     text-align:center;
     color:#aaa;
     margin-bottom:30px;
-    font-size:15px
+    font-size:15px;
 }
 
 .choice-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:18px
+    gap:18px;
 }
 
 .choice-card{
@@ -71,30 +74,32 @@ body{
     text-align:center;
     cursor:pointer;
     transition:.2s;
-    box-shadow:0 15px 40px rgba(0,0,0,.25)
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
 .choice-card:hover{
     transform:translateY(-5px);
-    border-color:#ffd900
+    border-color:#ffd900;
 }
 
 .choice-icon{
     font-size:52px;
-    margin-bottom:12px
+    margin-bottom:12px;
 }
 
 .choice-card h2{
-    margin:8px 0 10px
+    margin:8px 0 10px;
 }
 
 .choice-card p{
     color:#999;
     line-height:1.6;
-    min-height:70px
+    min-height:70px;
 }
 
-/* ================= CONTACT ================= */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-section{
     margin-top:22px;
@@ -102,19 +107,19 @@ body{
     border:1px solid #454565;
     border-radius:18px;
     padding:18px;
-    text-align:center
+    text-align:center;
 }
 
 .contact-section h2{
     color:#ffd900;
     font-size:18px;
-    margin:0 0 15px
+    margin:0 0 15px;
 }
 
 .contact-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:12px
+    gap:12px;
 }
 
 .contact-item{
@@ -127,12 +132,12 @@ body{
     border-radius:12px;
     text-decoration:none;
     color:#fff;
-    transition:.2s
+    transition:.2s;
 }
 
 .contact-item:hover{
     transform:translateY(-3px);
-    border-color:#ffd900
+    border-color:#ffd900;
 }
 
 .contact-logo{
@@ -143,30 +148,32 @@ body{
     align-items:center;
     justify-content:center;
     font-weight:bold;
-    flex-shrink:0
+    flex-shrink:0;
 }
 
 .wa-logo{
-    background:#25D366
+    background:#25D366;
 }
 
 .tiktok-logo{
     background:#000;
-    border:1px solid #555
+    border:1px solid #555;
 }
 
 .contact-title{
     font-weight:bold;
     font-size:14px;
-    margin-bottom:4px
+    margin-bottom:4px;
 }
 
 .contact-value{
     color:#aaa;
-    font-size:13px
+    font-size:13px;
 }
 
-/* ================= CARD ================= */
+/* =========================
+   CARD
+========================= */
 
 .card{
     background:#19192d;
@@ -174,22 +181,24 @@ body{
     border-radius:18px;
     padding:22px;
     margin-bottom:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.3)
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
 .section-title{
     text-align:center;
     color:#ffd900;
     margin-top:0;
-    margin-bottom:20px
+    margin-bottom:20px;
 }
 
-/* ================= FORM ================= */
+/* =========================
+   FORM
+========================= */
 
 label{
     display:block;
     margin:15px 0 8px;
-    font-weight:bold
+    font-weight:bold;
 }
 
 input,
@@ -201,15 +210,17 @@ select{
     background:#11111c;
     color:#fff;
     font-size:15px;
-    outline:none
+    outline:none;
 }
 
 input:focus,
 select:focus{
-    border-color:#ffd900
+    border-color:#ffd900;
 }
 
-/* ================= BUTTON ================= */
+/* =========================
+   BUTTON
+========================= */
 
 .btn{
     width:100%;
@@ -220,49 +231,51 @@ select:focus{
     font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    transition:.2s
+    transition:.2s;
 }
 
 .btn:hover{
     transform:translateY(-2px);
-    opacity:.93
+    opacity:.93;
 }
 
 .btn-primary{
     background:linear-gradient(90deg,#ffd900,#ff9f00);
-    color:#111
+    color:#111;
 }
 
 .btn-secondary{
     background:#303047;
-    color:#fff
+    color:#fff;
 }
 
-/* ================= CALCULATOR ================= */
+/* =========================
+   CALCULATOR
+========================= */
 
 .result-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:12px
+    gap:12px;
 }
 
 .result-item{
     background:#11111c;
     border:1px solid #35354e;
     border-radius:12px;
-    padding:14px
+    padding:14px;
 }
 
 .result-label{
     color:#999;
     font-size:13px;
-    margin-bottom:6px
+    margin-bottom:6px;
 }
 
 .result-value{
     font-size:17px;
     font-weight:bold;
-    word-break:break-word
+    word-break:break-word;
 }
 
 .total-box{
@@ -271,28 +284,30 @@ select:focus{
     text-align:center;
     border:1px solid #ffd900;
     border-radius:14px;
-    background:rgba(255,217,0,.08)
+    background:rgba(255,217,0,.08);
 }
 
 .total-box .label{
     color:#ffd900;
     font-size:13px;
-    margin:0
+    margin:0;
 }
 
 .total-box .value{
     font-size:28px;
     font-weight:bold;
-    margin-top:8px
+    margin-top:8px;
 }
 
-/* ================= PAKET ================= */
+/* =========================
+   PAKET JOKI
+========================= */
 
 .package-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:12px;
-    margin-top:15px
+    margin-top:15px;
 }
 
 .package-card{
@@ -302,42 +317,98 @@ select:focus{
     padding:16px;
     text-align:center;
     cursor:pointer;
-    transition:.2s
+    transition:.2s;
 }
 
 .package-card:hover{
     border-color:#ffd900;
-    transform:translateY(-3px)
+    transform:translateY(-3px);
 }
 
 .package-card.selected{
     border:2px solid #ffd900;
-    background:rgba(255,217,0,.08)
+    background:rgba(255,217,0,.08);
 }
 
 .package-icon{
     font-size:36px;
-    margin-bottom:8px
+    margin-bottom:8px;
 }
 
 .package-card h3{
     font-size:15px;
-    margin:8px 0
+    margin:8px 0;
 }
 
 .package-price{
     color:#ffd900;
     font-size:20px;
-    font-weight:bold
+    font-weight:bold;
 }
 
 .package-duration{
     color:#999;
     font-size:12px;
-    margin-top:6px
+    margin-top:6px;
 }
 
-/* ================= PAYMENT ================= */
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-box{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+}
+
+.quantity-box.active{
+    display:block;
+}
+
+.quantity-title{
+    color:#ffd900;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+/* =========================
+   TOTAL PAYMENT
+========================= */
+
+.pay-total{
+    display:none;
+    margin-top:15px;
+    padding:18px;
+    border:1px solid #ffd900;
+    border-radius:14px;
+    background:rgba(255,217,0,.08);
+    text-align:center;
+}
+
+.pay-total.active{
+    display:block;
+}
+
+.pay-total-title{
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.pay-total-value{
+    color:#ffd900;
+    font-size:30px;
+    font-weight:800;
+}
+
+/* =========================
+   PAYMENT
+========================= */
 
 .payment-box{
     display:none;
@@ -346,14 +417,16 @@ select:focus{
     border:1px solid #35354e;
     border-radius:12px;
     background:#11111c;
-    text-align:center
+    text-align:center;
 }
 
 .payment-box.active{
-    display:block
+    display:block;
 }
 
-/* ================= QRIS ================= */
+/* =========================
+   QRIS
+========================= */
 
 .qris-image{
     display:block;
@@ -362,16 +435,18 @@ select:focus{
     margin:15px auto;
     padding:8px;
     background:#fff;
-    border-radius:12px
+    border-radius:12px;
 }
 
-/* ================= DANA ================= */
+/* =========================
+   DANA
+========================= */
 
 .dana-card{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:8px
+    gap:8px;
 }
 
 .dana-logo{
@@ -382,23 +457,27 @@ select:focus{
     display:flex;
     align-items:center;
     justify-content:center;
+    color:#fff;
     font-size:28px;
-    font-weight:bold;
-    box-shadow:0 8px 20px rgba(18,136,255,.25)
+    font-weight:800;
+    letter-spacing:1px;
+    box-shadow:0 8px 20px rgba(18,136,255,.25);
 }
 
 .dana-name{
     font-size:18px;
-    font-weight:bold
+    font-weight:bold;
 }
 
 .dana-number{
     color:#ffd900;
     font-size:27px;
-    font-weight:bold
+    font-weight:bold;
 }
 
-/* ================= FILE ================= */
+/* =========================
+   FILE
+========================= */
 
 .file-preview{
     display:none;
@@ -407,11 +486,11 @@ select:focus{
     background:#11111c;
     border:1px solid #35354e;
     border-radius:12px;
-    text-align:center
+    text-align:center;
 }
 
 .file-preview.active{
-    display:block
+    display:block;
 }
 
 .file-preview img{
@@ -419,8 +498,12 @@ select:focus{
     max-height:320px;
     object-fit:contain;
     border-radius:10px;
-    margin-top:8px
+    margin-top:8px;
 }
+
+/* =========================
+   NOTICE
+========================= */
 
 .notice{
     margin-top:15px;
@@ -430,23 +513,25 @@ select:focus{
     background:rgba(255,217,0,.08);
     color:#bbb;
     font-size:12px;
-    line-height:1.6
+    line-height:1.6;
 }
 
 .status{
     text-align:center;
     color:#aaa;
     margin-top:12px;
-    min-height:20px
+    min-height:20px;
 }
 
 .small-text{
     color:#888;
     font-size:12px;
-    line-height:1.5
+    line-height:1.5;
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:650px){
 
@@ -454,11 +539,11 @@ select:focus{
     .package-grid,
     .result-grid,
     .contact-grid{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .main-title{
-        font-size:28px
+        font-size:28px;
     }
 }
 </style>
@@ -467,7 +552,6 @@ select:focus{
 <body>
 
 <div class="container">
-
 
 <!-- =====================================================
 HOME
@@ -486,8 +570,6 @@ HOME
         </div>
 
         <div class="choice-grid">
-
-            <!-- HITUNG SPEED -->
 
             <div
                 class="choice-card"
@@ -510,8 +592,6 @@ HOME
 
             </div>
 
-
-            <!-- JOKI -->
 
             <div
                 class="choice-card"
@@ -537,8 +617,6 @@ HOME
         </div>
 
 
-        <!-- HUBUNGI -->
-
         <div class="contact-section">
 
             <h2>
@@ -546,8 +624,6 @@ HOME
             </h2>
 
             <div class="contact-grid">
-
-                <!-- WHATSAPP -->
 
                 <a
                     class="contact-item"
@@ -572,8 +648,6 @@ HOME
 
                 </a>
 
-
-                <!-- TIKTOK -->
 
                 <a
                     class="contact-item"
@@ -619,55 +693,24 @@ CALCULATOR
             ⚡ CALCULATOR SPEED
         </h2>
 
+
         <label>
             🏃‍♂️ Treadmill
         </label>
 
         <select id="treadmill">
 
-            <option value="2">
-                Treadmill — +2
-            </option>
-
-            <option value="5">
-                Sci-Fi Treadmill — +5
-            </option>
-
-            <option value="12">
-                Flame Treadmill — +12
-            </option>
-
-            <option value="30">
-                Celebrity Treadmill — +30
-            </option>
-
-            <option value="80">
-                Golden Treadmill — +80
-            </option>
-
-            <option value="100">
-                Mythic Treadmill — +100
-            </option>
-
-            <option value="200">
-                Lucky Block Treadmill — +200
-            </option>
-
-            <option value="500">
-                Hacker Treadmill — +500
-            </option>
-
-            <option value="1000">
-                Demonic Treadmill — +1K
-            </option>
-
-            <option value="2000">
-                Angelic Treadmill — +2K
-            </option>
-
-            <option value="3000">
-                Astral Treadmill — +3K
-            </option>
+            <option value="2">Treadmill — +2</option>
+            <option value="5">Sci-Fi Treadmill — +5</option>
+            <option value="12">Flame Treadmill — +12</option>
+            <option value="30">Celebrity Treadmill — +30</option>
+            <option value="80">Golden Treadmill — +80</option>
+            <option value="100">Mythic Treadmill — +100</option>
+            <option value="200">Lucky Block Treadmill — +200</option>
+            <option value="500">Hacker Treadmill — +500</option>
+            <option value="1000">Demonic Treadmill — +1K</option>
+            <option value="2000">Angelic Treadmill — +2K</option>
+            <option value="3000">Astral Treadmill — +3K</option>
 
         </select>
 
@@ -678,49 +721,17 @@ CALCULATOR
 
         <select id="trail">
 
-            <option value="1.5">
-                Abu-abu — x1.5
-            </option>
-
-            <option value="2">
-                Hijau — x2
-            </option>
-
-            <option value="2.5">
-                Biru — x2.5
-            </option>
-
-            <option value="3">
-                Ungu — x3
-            </option>
-
-            <option value="3.5">
-                Emas — x3.5
-            </option>
-
-            <option value="4">
-                Merah — x4
-            </option>
-
-            <option value="5">
-                Galaksi — x5
-            </option>
-
-            <option value="7">
-                Rahasia — x7
-            </option>
-
-            <option value="10">
-                Abadi — x10
-            </option>
-
-            <option value="14">
-                Ilahi — x14
-            </option>
-
-            <option value="20">
-                Bunga Bulan — x20
-            </option>
+            <option value="1.5">Abu-abu — x1.5</option>
+            <option value="2">Hijau — x2</option>
+            <option value="2.5">Biru — x2.5</option>
+            <option value="3">Ungu — x3</option>
+            <option value="3.5">Emas — x3.5</option>
+            <option value="4">Merah — x4</option>
+            <option value="5">Galaksi — x5</option>
+            <option value="7">Rahasia — x7</option>
+            <option value="10">Abadi — x10</option>
+            <option value="14">Ilahi — x14</option>
+            <option value="20">Bunga Bulan — x20</option>
 
         </select>
 
@@ -805,7 +816,6 @@ CALCULATOR
                 <div class="result-label">
                     Speed Sekarang
                 </div>
-
                 <div
                     class="result-value"
                     id="resultCurrentSpeed"
@@ -819,7 +829,6 @@ CALCULATOR
                 <div class="result-label">
                     Gain / Step
                 </div>
-
                 <div
                     class="result-value"
                     id="resultGainStep"
@@ -833,7 +842,6 @@ CALCULATOR
                 <div class="result-label">
                     Gain / Detik
                 </div>
-
                 <div
                     class="result-value"
                     id="resultGainSecond"
@@ -847,7 +855,6 @@ CALCULATOR
                 <div class="result-label">
                     Gain / Menit
                 </div>
-
                 <div
                     class="result-value"
                     id="resultGainMinute"
@@ -861,7 +868,6 @@ CALCULATOR
                 <div class="result-label">
                     Gain / Jam
                 </div>
-
                 <div
                     class="result-value"
                     id="resultGainHour"
@@ -875,7 +881,6 @@ CALCULATOR
                 <div class="result-label">
                     Yang Didapat Saat AFK
                 </div>
-
                 <div
                     class="result-value"
                     id="resultAFK"
@@ -935,6 +940,7 @@ JOKI
 
         <div class="package-grid">
 
+
             <!-- AFK 1 HARI -->
 
             <div
@@ -942,7 +948,8 @@ JOKI
                 onclick="selectPackage(
                     this,
                     'Joki AFK 1 Hari',
-                    7000
+                    7000,
+                    'speed1'
                 )"
             >
 
@@ -955,11 +962,11 @@ JOKI
                 </h3>
 
                 <div class="package-price">
-                    Rp7.000
+                    Rp7.000 / hari
                 </div>
 
                 <div class="package-duration">
-                    Durasi: 1 Hari
+                    Quantity 1–3 hari
                 </div>
 
             </div>
@@ -972,7 +979,8 @@ JOKI
                 onclick="selectPackage(
                     this,
                     'Joki AFK 7 Hari',
-                    25000
+                    25000,
+                    'fixed'
                 )"
             >
 
@@ -989,7 +997,7 @@ JOKI
                 </div>
 
                 <div class="package-duration">
-                    Durasi: 7 Hari
+                    Fixed
                 </div>
 
             </div>
@@ -1002,7 +1010,8 @@ JOKI
                 onclick="selectPackage(
                     this,
                     'Joki Egg 1 Hari',
-                    30000
+                    30000,
+                    'fixed'
                 )"
             >
 
@@ -1019,7 +1028,7 @@ JOKI
                 </div>
 
                 <div class="package-duration">
-                    Durasi: 1 Hari
+                    Fixed
                 </div>
 
             </div>
@@ -1032,7 +1041,8 @@ JOKI
                 onclick="selectPackage(
                     this,
                     'Joki Egg 12 Jam',
-                    20000
+                    20000,
+                    'fixed'
                 )"
             >
 
@@ -1049,10 +1059,43 @@ JOKI
                 </div>
 
                 <div class="package-duration">
-                    Durasi: 12 Jam
+                    Fixed
                 </div>
 
             </div>
+
+        </div>
+
+
+        <!-- QUANTITY KHUSUS AFK 1 HARI -->
+
+        <div
+            id="quantityBox"
+            class="quantity-box active"
+        >
+
+            <div class="quantity-title">
+                📅 Quantity Joki AFK
+            </div>
+
+            <select
+                id="quantity"
+                onchange="updateTotal()"
+            >
+
+                <option value="1">
+                    1 Hari — Rp7.000
+                </option>
+
+                <option value="2">
+                    2 Hari — Rp14.000
+                </option>
+
+                <option value="3">
+                    3 Hari — Rp21.000
+                </option>
+
+            </select>
 
         </div>
 
@@ -1099,7 +1142,7 @@ JOKI
         >
 
 
-        <!-- WHATSAPP CUSTOMER -->
+        <!-- NOMOR CUSTOMER -->
 
         <label>
             📱 Nomor WhatsApp Customer
@@ -1112,7 +1155,7 @@ JOKI
         >
 
 
-        <!-- PEMBAYARAN -->
+        <!-- PAYMENT -->
 
         <label>
             💳 Metode Pembayaran
@@ -1138,6 +1181,27 @@ JOKI
         </select>
 
 
+        <!-- TOTAL BAYAR -->
+
+        <div
+            id="payTotal"
+            class="pay-total"
+        >
+
+            <div class="pay-total-title">
+                TOTAL BAYAR
+            </div>
+
+            <div
+                id="payTotalValue"
+                class="pay-total-value"
+            >
+                Rp7.000
+            </div>
+
+        </div>
+
+
         <!-- QRIS -->
 
         <div
@@ -1149,6 +1213,17 @@ JOKI
                 PEMBAYARAN QRIS
             </h3>
 
+            <div class="pay-total-title">
+                Total yang harus dibayar
+            </div>
+
+            <div
+                id="qrisTotal"
+                class="pay-total-value"
+            >
+                Rp7.000
+            </div>
+
             <p>
                 Scan QRIS berikut:
             </p>
@@ -1157,7 +1232,10 @@ JOKI
                 class="qris-image"
                 src="qris.jpeg"
                 alt="QRIS Pembayaran"
-                onerror="document.getElementById('qrisError').style.display='block';this.style.display='none';"
+                onerror="
+                    this.style.display='none';
+                    document.getElementById('qrisError').style.display='block';
+                "
             >
 
             <div
@@ -1166,15 +1244,9 @@ JOKI
                 style="display:none;color:#ff7777;"
             >
                 QRIS tidak ditemukan.
-                Pastikan nama file adalah
-                <b>qris.jpeg</b> dan berada
-                satu folder dengan
-                <b>index.html</b>.
-            </div>
-
-            <div class="small-text">
-                Setelah membayar,
-                upload bukti pembayaran di bawah.
+                Pastikan file bernama
+                qris.jpeg dan berada di folder
+                yang sama dengan index.html.
             </div>
 
         </div>
@@ -1193,6 +1265,17 @@ JOKI
                     DANA
                 </div>
 
+                <div class="pay-total-title">
+                    Total yang harus dibayar
+                </div>
+
+                <div
+                    id="danaTotal"
+                    class="pay-total-value"
+                >
+                    Rp7.000
+                </div>
+
                 <div class="small-text">
                     Nama penerima:
                 </div>
@@ -1207,11 +1290,6 @@ JOKI
 
                 <div class="dana-number">
                     087729174391
-                </div>
-
-                <div class="small-text">
-                    Pastikan nama dan nomor penerima
-                    sudah benar sebelum transfer.
                 </div>
 
             </div>
@@ -1252,10 +1330,8 @@ JOKI
 
         <div class="notice">
 
-            Setelah menekan
-            <b>KIRIM ORDER KE WHATSAPP</b>,
-            WhatsApp admin akan dibuka
-            dengan detail order yang sudah terisi.
+            Total pembayaran dihitung otomatis
+            berdasarkan paket dan quantity.
 
             Foto bukti pembayaran tetap perlu
             dikirim di chat WhatsApp secara manual.
@@ -1293,17 +1369,19 @@ JOKI
 
 <script>
 
-/* =========================
+/* =====================================================
    DATA PAKET
-========================= */
+===================================================== */
 
 let selectedPackage = "Joki AFK 1 Hari";
 let selectedPrice = 7000;
+let selectedType = "speed1";
+let quantity = 1;
 
 
-/* =========================
+/* =====================================================
    PINDAH HALAMAN
-========================= */
+===================================================== */
 
 function showPage(pageId){
 
@@ -1326,14 +1404,15 @@ function showPage(pageId){
 }
 
 
-/* =========================
+/* =====================================================
    PILIH PAKET
-========================= */
+===================================================== */
 
 function selectPackage(
     element,
     packageName,
-    price
+    price,
+    type
 ){
 
     document
@@ -1348,12 +1427,130 @@ function selectPackage(
 
     selectedPackage = packageName;
     selectedPrice = price;
+    selectedType = type;
+
+    const quantityBox =
+        document.getElementById(
+            "quantityBox"
+        );
+
+    if(type === "speed1"){
+
+        quantityBox.classList.add("active");
+
+        quantity = Number(
+            document.getElementById(
+                "quantity"
+            ).value
+        );
+
+    }else{
+
+        quantityBox.classList.remove("active");
+
+        quantity = 1;
+
+    }
+
+    updateTotal();
 }
 
 
-/* =========================
+/* =====================================================
+   HITUNG TOTAL JOKI
+===================================================== */
+
+function getTotal(){
+
+    if(selectedType === "speed1"){
+
+        const qty =
+            Number(
+                document
+                    .getElementById(
+                        "quantity"
+                    )
+                    .value
+            );
+
+        quantity = qty;
+
+        return selectedPrice * qty;
+
+    }
+
+    quantity = 1;
+
+    return selectedPrice;
+}
+
+
+/* =====================================================
+   UPDATE TOTAL
+===================================================== */
+
+function updateTotal(){
+
+    const total = getTotal();
+
+    const totalText =
+        "Rp" +
+        total.toLocaleString("id-ID");
+
+
+    document
+        .getElementById(
+            "payTotalValue"
+        )
+        .innerText =
+            totalText;
+
+
+    document
+        .getElementById(
+            "qrisTotal"
+        )
+        .innerText =
+            totalText;
+
+
+    document
+        .getElementById(
+            "danaTotal"
+        )
+        .innerText =
+            totalText;
+
+
+    /*
+        Total pembayaran hanya
+        ditampilkan setelah customer
+        memilih metode pembayaran.
+    */
+
+    const payment =
+        document
+            .getElementById(
+                "paymentMethod"
+            )
+            .value;
+
+
+    document
+        .getElementById(
+            "payTotal"
+        )
+        .classList
+        .toggle(
+            "active",
+            payment !== ""
+        );
+}
+
+
+/* =====================================================
    PARSE SPEED
-========================= */
+===================================================== */
 
 function parseSpeed(input){
 
@@ -1423,26 +1620,21 @@ function parseSpeed(input){
 }
 
 
-/* =========================
-   FORMAT NUMBER
-========================= */
+/* =====================================================
+FORMAT NUMBER
+===================================================== */
 
 function formatNumber(number){
 
     if(!Number.isFinite(number)){
-
         return "0";
-
     }
 
     if(number === 0){
-
         return "0";
-
     }
 
     const units = [
-
         ["DC",1e33],
         ["NO",1e30],
         ["OC",1e27],
@@ -1454,7 +1646,6 @@ function formatNumber(number){
         ["B",1e9],
         ["M",1e6],
         ["K",1e3]
-
     ];
 
     for(
@@ -1462,9 +1653,7 @@ function formatNumber(number){
         of units
     ){
 
-        if(
-            Math.abs(number) >= value
-        ){
+        if(Math.abs(number) >= value){
 
             const result =
                 number / value;
@@ -1488,9 +1677,9 @@ function formatNumber(number){
 }
 
 
-/* =========================
-   HITUNG
-========================= */
+/* =====================================================
+HITUNG SPEED
+===================================================== */
 
 function hitung(){
 
@@ -1543,7 +1732,6 @@ function hitung(){
             "Speed sekarang tidak valid.";
 
         return;
-
     }
 
 
@@ -1556,7 +1744,6 @@ function hitung(){
             "Waktu AFK tidak valid.";
 
         return;
-
     }
 
 
@@ -1578,15 +1765,18 @@ function hitung(){
 
 
     const gainPerMinute =
-        gainPerSecond * 60;
+        gainPerSecond *
+        60;
 
 
     const gainPerHour =
-        gainPerSecond * 3600;
+        gainPerSecond *
+        3600;
 
 
     const gainFromAFK =
-        gainPerHour * hours;
+        gainPerHour *
+        hours;
 
 
     const totalAfterAFK =
@@ -1595,43 +1785,57 @@ function hitung(){
 
 
     document
-        .getElementById("resultCurrentSpeed")
+        .getElementById(
+            "resultCurrentSpeed"
+        )
         .innerText =
             formatNumber(currentSpeed);
 
 
     document
-        .getElementById("resultGainStep")
+        .getElementById(
+            "resultGainStep"
+        )
         .innerText =
             formatNumber(gainPerStep);
 
 
     document
-        .getElementById("resultGainSecond")
+        .getElementById(
+            "resultGainSecond"
+        )
         .innerText =
             formatNumber(gainPerSecond);
 
 
     document
-        .getElementById("resultGainMinute")
+        .getElementById(
+            "resultGainMinute"
+        )
         .innerText =
             formatNumber(gainPerMinute);
 
 
     document
-        .getElementById("resultGainHour")
+        .getElementById(
+            "resultGainHour"
+        )
         .innerText =
             formatNumber(gainPerHour);
 
 
     document
-        .getElementById("resultAFK")
+        .getElementById(
+            "resultAFK"
+        )
         .innerText =
             formatNumber(gainFromAFK);
 
 
     document
-        .getElementById("resultTotal")
+        .getElementById(
+            "resultTotal"
+        )
         .innerText =
             formatNumber(totalAfterAFK);
 
@@ -1641,20 +1845,24 @@ function hitung(){
 }
 
 
-/* =========================
-   PEMBAYARAN
-========================= */
+/* =====================================================
+PEMBAYARAN
+===================================================== */
 
 function changePayment(){
 
     const method =
         document
-            .getElementById("paymentMethod")
+            .getElementById(
+                "paymentMethod"
+            )
             .value;
 
 
     document
-        .getElementById("qrisBox")
+        .getElementById(
+            "qrisBox"
+        )
         .classList
         .toggle(
             "active",
@@ -1663,43 +1871,57 @@ function changePayment(){
 
 
     document
-        .getElementById("danaBox")
+        .getElementById(
+            "danaBox"
+        )
         .classList
         .toggle(
             "active",
             method === "DANA"
         );
+
+
+    updateTotal();
 }
 
 
-/* =========================
-   PREVIEW BUKTI
-========================= */
+/* =====================================================
+PREVIEW BUKTI
+===================================================== */
 
 function previewProof(){
 
     const file =
         document
-            .getElementById("proofFile")
+            .getElementById(
+                "proofFile"
+            )
             .files[0];
+
 
     const box =
         document
-            .getElementById("filePreview");
+            .getElementById(
+                "filePreview"
+            );
+
 
     const image =
         document
-            .getElementById("proofPreviewImage");
+            .getElementById(
+                "proofPreviewImage"
+            );
 
 
     if(!file){
 
-        box.classList.remove("active");
+        box.classList.remove(
+            "active"
+        );
 
         image.src = "";
 
         return;
-
     }
 
 
@@ -1713,8 +1935,9 @@ function previewProof(){
             image.src =
                 event.target.result;
 
-            box.classList.add("active");
-
+            box.classList.add(
+                "active"
+            );
         };
 
 
@@ -1722,55 +1945,69 @@ function previewProof(){
 }
 
 
-/* =========================
-   KIRIM ORDER
-========================= */
+/* =====================================================
+KIRIM ORDER
+===================================================== */
 
 function kirimPesanan(){
 
     const username =
         document
-            .getElementById("robloxUsername")
+            .getElementById(
+                "robloxUsername"
+            )
             .value
             .trim();
 
 
     const password =
         document
-            .getElementById("robloxPassword")
+            .getElementById(
+                "robloxPassword"
+            )
             .value
             .trim();
 
 
     const gameMap =
         document
-            .getElementById("gameMap")
+            .getElementById(
+                "gameMap"
+            )
             .value
             .trim();
 
 
     const customerWA =
         document
-            .getElementById("customerWA")
+            .getElementById(
+                "customerWA"
+            )
             .value
             .trim();
 
 
     const payment =
         document
-            .getElementById("paymentMethod")
+            .getElementById(
+                "paymentMethod"
+            )
             .value;
 
 
     const proof =
         document
-            .getElementById("proofFile")
+            .getElementById(
+                "proofFile"
+            )
             .files[0];
 
 
     const status =
         document
-            .getElementById("jokiStatus");
+            .getElementById(
+                "jokiStatus"
+            );
 
 
     if(!username){
@@ -1780,7 +2017,6 @@ function kirimPesanan(){
         );
 
         return;
-
     }
 
 
@@ -1791,7 +2027,6 @@ function kirimPesanan(){
         );
 
         return;
-
     }
 
 
@@ -1802,7 +2037,6 @@ function kirimPesanan(){
         );
 
         return;
-
     }
 
 
@@ -1813,7 +2047,6 @@ function kirimPesanan(){
         );
 
         return;
-
     }
 
 
@@ -1824,7 +2057,6 @@ function kirimPesanan(){
         );
 
         return;
-
     }
 
 
@@ -1835,18 +2067,41 @@ function kirimPesanan(){
         );
 
         return;
-
     }
+
+
+    const total =
+        getTotal();
+
+
+    const totalText =
+        "Rp" +
+        total.toLocaleString(
+            "id-ID"
+        );
 
 
     const nomorAdmin =
         "6287729174391";
 
 
-    /*
-        PESAN WHATSAPP
-        TANPA EMOJI
-    */
+    let quantityText;
+
+
+    if(selectedType === "speed1"){
+
+        quantityText =
+            "Quantity: " +
+            quantity +
+            " Hari\n";
+
+    }else{
+
+        quantityText =
+            "";
+
+    }
+
 
     const pesan =
 
@@ -1856,8 +2111,16 @@ function kirimPesanan(){
         selectedPackage +
         "\n" +
 
-        "Harga: Rp" +
-        selectedPrice.toLocaleString("id-ID") +
+        quantityText +
+
+        "Harga Satuan: Rp" +
+        selectedPrice.toLocaleString(
+            "id-ID"
+        ) +
+        "\n" +
+
+        "Total Bayar: " +
+        totalText +
         "\n" +
 
         "Username Roblox: " +
@@ -1884,7 +2147,9 @@ function kirimPesanan(){
         "https://wa.me/" +
         nomorAdmin +
         "?text=" +
-        encodeURIComponent(pesan);
+        encodeURIComponent(
+            pesan
+        );
 
 
     window.open(
@@ -1898,9 +2163,9 @@ function kirimPesanan(){
 }
 
 
-/* =========================
-   ENTER = HITUNG
-========================= */
+/* =====================================================
+ENTER = HITUNG
+===================================================== */
 
 document.addEventListener(
     "keydown",
@@ -1909,7 +2174,9 @@ document.addEventListener(
         if(
             event.key === "Enter" &&
             document
-                .getElementById("calculatorPage")
+                .getElementById(
+                    "calculatorPage"
+                )
                 .classList
                 .contains("active")
         ){
@@ -1920,6 +2187,13 @@ document.addEventListener(
 
     }
 );
+
+
+/* =====================================================
+TOTAL AWAL
+===================================================== */
+
+updateTotal();
 
 </script>
 
