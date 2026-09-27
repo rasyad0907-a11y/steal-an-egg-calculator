@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
 *{
     box-sizing:border-box;
     font-family:Arial,sans-serif;
@@ -36,10 +37,6 @@ body{
     display:block;
 }
 
-/* =========================
-HOME
-========================= */
-
 .home-card{
     min-height:90vh;
     display:flex;
@@ -58,8 +55,115 @@ HOME
 .subtitle{
     text-align:center;
     color:#aaa;
-    margin-bottom:30px;
+    margin-bottom:16px;
     font-size:15px;
+}
+
+.live-order-counter{
+    width:max-content;
+    max-width:100%;
+    margin:0 auto 18px;
+    padding:7px 13px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:999px;
+    text-align:center;
+    color:#aaa;
+    font-size:12px;
+}
+
+.live-order-counter b{
+    color:#00ff88;
+}
+
+.promo-banner{
+    display:none;
+    margin:0 auto 22px;
+    padding:14px;
+    border:1px solid #ffd900;
+    border-radius:13px;
+    background:rgba(255,217,0,.08);
+    text-align:center;
+}
+
+.promo-banner.active{
+    display:block;
+}
+
+.promo-banner-title{
+    color:#ffd900;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.promo-banner-text{
+    color:#ccc;
+    font-size:12px;
+    line-height:1.5;
+    margin-top:5px;
+}
+
+.promo-banner-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 14px;
+    border-radius:8px;
+    background:linear-gradient(90deg,#ffd900,#ff9f00);
+    color:#111;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.maintenance-screen{
+    display:none;
+    min-height:100vh;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    padding:20px;
+    background:linear-gradient(135deg,#080812,#241044);
+    align-items:center;
+    justify-content:center;
+}
+
+.maintenance-screen.active{
+    display:flex;
+}
+
+.maintenance-box{
+    width:100%;
+    max-width:520px;
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:18px;
+    padding:28px 22px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+.maintenance-icon{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.maintenance-title{
+    color:#ffd900;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.maintenance-message{
+    color:#aaa;
+    font-size:14px;
+    line-height:1.6;
+    margin-top:10px;
+}
+
+.maintenance-contact{
+    margin-top:18px;
+    color:#777;
+    font-size:11px;
 }
 
 .choice-grid{
@@ -98,10 +202,6 @@ HOME
     line-height:1.6;
     min-height:70px;
 }
-
-/* =========================
-CONTACT
-========================= */
 
 .contact-section{
     margin-top:28px;
@@ -177,10 +277,6 @@ CONTACT
     font-size:9px;
 }
 
-/* =========================
-CARD
-========================= */
-
 .card{
     background:#19192d;
     border:1px solid #454565;
@@ -197,10 +293,6 @@ CARD
     margin-bottom:20px;
 }
 
-/* =========================
-FORM
-========================= */
-
 label{
     display:block;
     margin:15px 0 8px;
@@ -208,7 +300,8 @@ label{
 }
 
 input,
-select{
+select,
+textarea{
     width:100%;
     padding:13px 14px;
     border:1px solid #50506b;
@@ -219,14 +312,16 @@ select{
     outline:none;
 }
 
-input:focus,
-select:focus{
-    border-color:#ffd900;
+textarea{
+    min-height:90px;
+    resize:vertical;
 }
 
-/* =========================
-BUTTON
-========================= */
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#ffd900;
+}
 
 .btn{
     width:100%;
@@ -245,6 +340,12 @@ BUTTON
     opacity:.93;
 }
 
+.btn:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+    transform:none;
+}
+
 .btn-primary{
     background:linear-gradient(90deg,#ffd900,#ff9f00);
     color:#111;
@@ -255,9 +356,221 @@ BUTTON
     color:#fff;
 }
 
-/* =========================
-CALCULATOR
-========================= */
+.review-widget{
+    margin-top:18px;
+    padding:13px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+}
+
+.review-widget-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    color:#ffd900;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.review-count{
+    color:#666;
+    font-size:10px;
+    font-weight:normal;
+}
+
+.review-list{
+    display:grid;
+    gap:7px;
+    margin-top:10px;
+}
+
+.review-item{
+    display:flex;
+    gap:8px;
+    padding:8px;
+    background:#19192d;
+    border-radius:9px;
+    border:1px solid #29293b;
+}
+
+.review-avatar{
+    width:32px;
+    height:32px;
+    min-width:32px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#0b0b14;
+    border:1px solid #454565;
+}
+
+.review-content{
+    min-width:0;
+    flex:1;
+}
+
+.review-user{
+    font-size:11px;
+    font-weight:bold;
+    color:#fff;
+}
+
+.review-stars{
+    color:#ffd900;
+    font-size:10px;
+    margin-top:1px;
+}
+
+.review-text{
+    color:#999;
+    font-size:10px;
+    line-height:1.4;
+    margin-top:3px;
+    word-break:break-word;
+}
+
+.review-empty{
+    color:#666;
+    font-size:10px;
+    text-align:center;
+    padding:6px;
+}
+
+.review-toggle{
+    width:100%;
+    margin-top:9px;
+    padding:8px;
+    border:1px solid #454565;
+    border-radius:8px;
+    background:#19192d;
+    color:#aaa;
+    font-size:11px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.review-toggle:hover{
+    color:#fff;
+    border-color:#ffd900;
+}
+
+.review-form{
+    display:none;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid #29293b;
+}
+
+.review-form.active{
+    display:block;
+}
+
+.review-form input,
+.review-form textarea{
+    padding:9px 10px;
+    font-size:12px;
+}
+
+.review-form textarea{
+    min-height:65px;
+}
+
+.review-rating-select{
+    display:flex;
+    justify-content:center;
+    gap:4px;
+    margin:8px 0;
+}
+
+.review-star-btn{
+    width:auto;
+    margin:0;
+    padding:6px 9px;
+    border:1px solid #35354e;
+    border-radius:7px;
+    background:#19192d;
+    color:#555;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.review-star-btn.active{
+    color:#ffd900;
+    border-color:#ffd900;
+}
+
+.review-submit{
+    width:100%;
+    padding:9px;
+    margin-top:5px;
+    border:0;
+    border-radius:8px;
+    background:linear-gradient(90deg,#ffd900,#ff9f00);
+    color:#111;
+    font-size:11px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.review-message{
+    margin-top:7px;
+    text-align:center;
+    font-size:10px;
+    line-height:1.4;
+}
+
+.review-success{
+    color:#00ff88;
+}
+
+.review-error{
+    color:#ff7777;
+}
+
+.roblox-preview{
+    display:none;
+    margin-top:9px;
+    padding:10px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:11px;
+    text-align:center;
+}
+
+.roblox-preview.active{
+    display:block;
+}
+
+.roblox-avatar{
+    display:none;
+    width:70px;
+    height:70px;
+    margin:0 auto 6px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#080812;
+    border:2px solid #8b5cf6;
+}
+
+.roblox-username-name{
+    font-size:12px;
+    font-weight:bold;
+}
+
+.roblox-status{
+    margin-top:3px;
+    font-size:10px;
+    color:#00ff88;
+}
+
+.roblox-loading{
+    color:#ffd900;
+}
+
+.roblox-error{
+    color:#ff7777;
+}
 
 .result-grid{
     display:grid;
@@ -305,10 +618,6 @@ CALCULATOR
     margin-top:8px;
 }
 
-/* =========================
-PAKET JOKI
-========================= */
-
 .package-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -336,6 +645,11 @@ PAKET JOKI
     background:rgba(255,217,0,.08);
 }
 
+.package-card.unavailable{
+    opacity:.5;
+    border-color:#3b3b4b;
+}
+
 .package-icon{
     font-size:36px;
     margin-bottom:8px;
@@ -358,9 +672,120 @@ PAKET JOKI
     margin-top:6px;
 }
 
-/* =========================
-QUANTITY
-========================= */
+.package-slot{
+    color:#777;
+    font-size:10px;
+    margin-top:8px;
+}
+
+.package-slot.available{
+    color:#00ff88;
+}
+
+.package-slot.empty{
+    color:#ff7777;
+}
+
+.combo-section{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #303046;
+}
+
+.combo-title{
+    color:#ffd900;
+    text-align:center;
+    font-size:18px;
+    margin:0 0 6px;
+}
+
+.combo-subtitle{
+    text-align:center;
+    color:#888;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.combo-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.combo-card{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:13px;
+    padding:16px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    position:relative;
+}
+
+.combo-card:hover{
+    border-color:#ffd900;
+    transform:translateY(-3px);
+}
+
+.combo-card.selected{
+    border:2px solid #ffd900;
+    background:rgba(255,217,0,.08);
+}
+
+.combo-badge{
+    display:inline-block;
+    margin-bottom:7px;
+    padding:4px 8px;
+    border-radius:20px;
+    background:rgba(255,217,0,.1);
+    color:#ffd900;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.combo-card h3{
+    font-size:15px;
+    margin:7px 0;
+}
+
+.combo-description{
+    color:#999;
+    font-size:12px;
+    line-height:1.5;
+    min-height:36px;
+}
+
+.combo-price{
+    color:#ffd900;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.combo-info{
+    color:#aaa;
+    font-size:11px;
+    margin-top:6px;
+}
+
+.combo-empty{
+    grid-column:1 / -1;
+    text-align:center;
+    color:#666;
+    padding:15px;
+    border:1px dashed #35354e;
+    border-radius:12px;
+    font-size:12px;
+}
+
+.combo-loading{
+    grid-column:1 / -1;
+    text-align:center;
+    color:#777;
+    padding:15px;
+    font-size:12px;
+}
 
 .quantity-box{
     display:none;
@@ -381,10 +806,6 @@ QUANTITY
     font-weight:bold;
     margin-bottom:8px;
 }
-
-/* =========================
-PAYMENT
-========================= */
 
 .pay-total{
     display:none;
@@ -426,10 +847,6 @@ PAYMENT
     display:block;
 }
 
-/* =========================
-QRIS
-========================= */
-
 .qris-image{
     display:block;
     width:100%;
@@ -439,10 +856,6 @@ QRIS
     background:#fff;
     border-radius:12px;
 }
-
-/* =========================
-DANA
-========================= */
 
 .dana-card{
     display:flex;
@@ -475,10 +888,6 @@ DANA
     font-size:27px;
     font-weight:bold;
 }
-
-/* =========================
-PROMO
-========================= */
 
 .promo-box{
     margin-top:18px;
@@ -516,10 +925,6 @@ PROMO
 .promo-error{
     color:#ff7777;
 }
-
-/* =========================
-RINGKASAN
-========================= */
 
 .summary-box{
     margin-top:18px;
@@ -562,10 +967,6 @@ RINGKASAN
     font-size:20px;
 }
 
-/* =========================
-FILE
-========================= */
-
 .file-preview{
     display:none;
     margin-top:12px;
@@ -587,10 +988,6 @@ FILE
     border-radius:10px;
     margin-top:8px;
 }
-
-/* =========================
-CEK ORDER
-========================= */
 
 .check-box{
     margin-top:22px;
@@ -654,10 +1051,6 @@ CEK ORDER
     line-height:1.5;
 }
 
-/* =========================
-ADMIN LINK
-========================= */
-
 .admin-link{
     text-align:center;
     margin-top:18px;
@@ -675,10 +1068,6 @@ ADMIN LINK
 .admin-link a:hover{
     color:#fff;
 }
-
-/* =========================
-ID ORDER
-========================= */
 
 .order-code-box{
     margin-top:12px;
@@ -721,14 +1110,11 @@ ID ORDER
     background:#454565;
 }
 
-/* =========================
-MOBILE
-========================= */
-
 @media(max-width:650px){
 
     .choice-grid,
     .package-grid,
+    .combo-grid,
     .result-grid{
         grid-template-columns:1fr;
     }
@@ -748,17 +1134,49 @@ MOBILE
     .summary-row{
         font-size:14px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div
+    id="maintenanceScreen"
+    class="maintenance-screen"
+>
+    <div class="maintenance-box">
 
-<!-- =====================================================
-HOME
-===================================================== -->
+        <div class="maintenance-icon">
+            🔧
+        </div>
+
+        <div
+            id="maintenanceTitle"
+            class="maintenance-title"
+        >
+            Website Sedang Maintenance
+        </div>
+
+        <div
+            id="maintenanceMessage"
+            class="maintenance-message"
+        >
+            Silakan kembali beberapa saat lagi.
+        </div>
+
+        <div class="maintenance-contact">
+            HUBUNGI / BANTUAN
+            <br>
+            WhatsApp 087729174391
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
 
 <div id="homePage" class="page active">
 
@@ -772,6 +1190,34 @@ HOME
             Joki & Calculator Speed Steal An Egg
         </div>
 
+        <div class="live-order-counter">
+            👥 <b id="liveOrderCount">0</b>
+            order telah dikerjakan
+        </div>
+
+
+        <div
+            id="promoBanner"
+            class="promo-banner"
+        >
+            <div
+                id="promoBannerTitle"
+                class="promo-banner-title"
+            ></div>
+
+            <div
+                id="promoBannerText"
+                class="promo-banner-text"
+            ></div>
+
+            <a
+                id="promoBannerButton"
+                class="promo-banner-btn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            ></a>
+        </div>
 
         <div class="choice-grid">
 
@@ -821,8 +1267,6 @@ HOME
         </div>
 
 
-        <!-- CEK PESANAN -->
-
         <div class="check-box">
 
             <div class="check-title">
@@ -852,7 +1296,134 @@ HOME
         </div>
 
 
-        <!-- ADMIN LOGIN -->
+        <div class="review-widget">
+
+            <div class="review-widget-title">
+
+                <span>
+                    ⭐ Review Customer
+                </span>
+
+                <span
+                    id="reviewCount"
+                    class="review-count"
+                >
+                    0 review
+                </span>
+
+            </div>
+
+
+            <div
+                id="reviewList"
+                class="review-list"
+            >
+
+                <div class="review-empty">
+                    Memuat review...
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="review-toggle"
+                id="reviewToggleButton"
+                onclick="toggleReviewForm()"
+            >
+                ⭐ TULIS REVIEW
+            </button>
+
+
+            <div
+                id="reviewForm"
+                class="review-form"
+            >
+
+                <input
+                    type="text"
+                    id="reviewOrderCode"
+                    maxlength="40"
+                    placeholder="ID Order"
+                >
+
+
+                <input
+                    type="tel"
+                    id="reviewWhatsApp"
+                    maxlength="20"
+                    placeholder="Nomor WhatsApp saat order"
+                    style="margin-top:7px;"
+                >
+
+
+                <div class="review-rating-select">
+
+                    <button
+                        type="button"
+                        class="review-star-btn active"
+                        data-rating="1"
+                        onclick="pilihRating(1)"
+                    >★</button>
+
+                    <button
+                        type="button"
+                        class="review-star-btn active"
+                        data-rating="2"
+                        onclick="pilihRating(2)"
+                    >★</button>
+
+                    <button
+                        type="button"
+                        class="review-star-btn active"
+                        data-rating="3"
+                        onclick="pilihRating(3)"
+                    >★</button>
+
+                    <button
+                        type="button"
+                        class="review-star-btn active"
+                        data-rating="4"
+                        onclick="pilihRating(4)"
+                    >★</button>
+
+                    <button
+                        type="button"
+                        class="review-star-btn active"
+                        data-rating="5"
+                        onclick="pilihRating(5)"
+                    >★</button>
+
+                </div>
+
+
+                <textarea
+                    id="reviewComment"
+                    maxlength="300"
+                    placeholder="Tulis pengalaman kamu..."
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    class="review-submit"
+                    id="reviewSubmitButton"
+                    onclick="kirimReview()"
+                >
+                    KIRIM REVIEW
+                </button>
+
+
+                <div
+                    id="reviewMessage"
+                    class="review-message"
+                ></div>
+
+            </div>
+
+        </div>
+
 
         <div class="admin-link">
 
@@ -865,8 +1436,6 @@ HOME
 
         </div>
 
-
-        <!-- HUBUNGI / BANTUAN PALING BAWAH -->
 
         <div class="contact-section">
 
@@ -936,10 +1505,6 @@ HOME
 </div>
 
 
-<!-- =====================================================
-CALCULATOR
-===================================================== -->
-
 <div id="calculatorPage" class="page">
 
     <div class="card">
@@ -948,13 +1513,9 @@ CALCULATOR
             ⚡ CALCULATOR SPEED
         </h2>
 
-
-        <label>
-            🏃‍♂️ Treadmill
-        </label>
+        <label>🏃‍♂️ Treadmill</label>
 
         <select id="treadmill">
-
             <option value="2">Treadmill — +2</option>
             <option value="5">Sci-Fi Treadmill — +5</option>
             <option value="12">Flame Treadmill — +12</option>
@@ -966,16 +1527,11 @@ CALCULATOR
             <option value="1000">Demonic Treadmill — +1K</option>
             <option value="2000">Angelic Treadmill — +2K</option>
             <option value="3000">Astral Treadmill — +3K</option>
-
         </select>
 
-
-        <label>
-            ✨ Trail
-        </label>
+        <label>✨ Trail</label>
 
         <select id="trail">
-
             <option value="1.5">Abu-abu — x1.5</option>
             <option value="2">Hijau — x2</option>
             <option value="2.5">Biru — x2.5</option>
@@ -987,16 +1543,11 @@ CALCULATOR
             <option value="10">Abadi — x10</option>
             <option value="14">Ilahi — x14</option>
             <option value="20">Bunga Bulan — x20</option>
-
         </select>
 
-
-        <label>
-            🚀 Multiplier
-        </label>
+        <label>🚀 Multiplier</label>
 
         <select id="multiplier">
-
             <option value="1">x1</option>
             <option value="2">x2</option>
             <option value="4">x4</option>
@@ -1011,13 +1562,9 @@ CALCULATOR
             <option value="2048">x2K</option>
             <option value="3072">x3K</option>
             <option value="4096">x4K</option>
-
         </select>
 
-
-        <label>
-            ⚡ Speed Sekarang
-        </label>
+        <label>⚡ Speed Sekarang</label>
 
         <input
             type="text"
@@ -1026,10 +1573,7 @@ CALCULATOR
             placeholder="Contoh: 10K / 2.5M / 1B"
         >
 
-
-        <label>
-            💤 AFK Berapa Jam?
-        </label>
+        <label>💤 AFK Berapa Jam?</label>
 
         <input
             type="number"
@@ -1040,14 +1584,12 @@ CALCULATOR
             placeholder="Contoh: 8"
         >
 
-
         <button
             class="btn btn-primary"
             onclick="hitung()"
         >
             ⚡ HITUNG SEKARANG
         </button>
-
 
         <div
             class="status"
@@ -1068,98 +1610,33 @@ CALCULATOR
         <div class="result-grid">
 
             <div class="result-item">
-
-                <div class="result-label">
-                    Speed Sekarang
-                </div>
-
-                <div
-                    class="result-value"
-                    id="resultCurrentSpeed"
-                >
-                    0
-                </div>
-
+                <div class="result-label">Speed Sekarang</div>
+                <div class="result-value" id="resultCurrentSpeed">0</div>
             </div>
 
-
             <div class="result-item">
-
-                <div class="result-label">
-                    Gain / Step
-                </div>
-
-                <div
-                    class="result-value"
-                    id="resultGainStep"
-                >
-                    0
-                </div>
-
+                <div class="result-label">Gain / Step</div>
+                <div class="result-value" id="resultGainStep">0</div>
             </div>
 
-
             <div class="result-item">
-
-                <div class="result-label">
-                    Gain / Detik
-                </div>
-
-                <div
-                    class="result-value"
-                    id="resultGainSecond"
-                >
-                    0
-                </div>
-
+                <div class="result-label">Gain / Detik</div>
+                <div class="result-value" id="resultGainSecond">0</div>
             </div>
 
-
             <div class="result-item">
-
-                <div class="result-label">
-                    Gain / Menit
-                </div>
-
-                <div
-                    class="result-value"
-                    id="resultGainMinute"
-                >
-                    0
-                </div>
-
+                <div class="result-label">Gain / Menit</div>
+                <div class="result-value" id="resultGainMinute">0</div>
             </div>
 
-
             <div class="result-item">
-
-                <div class="result-label">
-                    Gain / Jam
-                </div>
-
-                <div
-                    class="result-value"
-                    id="resultGainHour"
-                >
-                    0
-                </div>
-
+                <div class="result-label">Gain / Jam</div>
+                <div class="result-value" id="resultGainHour">0</div>
             </div>
 
-
             <div class="result-item">
-
-                <div class="result-label">
-                    Yang Didapat Saat AFK
-                </div>
-
-                <div
-                    class="result-value"
-                    id="resultAFK"
-                >
-                    0
-                </div>
-
+                <div class="result-label">Yang Didapat Saat AFK</div>
+                <div class="result-value" id="resultAFK">0</div>
             </div>
 
         </div>
@@ -1193,10 +1670,6 @@ CALCULATOR
 </div>
 
 
-<!-- =====================================================
-JOKI
-===================================================== -->
-
 <div id="jokiPage" class="page">
 
     <div class="card">
@@ -1205,33 +1678,21 @@ JOKI
             👟 PESAN JOKI
         </h2>
 
-
         <label>
             📦 Pilih Paket Joki
         </label>
 
-
         <div class="package-grid">
-
 
             <div
                 class="package-card selected"
-                onclick="selectPackage(
-                    this,
-                    'Joki AFK 1 Hari',
-                    7000,
-                    'speed1',
-                    'afk_1d'
-                )"
+                data-package-id="afk_1d"
+                onclick="selectPackage(this,'Joki AFK 1 Hari',7000,'speed1','afk_1d')"
             >
 
-                <div class="package-icon">
-                    👟⚡
-                </div>
+                <div class="package-icon">👟⚡</div>
 
-                <h3>
-                    Joki AFK 1 Hari
-                </h3>
+                <h3>Joki AFK 1 Hari</h3>
 
                 <div class="package-price">
                     Rp7.000 / hari
@@ -1241,27 +1702,25 @@ JOKI
                     Quantity 1–3 hari
                 </div>
 
+                <div
+                    id="slot-afk_1d"
+                    class="package-slot"
+                >
+                    Memuat slot...
+                </div>
+
             </div>
 
 
             <div
                 class="package-card"
-                onclick="selectPackage(
-                    this,
-                    'Joki AFK 7 Hari',
-                    25000,
-                    'fixed',
-                    'afk_7d'
-                )"
+                data-package-id="afk_7d"
+                onclick="selectPackage(this,'Joki AFK 7 Hari',25000,'fixed','afk_7d')"
             >
 
-                <div class="package-icon">
-                    👟🔥
-                </div>
+                <div class="package-icon">👟🔥</div>
 
-                <h3>
-                    Joki AFK 7 Hari
-                </h3>
+                <h3>Joki AFK 7 Hari</h3>
 
                 <div class="package-price">
                     Rp25.000
@@ -1271,27 +1730,25 @@ JOKI
                     Fixed
                 </div>
 
+                <div
+                    id="slot-afk_7d"
+                    class="package-slot"
+                >
+                    Memuat slot...
+                </div>
+
             </div>
 
 
             <div
                 class="package-card"
-                onclick="selectPackage(
-                    this,
-                    'Joki Egg 1 Hari',
-                    30000,
-                    'fixed',
-                    'egg_1d'
-                )"
+                data-package-id="egg_1d"
+                onclick="selectPackage(this,'Joki Egg 1 Hari',30000,'fixed','egg_1d')"
             >
 
-                <div class="package-icon">
-                    🥚⚡
-                </div>
+                <div class="package-icon">🥚⚡</div>
 
-                <h3>
-                    Joki Egg 1 Hari
-                </h3>
+                <h3>Joki Egg 1 Hari</h3>
 
                 <div class="package-price">
                     Rp30.000
@@ -1301,27 +1758,25 @@ JOKI
                     Fixed
                 </div>
 
+                <div
+                    id="slot-egg_1d"
+                    class="package-slot"
+                >
+                    Memuat slot...
+                </div>
+
             </div>
 
 
             <div
                 class="package-card"
-                onclick="selectPackage(
-                    this,
-                    'Joki Egg 12 Jam',
-                    20000,
-                    'fixed',
-                    'egg_12h'
-                )"
+                data-package-id="egg_12h"
+                onclick="selectPackage(this,'Joki Egg 12 Jam',20000,'fixed','egg_12h')"
             >
 
-                <div class="package-icon">
-                    🥚⏱️
-                </div>
+                <div class="package-icon">🥚⏱️</div>
 
-                <h3>
-                    Joki Egg 12 Jam
-                </h3>
+                <h3>Joki Egg 12 Jam</h3>
 
                 <div class="package-price">
                     Rp20.000
@@ -1329,6 +1784,37 @@ JOKI
 
                 <div class="package-duration">
                     Fixed
+                </div>
+
+                <div
+                    id="slot-egg_12h"
+                    class="package-slot"
+                >
+                    Memuat slot...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="combo-section">
+
+            <div class="combo-title">
+                🔥 PAKET COMBO
+            </div>
+
+            <div class="combo-subtitle">
+                Paket combo dibuat dan diatur oleh admin
+            </div>
+
+            <div
+                id="comboPackageGrid"
+                class="combo-grid"
+            >
+
+                <div class="combo-loading">
+                    Memuat paket combo...
                 </div>
 
             </div>
@@ -1347,21 +1833,11 @@ JOKI
 
             <select
                 id="quantity"
-                onchange="updateSummary()"
+                onchange="refreshPricing()"
             >
-
-                <option value="1">
-                    1 Hari — Rp7.000
-                </option>
-
-                <option value="2">
-                    2 Hari — Rp14.000
-                </option>
-
-                <option value="3">
-                    3 Hari — Rp21.000
-                </option>
-
+                <option value="1">1 Hari — Rp7.000</option>
+                <option value="2">2 Hari — Rp14.000</option>
+                <option value="3">3 Hari — Rp21.000</option>
             </select>
 
         </div>
@@ -1374,9 +1850,36 @@ JOKI
         <input
             type="text"
             id="robloxUsername"
-            placeholder="Masukkan username Roblox"
+            placeholder="Masukkan username Roblox / @username"
             autocomplete="off"
         >
+
+
+        <div
+            id="robloxPreview"
+            class="roblox-preview"
+        >
+
+            <img
+                id="robloxAvatar"
+                class="roblox-avatar"
+                src=""
+                alt="Avatar Roblox"
+            >
+
+            <div
+                id="robloxUsernameName"
+                class="roblox-username-name"
+            ></div>
+
+            <div
+                id="robloxStatus"
+                class="roblox-status"
+            >
+                Mencari username...
+            </div>
+
+        </div>
 
 
         <label>
@@ -1386,8 +1889,9 @@ JOKI
         <input
             type="password"
             id="robloxPassword"
+            name="roblox_joki_password"
             placeholder="Masukkan password Roblox"
-            autocomplete="off"
+            autocomplete="new-password"
         >
 
 
@@ -1401,6 +1905,17 @@ JOKI
             placeholder="Contoh: Speed Steal An Egg"
             autocomplete="off"
         >
+
+
+        <label>
+            📝 Catatan Order
+        </label>
+
+        <textarea
+            id="orderNote"
+            placeholder="Contoh: Tolong fokus egg dulu / jangan keluar game / dll."
+            maxlength="500"
+        ></textarea>
 
 
         <label>
@@ -1498,9 +2013,6 @@ JOKI
                 style="display:none;color:#ff7777;"
             >
                 QRIS tidak ditemukan.
-                Pastikan file bernama qris.jpeg
-                dan berada di folder yang sama
-                dengan index.html.
             </div>
 
         </div>
@@ -1549,8 +2061,6 @@ JOKI
         </div>
 
 
-        <!-- PROMO -->
-
         <div class="promo-box">
 
             <label style="margin-top:0;">
@@ -1565,6 +2075,7 @@ JOKI
                     placeholder="Masukkan kode promo"
                     autocomplete="off"
                     maxlength="30"
+                    oninput="promoTyping()"
                 >
 
                 <button
@@ -1585,8 +2096,6 @@ JOKI
         </div>
 
 
-        <!-- RINGKASAN -->
-
         <div class="summary-box">
 
             <div class="summary-title">
@@ -1595,59 +2104,39 @@ JOKI
 
             <div class="summary-row">
                 <span>Paket</span>
-                <span id="sumPackage">
-                    Joki AFK 1 Hari
-                </span>
+                <span id="sumPackage">Joki AFK 1 Hari</span>
             </div>
 
             <div class="summary-row">
                 <span>Quantity</span>
-                <span id="sumQuantity">
-                    1 Hari
-                </span>
+                <span id="sumQuantity">1 Hari</span>
             </div>
 
             <div class="summary-row">
                 <span>Harga Satuan</span>
-                <span id="sumUnitPrice">
-                    Rp7.000
-                </span>
+                <span id="sumUnitPrice">Rp7.000</span>
             </div>
 
             <div class="summary-row">
                 <span>Subtotal</span>
-                <span id="sumSubtotal">
-                    Rp7.000
-                </span>
+                <span id="sumSubtotal">Rp7.000</span>
             </div>
 
             <div class="summary-row">
                 <span>Promo</span>
-                <span id="sumPromo">
-                    -
-                </span>
+                <span id="sumPromo">-</span>
             </div>
 
             <div class="summary-row">
                 <span>Diskon</span>
-                <span id="sumDiscount">
-                    Rp0
-                </span>
+                <span id="sumDiscount">Rp0</span>
             </div>
 
             <div class="summary-row">
-
-                <span>
-                    Total Bayar
-                </span>
-
-                <span
-                    id="sumTotal"
-                    class="summary-total"
-                >
+                <span>Total Bayar</span>
+                <span id="sumTotal" class="summary-total">
                     Rp7.000
                 </span>
-
             </div>
 
         </div>
@@ -1660,9 +2149,14 @@ JOKI
         <input
             type="file"
             id="proofFile"
-            accept="image/*"
+            accept="image/jpeg,image/png,image/webp"
             onchange="previewProof()"
         >
+
+        <div class="small-text">
+            JPG, PNG, WEBP — maksimal 5 MB.
+            Bukti akan otomatis disimpan ke sistem.
+        </div>
 
 
         <div
@@ -1683,19 +2177,17 @@ JOKI
 
 
         <div class="notice">
-
             Setelah pembayaran selesai, upload bukti
             pembayaran lalu klik tombol order.
-            Website akan membuat ID Order dan membuka
-            WhatsApp admin dengan data pesanan.
-            Foto bukti pembayaran tetap dikirim manual
-            di chat WhatsApp.
-
+            Website akan membuat ID Order,
+            menyimpan bukti ke sistem dan membuka
+            WhatsApp admin.
         </div>
 
 
         <button
             class="btn btn-primary"
+            id="orderButton"
             onclick="kirimPesanan()"
         >
             KIRIM ORDER KE WHATSAPP
@@ -1724,10 +2216,6 @@ JOKI
 
 <script>
 
-/* =====================================================
-SUPABASE
-===================================================== */
-
 const SUPABASE_URL =
     "https://oyqdraemxlzqenbsdujh.supabase.co";
 
@@ -1740,18 +2228,9 @@ const supabaseClient =
         SUPABASE_PUBLISHABLE_KEY
     );
 
-
-/* =====================================================
-WHATSAPP
-===================================================== */
-
 const ADMIN_WA =
     "6287729174391";
 
-
-/* =====================================================
-ORDER
-===================================================== */
 
 let selectedPackage =
     "Joki AFK 1 Hari";
@@ -1768,32 +2247,75 @@ let selectedPackageId =
 let quantity =
     1;
 
+let selectedOrderMode =
+    "regular";
+
+let selectedComboId =
+    null;
+
+let selectedCombo =
+    null;
+
 let promoApplied =
     false;
 
 let promoCodeApplied =
     "";
 
+let promoInfo =
+    null;
+
 let latestOrderCode =
     "";
 
+let packageSlots =
+    {};
 
-/* =====================================================
-RUPIAH
-===================================================== */
+let packageSlotsLoaded =
+    false;
+
+let pricingRequestId =
+    0;
+
+let selectedReviewRating =
+    5;
+
+let robloxAvatarTimer =
+    null;
+
+let robloxAvatarController =
+    null;
+
 
 function rupiah(number){
 
     return "Rp" +
         Number(number || 0)
-        .toLocaleString("id-ID");
+            .toLocaleString("id-ID");
 
 }
 
 
-/* =====================================================
-PAGE
-===================================================== */
+function formatDuration(hours){
+
+    const value =
+        Number(hours || 0);
+
+    if(value >= 24){
+
+        const days =
+            value / 24;
+
+        if(Number.isInteger(days)){
+            return days + " Hari";
+        }
+
+        return value + " Jam";
+    }
+
+    return value + " Jam";
+}
+
 
 function showPage(pageId){
 
@@ -1801,21 +2323,24 @@ function showPage(pageId){
         .querySelectorAll(".page")
         .forEach(function(page){
 
-            page.classList.remove("active");
+            page.classList.remove(
+                "active"
+            );
 
         });
 
-
     const page =
-        document.getElementById(pageId);
-
+        document.getElementById(
+            pageId
+        );
 
     if(page){
 
-        page.classList.add("active");
+        page.classList.add(
+            "active"
+        );
 
     }
-
 
     window.scrollTo({
         top:0,
@@ -1825,9 +2350,1408 @@ function showPage(pageId){
 }
 
 
-/* =====================================================
-PAKET
-===================================================== */
+function escapeAttribute(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(/&/g,"&amp;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+
+}
+
+
+function escapeHtml(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+async function loadLiveOrderCounter(){
+
+    const element =
+        document.getElementById(
+            "liveOrderCount"
+        );
+
+    if(!element){
+        return;
+    }
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "get_live_order_counter_v2"
+            );
+
+        if(error){
+            console.error(
+                "Counter error:",
+                error
+            );
+            return;
+        }
+
+        const row =
+            Array.isArray(data)
+                ? data[0]
+                : data;
+
+        const total =
+            Number(
+                row?.total_orders || 0
+            );
+
+        element.innerText =
+            total.toLocaleString(
+                "id-ID"
+            );
+
+    }catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* =========================
+ROBLOX
+========================= */
+
+function cleanRobloxUsername(
+    username
+){
+
+    return String(
+        username || ""
+    )
+    .trim()
+    .replace(/^@+/,"");
+
+}
+
+
+function resetRobloxPreview(){
+
+    const box =
+        document.getElementById(
+            "robloxPreview"
+        );
+
+    const image =
+        document.getElementById(
+            "robloxAvatar"
+        );
+
+    const name =
+        document.getElementById(
+            "robloxUsernameName"
+        );
+
+    const status =
+        document.getElementById(
+            "robloxStatus"
+        );
+
+
+    if(box){
+        box.classList.remove(
+            "active"
+        );
+    }
+
+    if(image){
+
+        image.removeAttribute(
+            "src"
+        );
+
+        image.style.display =
+            "none";
+
+    }
+
+    if(name){
+        name.innerText = "";
+    }
+
+    if(status){
+
+        status.className =
+            "roblox-status";
+
+        status.innerText =
+            "";
+
+    }
+
+}
+
+
+async function getRobloxUser(
+    username,
+    signal = undefined
+){
+
+    const cleanUsername =
+        cleanRobloxUsername(
+            username
+        );
+
+
+    if(!cleanUsername){
+        return null;
+    }
+
+
+    const response =
+        await fetch(
+            "https://users.roblox.com/v1/usernames/users",
+            {
+                method:"POST",
+
+                headers:{
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body:JSON.stringify({
+                    usernames:[
+                        cleanUsername
+                    ],
+
+                    excludeBannedUsers:false
+                }),
+
+                signal
+            }
+        );
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "Gagal mencari username Roblox."
+        );
+
+    }
+
+
+    const data =
+        await response.json();
+
+
+    return data?.data?.[0] || null;
+
+}
+
+
+async function getRobloxAvatarUrl(
+    userId,
+    signal = undefined
+){
+
+    const maxAttempts =
+        8;
+
+
+    for(
+        let attempt = 0;
+        attempt < maxAttempts;
+        attempt++
+    ){
+
+        const url =
+            "https://thumbnails.roblox.com/v1/users/avatar-headshot" +
+            "?userIds=" +
+            encodeURIComponent(userId) +
+            "&size=150x150" +
+            "&format=Png" +
+            "&isCircular=false";
+
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    cache:"no-store",
+                    signal
+                }
+            );
+
+
+        if(response.ok){
+
+            const data =
+                await response.json();
+
+            const thumbnail =
+                data?.data?.[0];
+
+
+            if(
+                thumbnail &&
+                thumbnail.state ===
+                    "Completed" &&
+                thumbnail.imageUrl
+            ){
+
+                return thumbnail.imageUrl;
+
+            }
+
+        }
+
+
+        if(
+            attempt <
+            maxAttempts - 1
+        ){
+
+            await new Promise(
+                function(resolve){
+
+                    setTimeout(
+                        resolve,
+                        800
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+
+    return "";
+
+}
+
+
+async function loadRobloxAvatar(){
+
+    const input =
+        document.getElementById(
+            "robloxUsername"
+        );
+
+    const box =
+        document.getElementById(
+            "robloxPreview"
+        );
+
+    const image =
+        document.getElementById(
+            "robloxAvatar"
+        );
+
+    const name =
+        document.getElementById(
+            "robloxUsernameName"
+        );
+
+    const status =
+        document.getElementById(
+            "robloxStatus"
+        );
+
+
+    if(
+        !input ||
+        !box ||
+        !image ||
+        !name ||
+        !status
+    ){
+
+        return;
+
+    }
+
+
+    const username =
+        cleanRobloxUsername(
+            input.value
+        );
+
+
+    if(
+        username.length < 3
+    ){
+
+        resetRobloxPreview();
+
+        return;
+
+    }
+
+
+    if(
+        robloxAvatarController
+    ){
+
+        robloxAvatarController.abort();
+
+    }
+
+
+    robloxAvatarController =
+        new AbortController();
+
+
+    const signal =
+        robloxAvatarController.signal;
+
+
+    box.classList.add(
+        "active"
+    );
+
+
+    image.removeAttribute(
+        "src"
+    );
+
+    image.style.display =
+        "none";
+
+
+    name.innerText =
+        "@" + username;
+
+
+    status.className =
+        "roblox-status roblox-loading";
+
+
+    status.innerText =
+        "⏳ Mencari username Roblox...";
+
+
+    try{
+
+        const user =
+            await getRobloxUser(
+                username,
+                signal
+            );
+
+
+        if(!user){
+
+            status.className =
+                "roblox-status roblox-error";
+
+            status.innerText =
+                "❌ Username Roblox tidak ditemukan";
+
+            return;
+
+        }
+
+
+        name.innerText =
+            "@" + user.name;
+
+
+        status.className =
+            "roblox-status roblox-loading";
+
+        status.innerText =
+            "⏳ Memuat avatar...";
+
+
+        const avatarUrl =
+            await getRobloxAvatarUrl(
+                user.id,
+                signal
+            );
+
+
+        if(!avatarUrl){
+
+            status.className =
+                "roblox-status";
+
+            status.innerText =
+                "✅ Username ditemukan";
+
+            return;
+
+        }
+
+
+        image.onload =
+            function(){
+
+                image.style.display =
+                    "block";
+
+                status.className =
+                    "roblox-status";
+
+                status.innerText =
+                    "✅ Username ditemukan";
+
+            };
+
+
+        image.onerror =
+            function(){
+
+                image.style.display =
+                    "none";
+
+                status.className =
+                    "roblox-status";
+
+                status.innerText =
+                    "✅ Username ditemukan";
+
+            };
+
+
+        image.src =
+            avatarUrl;
+
+
+    }catch(error){
+
+        if(
+            error.name ===
+            "AbortError"
+        ){
+            return;
+        }
+
+
+        console.error(
+            "Avatar Roblox error:",
+            error
+        );
+
+
+        status.className =
+            "roblox-status roblox-error";
+
+
+        status.innerText =
+            "⚠️ Avatar tidak dapat dimuat";
+
+    }
+
+}
+
+
+function initRobloxAvatar(){
+
+    const input =
+        document.getElementById(
+            "robloxUsername"
+        );
+
+
+    if(!input){
+        return;
+    }
+
+
+    input.addEventListener(
+        "input",
+        function(){
+
+            clearTimeout(
+                robloxAvatarTimer
+            );
+
+
+            robloxAvatarTimer =
+                setTimeout(
+                    loadRobloxAvatar,
+                    600
+                );
+
+        }
+    );
+
+
+    input.addEventListener(
+        "blur",
+        loadRobloxAvatar
+    );
+
+}
+
+
+/* =========================
+REVIEW
+========================= */
+
+function pilihRating(rating){
+
+    selectedReviewRating =
+        Number(rating);
+
+
+    document
+        .querySelectorAll(
+            ".review-star-btn"
+        )
+        .forEach(function(button){
+
+            const value =
+                Number(
+                    button.dataset.rating
+                );
+
+
+            button.classList.toggle(
+                "active",
+                value <=
+                selectedReviewRating
+            );
+
+        });
+
+}
+
+
+function toggleReviewForm(){
+
+    const form =
+        document.getElementById(
+            "reviewForm"
+        );
+
+    const button =
+        document.getElementById(
+            "reviewToggleButton"
+        );
+
+
+    const active =
+        form.classList.toggle(
+            "active"
+        );
+
+
+    button.innerText =
+        active
+            ? "✕ TUTUP REVIEW"
+            : "⭐ TULIS REVIEW";
+
+}
+
+
+async function getRobloxAvatarSmall(
+    username
+){
+
+    try{
+
+        const user =
+            await getRobloxUser(
+                cleanRobloxUsername(
+                    username
+                )
+            );
+
+
+        if(!user){
+            return "";
+        }
+
+
+        return await getRobloxAvatarUrl(
+            user.id
+        );
+
+    }catch(error){
+
+        console.error(
+            "Review avatar error:",
+            error
+        );
+
+        return "";
+
+    }
+
+}
+
+
+async function loadReviews(){
+
+    const list =
+        document.getElementById(
+            "reviewList"
+        );
+
+    const countElement =
+        document.getElementById(
+            "reviewCount"
+        );
+
+
+    if(!list){
+        return;
+    }
+
+
+    list.innerHTML =
+        `
+        <div class="review-empty">
+            Memuat review...
+        </div>
+        `;
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "get_reviews_v2",
+                {
+                    p_limit:3
+                }
+            );
+
+
+        if(error){
+            throw error;
+        }
+
+
+        const rows =
+            Array.isArray(data)
+                ? data
+                : [];
+
+
+        countElement.innerText =
+            rows.length +
+            " review terbaru";
+
+
+        if(rows.length === 0){
+
+            list.innerHTML =
+                `
+                <div class="review-empty">
+                    Belum ada review.
+                </div>
+                `;
+
+            return;
+
+        }
+
+
+        list.innerHTML =
+            "";
+
+
+        rows.forEach(
+            function(review){
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "review-item";
+
+
+                const avatar =
+                    document.createElement(
+                        "img"
+                    );
+
+                avatar.className =
+                    "review-avatar";
+
+                avatar.alt =
+                    "Avatar Roblox";
+
+
+                const content =
+                    document.createElement(
+                        "div"
+                    );
+
+                content.className =
+                    "review-content";
+
+
+                const username =
+                    document.createElement(
+                        "div"
+                    );
+
+                username.className =
+                    "review-user";
+
+                username.innerText =
+                    review.roblox_username ||
+                    "Customer";
+
+
+                const stars =
+                    document.createElement(
+                        "div"
+                    );
+
+                stars.className =
+                    "review-stars";
+
+
+                const rating =
+                    Number(
+                        review.rating || 0
+                    );
+
+
+                stars.innerText =
+                    "★".repeat(
+                        rating
+                    ) +
+                    "☆".repeat(
+                        Math.max(
+                            0,
+                            5 - rating
+                        )
+                    );
+
+
+                content.appendChild(
+                    username
+                );
+
+                content.appendChild(
+                    stars
+                );
+
+
+                if(review.comment){
+
+                    const comment =
+                        document.createElement(
+                            "div"
+                        );
+
+                    comment.className =
+                        "review-text";
+
+                    comment.innerText =
+                        review.comment;
+
+                    content.appendChild(
+                        comment
+                    );
+
+                }
+
+
+                item.appendChild(
+                    avatar
+                );
+
+                item.appendChild(
+                    content
+                );
+
+                list.appendChild(
+                    item
+                );
+
+
+                getRobloxAvatarSmall(
+                    review.roblox_username
+                )
+                .then(
+                    function(url){
+
+                        if(url){
+                            avatar.src =
+                                url;
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "Review error:",
+            error
+        );
+
+
+        list.innerHTML =
+            `
+            <div class="review-empty">
+                Review belum tersedia.
+            </div>
+            `;
+
+    }
+
+}
+
+
+async function kirimReview(){
+
+    const orderCode =
+        document.getElementById(
+            "reviewOrderCode"
+        ).value
+        .trim()
+        .toUpperCase();
+
+
+    const whatsapp =
+        document.getElementById(
+            "reviewWhatsApp"
+        ).value
+        .trim();
+
+
+    const comment =
+        document.getElementById(
+            "reviewComment"
+        ).value
+        .trim();
+
+
+    const message =
+        document.getElementById(
+            "reviewMessage"
+        );
+
+
+    const button =
+        document.getElementById(
+            "reviewSubmitButton"
+        );
+
+
+    if(!orderCode){
+
+        message.className =
+            "review-message review-error";
+
+        message.innerText =
+            "Masukkan ID Order.";
+
+        return;
+
+    }
+
+
+    if(!whatsapp){
+
+        message.className =
+            "review-message review-error";
+
+        message.innerText =
+            "Masukkan nomor WhatsApp saat order.";
+
+        return;
+
+    }
+
+
+    button.disabled =
+        true;
+
+    button.innerText =
+        "MENGIRIM...";
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "submit_order_review_v2",
+                {
+                    p_order_code:
+                        orderCode,
+
+                    p_whatsapp:
+                        whatsapp,
+
+                    p_rating:
+                        selectedReviewRating,
+
+                    p_comment:
+                        comment
+                }
+            );
+
+
+        if(error){
+            throw error;
+        }
+
+
+        const result =
+            Array.isArray(data)
+                ? data[0]
+                : data;
+
+
+        if(
+            !result ||
+            result.success !== true
+        ){
+
+            message.className =
+                "review-message review-error";
+
+            message.innerText =
+                result?.message ||
+                "Review gagal dikirim.";
+
+            return;
+
+        }
+
+
+        message.className =
+            "review-message review-success";
+
+        message.innerText =
+            result.message ||
+            "Review berhasil dikirim.";
+
+
+        document.getElementById(
+            "reviewOrderCode"
+        ).value = "";
+
+
+        document.getElementById(
+            "reviewWhatsApp"
+        ).value = "";
+
+
+        document.getElementById(
+            "reviewComment"
+        ).value = "";
+
+
+        pilihRating(5);
+
+        await loadReviews();
+
+
+    }catch(error){
+
+        console.error(
+            "Submit review error:",
+            error
+        );
+
+
+        message.className =
+            "review-message review-error";
+
+        message.innerText =
+            error.message ||
+            "Review gagal dikirim.";
+
+    }finally{
+
+        button.disabled =
+            false;
+
+        button.innerText =
+            "KIRIM REVIEW";
+
+    }
+
+}
+
+
+/* =========================
+STORE SETTINGS
+========================= */
+
+async function loadStoreSettings(){
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+                .rpc(
+                    "get_store_settings_v2"
+                );
+
+
+        if(error){
+
+            console.error(
+                "Gagal memuat settings:",
+                error
+            );
+
+            return;
+
+        }
+
+
+        const settings =
+            Array.isArray(data)
+                ? data[0]
+                : data;
+
+
+        if(!settings){
+            return;
+        }
+
+
+        document.getElementById(
+            "maintenanceTitle"
+        ).innerText =
+            settings.maintenance_title ||
+            "Website Sedang Maintenance";
+
+
+        document.getElementById(
+            "maintenanceMessage"
+        ).innerText =
+            settings.maintenance_message ||
+            "Silakan kembali beberapa saat lagi";
+
+
+        document.getElementById(
+            "maintenanceScreen"
+        ).classList.toggle(
+            "active",
+            settings.maintenance_mode === true
+        );
+
+
+        const banner =
+            document.getElementById(
+                "promoBanner"
+            );
+
+
+        const active =
+            settings.promo_banner_active === true &&
+            (
+                settings.promo_banner_title ||
+                settings.promo_banner_text
+            );
+
+
+        banner.classList.toggle(
+            "active",
+            active
+        );
+
+
+        if(active){
+
+            document.getElementById(
+                "promoBannerTitle"
+            ).innerText =
+                settings.promo_banner_title || "";
+
+
+            document.getElementById(
+                "promoBannerText"
+            ).innerText =
+                settings.promo_banner_text || "";
+
+
+            const button =
+                document.getElementById(
+                    "promoBannerButton"
+                );
+
+
+            if(
+                settings.promo_banner_button_text &&
+                settings.promo_banner_button_url
+            ){
+
+                button.innerText =
+                    settings.promo_banner_button_text;
+
+                button.href =
+                    settings.promo_banner_button_url;
+
+                button.style.display =
+                    "inline-block";
+
+            }else{
+
+                button.style.display =
+                    "none";
+
+            }
+
+        }
+
+    }catch(error){
+
+        console.error(
+            "Settings error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================
+SLOT
+========================= */
+
+async function loadPackageSlots(){
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "get_joki_package_slots_v2"
+            );
+
+
+        if(error){
+
+            console.error(
+                "Slot error:",
+                error
+            );
+
+            return;
+
+        }
+
+
+        packageSlots = {};
+
+
+        (data || []).forEach(
+            function(item){
+
+                packageSlots[
+                    item.package_id
+                ] = item;
+
+            }
+        );
+
+
+        packageSlotsLoaded =
+            true;
+
+
+        updatePackageSlotUI();
+
+
+    }catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+
+function updatePackageSlotUI(){
+
+    const ids = [
+        "afk_1d",
+        "afk_7d",
+        "egg_1d",
+        "egg_12h"
+    ];
+
+
+    ids.forEach(
+        function(id){
+
+            const info =
+                packageSlots[id];
+
+            const text =
+                document.getElementById(
+                    "slot-" + id
+                );
+
+            const card =
+                document.querySelector(
+                    ".package-card[data-package-id='" +
+                    id +
+                    "']"
+                );
+
+
+            if(!text || !card){
+                return;
+            }
+
+
+            card.classList.remove(
+                "unavailable"
+            );
+
+
+            text.classList.remove(
+                "available",
+                "empty"
+            );
+
+
+            if(!info){
+
+                text.innerText =
+                    "Tidak tersedia";
+
+                text.classList.add(
+                    "empty"
+                );
+
+                card.classList.add(
+                    "unavailable"
+                );
+
+                return;
+
+            }
+
+
+            if(
+                info.remaining_slot === null
+            ){
+
+                text.innerText =
+                    "Slot tidak terbatas";
+
+                text.classList.add(
+                    "available"
+                );
+
+                return;
+
+            }
+
+
+            const remaining =
+                Number(
+                    info.remaining_slot
+                );
+
+
+            if(remaining > 0){
+
+                text.innerText =
+                    "Sisa " +
+                    remaining +
+                    " slot";
+
+                text.classList.add(
+                    "available"
+                );
+
+            }else{
+
+                text.innerText =
+                    "Slot habis";
+
+                text.classList.add(
+                    "empty"
+                );
+
+                card.classList.add(
+                    "unavailable"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+function isPackageAvailable(
+    packageId
+){
+
+    if(!packageSlotsLoaded){
+        return true;
+    }
+
+
+    const info =
+        packageSlots[packageId];
+
+
+    if(!info){
+        return false;
+    }
+
+
+    if(
+        info.remaining_slot === null
+    ){
+        return true;
+    }
+
+
+    return Number(
+        info.remaining_slot
+    ) > 0;
+
+}
+
+
+/* =========================
+PACKAGE
+========================= */
 
 function selectPackage(
     element,
@@ -1837,21 +3761,59 @@ function selectPackage(
     packageId
 ){
 
+    if(
+        packageSlotsLoaded &&
+        !isPackageAvailable(
+            packageId
+        )
+    ){
+
+        alert(
+            "Slot paket ini sedang habis atau tidak tersedia."
+        );
+
+        return;
+
+    }
+
+
     document
-        .querySelectorAll(".package-card")
-        .forEach(function(card){
+        .querySelectorAll(
+            ".package-card"
+        )
+        .forEach(
+            card =>
+                card.classList.remove(
+                    "selected"
+                )
+        );
 
-            card.classList.remove(
-                "selected"
-            );
 
-        });
+    document
+        .querySelectorAll(
+            ".combo-card"
+        )
+        .forEach(
+            card =>
+                card.classList.remove(
+                    "selected"
+                )
+        );
 
 
     element.classList.add(
         "selected"
     );
 
+
+    selectedOrderMode =
+        "regular";
+
+    selectedComboId =
+        null;
+
+    selectedCombo =
+        null;
 
     selectedPackage =
         packageName;
@@ -1891,22 +3853,333 @@ function selectPackage(
             "active"
         );
 
-        quantity =
-            1;
+        quantity = 1;
 
     }
 
 
-    updateSummary();
+    refreshPricing();
 
 }
 
 
-/* =====================================================
-SUBTOTAL
-===================================================== */
+/* =========================
+COMBO
+========================= */
+
+async function loadComboPackages(){
+
+    const grid =
+        document.getElementById(
+            "comboPackageGrid"
+        );
+
+
+    grid.innerHTML =
+        "<div class='combo-loading'>Memuat paket combo...</div>";
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+                .from(
+                    "combo_packages"
+                )
+                .select(
+                    "id,name,description,price,quota_limit,used_count,active,duration_hours"
+                )
+                .eq(
+                    "active",
+                    true
+                )
+                .order(
+                    "id",
+                    {
+                        ascending:true
+                    }
+                );
+
+
+        if(error){
+
+            console.error(
+                "Gagal mengambil combo:",
+                error
+            );
+
+            grid.innerHTML =
+                "<div class='combo-empty'>Paket combo belum bisa dimuat.</div>";
+
+            window.comboPackages =
+                [];
+
+            return;
+
+        }
+
+
+        const available =
+            (data || []).filter(
+                function(combo){
+
+                    if(
+                        combo.quota_limit === null
+                    ){
+                        return true;
+                    }
+
+
+                    return Number(
+                        combo.used_count || 0
+                    ) <
+                    Number(
+                        combo.quota_limit
+                    );
+
+                }
+            );
+
+
+        if(available.length === 0){
+
+            grid.innerHTML =
+                "<div class='combo-empty'>Belum ada paket combo yang tersedia.</div>";
+
+            window.comboPackages =
+                [];
+
+            return;
+
+        }
+
+
+        grid.innerHTML =
+            available.map(
+                function(combo){
+
+                    const used =
+                        Number(
+                            combo.used_count || 0
+                        );
+
+
+                    const quotaText =
+                        combo.quota_limit === null
+                            ? "Kuota tidak terbatas"
+                            : "Sisa " +
+                              Math.max(
+                                  0,
+                                  Number(
+                                      combo.quota_limit
+                                  ) -
+                                  used
+                              ) +
+                              " / " +
+                              Number(
+                                  combo.quota_limit
+                              );
+
+
+                    return (
+                        "<div " +
+                            "class='combo-card' " +
+                            "data-combo-id='" +
+                            escapeAttribute(
+                                combo.id
+                            ) +
+                            "' " +
+                            "onclick='selectCombo(" +
+                                Number(
+                                    combo.id
+                                ) +
+                            ")'>" +
+
+                            "<div class='combo-badge'>" +
+                                "COMBO" +
+                            "</div>" +
+
+                            "<h3>" +
+                                escapeHtml(
+                                    combo.name
+                                ) +
+                            "</h3>" +
+
+                            "<div class='combo-description'>" +
+                                escapeHtml(
+                                    combo.description || ""
+                                ) +
+                            "</div>" +
+
+                            "<div class='combo-price'>" +
+                                rupiah(
+                                    combo.price
+                                ) +
+                            "</div>" +
+
+                            "<div class='combo-info'>" +
+                                formatDuration(
+                                    combo.duration_hours
+                                ) +
+                                " • " +
+                                escapeHtml(
+                                    quotaText
+                                ) +
+                            "</div>" +
+
+                        "</div>"
+                    );
+
+                }
+            ).join("");
+
+
+        window.comboPackages =
+            available;
+
+
+    }catch(error){
+
+        console.error(error);
+
+        grid.innerHTML =
+            "<div class='combo-empty'>Terjadi kesalahan saat memuat combo.</div>";
+
+    }
+
+}
+
+
+function selectCombo(
+    comboId
+){
+
+    const combo =
+        (
+            window.comboPackages ||
+            []
+        ).find(
+            item =>
+                Number(item.id) ===
+                Number(comboId)
+        );
+
+
+    if(!combo){
+
+        alert(
+            "Paket combo tidak ditemukan."
+        );
+
+        return;
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".package-card"
+        )
+        .forEach(
+            card =>
+                card.classList.remove(
+                    "selected"
+                )
+        );
+
+
+    document
+        .querySelectorAll(
+            ".combo-card"
+        )
+        .forEach(
+            card =>
+                card.classList.remove(
+                    "selected"
+                )
+        );
+
+
+    const comboElement =
+        document.querySelector(
+            ".combo-card[data-combo-id='" +
+            combo.id +
+            "']"
+        );
+
+
+    if(comboElement){
+
+        comboElement.classList.add(
+            "selected"
+        );
+
+    }
+
+
+    selectedOrderMode =
+        "combo";
+
+    selectedComboId =
+        Number(combo.id);
+
+    selectedCombo =
+        combo;
+
+    selectedPackage =
+        combo.name;
+
+    selectedPrice =
+        Number(combo.price);
+
+    selectedPackageId =
+        "combo_" +
+        combo.id;
+
+    selectedType =
+        "combo";
+
+    quantity =
+        1;
+
+
+    document
+        .getElementById(
+            "quantityBox"
+        )
+        .classList
+        .remove(
+            "active"
+        );
+
+
+    refreshPricing();
+
+}
+
+
+/* =========================
+PRICING
+========================= */
 
 function getSubtotal(){
+
+    if(
+        selectedOrderMode ===
+        "combo"
+    ){
+
+        quantity = 1;
+
+        return Number(
+            selectedPrice
+        );
+
+    }
+
 
     if(
         selectedType ===
@@ -1929,58 +4202,73 @@ function getSubtotal(){
             quantity > 3
         ){
 
-            quantity =
-                1;
+            quantity = 1;
 
         }
 
 
         return (
-            selectedPrice *
+            Number(
+                selectedPrice
+            ) *
             quantity
         );
 
     }
 
 
-    quantity =
-        1;
+    quantity = 1;
 
-
-    return selectedPrice;
+    return Number(
+        selectedPrice
+    );
 
 }
 
 
-/* =====================================================
-PROMO
-===================================================== */
+function promoTyping(){
 
-function getPromoDiscount(
-    subtotal
-){
+    const input =
+        document.getElementById(
+            "promoCode"
+        );
+
+
+    const code =
+        input.value
+            .trim()
+            .toUpperCase();
+
 
     if(
         promoApplied &&
-        promoCodeApplied ===
-            "SYADZZ01"
+        code !== promoCodeApplied
     ){
 
-        return Math.round(
-            subtotal *
-            15 /
-            100
-        );
+        promoApplied =
+            false;
+
+        promoCodeApplied =
+            "";
+
+        promoInfo =
+            null;
+
+
+        document.getElementById(
+            "promoMessage"
+        ).innerText =
+            "";
+
+
+        renderSummary();
 
     }
-
-
-    return 0;
 
 }
 
 
-function gunakanPromo(){
+async function gunakanPromo(){
 
     const input =
         document.getElementById(
@@ -2000,16 +4288,11 @@ function gunakanPromo(){
             .toUpperCase();
 
 
-    promoApplied =
-        false;
+    if(!code){
 
-    promoCodeApplied =
-        "";
-
-
-    if(
-        code === ""
-    ){
+        promoApplied = false;
+        promoCodeApplied = "";
+        promoInfo = null;
 
         message.className =
             "promo-message promo-error";
@@ -2017,69 +4300,231 @@ function gunakanPromo(){
         message.innerText =
             "Masukkan kode promo.";
 
-        updateSummary();
+        renderSummary();
 
         return;
 
     }
 
 
-    if(
-        code !==
-        "SYADZZ01"
-    ){
+    message.className =
+        "promo-message";
+
+    message.innerText =
+        "Mengecek promo...";
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "check_promo_v2",
+                {
+                    p_code:code,
+                    p_subtotal:
+                        getSubtotal()
+                }
+            );
+
+
+        if(error){
+            throw error;
+        }
+
+
+        const result =
+            Array.isArray(data)
+                ? data[0]
+                : data;
+
+
+        if(
+            !result ||
+            result.valid !== true
+        ){
+
+            promoApplied = false;
+            promoCodeApplied = "";
+            promoInfo = null;
+
+            message.className =
+                "promo-message promo-error";
+
+            message.innerText =
+                result?.message ||
+                "Kode promo tidak valid.";
+
+            renderSummary();
+
+            return;
+
+        }
+
+
+        promoApplied = true;
+        promoCodeApplied =
+            result.code;
+
+        promoInfo =
+            result;
+
+        message.className =
+            "promo-message promo-success";
+
+        message.innerText =
+            result.message ||
+            "Promo berhasil digunakan.";
+
+        renderSummary();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        promoApplied = false;
+        promoCodeApplied = "";
+        promoInfo = null;
 
         message.className =
             "promo-message promo-error";
 
         message.innerText =
-            "Kode promo tidak valid.";
+            "Gagal mengecek promo: " +
+            (
+                error.message ||
+                "Error"
+            );
 
-        updateSummary();
-
-        return;
+        renderSummary();
 
     }
-
-
-    promoApplied =
-        true;
-
-    promoCodeApplied =
-        "SYADZZ01";
-
-
-    message.className =
-        "promo-message promo-success";
-
-    message.innerText =
-        "Promo SYADZZ01 aktif. Diskon 15%.";
-
-
-    updateSummary();
 
 }
 
 
-/* =====================================================
-SUMMARY
-===================================================== */
+async function refreshPricing(){
 
-function updateSummary(){
+    const requestId =
+        ++pricingRequestId;
+
+
+    quantity =
+        selectedOrderMode === "combo"
+            ? 1
+            : (
+                selectedType === "speed1"
+                    ? Number(
+                        document.getElementById(
+                            "quantity"
+                        ).value
+                    )
+                    : 1
+            );
+
+
+    if(
+        promoCodeApplied &&
+        promoApplied
+    ){
+
+        try{
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient.rpc(
+                    "check_promo_v2",
+                    {
+                        p_code:
+                            promoCodeApplied,
+
+                        p_subtotal:
+                            getSubtotal()
+                    }
+                );
+
+
+            if(
+                requestId !==
+                pricingRequestId
+            ){
+                return;
+            }
+
+
+            if(
+                error ||
+                !data ||
+                !data[0] ||
+                data[0].valid !== true
+            ){
+
+                promoApplied = false;
+                promoCodeApplied = "";
+                promoInfo = null;
+
+                document.getElementById(
+                    "promoMessage"
+                ).innerText =
+                    data?.[0]?.message ||
+                    "Promo tidak lagi berlaku pada subtotal ini.";
+
+            }else{
+
+                promoInfo =
+                    data[0];
+
+            }
+
+        }catch(error){
+
+            console.error(error);
+
+        }
+
+    }
+
+
+    renderSummary();
+
+}
+
+
+function renderSummary(){
 
     const subtotal =
         getSubtotal();
 
 
-    const discount =
-        getPromoDiscount(
-            subtotal
-        );
+    let discount =
+        0;
+
+
+    if(
+        promoApplied &&
+        promoInfo
+    ){
+
+        discount =
+            Number(
+                promoInfo.discount_amount ||
+                0
+            );
+
+    }
 
 
     const total =
-        subtotal -
-        discount;
+        Math.max(
+            subtotal -
+            discount,
+            0
+        );
 
 
     document.getElementById(
@@ -2091,8 +4536,9 @@ function updateSummary(){
     document.getElementById(
         "sumQuantity"
     ).innerText =
-        quantity +
-        " Hari";
+        selectedOrderMode === "combo"
+            ? "1 Paket"
+            : quantity + " Hari";
 
 
     document.getElementById(
@@ -2115,7 +4561,7 @@ function updateSummary(){
         "sumPromo"
     ).innerText =
         promoApplied
-            ? "SYADZZ01"
+            ? promoCodeApplied
             : "-";
 
 
@@ -2178,21 +4624,17 @@ function updateSummary(){
 }
 
 
-/* =====================================================
-PARSE SPEED
-===================================================== */
+/* =========================
+CALCULATOR
+========================= */
 
-function parseSpeed(
-    input
-){
+function parseSpeed(input){
 
     if(
         input === null ||
         input === undefined
     ){
-
         return NaN;
-
     }
 
 
@@ -2204,12 +4646,8 @@ function parseSpeed(
             .replace(/\s+/g,"");
 
 
-    if(
-        text === ""
-    ){
-
+    if(!text){
         return NaN;
-
     }
 
 
@@ -2237,16 +4675,12 @@ function parseSpeed(
 
 
     if(!match){
-
         return NaN;
-
     }
 
 
     const number =
-        Number(
-            match[1]
-        );
+        Number(match[1]);
 
 
     const suffix =
@@ -2254,14 +4688,10 @@ function parseSpeed(
 
 
     if(
-        !Number.isFinite(
-            number
-        ) ||
+        !Number.isFinite(number) ||
         number < 0
     ){
-
         return NaN;
-
     }
 
 
@@ -2271,36 +4701,21 @@ function parseSpeed(
 }
 
 
-/* =====================================================
-FORMAT NUMBER
-===================================================== */
-
-function formatNumber(
-    number
-){
+function formatNumber(number){
 
     if(
-        !Number.isFinite(
-            number
-        )
+        !Number.isFinite(number)
     ){
-
         return "0";
-
     }
 
 
-    if(
-        number === 0
-    ){
-
+    if(number === 0){
         return "0";
-
     }
 
 
     const units = [
-
         ["DC",1e33],
         ["NO",1e30],
         ["OC",1e27],
@@ -2312,7 +4727,6 @@ function formatNumber(
         ["B",1e9],
         ["M",1e6],
         ["K",1e3]
-
     ];
 
 
@@ -2327,42 +4741,29 @@ function formatNumber(
         ){
 
             const result =
-                number /
-                value;
+                number / value;
 
 
-            let decimals =
-                2;
+            let decimals = 2;
 
 
             if(
-                Math.abs(result) >=
-                100
+                Math.abs(result) >= 100
             ){
-
-                decimals =
-                    0;
-
+                decimals = 0;
             }else if(
-                Math.abs(result) >=
-                10
+                Math.abs(result) >= 10
             ){
-
-                decimals =
-                    1;
-
+                decimals = 1;
             }
 
 
             return result
                 .toFixed(decimals)
-                .replace(
-                    /\.00$/,
-                    ""
-                )
+                .replace(/\.00$/,"")
                 .replace(
                     /(\.\d)0$/,
-                    ""
+                    "$1"
                 ) +
                 name;
 
@@ -2371,22 +4772,16 @@ function formatNumber(
     }
 
 
-    return Number(
-        number
-    ).toLocaleString(
-        "id-ID",
-        {
-            maximumFractionDigits:
-                2
-        }
-    );
+    return Number(number)
+        .toLocaleString(
+            "id-ID",
+            {
+                maximumFractionDigits:2
+            }
+        );
 
 }
 
-
-/* =====================================================
-HITUNG SPEED
-===================================================== */
 
 function hitung(){
 
@@ -2452,9 +4847,7 @@ function hitung(){
 
 
     if(
-        !Number.isFinite(
-            hours
-        ) ||
+        !Number.isFinite(hours) ||
         hours < 0
     ){
 
@@ -2466,8 +4859,7 @@ function hitung(){
     }
 
 
-    const STEPS_PER_SECOND =
-        22;
+    const STEPS_PER_SECOND = 22;
 
 
     const gainPerStep =
@@ -2485,13 +4877,11 @@ function hitung(){
 
 
     const gainPerMinute =
-        gainPerSecond *
-        60;
+        gainPerSecond * 60;
 
 
     const gainPerHour =
-        gainPerSecond *
-        3600;
+        gainPerSecond * 3600;
 
 
     const gainFromAFK =
@@ -2566,10 +4956,6 @@ function hitung(){
 }
 
 
-/* =====================================================
-PEMBAYARAN
-===================================================== */
-
 function changePayment(){
 
     const method =
@@ -2600,14 +4986,10 @@ function changePayment(){
         );
 
 
-    updateSummary();
+    renderSummary();
 
 }
 
-
-/* =====================================================
-PREVIEW
-===================================================== */
 
 function previewProof(){
 
@@ -2635,8 +5017,40 @@ function previewProof(){
             "active"
         );
 
-        image.src =
+        image.src = "";
+
+        return;
+
+    }
+
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+
+    if(
+        !allowedTypes.includes(
+            file.type
+        )
+    ){
+
+        alert(
+            "Bukti pembayaran harus JPG, PNG, atau WEBP."
+        );
+
+
+        document.getElementById(
+            "proofFile"
+        ).value =
             "";
+
+
+        box.classList.remove(
+            "active"
+        );
 
         return;
 
@@ -2644,19 +5058,24 @@ function previewProof(){
 
 
     if(
-        !file.type.startsWith(
-            "image/"
-        )
+        file.size >
+        5 * 1024 * 1024
     ){
 
         alert(
-            "Bukti pembayaran harus berupa gambar."
+            "Ukuran bukti pembayaran maksimal 5 MB."
         );
+
 
         document.getElementById(
             "proofFile"
         ).value =
             "";
+
+
+        box.classList.remove(
+            "active"
+        );
 
         return;
 
@@ -2687,27 +5106,59 @@ function previewProof(){
 }
 
 
-/* =====================================================
+function randomFileName(){
+
+    if(
+        window.crypto &&
+        typeof crypto.randomUUID ===
+        "function"
+    ){
+
+        return crypto.randomUUID();
+
+    }
+
+
+    return (
+        Date.now() +
+        "-" +
+        Math.random()
+            .toString(36)
+            .slice(2)
+    );
+
+}
+
+
+/* =========================
 KIRIM ORDER
-===================================================== */
+========================= */
 
 async function kirimPesanan(){
 
     const username =
-        document.getElementById(
-            "robloxUsername"
-        ).value.trim();
+        cleanRobloxUsername(
+            document.getElementById(
+                "robloxUsername"
+            ).value
+        );
 
 
     const password =
         document.getElementById(
             "robloxPassword"
-        ).value.trim();
+        ).value;
 
 
     const gameMap =
         document.getElementById(
             "gameMap"
+        ).value.trim();
+
+
+    const orderNote =
+        document.getElementById(
+            "orderNote"
         ).value.trim();
 
 
@@ -2732,6 +5183,12 @@ async function kirimPesanan(){
     const status =
         document.getElementById(
             "jokiStatus"
+        );
+
+
+    const button =
+        document.getElementById(
+            "orderButton"
         );
 
 
@@ -2809,16 +5266,132 @@ async function kirimPesanan(){
     }
 
 
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+
     if(
-        promoInput !== "" &&
-        promoInput !== "SYADZZ01"
+        !allowedTypes.includes(
+            proof.type
+        )
     ){
 
         alert(
-            "Kode promo tidak valid."
+            "Bukti pembayaran harus JPG, PNG, atau WEBP."
         );
 
         return;
+
+    }
+
+
+    if(
+        proof.size >
+        5 * 1024 * 1024
+    ){
+
+        alert(
+            "Ukuran bukti pembayaran maksimal 5 MB."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        selectedOrderMode ===
+        "regular" &&
+        !isPackageAvailable(
+            selectedPackageId
+        )
+    ){
+
+        alert(
+            "Slot paket ini sudah habis."
+        );
+
+
+        await loadPackageSlots();
+
+        return;
+
+    }
+
+
+    if(promoInput !== ""){
+
+        try{
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient.rpc(
+                    "check_promo_v2",
+                    {
+                        p_code:
+                            promoInput,
+
+                        p_subtotal:
+                            getSubtotal()
+                    }
+                );
+
+
+            if(error){
+                throw error;
+            }
+
+
+            const promoResult =
+                Array.isArray(data)
+                    ? data[0]
+                    : data;
+
+
+            if(
+                !promoResult ||
+                promoResult.valid !== true
+            ){
+
+                alert(
+                    promoResult?.message ||
+                    "Kode promo tidak valid."
+                );
+
+                return;
+
+            }
+
+
+            promoApplied = true;
+
+            promoCodeApplied =
+                promoResult.code;
+
+            promoInfo =
+                promoResult;
+
+            renderSummary();
+
+
+        }catch(error){
+
+            alert(
+                "Gagal mengecek promo:\n" +
+                (
+                    error.message ||
+                    "Error"
+                )
+            );
+
+            return;
+
+        }
 
     }
 
@@ -2830,97 +5403,235 @@ async function kirimPesanan(){
         );
 
 
+    button.disabled =
+        true;
+
+
+    button.innerText =
+        "MEMPROSES ORDER...";
+
+
     status.innerText =
         "Menyimpan order ke database...";
 
 
     try{
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient.rpc(
-                "create_joki_order",
-                {
-                    p_roblox_username:
-                        username,
-
-                    p_whatsapp:
-                        customerWA,
-
-                    p_package_id:
-                        selectedPackageId,
-
-                    p_quantity:
-                        quantity,
-
-                    p_game_map:
-                        gameMap,
-
-                    p_payment_method:
-                        payment,
-
-                    p_payment_reference:
-                        null,
-
-                    p_promo_code:
-                        promoInput ||
-                        null
-                }
-            );
+        let order;
 
 
-        if(error){
+        if(
+            selectedOrderMode ===
+            "regular"
+        ){
 
-            if(waWindow){
-                waWindow.close();
+            const {
+                data,
+                error
+            } =
+                await supabaseClient.rpc(
+                    "create_joki_order_v2",
+                    {
+                        p_roblox_username:
+                            username,
+
+                        p_whatsapp:
+                            customerWA,
+
+                        p_package_id:
+                            selectedPackageId,
+
+                        p_quantity:
+                            quantity,
+
+                        p_game_map:
+                            gameMap,
+
+                        p_payment_method:
+                            payment,
+
+                        p_payment_reference:
+                            null,
+
+                        p_promo_code:
+                            promoInput ||
+                            null,
+
+                        p_order_note:
+                            orderNote
+                    }
+                );
+
+
+            if(error){
+                throw error;
             }
 
 
-            console.error(
+            order =
+                Array.isArray(data)
+                    ? data[0]
+                    : data;
+
+
+        }else{
+
+            if(!selectedComboId){
+
+                throw new Error(
+                    "Paket combo belum dipilih."
+                );
+
+            }
+
+
+            const {
+                data,
                 error
-            );
+            } =
+                await supabaseClient.rpc(
+                    "create_combo_order_v2",
+                    {
+                        p_combo_id:
+                            Number(
+                                selectedComboId
+                            ),
+
+                        p_roblox_username:
+                            username,
+
+                        p_whatsapp:
+                            customerWA,
+
+                        p_game_map:
+                            gameMap,
+
+                        p_payment_method:
+                            payment,
+
+                        p_payment_reference:
+                            null,
+
+                        p_promo_code:
+                            promoInput ||
+                            null,
+
+                        p_order_note:
+                            orderNote
+                    }
+                );
 
 
-            alert(
-                error.message ||
-                "Gagal membuat order."
-            );
+            if(error){
+                throw error;
+            }
 
 
-            status.innerText =
-                "Order gagal dibuat.";
-
-            return;
+            order =
+                Array.isArray(data)
+                    ? data[0]
+                    : data;
 
         }
 
 
-        const order =
-            Array.isArray(data)
-                ? data[0]
-                : data;
+        if(
+            !order ||
+            !order.order_code
+        ){
 
-
-        if(!order){
-
-            if(waWindow){
-                waWindow.close();
-            }
-
-
-            alert(
+            throw new Error(
                 "Database tidak mengembalikan ID Order."
             );
-
-            return;
 
         }
 
 
         latestOrderCode =
             order.order_code;
+
+
+        status.innerText =
+            "Mengupload bukti pembayaran...";
+
+
+        const extension =
+            proof.name
+                .split(".")
+                .pop()
+                .toLowerCase();
+
+
+        const proofPath =
+            order.order_code +
+            "/" +
+            randomFileName() +
+            "." +
+            extension;
+
+
+        const {
+            error:uploadError
+        } =
+            await supabaseClient
+                .storage
+                .from(
+                    "payment-proofs"
+                )
+                .upload(
+                    proofPath,
+                    proof,
+                    {
+                        cacheControl:"3600",
+                        contentType:proof.type,
+                        upsert:false
+                    }
+                );
+
+
+        let proofUploaded =
+            false;
+
+
+        if(!uploadError){
+
+            const {
+                error:attachError
+            } =
+                await supabaseClient.rpc(
+                    "attach_payment_proof",
+                    {
+                        p_order_code:
+                            order.order_code,
+
+                        p_proof_path:
+                            proofPath
+                    }
+                );
+
+
+            if(!attachError){
+
+                proofUploaded =
+                    true;
+
+            }else{
+
+                console.error(
+                    "Attach proof error:",
+                    attachError
+                );
+
+            }
+
+        }else{
+
+            console.error(
+                "Upload proof error:",
+                uploadError
+            );
+
+        }
 
 
         const finalTotal =
@@ -2941,71 +5652,85 @@ async function kirimPesanan(){
 
 
         if(
+            selectedOrderMode ===
+            "combo"
+        ){
+
+            quantityText =
+                "📅 *Quantity:* 1 Paket\n";
+
+        }else if(
             selectedType ===
             "speed1"
         ){
 
             quantityText =
-                "Quantity: " +
+                "📅 *Quantity:* " +
                 quantity +
                 " Hari\n";
 
         }
 
 
-        let promoText =
-            "Promo: -\n";
-
-
-        let discountText =
-            "Diskon: Rp0\n";
-
-
-        if(
+        const promoText =
             order.promo_code
-        ){
-
-            promoText =
-                "Promo: " +
-                order.promo_code +
-                "\n";
+                ? "🎟️ *Promo:* " +
+                  order.promo_code +
+                  "\n"
+                : "🎟️ *Promo:* -\n";
 
 
-            discountText =
-                "Diskon: " +
-                Number(
-                    order.discount_percent
-                ) +
-                "% (-" +
-                rupiah(
-                    finalDiscount
-                ) +
-                ")\n";
+        const discountText =
+            "🏷️ *Diskon:* -" +
+            rupiah(
+                finalDiscount
+            ) +
+            "\n";
 
-        }
 
+        const noteText =
+            orderNote
+                ? "📝 *Catatan:* " +
+                  orderNote +
+                  "\n"
+                : "📝 *Catatan:* -\n";
+
+
+        const buktiText =
+            proofUploaded
+                ? "🧾 Bukti pembayaran sudah diupload ke sistem."
+                : "🧾 Bukti pembayaran belum berhasil diupload otomatis.";
+
+
+        /*
+         * ==================================================
+         * FORMAT CHAT WHATSAPP ADMIN
+         * ID ORDERAN SEKARANG PALING ATAS
+         * ==================================================
+         */
 
         const pesan =
+            "🛒 *ORDER JOKI BARU*\n\n" +
 
-            "ORDER JOKI BARU\n\n" +
-
-            "ID Order: " +
+            "🆔 *ID ORDERAN:* " +
             order.order_code +
             "\n\n" +
 
-            "Paket: " +
+            "━━━━━━━━━━━━━━━━━━\n\n" +
+
+            "📦 *Paket:* " +
             order.package_name +
             "\n" +
 
             quantityText +
 
-            "Harga Satuan: " +
+            "💰 *Harga Satuan:* " +
             rupiah(
-                selectedPrice
+                order.unit_price
             ) +
             "\n" +
 
-            "Subtotal: " +
+            "💵 *Subtotal:* " +
             rupiah(
                 order.subtotal
             ) +
@@ -3015,33 +5740,35 @@ async function kirimPesanan(){
 
             discountText +
 
-            "Total Bayar: " +
+            "💳 *Total Bayar:* " +
             rupiah(
                 finalTotal
             ) +
             "\n\n" +
 
-            "Username Roblox: " +
+            "👤 *Username Roblox:* " +
             username +
             "\n" +
 
-            "Password Roblox: " +
+            "🔐 *Password Roblox:* " +
             password +
             "\n" +
 
-            "Game / Map: " +
+            "🎮 *Game / Map:* " +
             gameMap +
             "\n" +
 
-            "WA Customer: " +
+            noteText +
+
+            "📱 *WA Customer:* " +
             customerWA +
             "\n" +
 
-            "Pembayaran: " +
+            "💳 *Pembayaran:* " +
             payment +
             "\n\n" +
 
-            "Bukti pembayaran akan dikirim di chat WhatsApp.";
+            buktiText;
 
 
         const url =
@@ -3066,12 +5793,7 @@ async function kirimPesanan(){
         }
 
 
-        /* =========================
-           HASIL + SALIN ID
-        ========================= */
-
         status.innerHTML =
-
             "Order berhasil dibuat." +
 
             "<div class='order-code-box'>" +
@@ -3093,23 +5815,25 @@ async function kirimPesanan(){
                     "type='button' " +
                     "class='copy-order-btn' " +
                     "onclick='salinOrderId()'>" +
+
                     "SALIN ID ORDER" +
+
                 "</button>" +
 
             "</div>" +
 
             "<div style='margin-top:10px;'>" +
 
-                "WhatsApp admin sudah dibuka. " +
+                (
+                    proofUploaded
+                        ? "Bukti pembayaran sudah masuk ke sistem. "
+                        : "Bukti pembayaran gagal diupload otomatis. "
+                ) +
 
-                "Kirim foto bukti pembayaran di chat." +
+                "WhatsApp admin sudah dibuka." +
 
             "</div>";
 
-
-        /*
-          Password tidak disimpan ke database.
-        */
 
         document.getElementById(
             "robloxPassword"
@@ -3117,10 +5841,29 @@ async function kirimPesanan(){
             "";
 
 
+        if(
+            selectedOrderMode ===
+            "combo"
+        ){
+
+            await loadComboPackages();
+
+        }else{
+
+            await loadPackageSlots();
+
+        }
+
+
+        await loadLiveOrderCounter();
+
+
     }catch(error){
 
         if(waWindow){
+
             waWindow.close();
+
         }
 
 
@@ -3131,21 +5874,33 @@ async function kirimPesanan(){
 
         alert(
             "Terjadi kesalahan saat membuat order:\n" +
-            error.message
+            (
+                error.message ||
+                "Error tidak diketahui"
+            )
         );
 
 
         status.innerText =
             "Order gagal dibuat.";
 
+
+    }finally{
+
+        button.disabled =
+            false;
+
+        button.innerText =
+            "KIRIM ORDER KE WHATSAPP";
+
     }
 
 }
 
 
-/* =====================================================
-SALIN ID
-===================================================== */
+/* =========================
+COPY ORDER
+========================= */
 
 async function salinOrderId(){
 
@@ -3182,10 +5937,6 @@ async function salinOrderId(){
         false;
 
 
-    /*
-      Cara modern
-    */
-
     try{
 
         if(
@@ -3211,10 +5962,6 @@ async function salinOrderId(){
 
     }
 
-
-    /*
-      Cara lama untuk file://
-    */
 
     if(!berhasil){
 
@@ -3256,75 +6003,9 @@ async function salinOrderId(){
 }
 
 
-/* =====================================================
-ESCAPE ATTRIBUTE
-===================================================== */
-
-function escapeAttribute(value){
-
-    return String(
-        value ?? ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    );
-
-}
-
-
-/* =====================================================
-ESCAPE HTML
-===================================================== */
-
-function escapeHtml(value){
-
-    return String(
-        value ?? ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    );
-
-}
-
-
-/* =====================================================
+/* =========================
 CEK ORDER
-===================================================== */
+========================= */
 
 async function cekPesanan(){
 
@@ -3369,7 +6050,7 @@ async function cekPesanan(){
             error
         } =
             await supabaseClient.rpc(
-                "get_order_status",
+                "get_order_status_v2",
                 {
                     p_order_code:
                         code
@@ -3378,11 +6059,6 @@ async function cekPesanan(){
 
 
         if(error){
-
-            console.error(
-                error
-            );
-
 
             result.innerHTML =
                 "Gagal mengecek pesanan:<br>" +
@@ -3415,13 +6091,13 @@ async function cekPesanan(){
             order.started_at
                 ? new Date(
                     order.started_at
-                  ).toLocaleString(
+                ).toLocaleString(
                     "id-ID",
                     {
                         timeZone:
                             "Asia/Jakarta"
                     }
-                  )
+                )
                 : "-";
 
 
@@ -3429,13 +6105,13 @@ async function cekPesanan(){
             order.finish_at
                 ? new Date(
                     order.finish_at
-                  ).toLocaleString(
+                ).toLocaleString(
                     "id-ID",
                     {
                         timeZone:
                             "Asia/Jakarta"
                     }
-                  )
+                )
                 : "-";
 
 
@@ -3458,7 +6134,11 @@ async function cekPesanan(){
             "<div style='margin-top:8px'>" +
                 "<b>Quantity:</b> " +
                 order.quantity +
-                " Hari" +
+                (
+                    order.quantity === 1
+                        ? " Paket"
+                        : " Hari"
+                ) +
             "</div>" +
 
             "<div style='margin-top:8px'>" +
@@ -3491,12 +6171,8 @@ async function cekPesanan(){
                 ) +
             "</div>";
 
+
     }catch(error){
-
-        console.error(
-            error
-        );
-
 
         result.innerHTML =
             "Terjadi kesalahan:<br>" +
@@ -3508,10 +6184,6 @@ async function cekPesanan(){
 
 }
 
-
-/* =====================================================
-ENTER
-===================================================== */
 
 document.addEventListener(
     "keydown",
@@ -3535,29 +6207,38 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-QUANTITY
-===================================================== */
+/* =========================
+INIT
+========================= */
 
-document
-    .getElementById(
-        "quantity"
-    )
-    .addEventListener(
-        "change",
-        function(){
+async function init(){
 
-            updateSummary();
+    renderSummary();
 
-        }
+    pilihRating(5);
+
+    initRobloxAvatar();
+
+    await loadStoreSettings();
+
+    await loadPackageSlots();
+
+    await loadComboPackages();
+
+    await loadLiveOrderCounter();
+
+    await loadReviews();
+
+
+    setInterval(
+        loadLiveOrderCounter,
+        60000
     );
 
+}
 
-/* =====================================================
-AWAL
-===================================================== */
 
-updateSummary();
+init();
 
 </script>
 
