@@ -3,483 +3,457 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Calculator Speed Steal An Egg</title>
+<title>SYADZZ STORE</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+*{
+    box-sizing:border-box;
+    font-family:Arial,sans-serif
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #080812, #241044);
-    color: white;
-    padding: 25px 15px;
+body{
+    margin:0;
+    min-height:100vh;
+    padding:20px 15px;
+    background:linear-gradient(135deg,#080812,#241044);
+    color:#fff
 }
 
-.container {
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
+.container{
+    width:100%;
+    max-width:760px;
+    margin:auto
 }
 
-/* =====================================================
-   FOLLOW TIKTOK
-===================================================== */
-
-#followGate {
-    min-height: calc(100vh - 50px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.page{
+    display:none
 }
 
-.follow-card {
-    width: 100%;
-    max-width: 520px;
-
-    background: #19192d;
-    border: 1px solid #454565;
-    border-radius: 20px;
-
-    padding: 30px 24px;
-    text-align: center;
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+.page.active{
+    display:block
 }
 
-/* =====================================================
-   LOGO TIKTOK
-===================================================== */
+/* ================= HOME ================= */
 
-.follow-icon {
-    width: 85px;
-    height: 85px;
-
-    margin: 0 auto 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.home-card{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center
 }
 
-.follow-icon svg {
-    width: 78px;
-    height: 78px;
-    display: block;
+.main-title{
+    text-align:center;
+    color:#ffd900;
+    font-size:36px;
+    margin:0 0 8px;
+    font-weight:800
 }
 
-/* =====================================================
-   FOLLOW
-===================================================== */
-
-.follow-card h1 {
-    margin: 0 0 10px;
-    color: #ffd900;
-    font-size: 28px;
+.subtitle{
+    text-align:center;
+    color:#aaa;
+    margin-bottom:30px
 }
 
-.follow-card p {
-    color: #aaa;
-    line-height: 1.6;
-    margin: 8px 0;
+.choice-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px
 }
 
-.tiktok-account {
-    margin: 20px 0;
-
-    padding: 16px;
-
-    background: #11111c;
-    border: 1px solid #454565;
-    border-radius: 12px;
-
-    font-size: 20px;
-    font-weight: bold;
+.choice-card{
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 15px 40px rgba(0,0,0,.25)
 }
 
-/* =====================================================
-   FOLLOW BUTTON
-===================================================== */
-
-.follow-btn {
-    width: 100%;
-
-    padding: 15px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: linear-gradient(
-        90deg,
-        #25f4ee,
-        #fe2c55
-    );
-
-    color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
-    transition: 0.2s;
+.choice-card:hover{
+    transform:translateY(-5px);
+    border-color:#ffd900
 }
 
-.follow-btn:hover {
-    transform: translateY(-2px);
+.choice-icon{
+    font-size:52px;
+    margin-bottom:12px
 }
 
-.follow-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+.choice-card h2{
+    margin:8px 0 10px
 }
 
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-.countdown-box {
-    display: none;
-
-    margin-top: 18px;
-    padding: 15px;
-
-    border-radius: 12px;
-
-    background: #11111c;
-    color: #aaa;
+.choice-card p{
+    color:#999;
+    line-height:1.6;
+    min-height:70px
 }
 
-.countdown-number {
-    display: block;
+/* ================= CONTACT ================= */
 
-    margin-top: 7px;
-
-    color: #ffd900;
-
-    font-size: 30px;
-    font-weight: bold;
+.contact-section{
+    margin-top:22px;
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:18px;
+    padding:18px;
+    text-align:center
 }
 
-/* =====================================================
-   CONTINUE
-===================================================== */
-
-.continue-btn {
-    display: none;
-
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding: 15px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: linear-gradient(
-        90deg,
-        #16a34a,
-        #00c853
-    );
-
-    color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
+.contact-section h2{
+    color:#ffd900;
+    font-size:18px;
+    margin:0 0 15px
 }
 
-.continue-btn:hover {
-    opacity: 0.9;
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px
 }
 
-.follow-note {
-    margin-top: 15px;
-
-    color: #777;
-
-    font-size: 12px;
-    line-height: 1.5;
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+    text-decoration:none;
+    color:#fff;
+    transition:.2s
 }
 
-/* =====================================================
-   CALCULATOR
-===================================================== */
-
-#calculatorPage {
-    display: none;
+.contact-item:hover{
+    transform:translateY(-3px);
+    border-color:#ffd900
 }
 
-.main-title {
-    text-align: center;
-
-    color: #ffd900;
-
-    margin: 0 0 8px;
-
-    font-size: 31px;
-
-    line-height: 1.2;
+.contact-logo{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold
 }
 
-.subtitle {
-    text-align: center;
-
-    color: #aaa;
-
-    margin-bottom: 25px;
-
-    font-size: 15px;
+.wa-logo{
+    background:#25D366
 }
 
-/* =====================================================
-   CARD
-===================================================== */
-
-.card {
-    background: #19192d;
-
-    border: 1px solid #454565;
-
-    border-radius: 18px;
-
-    padding: 22px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
+.tiktok-logo{
+    background:#000;
+    border:1px solid #555
 }
 
-/* =====================================================
-   INPUT
-===================================================== */
-
-label {
-    display: block;
-
-    font-weight: bold;
-
-    margin: 15px 0 7px;
+.contact-title{
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:4px
 }
 
-select,
-input {
-    width: 100%;
-
-    padding: 14px;
-
-    background: #11111c;
-
-    color: white;
-
-    border: 2px solid #44445c;
-
-    border-radius: 10px;
-
-    font-size: 16px;
-
-    outline: none;
+.contact-value{
+    color:#aaa;
+    font-size:13px
 }
 
-select:focus,
-input:focus {
-    border-color: #8b5cf6;
+/* ================= CARD ================= */
+
+.card{
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3)
 }
 
-input::placeholder {
-    color: #666;
+.section-title{
+    text-align:center;
+    color:#ffd900;
+    margin-top:0
 }
 
-/* =====================================================
-   HASIL
-===================================================== */
+/* ================= FORM ================= */
 
-.result-title {
-    text-align: center;
-
-    color: #00ff88;
-
-    margin-top: 0;
+label{
+    display:block;
+    margin:15px 0 8px;
+    font-weight:bold
 }
 
-.row {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 14px;
-
-    margin-top: 9px;
-
-    border-radius: 10px;
-
-    background: #11111c;
+input,
+select{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #50506b;
+    border-radius:10px;
+    background:#11111c;
+    color:#fff;
+    font-size:15px;
+    outline:none
 }
 
-.row span:first-child {
-    color: #ccc;
+input:focus,
+select:focus{
+    border-color:#ffd900
 }
 
-.row span:last-child {
-    color: #00ff88;
+/* ================= BUTTON ================= */
 
-    font-weight: bold;
-
-    text-align: right;
-
-    word-break: break-word;
+.btn{
+    width:100%;
+    border:0;
+    border-radius:10px;
+    padding:14px;
+    margin-top:15px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s
 }
 
-/* =====================================================
-   STATUS
-===================================================== */
-
-.status {
-    margin-top: 12px;
-
-    padding: 10px;
-
-    border-radius: 10px;
-
-    background: #151526;
-
-    color: #aaa;
-
-    font-size: 13px;
-
-    text-align: center;
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.93
 }
 
-/* =====================================================
-   TOTAL
-===================================================== */
-
-.final {
-    margin-top: 20px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    border-radius: 15px;
-
-    border: 2px solid #8b5cf6;
-
-    background: #21133d;
+.btn-primary{
+    background:linear-gradient(90deg,#ffd900,#ff9f00);
+    color:#111
 }
 
-.final-title {
-    color: #aaa;
-    font-size: 15px;
+.btn-secondary{
+    background:#303047;
+    color:#fff
 }
 
-.total {
-    margin-top: 8px;
+/* ================= CALCULATOR ================= */
 
-    color: #ffd900;
-
-    font-size: 42px;
-
-    font-weight: bold;
-
-    word-break: break-word;
+.result-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px
 }
 
-/* =====================================================
-   TIKTOK
-===================================================== */
-
-.tiktok-box {
-    margin-top: 20px;
-
-    padding: 15px 20px;
-
-    background: #11111c;
-
-    border: 1px solid #454565;
-
-    border-radius: 12px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+.result-item{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+    padding:14px
 }
 
-.tiktok-link {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    text-decoration: none;
-
-    color: white;
-
-    font-size: 18px;
-
-    font-weight: bold;
+.result-label{
+    color:#999;
+    font-size:13px;
+    margin-bottom:6px
 }
 
-.tiktok-logo {
-    width: 30px;
-    height: 34px;
-
-    display: block;
+.result-value{
+    font-size:17px;
+    font-weight:bold
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer {
-    text-align: center;
-
-    color: #777;
-
-    font-size: 12px;
-
-    margin-top: 20px;
+.total-box{
+    margin-top:18px;
+    padding:20px;
+    text-align:center;
+    border:1px solid #ffd900;
+    border-radius:14px;
+    background:rgba(255,217,0,.08)
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+.total-box .label{
+    color:#ffd900;
+    font-size:13px
+}
 
-@media (max-width: 500px) {
+.total-box .value{
+    font-size:28px;
+    font-weight:bold;
+    margin-top:8px
+}
 
-    .main-title {
-        font-size: 25px;
+/* ================= PAKET ================= */
+
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:15px
+}
+
+.package-card{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:13px;
+    padding:16px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s
+}
+
+.package-card:hover{
+    border-color:#ffd900;
+    transform:translateY(-3px)
+}
+
+.package-card.selected{
+    border:2px solid #ffd900;
+    background:rgba(255,217,0,.08)
+}
+
+.package-icon{
+    font-size:36px;
+    margin-bottom:8px
+}
+
+.package-card h3{
+    font-size:15px;
+    margin:8px 0
+}
+
+.package-price{
+    color:#ffd900;
+    font-size:20px;
+    font-weight:bold
+}
+
+.package-duration{
+    color:#999;
+    font-size:12px;
+    margin-top:6px
+}
+
+/* ================= PAYMENT ================= */
+
+.payment-box{
+    display:none;
+    margin-top:15px;
+    padding:18px;
+    border:1px solid #35354e;
+    border-radius:12px;
+    background:#11111c;
+    text-align:center
+}
+
+.payment-box.active{
+    display:block
+}
+
+/* ================= QRIS ================= */
+
+.qris-image{
+    display:block;
+    width:100%;
+    max-width:400px;
+    margin:15px auto;
+    padding:8px;
+    background:#fff;
+    border-radius:12px
+}
+
+/* ================= DANA ================= */
+
+.dana-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px
+}
+
+.dana-logo{
+    width:150px;
+    height:54px;
+    border-radius:16px;
+    background:#1288ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(18,136,255,.25)
+}
+
+.dana-name{
+    font-size:18px;
+    font-weight:bold
+}
+
+.dana-number{
+    color:#ffd900;
+    font-size:27px;
+    font-weight:bold
+}
+
+/* ================= FILE ================= */
+
+.file-preview{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+    text-align:center
+}
+
+.file-preview.active{
+    display:block
+}
+
+.file-preview img{
+    width:100%;
+    max-height:320px;
+    object-fit:contain;
+    border-radius:10px;
+    margin-top:8px
+}
+
+.notice{
+    margin-top:15px;
+    padding:13px;
+    border:1px solid #5a5220;
+    border-radius:10px;
+    background:rgba(255,217,0,.08);
+    color:#bbb;
+    font-size:12px;
+    line-height:1.6
+}
+
+.status{
+    text-align:center;
+    color:#aaa;
+    margin-top:12px;
+    min-height:20px
+}
+
+.small-text{
+    color:#888;
+    font-size:12px;
+    line-height:1.5
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    .choice-grid,
+    .package-grid,
+    .result-grid,
+    .contact-grid{
+        grid-template-columns:1fr
     }
 
-    .card {
-        padding: 17px;
-    }
-
-    .follow-card {
-        padding: 25px 18px;
-    }
-
-    .row {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    .total {
-        font-size: 34px;
+    .main-title{
+        font-size:28px
     }
 }
 </style>
@@ -487,175 +461,135 @@ input::placeholder {
 
 <body>
 
-<!-- =====================================================
-     🎵 BACKGROUND MUSIC
-     
-     FILE LAGU:
-     Taruh file "teh-hijau.mp3" SATU FOLDER
-     dengan file index.html
-===================================================== -->
-
-<audio
-    id="bgMusic"
-    loop
-    preload="auto"
->
-    <!-- 🎵 FILE LAGU YANG HARUS DIMASUKKAN DI SINI -->
-    <source
-        src="teh-hijau.mp3"
-        type="audio/mpeg"
-    >
-</audio>
-
+<div class="container">
 
 <!-- =====================================================
-     FOLLOW TIKTOK
+HOME
 ===================================================== -->
 
-<div id="followGate">
+<div id="homePage" class="page active">
 
-    <div class="follow-card">
+    <div class="home-card">
 
-        <!-- LOGO TIKTOK -->
-
-        <div class="follow-icon">
-
-            <svg
-                viewBox="0 0 48 48"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-
-                <path
-                    fill="#25F4EE"
-                    d="
-                    M34.2 6.3
-                    C35.9 8.7 38.4 10.6 41.4 11.7
-                    V18.8
-                    C38.3 18.7 35.4 17.8 32.9 16.3
-                    V29.6
-                    C32.9 36.7 27.2 42.4 20.1 42.4
-                    C13 42.4 7.3 36.7 7.3 29.6
-                    C7.3 22.5 13 16.8 20.1 16.8
-                    C20.9 16.8 21.6 16.9 22.4 17.1
-                    V24.3
-                    C21.7 24.1 20.9 23.9 20.1 23.9
-                    C16.9 23.9 14.3 26.5 14.3 29.7
-                    C14.3 32.9 16.9 35.5 20.1 35.5
-                    C23.3 35.5 25.9 32.9 25.9 29.7
-                    V6.3
-                    H34.2Z
-                    "
-                    transform="translate(-2 2)"
-                />
-
-                <path
-                    fill="#FE2C55"
-                    d="
-                    M34.2 6.3
-                    C35.9 8.7 38.4 10.6 41.4 11.7
-                    V18.8
-                    C38.3 18.7 35.4 17.8 32.9 16.3
-                    V29.6
-                    C32.9 36.7 27.2 42.4 20.1 42.4
-                    C13 42.4 7.3 36.7 7.3 29.6
-                    C7.3 22.5 13 16.8 20.1 16.8
-                    C20.9 16.8 21.6 16.9 22.4 17.1
-                    V24.3
-                    C21.7 24.1 20.9 23.9 20.1 23.9
-                    C16.9 23.9 14.3 26.5 14.3 29.7
-                    C14.3 32.9 16.9 35.5 20.1 35.5
-                    C23.3 35.5 25.9 32.9 25.9 29.7
-                    V6.3
-                    H34.2Z
-                    "
-                    transform="translate(2 -2)"
-                />
-
-                <path
-                    fill="#FFFFFF"
-                    d="
-                    M34.2 4.3
-                    C35.9 6.7 38.4 8.6 41.4 9.7
-                    V16.8
-                    C38.3 16.7 35.4 15.8 32.9 14.3
-                    V27.6
-                    C32.9 34.7 27.2 40.4 20.1 40.4
-                    C13 40.4 7.3 34.7 7.3 27.6
-                    C7.3 20.5 13 14.8 20.1 14.8
-                    C20.9 14.8 21.6 14.9 22.4 15.1
-                    V22.3
-                    C21.7 22.1 20.9 21.9 20.1 21.9
-                    C16.9 21.9 14.3 24.5 14.3 27.7
-                    C14.3 30.9 16.9 33.5 20.1 33.5
-                    C23.3 33.5 25.9 30.9 25.9 27.7
-                    V4.3
-                    H34.2Z
-                    "
-                />
-
-            </svg>
-
-        </div>
-
-
-        <h1>
-            Follow TikTok Dulu
+        <h1 class="main-title">
+            SYADZZ STORE
         </h1>
 
-
-        <p>
-            Follow akun TikTok di bawah untuk
-            membuka Calculator Speed Steal An Egg.
-        </p>
-
-
-        <div class="tiktok-account">
-            @syadzz011
+        <div class="subtitle">
+            Joki & Calculator Speed Steal An Egg
         </div>
 
+        <div class="choice-grid">
 
-        <button
-            class="follow-btn"
-            id="followButton"
-            onclick="mulaiFollow()"
-        >
-            FOLLOW @SYADZZ011
-        </button>
+            <!-- HITUNG SPEED -->
 
-
-        <div
-            class="countdown-box"
-            id="countdownBox"
-        >
-
-            Silakan follow dulu.
-
-            <br>
-
-            Tunggu:
-
-            <span
-                class="countdown-number"
-                id="countdownNumber"
+            <div
+                class="choice-card"
+                onclick="showPage('calculatorPage')"
             >
-                10
-            </span>
+
+                <div class="choice-icon">
+                    ⚡
+                </div>
+
+                <h2>
+                    HITUNG SPEED
+                </h2>
+
+                <p>
+                    Hitung speed berdasarkan
+                    treadmill, trail, multiplier
+                    dan waktu AFK.
+                </p>
+
+            </div>
+
+
+            <!-- JOKI -->
+
+            <div
+                class="choice-card"
+                onclick="showPage('jokiPage')"
+            >
+
+                <div class="choice-icon">
+                    👟⚡
+                </div>
+
+                <h2>
+                    JOKI
+                </h2>
+
+                <p>
+                    Pilih paket joki,
+                    pembayaran dan
+                    kirim order.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <button
-            class="continue-btn"
-            id="continueButton"
-            onclick="bukaCalculator()"
-        >
-            ✅ SAYA SUDAH FOLLOW
-        </button>
+        <!-- HUBUNGI -->
+
+        <div class="contact-section">
+
+            <h2>
+                HUBUNGI / BANTUAN
+            </h2>
+
+            <div class="contact-grid">
+
+                <a
+                    class="contact-item"
+                    href="https://wa.me/6287729174391"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="contact-logo wa-logo">
+                        WA
+                    </div>
+
+                    <div>
+                        <div class="contact-title">
+                            WhatsApp
+                        </div>
+
+                        <div class="contact-value">
+                            087729174391
+                        </div>
+                    </div>
+
+                </a>
 
 
-        <div class="follow-note">
-            Setelah timer selesai,
-            tekan tombol "Saya Sudah Follow".
+                <a
+                    class="contact-item"
+                    href="https://www.tiktok.com/@syadzz011"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="contact-logo tiktok-logo">
+                        TT
+                    </div>
+
+                    <div>
+                        <div class="contact-title">
+                            TikTok
+                        </div>
+
+                        <div class="contact-value">
+                            syadzz011
+                        </div>
+                    </div>
+
+                </a>
+
+            </div>
+
         </div>
 
     </div>
@@ -663,87 +597,38 @@ input::placeholder {
 </div>
 
 
-
 <!-- =====================================================
-     CALCULATOR
+CALCULATOR
 ===================================================== -->
 
-<div
-    id="calculatorPage"
-    class="container"
->
-
-    <h1 class="main-title">
-        ⚡ Calculator Speed Steal An Egg
-    </h1>
-
-
-    <div class="subtitle">
-        Hitung hasil AFK kamu
-    </div>
-
-
-    <!-- INPUT -->
+<div id="calculatorPage" class="page">
 
     <div class="card">
 
-
-        <!-- TREADMILL -->
+        <h2 class="section-title">
+            ⚡ CALCULATOR SPEED
+        </h2>
 
         <label>
-            🏃 Treadmill
+            🏃‍♂️ Treadmill
         </label>
 
         <select id="treadmill">
 
-            <option value="2">
-                Treadmill — +2
-            </option>
-
-            <option value="5">
-                Sci-Fi Treadmill — +5
-            </option>
-
-            <option value="12">
-                Flame Treadmill — +12
-            </option>
-
-            <option value="30">
-                Celebrity Treadmill — +30
-            </option>
-
-            <option value="80">
-                Golden Treadmill — +80
-            </option>
-
-            <option value="100">
-                Mythic Treadmill — +100
-            </option>
-
-            <option value="200">
-                Lucky Block Treadmill — +200
-            </option>
-
-            <option value="500">
-                Hacker Treadmill — +500
-            </option>
-
-            <option value="1000">
-                Demonic Treadmill — +1K
-            </option>
-
-            <option value="2000">
-                Angelic Treadmill — +2K
-            </option>
-
-            <option value="3000">
-                Astral Treadmill — +3K
-            </option>
+            <option value="2">Treadmill — +2</option>
+            <option value="5">Sci-Fi Treadmill — +5</option>
+            <option value="12">Flame Treadmill — +12</option>
+            <option value="30">Celebrity Treadmill — +30</option>
+            <option value="80">Golden Treadmill — +80</option>
+            <option value="100">Mythic Treadmill — +100</option>
+            <option value="200">Lucky Block Treadmill — +200</option>
+            <option value="500">Hacker Treadmill — +500</option>
+            <option value="1000">Demonic Treadmill — +1K</option>
+            <option value="2000">Angelic Treadmill — +2K</option>
+            <option value="3000">Astral Treadmill — +3K</option>
 
         </select>
 
-
-        <!-- TRAIL -->
 
         <label>
             ✨ Trail
@@ -751,54 +636,20 @@ input::placeholder {
 
         <select id="trail">
 
-            <option value="1.5">
-                Abu-abu — x1.5
-            </option>
-
-            <option value="2">
-                Hijau — x2
-            </option>
-
-            <option value="2.5">
-                Biru — x2.5
-            </option>
-
-            <option value="3">
-                Ungu — x3
-            </option>
-
-            <option value="3.5">
-                Emas — x3.5
-            </option>
-
-            <option value="4">
-                Merah — x4
-            </option>
-
-            <option value="5">
-                Galaksi — x5
-            </option>
-
-            <option value="7">
-                Rahasia — x7
-            </option>
-
-            <option value="10">
-                Abadi — x10
-            </option>
-
-            <option value="14">
-                Ilahi — x14
-            </option>
-
-            <option value="20">
-                Bunga Bulan — x20
-            </option>
+            <option value="1.5">Abu-abu — x1.5</option>
+            <option value="2">Hijau — x2</option>
+            <option value="2.5">Biru — x2.5</option>
+            <option value="3">Ungu — x3</option>
+            <option value="3.5">Emas — x3.5</option>
+            <option value="4">Merah — x4</option>
+            <option value="5">Galaksi — x5</option>
+            <option value="7">Rahasia — x7</option>
+            <option value="10">Abadi — x10</option>
+            <option value="14">Ilahi — x14</option>
+            <option value="20">Bunga Bulan — x20</option>
 
         </select>
 
-
-        <!-- MULTIPLIER -->
 
         <label>
             🚀 Multiplier
@@ -816,16 +667,6 @@ input::placeholder {
             <option value="128">x128</option>
             <option value="256">x256</option>
             <option value="512">x512</option>
-
-            <!-- ==========================
-                 MULTIPLIER 1K - 4K
-
-                 1K = 1024
-                 2K = 2048
-                 3K = 3072
-                 4K = 4096
-            =========================== -->
-
             <option value="1024">x1K</option>
             <option value="2048">x2K</option>
             <option value="3072">x3K</option>
@@ -834,8 +675,6 @@ input::placeholder {
         </select>
 
 
-        <!-- SPEED SEKARANG -->
-
         <label>
             ⚡ Speed Sekarang
         </label>
@@ -843,120 +682,146 @@ input::placeholder {
         <input
             type="text"
             id="currentSpeed"
-            placeholder="Contoh: 3K, 900M, 1.5T"
-            autocomplete="off"
+            value="0"
+            placeholder="Contoh: 10K / 2.5M / 1B"
         >
 
 
-        <!-- AFK -->
-
         <label>
-            ⏰ AFK Berapa Jam?
+            💤 AFK Berapa Jam?
         </label>
 
         <input
             type="number"
             id="hours"
             min="0"
-            step="0.01"
+            step="0.1"
             value="1"
             placeholder="Contoh: 8"
         >
 
+
+        <button
+            class="btn btn-primary"
+            onclick="hitung()"
+        >
+            ⚡ HITUNG SEKARANG
+        </button>
+
+
+        <div
+            class="status"
+            id="dataStatus"
+        >
+            Masukkan data lalu hitung.
+        </div>
+
     </div>
 
 
-
-    <!-- HASIL -->
-
     <div class="card">
 
-        <h2 class="result-title">
-            📊 HASIL AFK
+        <h2 class="section-title">
+            📊 HASIL PERHITUNGAN
         </h2>
 
+        <div class="result-grid">
 
-        <div class="row">
-            <span>⚡ Speed Sekarang</span>
-            <span id="outCurrent"></span>
-        </div>
+            <div class="result-item">
+                <div class="result-label">
+                    Speed Sekarang
+                </div>
 
-
-        <div class="row">
-            <span>🏃 Treadmill</span>
-            <span id="outTreadmill"></span>
-        </div>
-
-
-        <div class="row">
-            <span>✨ Trail</span>
-            <span id="outTrail"></span>
-        </div>
-
-
-        <div class="row">
-            <span>🚀 Multiplier</span>
-            <span id="outMultiplier"></span>
-        </div>
-
-
-        <div class="row">
-            <span>⏱️ Step / Detik</span>
-            <span id="outSteps"></span>
-        </div>
-
-
-        <div class="row">
-            <span>💰 Gain / Step</span>
-            <span id="outStep"></span>
-        </div>
-
-
-        <div class="row">
-            <span>⚡ Gain / Detik</span>
-            <span id="outSecond"></span>
-        </div>
-
-
-        <div class="row">
-            <span>🔥 Gain / Menit</span>
-            <span id="outMinute"></span>
-        </div>
-
-
-        <div class="row">
-            <span>💎 Gain / Jam</span>
-            <span id="outHour"></span>
-        </div>
-
-
-        <div class="row">
-            <span>⏰ Waktu AFK</span>
-            <span id="outHours"></span>
-        </div>
-
-
-        <div class="row">
-            <span>📈 Yang Didapat Saat AFK</span>
-            <span id="outGain"></span>
-        </div>
-
-
-        <div class="status">
-            ℹ️ Hasil ini adalah perkiraan,
-            kurang lebih mendekati hasil di dalam game.
-        </div>
-
-
-        <div class="final">
-
-            <div class="final-title">
-                🏆 TOTAL HASIL AFK
+                <div
+                    class="result-value"
+                    id="resultCurrentSpeed"
+                >
+                    0
+                </div>
             </div>
 
+
+            <div class="result-item">
+                <div class="result-label">
+                    Gain / Step
+                </div>
+
+                <div
+                    class="result-value"
+                    id="resultGainStep"
+                >
+                    0
+                </div>
+            </div>
+
+
+            <div class="result-item">
+                <div class="result-label">
+                    Gain / Detik
+                </div>
+
+                <div
+                    class="result-value"
+                    id="resultGainSecond"
+                >
+                    0
+                </div>
+            </div>
+
+
+            <div class="result-item">
+                <div class="result-label">
+                    Gain / Menit
+                </div>
+
+                <div
+                    class="result-value"
+                    id="resultGainMinute"
+                >
+                    0
+                </div>
+            </div>
+
+
+            <div class="result-item">
+                <div class="result-label">
+                    Gain / Jam
+                </div>
+
+                <div
+                    class="result-value"
+                    id="resultGainHour"
+                >
+                    0
+                </div>
+            </div>
+
+
+            <div class="result-item">
+                <div class="result-label">
+                    Yang Didapat Saat AFK
+                </div>
+
+                <div
+                    class="result-value"
+                    id="resultAFK"
+                >
+                    0
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="total-box">
+
+            <p class="label">
+                TOTAL HASIL AFK
+            </p>
+
             <div
-                class="total"
-                id="outTotal"
+                class="value"
+                id="resultTotal"
             >
                 0
             </div>
@@ -964,531 +829,632 @@ input::placeholder {
         </div>
 
 
-        <!-- TIKTOK -->
+        <button
+            class="btn btn-secondary"
+            onclick="showPage('homePage')"
+        >
+            ⬅ KEMBALI
+        </button>
 
-        <div class="tiktok-box">
-
-            <a
-                class="tiktok-link"
-                href="https://www.tiktok.com/@syadzz011"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-
-                <svg
-                    class="tiktok-logo"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-
-                    <path
-                        d="
-                        M19.59 6.69
-                        a4.83 4.83 0 0 1-3.77-4.25
-                        V2h-3.45
-                        v13.67
-                        a2.9 2.9 0 1 1-2-2.77
-                        V9.38
-                        a6.27 6.27 0 1 0 5.48 6.29
-                        V8.41
-                        a8.16 8.16 0 0 0 4.79 1.52
-                        V6.5
-                        a4.84 4.84 0 0 1-1.05-.1z
-                        "
-                    />
-
-                </svg>
-
-                <span>
-                    syadzz011
-                </span>
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer">
-        Calculator Speed • Steal an Egg
     </div>
 
 </div>
 
 
+<!-- =====================================================
+JOKI
+===================================================== -->
+
+<div id="jokiPage" class="page">
+
+    <div class="card">
+
+        <h2 class="section-title">
+            👟 PESAN JOKI
+        </h2>
+
+
+        <label>
+            📦 Pilih Paket Joki
+        </label>
+
+
+        <div class="package-grid">
+
+
+            <div
+                class="package-card selected"
+                onclick="selectPackage(
+                    this,
+                    'Joki AFK 1 Hari',
+                    7000
+                )"
+            >
+
+                <div class="package-icon">
+                    👟⚡
+                </div>
+
+                <h3>
+                    Joki AFK 1 Hari
+                </h3>
+
+                <div class="package-price">
+                    Rp7.000
+                </div>
+
+                <div class="package-duration">
+                    Durasi: 1 Hari
+                </div>
+
+            </div>
+
+
+            <div
+                class="package-card"
+                onclick="selectPackage(
+                    this,
+                    'Joki AFK 7 Hari',
+                    25000
+                )"
+            >
+
+                <div class="package-icon">
+                    👟🔥
+                </div>
+
+                <h3>
+                    Joki AFK 7 Hari
+                </h3>
+
+                <div class="package-price">
+                    Rp25.000
+                </div>
+
+                <div class="package-duration">
+                    Durasi: 7 Hari
+                </div>
+
+            </div>
+
+
+            <div
+                class="package-card"
+                onclick="selectPackage(
+                    this,
+                    'Joki Egg 1 Hari',
+                    30000
+                )"
+            >
+
+                <div class="package-icon">
+                    🥚⚡
+                </div>
+
+                <h3>
+                    Joki Egg 1 Hari
+                </h3>
+
+                <div class="package-price">
+                    Rp30.000
+                </div>
+
+                <div class="package-duration">
+                    Durasi: 1 Hari
+                </div>
+
+            </div>
+
+
+            <div
+                class="package-card"
+                onclick="selectPackage(
+                    this,
+                    'Joki Egg 12 Jam',
+                    20000
+                )"
+            >
+
+                <div class="package-icon">
+                    🥚⏱️
+                </div>
+
+                <h3>
+                    Joki Egg 12 Jam
+                </h3>
+
+                <div class="package-price">
+                    Rp20.000
+                </div>
+
+                <div class="package-duration">
+                    Durasi: 12 Jam
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <label>
+            👤 Username Roblox
+        </label>
+
+        <input
+            type="text"
+            id="robloxUsername"
+            placeholder="Masukkan username Roblox"
+            autocomplete="off"
+        >
+
+
+        <label>
+            🔐 Password Roblox
+        </label>
+
+        <input
+            type="password"
+            id="robloxPassword"
+            placeholder="Masukkan password Roblox"
+            autocomplete="off"
+        >
+
+
+        <label>
+            📱 Nomor WhatsApp Customer
+        </label>
+
+        <input
+            type="tel"
+            id="customerWA"
+            placeholder="Contoh: 081234567890"
+        >
+
+
+        <label>
+            💳 Metode Pembayaran
+        </label>
+
+        <select
+            id="paymentMethod"
+            onchange="changePayment()"
+        >
+
+            <option value="">
+                Pilih metode pembayaran
+            </option>
+
+            <option value="QRIS">
+                QRIS
+            </option>
+
+            <option value="DANA">
+                DANA
+            </option>
+
+        </select>
+
+
+        <!-- =================================================
+        QRIS
+        ================================================= -->
+
+        <div
+            id="qrisBox"
+            class="payment-box"
+        >
+
+            <h3>
+                PEMBAYARAN QRIS
+            </h3>
+
+            <p>
+                Scan QRIS berikut:
+            </p>
+
+
+            <!--
+                FILE HARUS:
+
+                qris.jpeg
+
+                DAN HARUS SATU FOLDER
+                DENGAN INDEX.HTML
+            -->
+
+            <img
+                id="qrisImage"
+                class="qris-image"
+                src="qris.jpeg"
+                alt="QRIS Pembayaran"
+                onerror="qrisError()"
+            >
+
+
+            <div
+                id="qrisErrorText"
+                class="small-text"
+                style="display:none;color:#ff7777"
+            >
+                QRIS tidak ditemukan.
+                Pastikan file bernama
+                qris.jpeg dan berada satu folder
+                dengan INDEX.HTML.
+            </div>
+
+
+            <div class="small-text">
+                Setelah membayar,
+                upload bukti pembayaran di bawah.
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+        DANA
+        ================================================= -->
+
+        <div
+            id="danaBox"
+            class="payment-box"
+        >
+
+            <div class="dana-card">
+
+                <div class="dana-logo">
+                    DANA
+                </div>
+
+                <div class="small-text">
+                    Nama penerima:
+                </div>
+
+                <div class="dana-name">
+                    Muhammad Rasyad Mubarok
+                </div>
+
+                <div class="small-text">
+                    Nomor DANA:
+                </div>
+
+                <div class="dana-number">
+                    087729174391
+                </div>
+
+                <div class="small-text">
+                    Pastikan nama dan nomor penerima
+                    sudah benar sebelum transfer.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <label>
+            🧾 Upload Bukti Pembayaran
+        </label>
+
+        <input
+            type="file"
+            id="proofFile"
+            accept="image/*"
+            onchange="previewProof()"
+        >
+
+
+        <div
+            class="file-preview"
+            id="filePreview"
+        >
+
+            <div class="small-text">
+                Preview bukti pembayaran:
+            </div>
+
+            <img
+                id="proofPreviewImage"
+                alt="Bukti pembayaran"
+            >
+
+        </div>
+
+
+        <div class="notice">
+
+            Setelah menekan
+            <b>KIRIM ORDER KE WHATSAPP</b>,
+            WhatsApp admin akan dibuka
+            dengan detail order yang sudah terisi.
+
+            Foto bukti pembayaran tetap perlu
+            dikirim di chat WhatsApp secara manual.
+
+        </div>
+
+
+        <button
+            class="btn btn-primary"
+            onclick="kirimPesanan()"
+        >
+            KIRIM ORDER KE WHATSAPP
+        </button>
+
+
+        <button
+            class="btn btn-secondary"
+            onclick="showPage('homePage')"
+        >
+            ⬅ KEMBALI
+        </button>
+
+
+        <div
+            class="status"
+            id="jokiStatus"
+        ></div>
+
+    </div>
+
+</div>
+
+</div>
+
 
 <script>
 
 /* =====================================================
-   MUSIC
+DATA PAKET
 ===================================================== */
 
-const bgMusic =
-    document.getElementById("bgMusic");
-
-
-/*
-   Volume 30%.
-   Silakan ubah:
-
-   0.1 = pelan
-   0.3 = sedang
-   0.5 = cukup keras
-   1.0 = maksimal
-*/
-
-bgMusic.volume = 0.3;
+let selectedPackage = "Joki AFK 1 Hari";
+let selectedPrice = 7000;
 
 
 /* =====================================================
-   FOLLOW TIKTOK
+PINDAH HALAMAN
 ===================================================== */
 
-let countdownStarted = false;
+function showPage(pageId){
 
-let countdown = 10;
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
 
-let countdownInterval = null;
+            page.classList.remove("active");
 
+        });
 
-function mulaiFollow() {
-
-    if (countdownStarted) {
-        return;
-    }
-
-    countdownStarted = true;
-
-
-    /*
-       Buka TikTok
-    */
-
-    window.open(
-        "https://www.tiktok.com/@syadzz011",
-        "_blank"
-    );
-
-
-    /*
-       🎵 MULAI LAGU
-    */
-
-    bgMusic.play().catch(
-        function(error) {
-
-            console.log(
-                "Musik tidak dapat diputar:",
-                error
-            );
-
-        }
-    );
-
-
-    const button =
-        document.getElementById(
-            "followButton"
-        );
-
-
-    const box =
-        document.getElementById(
-            "countdownBox"
-        );
-
-
-    const number =
-        document.getElementById(
-            "countdownNumber"
-        );
-
-
-    button.disabled = true;
-
-    button.innerText =
-        "⏳ TUNGGU 10 DETIK";
-
-
-    box.style.display =
-        "block";
-
-
-    number.innerText =
-        countdown;
-
-
-    countdownInterval =
-        setInterval(
-            function() {
-
-                countdown--;
-
-                number.innerText =
-                    countdown;
-
-
-                if (
-                    countdown <= 0
-                ) {
-
-                    clearInterval(
-                        countdownInterval
-                    );
-
-
-                    number.innerText =
-                        "SELESAI";
-
-
-                    button.innerText =
-                        "✅ TIMER SELESAI";
-
-
-                    document.getElementById(
-                        "continueButton"
-                    ).style.display =
-                        "block";
-
-                }
-
-            },
-            1000
-        );
-
-}
-
-
-/* =====================================================
-   BUKA CALCULATOR
-===================================================== */
-
-function bukaCalculator() {
-
-    document.getElementById(
-        "followGate"
-    ).style.display =
-        "none";
-
-
-    document.getElementById(
-        "calculatorPage"
-    ).style.display =
-        "block";
-
-
-    hitung();
-
+    document
+        .getElementById(pageId)
+        .classList.add("active");
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        top:0,
+        behavior:"smooth"
     });
-
 }
 
 
 /* =====================================================
-   STEP / DETIK
+PILIH PAKET
 ===================================================== */
 
-const STEPS_PER_SECOND = 22;
+function selectPackage(
+    element,
+    packageName,
+    price
+){
+
+    document
+        .querySelectorAll(".package-card")
+        .forEach(function(card){
+
+            card.classList.remove("selected");
+
+        });
+
+    element.classList.add("selected");
+
+    selectedPackage = packageName;
+    selectedPrice = price;
+}
 
 
 /* =====================================================
-   PARSE SPEED
+PARSE SPEED
 ===================================================== */
 
-function parseSpeed(input) {
+function parseSpeed(input){
 
-    const text =
-        String(input || "")
-        .trim()
-        .toUpperCase()
-        .replace(/,/g, "")
-        .replace(/\s+/g, "");
-
-
-    if (text === "") {
-        return 0;
-    }
-
-
-    const units = {
-
-        K: 1e3,
-        M: 1e6,
-        B: 1e9,
-        T: 1e12,
-
-        QA: 1e15,
-        QI: 1e18,
-        SX: 1e21,
-        SP: 1e24,
-        OC: 1e27,
-        NO: 1e30,
-        DC: 1e33
-
-    };
-
-
-    const match =
-        text.match(
-            /^([+-]?(?:\d+(?:\.\d*)?|\.\d+))(K|M|B|T|QA|QI|SX|SP|OC|NO|DC)?$/
-        );
-
-
-    if (!match) {
+    if(
+        input === null ||
+        input === undefined
+    ){
         return NaN;
     }
 
+    let text =
+        String(input)
+        .trim()
+        .toUpperCase()
+        .replace(/,/g,"");
 
-    const number =
-        Number(match[1]);
+    if(text === ""){
+        return NaN;
+    }
 
+    const units = {
+        K:1e3,
+        M:1e6,
+        B:1e9,
+        T:1e12,
+        QA:1e15,
+        QI:1e18,
+        SX:1e21,
+        SP:1e24,
+        OC:1e27,
+        NO:1e30,
+        DC:1e33
+    };
 
-    const unit =
-        match[2] || "";
+    for(
+        const suffix of Object.keys(units)
+    ){
 
+        if(text.endsWith(suffix)){
 
-    const result =
-        number *
-        (units[unit] || 1);
+            const number =
+                Number(
+                    text.slice(
+                        0,
+                        -suffix.length
+                    )
+                );
 
+            return Number.isFinite(number)
+                ? number * units[suffix]
+                : NaN;
+        }
+    }
 
-    return Number.isFinite(result)
-        ? result
+    const number = Number(text);
+
+    return Number.isFinite(number)
+        ? number
         : NaN;
 }
 
 
 /* =====================================================
-   FORMAT ANGKA
+FORMAT NUMBER
 ===================================================== */
 
-function formatNumber(number) {
+function formatNumber(number){
 
-    if (!Number.isFinite(number)) {
+    if(!Number.isFinite(number)){
         return "0";
     }
 
-
-    if (number === 0) {
+    if(number === 0){
         return "0";
     }
-
 
     const units = [
-
-        { name: "", value: 1 },
-
-        { name: "K", value: 1e3 },
-
-        { name: "M", value: 1e6 },
-
-        { name: "B", value: 1e9 },
-
-        { name: "T", value: 1e12 },
-
-        { name: "Qa", value: 1e15 },
-
-        { name: "Qi", value: 1e18 },
-
-        { name: "Sx", value: 1e21 },
-
-        { name: "Sp", value: 1e24 },
-
-        { name: "Oc", value: 1e27 },
-
-        { name: "No", value: 1e30 },
-
-        { name: "Dc", value: 1e33 }
-
+        ["DC",1e33],
+        ["NO",1e30],
+        ["OC",1e27],
+        ["SP",1e24],
+        ["SX",1e21],
+        ["QI",1e18],
+        ["QA",1e15],
+        ["T",1e12],
+        ["B",1e9],
+        ["M",1e6],
+        ["K",1e3]
     ];
 
+    for(
+        const [name,value] of units
+    ){
 
-    const absolute =
-        Math.abs(number);
+        if(Math.abs(number) >= value){
 
+            const result =
+                number / value;
 
-    let selected =
-        units[0];
-
-
-    for (
-        let i = 0;
-        i < units.length;
-        i++
-    ) {
-
-        if (
-            absolute >=
-            units[i].value
-        ) {
-
-            selected =
-                units[i];
-
+            return result
+                .toFixed(
+                    Math.abs(result) >= 100
+                    ? 0
+                    : 2
+                )
+                .replace(/\.00$/,"")
+                .replace(/(\.\d)0$/,"")
+                + name;
         }
-
     }
 
-
-    const value =
-        number /
-        selected.value;
-
-
-    let decimals;
-
-
-    if (
-        Math.abs(value) >= 100
-    ) {
-
-        decimals = 0;
-
-    }
-
-    else {
-
-        decimals = 2;
-
-    }
-
-
-    let result =
-        value.toFixed(
-            decimals
-        );
-
-
-    result =
-        result
-        .replace(/\.00$/, "")
-        .replace(/(\.\d)0$/, "");
-
-
-    return (
-        result +
-        selected.name
-    );
+    return number
+        .toFixed(2)
+        .replace(/\.00$/,"")
+        .replace(/(\.\d)0$/,"");
 }
 
 
 /* =====================================================
-   FORMAT MULTIPLIER
+HITUNG SPEED
 ===================================================== */
 
-function formatMultiplier(value) {
-
-    if (value === 1024) {
-        return "1K";
-    }
-
-    if (value === 2048) {
-        return "2K";
-    }
-
-    if (value === 3072) {
-        return "3K";
-    }
-
-    if (value === 4096) {
-        return "4K";
-    }
-
-
-    return formatNumber(value);
-}
-
-
-/* =====================================================
-   HITUNG
-===================================================== */
-
-function hitung() {
+function hitung(){
 
     const treadmill =
         Number(
-            document.getElementById(
-                "treadmill"
-            ).value
+            document
+                .getElementById("treadmill")
+                .value
         );
-
 
     const trail =
         Number(
-            document.getElementById(
-                "trail"
-            ).value
+            document
+                .getElementById("trail")
+                .value
         );
-
 
     const multiplier =
         Number(
-            document.getElementById(
-                "multiplier"
-            ).value
+            document
+                .getElementById("multiplier")
+                .value
         );
-
 
     const currentSpeed =
         parseSpeed(
-            document.getElementById(
-                "currentSpeed"
-            ).value
+            document
+                .getElementById("currentSpeed")
+                .value
         );
-
 
     const hours =
         Number(
-            document.getElementById(
-                "hours"
-            ).value
+            document
+                .getElementById("hours")
+                .value
         );
 
+    const status =
+        document
+            .getElementById("dataStatus");
 
-    if (
-        !Number.isFinite(
-            currentSpeed
-        ) ||
+
+    if(
+        !Number.isFinite(currentSpeed) ||
         currentSpeed < 0
-    ) {
+    ){
 
-        document.getElementById(
-            "dataStatus"
-        ).innerText =
-            "⚠️ Speed Sekarang tidak valid.";
+        status.innerText =
+            "Speed sekarang tidak valid.";
 
         return;
     }
 
 
-    if (
+    if(
         !Number.isFinite(hours) ||
         hours < 0
-    ) {
+    ){
 
-        document.getElementById(
-            "dataStatus"
-        ).innerText =
-            "⚠️ Waktu AFK tidak valid.";
+        status.innerText =
+            "Waktu AFK tidak valid.";
 
         return;
     }
 
 
-    /*
-       Gain / Step
+    const STEPS_PER_SECOND = 22;
 
-       Pola yang digunakan:
-
-       Treadmill ×
-       (Trail + Multiplier - 1)
-    */
 
     const gainPerStep =
         treadmill *
@@ -1505,187 +1471,333 @@ function hitung() {
 
 
     const gainPerMinute =
-        gainPerSecond *
-        60;
+        gainPerSecond * 60;
 
 
     const gainPerHour =
-        gainPerSecond *
-        3600;
+        gainPerSecond * 3600;
 
-
-    /*
-       Yang benar-benar didapat
-       selama AFK
-    */
 
     const gainFromAFK =
-        gainPerHour *
-        hours;
+        gainPerHour * hours;
 
-
-    /*
-       Speed awal +
-       hasil selama AFK
-    */
 
     const totalAfterAFK =
         currentSpeed +
         gainFromAFK;
 
 
-    /*
-       Tampilkan hasil
-    */
-
-    document.getElementById(
-        "outCurrent"
-    ).innerText =
-        formatNumber(
-            currentSpeed
-        );
+    document
+        .getElementById("resultCurrentSpeed")
+        .innerText =
+            formatNumber(currentSpeed);
 
 
-    document.getElementById(
-        "outTreadmill"
-    ).innerText =
-        "+" +
-        formatNumber(
-            treadmill
-        );
+    document
+        .getElementById("resultGainStep")
+        .innerText =
+            formatNumber(gainPerStep);
 
 
-    document.getElementById(
-        "outTrail"
-    ).innerText =
-        "x" +
-        trail;
+    document
+        .getElementById("resultGainSecond")
+        .innerText =
+            formatNumber(gainPerSecond);
 
 
-    document.getElementById(
-        "outMultiplier"
-    ).innerText =
-        "x" +
-        formatMultiplier(
-            multiplier
-        );
+    document
+        .getElementById("resultGainMinute")
+        .innerText =
+            formatNumber(gainPerMinute);
 
 
-    document.getElementById(
-        "outSteps"
-    ).innerText =
-        STEPS_PER_SECOND +
-        " step";
+    document
+        .getElementById("resultGainHour")
+        .innerText =
+            formatNumber(gainPerHour);
 
 
-    document.getElementById(
-        "outStep"
-    ).innerText =
-        formatNumber(
-            gainPerStep
-        );
+    document
+        .getElementById("resultAFK")
+        .innerText =
+            formatNumber(gainFromAFK);
 
 
-    document.getElementById(
-        "outSecond"
-    ).innerText =
-        formatNumber(
-            gainPerSecond
-        );
+    document
+        .getElementById("resultTotal")
+        .innerText =
+            formatNumber(totalAfterAFK);
 
 
-    document.getElementById(
-        "outMinute"
-    ).innerText =
-        formatNumber(
-            gainPerMinute
-        );
-
-
-    document.getElementById(
-        "outHour"
-    ).innerText =
-        formatNumber(
-            gainPerHour
-        );
-
-
-    document.getElementById(
-        "outHours"
-    ).innerText =
-        hours +
-        " jam";
-
-
-    /*
-       HANYA HASIL AFK
-    */
-
-    document.getElementById(
-        "outGain"
-    ).innerText =
-        formatNumber(
-            gainFromAFK
-        );
-
-
-    /*
-       SPEED AWAL + HASIL AFK
-    */
-
-    document.getElementById(
-        "outTotal"
-    ).innerText =
-        formatNumber(
-            totalAfterAFK
-        );
-
-
-    document.getElementById(
-        "dataStatus"
-    ).innerText =
-        "ℹ️ Hasil ini adalah perkiraan, kurang lebih mendekati hasil di dalam game.";
-
+    status.innerText =
+        "Perhitungan berhasil.";
 }
 
 
 /* =====================================================
-   AUTO UPDATE
+PEMBAYARAN
 ===================================================== */
 
-[
-    "treadmill",
-    "trail",
-    "multiplier",
-    "currentSpeed",
-    "hours"
-].forEach(
-    function(id) {
+function changePayment(){
 
+    const method =
         document
-            .getElementById(id)
-            .addEventListener(
-                "input",
-                hitung
-            );
+            .getElementById("paymentMethod")
+            .value;
 
 
-        document
-            .getElementById(id)
-            .addEventListener(
-                "change",
-                hitung
-            );
+    document
+        .getElementById("qrisBox")
+        .classList
+        .toggle(
+            "active",
+            method === "QRIS"
+        );
 
-    }
-);
+
+    document
+        .getElementById("danaBox")
+        .classList
+        .toggle(
+            "active",
+            method === "DANA"
+        );
+}
 
 
 /* =====================================================
-   HITUNG AWAL
+QRIS ERROR
 ===================================================== */
 
-hitung();
+function qrisError(){
+
+    document
+        .getElementById("qrisImage")
+        .style.display = "none";
+
+
+    document
+        .getElementById("qrisErrorText")
+        .style.display = "block";
+}
+
+
+/* =====================================================
+PREVIEW BUKTI
+===================================================== */
+
+function previewProof(){
+
+    const file =
+        document
+            .getElementById("proofFile")
+            .files[0];
+
+
+    const box =
+        document
+            .getElementById("filePreview");
+
+
+    const image =
+        document
+            .getElementById("proofPreviewImage");
+
+
+    if(!file){
+
+        box.classList.remove("active");
+
+        image.src = "";
+
+        return;
+    }
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(event){
+
+            image.src =
+                event.target.result;
+
+            box.classList.add("active");
+        };
+
+
+    reader.readAsDataURL(file);
+}
+
+
+/* =====================================================
+KIRIM ORDER WHATSAPP
+===================================================== */
+
+function kirimPesanan(){
+
+    const username =
+        document
+            .getElementById("robloxUsername")
+            .value
+            .trim();
+
+
+    const password =
+        document
+            .getElementById("robloxPassword")
+            .value
+            .trim();
+
+
+    const customerWA =
+        document
+            .getElementById("customerWA")
+            .value
+            .trim();
+
+
+    const payment =
+        document
+            .getElementById("paymentMethod")
+            .value;
+
+
+    const proof =
+        document
+            .getElementById("proofFile")
+            .files[0];
+
+
+    const status =
+        document
+            .getElementById("jokiStatus");
+
+
+    if(!username){
+
+        alert(
+            "Masukkan username Roblox."
+        );
+
+        return;
+    }
+
+
+    if(!password){
+
+        alert(
+            "Masukkan password Roblox."
+        );
+
+        return;
+    }
+
+
+    if(!customerWA){
+
+        alert(
+            "Masukkan nomor WhatsApp customer."
+        );
+
+        return;
+    }
+
+
+    if(!payment){
+
+        alert(
+            "Pilih metode pembayaran."
+        );
+
+        return;
+    }
+
+
+    if(!proof){
+
+        alert(
+            "Upload bukti pembayaran."
+        );
+
+        return;
+    }
+
+
+    const nomorAdmin =
+        "6287729174391";
+
+
+    const pesan =
+
+        "ORDER JOKI BARU\n\n" +
+
+        "Paket: " +
+        selectedPackage +
+        "\n" +
+
+        "Harga: Rp" +
+        selectedPrice.toLocaleString("id-ID") +
+        "\n" +
+
+        "Username Roblox: " +
+        username +
+        "\n" +
+
+        "Password Roblox: " +
+        password +
+        "\n" +
+
+        "WA Customer: " +
+        customerWA +
+        "\n" +
+
+        "Pembayaran: " +
+        payment;
+
+
+    const url =
+        "https://wa.me/" +
+        nomorAdmin +
+        "?text=" +
+        encodeURIComponent(pesan);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    status.innerText =
+        "WhatsApp admin dibuka. Kirim foto bukti pembayaran di chat.";
+}
+
+
+/* =====================================================
+ENTER = HITUNG
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter" &&
+            document
+                .getElementById("calculatorPage")
+                .classList
+                .contains("active")
+        ){
+
+            hitung();
+
+        }
+
+    }
+);
 
 </script>
 
