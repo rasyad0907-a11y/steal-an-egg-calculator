@@ -53,7 +53,8 @@ body{
 .subtitle{
     text-align:center;
     color:#aaa;
-    margin-bottom:30px
+    margin-bottom:30px;
+    font-size:15px
 }
 
 .choice-grid{
@@ -141,7 +142,8 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:bold
+    font-weight:bold;
+    flex-shrink:0
 }
 
 .wa-logo{
@@ -178,7 +180,8 @@ body{
 .section-title{
     text-align:center;
     color:#ffd900;
-    margin-top:0
+    margin-top:0;
+    margin-bottom:20px
 }
 
 /* ================= FORM ================= */
@@ -258,7 +261,8 @@ select:focus{
 
 .result-value{
     font-size:17px;
-    font-weight:bold
+    font-weight:bold;
+    word-break:break-word
 }
 
 .total-box{
@@ -272,7 +276,8 @@ select:focus{
 
 .total-box .label{
     color:#ffd900;
-    font-size:13px
+    font-size:13px;
+    margin:0
 }
 
 .total-box .value{
@@ -463,6 +468,7 @@ select:focus{
 
 <div class="container">
 
+
 <!-- =====================================================
 HOME
 ===================================================== -->
@@ -541,6 +547,8 @@ HOME
 
             <div class="contact-grid">
 
+                <!-- WHATSAPP -->
+
                 <a
                     class="contact-item"
                     href="https://wa.me/6287729174391"
@@ -564,6 +572,8 @@ HOME
 
                 </a>
 
+
+                <!-- TIKTOK -->
 
                 <a
                     class="contact-item"
@@ -615,17 +625,49 @@ CALCULATOR
 
         <select id="treadmill">
 
-            <option value="2">Treadmill — +2</option>
-            <option value="5">Sci-Fi Treadmill — +5</option>
-            <option value="12">Flame Treadmill — +12</option>
-            <option value="30">Celebrity Treadmill — +30</option>
-            <option value="80">Golden Treadmill — +80</option>
-            <option value="100">Mythic Treadmill — +100</option>
-            <option value="200">Lucky Block Treadmill — +200</option>
-            <option value="500">Hacker Treadmill — +500</option>
-            <option value="1000">Demonic Treadmill — +1K</option>
-            <option value="2000">Angelic Treadmill — +2K</option>
-            <option value="3000">Astral Treadmill — +3K</option>
+            <option value="2">
+                Treadmill — +2
+            </option>
+
+            <option value="5">
+                Sci-Fi Treadmill — +5
+            </option>
+
+            <option value="12">
+                Flame Treadmill — +12
+            </option>
+
+            <option value="30">
+                Celebrity Treadmill — +30
+            </option>
+
+            <option value="80">
+                Golden Treadmill — +80
+            </option>
+
+            <option value="100">
+                Mythic Treadmill — +100
+            </option>
+
+            <option value="200">
+                Lucky Block Treadmill — +200
+            </option>
+
+            <option value="500">
+                Hacker Treadmill — +500
+            </option>
+
+            <option value="1000">
+                Demonic Treadmill — +1K
+            </option>
+
+            <option value="2000">
+                Angelic Treadmill — +2K
+            </option>
+
+            <option value="3000">
+                Astral Treadmill — +3K
+            </option>
 
         </select>
 
@@ -636,17 +678,49 @@ CALCULATOR
 
         <select id="trail">
 
-            <option value="1.5">Abu-abu — x1.5</option>
-            <option value="2">Hijau — x2</option>
-            <option value="2.5">Biru — x2.5</option>
-            <option value="3">Ungu — x3</option>
-            <option value="3.5">Emas — x3.5</option>
-            <option value="4">Merah — x4</option>
-            <option value="5">Galaksi — x5</option>
-            <option value="7">Rahasia — x7</option>
-            <option value="10">Abadi — x10</option>
-            <option value="14">Ilahi — x14</option>
-            <option value="20">Bunga Bulan — x20</option>
+            <option value="1.5">
+                Abu-abu — x1.5
+            </option>
+
+            <option value="2">
+                Hijau — x2
+            </option>
+
+            <option value="2.5">
+                Biru — x2.5
+            </option>
+
+            <option value="3">
+                Ungu — x3
+            </option>
+
+            <option value="3.5">
+                Emas — x3.5
+            </option>
+
+            <option value="4">
+                Merah — x4
+            </option>
+
+            <option value="5">
+                Galaksi — x5
+            </option>
+
+            <option value="7">
+                Rahasia — x7
+            </option>
+
+            <option value="10">
+                Abadi — x10
+            </option>
+
+            <option value="14">
+                Ilahi — x14
+            </option>
+
+            <option value="20">
+                Bunga Bulan — x20
+            </option>
 
         </select>
 
@@ -861,6 +935,7 @@ JOKI
 
         <div class="package-grid">
 
+            <!-- AFK 1 HARI -->
 
             <div
                 class="package-card selected"
@@ -890,6 +965,8 @@ JOKI
             </div>
 
 
+            <!-- AFK 7 HARI -->
+
             <div
                 class="package-card"
                 onclick="selectPackage(
@@ -918,6 +995,8 @@ JOKI
             </div>
 
 
+            <!-- EGG 1 HARI -->
+
             <div
                 class="package-card"
                 onclick="selectPackage(
@@ -945,6 +1024,8 @@ JOKI
 
             </div>
 
+
+            <!-- EGG 12 JAM -->
 
             <div
                 class="package-card"
@@ -976,6 +1057,8 @@ JOKI
         </div>
 
 
+        <!-- USERNAME -->
+
         <label>
             👤 Username Roblox
         </label>
@@ -987,6 +1070,8 @@ JOKI
             autocomplete="off"
         >
 
+
+        <!-- PASSWORD -->
 
         <label>
             🔐 Password Roblox
@@ -1000,6 +1085,22 @@ JOKI
         >
 
 
+        <!-- GAME / MAP -->
+
+        <label>
+            🎮 Game / Map
+        </label>
+
+        <input
+            type="text"
+            id="gameMap"
+            placeholder="Contoh: Speed Steal An Egg"
+            autocomplete="off"
+        >
+
+
+        <!-- WHATSAPP CUSTOMER -->
+
         <label>
             📱 Nomor WhatsApp Customer
         </label>
@@ -1010,6 +1111,8 @@ JOKI
             placeholder="Contoh: 081234567890"
         >
 
+
+        <!-- PEMBAYARAN -->
 
         <label>
             💳 Metode Pembayaran
@@ -1035,9 +1138,7 @@ JOKI
         </select>
 
 
-        <!-- =================================================
-        QRIS
-        ================================================= -->
+        <!-- QRIS -->
 
         <div
             id="qrisBox"
@@ -1052,36 +1153,24 @@ JOKI
                 Scan QRIS berikut:
             </p>
 
-
-            <!--
-                FILE HARUS:
-
-                qris.jpeg
-
-                DAN HARUS SATU FOLDER
-                DENGAN INDEX.HTML
-            -->
-
             <img
-                id="qrisImage"
                 class="qris-image"
                 src="qris.jpeg"
                 alt="QRIS Pembayaran"
-                onerror="qrisError()"
+                onerror="document.getElementById('qrisError').style.display='block';this.style.display='none';"
             >
-
 
             <div
-                id="qrisErrorText"
+                id="qrisError"
                 class="small-text"
-                style="display:none;color:#ff7777"
+                style="display:none;color:#ff7777;"
             >
                 QRIS tidak ditemukan.
-                Pastikan file bernama
-                qris.jpeg dan berada satu folder
-                dengan INDEX.HTML.
+                Pastikan nama file adalah
+                <b>qris.jpeg</b> dan berada
+                satu folder dengan
+                <b>index.html</b>.
             </div>
-
 
             <div class="small-text">
                 Setelah membayar,
@@ -1091,9 +1180,7 @@ JOKI
         </div>
 
 
-        <!-- =================================================
-        DANA
-        ================================================= -->
+        <!-- DANA -->
 
         <div
             id="danaBox"
@@ -1132,6 +1219,8 @@ JOKI
         </div>
 
 
+        <!-- BUKTI -->
+
         <label>
             🧾 Upload Bukti Pembayaran
         </label>
@@ -1155,7 +1244,7 @@ JOKI
 
             <img
                 id="proofPreviewImage"
-                alt="Bukti pembayaran"
+                alt="Bukti Pembayaran"
             >
 
         </div>
@@ -1204,17 +1293,17 @@ JOKI
 
 <script>
 
-/* =====================================================
-DATA PAKET
-===================================================== */
+/* =========================
+   DATA PAKET
+========================= */
 
 let selectedPackage = "Joki AFK 1 Hari";
 let selectedPrice = 7000;
 
 
-/* =====================================================
-PINDAH HALAMAN
-===================================================== */
+/* =========================
+   PINDAH HALAMAN
+========================= */
 
 function showPage(pageId){
 
@@ -1237,9 +1326,9 @@ function showPage(pageId){
 }
 
 
-/* =====================================================
-PILIH PAKET
-===================================================== */
+/* =========================
+   PILIH PAKET
+========================= */
 
 function selectPackage(
     element,
@@ -1262,9 +1351,9 @@ function selectPackage(
 }
 
 
-/* =====================================================
-PARSE SPEED
-===================================================== */
+/* =========================
+   PARSE SPEED
+========================= */
 
 function parseSpeed(input){
 
@@ -1272,7 +1361,9 @@ function parseSpeed(input){
         input === null ||
         input === undefined
     ){
+
         return NaN;
+
     }
 
     let text =
@@ -1282,10 +1373,13 @@ function parseSpeed(input){
         .replace(/,/g,"");
 
     if(text === ""){
+
         return NaN;
+
     }
 
     const units = {
+
         K:1e3,
         M:1e6,
         B:1e9,
@@ -1297,10 +1391,12 @@ function parseSpeed(input){
         OC:1e27,
         NO:1e30,
         DC:1e33
+
     };
 
     for(
-        const suffix of Object.keys(units)
+        const suffix
+        of Object.keys(units)
     ){
 
         if(text.endsWith(suffix)){
@@ -1327,21 +1423,26 @@ function parseSpeed(input){
 }
 
 
-/* =====================================================
-FORMAT NUMBER
-===================================================== */
+/* =========================
+   FORMAT NUMBER
+========================= */
 
 function formatNumber(number){
 
     if(!Number.isFinite(number)){
+
         return "0";
+
     }
 
     if(number === 0){
+
         return "0";
+
     }
 
     const units = [
+
         ["DC",1e33],
         ["NO",1e30],
         ["OC",1e27],
@@ -1353,13 +1454,17 @@ function formatNumber(number){
         ["B",1e9],
         ["M",1e6],
         ["K",1e3]
+
     ];
 
     for(
-        const [name,value] of units
+        const [name,value]
+        of units
     ){
 
-        if(Math.abs(number) >= value){
+        if(
+            Math.abs(number) >= value
+        ){
 
             const result =
                 number / value;
@@ -1367,8 +1472,8 @@ function formatNumber(number){
             return result
                 .toFixed(
                     Math.abs(result) >= 100
-                    ? 0
-                    : 2
+                        ? 0
+                        : 2
                 )
                 .replace(/\.00$/,"")
                 .replace(/(\.\d)0$/,"")
@@ -1383,9 +1488,9 @@ function formatNumber(number){
 }
 
 
-/* =====================================================
-HITUNG SPEED
-===================================================== */
+/* =========================
+   HITUNG
+========================= */
 
 function hitung(){
 
@@ -1438,6 +1543,7 @@ function hitung(){
             "Speed sekarang tidak valid.";
 
         return;
+
     }
 
 
@@ -1450,6 +1556,7 @@ function hitung(){
             "Waktu AFK tidak valid.";
 
         return;
+
     }
 
 
@@ -1534,9 +1641,9 @@ function hitung(){
 }
 
 
-/* =====================================================
-PEMBAYARAN
-===================================================== */
+/* =========================
+   PEMBAYARAN
+========================= */
 
 function changePayment(){
 
@@ -1565,26 +1672,9 @@ function changePayment(){
 }
 
 
-/* =====================================================
-QRIS ERROR
-===================================================== */
-
-function qrisError(){
-
-    document
-        .getElementById("qrisImage")
-        .style.display = "none";
-
-
-    document
-        .getElementById("qrisErrorText")
-        .style.display = "block";
-}
-
-
-/* =====================================================
-PREVIEW BUKTI
-===================================================== */
+/* =========================
+   PREVIEW BUKTI
+========================= */
 
 function previewProof(){
 
@@ -1593,11 +1683,9 @@ function previewProof(){
             .getElementById("proofFile")
             .files[0];
 
-
     const box =
         document
             .getElementById("filePreview");
-
 
     const image =
         document
@@ -1611,6 +1699,7 @@ function previewProof(){
         image.src = "";
 
         return;
+
     }
 
 
@@ -1625,6 +1714,7 @@ function previewProof(){
                 event.target.result;
 
             box.classList.add("active");
+
         };
 
 
@@ -1632,9 +1722,9 @@ function previewProof(){
 }
 
 
-/* =====================================================
-KIRIM ORDER WHATSAPP
-===================================================== */
+/* =========================
+   KIRIM ORDER
+========================= */
 
 function kirimPesanan(){
 
@@ -1648,6 +1738,13 @@ function kirimPesanan(){
     const password =
         document
             .getElementById("robloxPassword")
+            .value
+            .trim();
+
+
+    const gameMap =
+        document
+            .getElementById("gameMap")
             .value
             .trim();
 
@@ -1683,6 +1780,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -1693,6 +1791,18 @@ function kirimPesanan(){
         );
 
         return;
+
+    }
+
+
+    if(!gameMap){
+
+        alert(
+            "Masukkan nama game / map."
+        );
+
+        return;
+
     }
 
 
@@ -1703,6 +1813,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -1713,6 +1824,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -1723,12 +1835,18 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
     const nomorAdmin =
         "6287729174391";
 
+
+    /*
+        PESAN WHATSAPP
+        TANPA EMOJI
+    */
 
     const pesan =
 
@@ -1748,6 +1866,10 @@ function kirimPesanan(){
 
         "Password Roblox: " +
         password +
+        "\n" +
+
+        "Game / Map: " +
+        gameMap +
         "\n" +
 
         "WA Customer: " +
@@ -1776,9 +1898,9 @@ function kirimPesanan(){
 }
 
 
-/* =====================================================
-ENTER = HITUNG
-===================================================== */
+/* =========================
+   ENTER = HITUNG
+========================= */
 
 document.addEventListener(
     "keydown",
