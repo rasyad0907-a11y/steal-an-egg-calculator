@@ -2378,6 +2378,53 @@ function escapeHtml(value){
 }
 
 
+/* =========================
+BERSIHKAN TEKS WHATSAPP
+========================= */
+
+function hapusEmoji(text){
+
+    return String(
+        text ?? ""
+    )
+    .replace(/\uFFFD/g,"")
+    .replace(
+        /[\u{1F000}-\u{1FAFF}]/gu,
+        ""
+    )
+    .replace(
+        /[\u{1F1E6}-\u{1F1FF}]/gu,
+        ""
+    )
+    .replace(
+        /[\u{2600}-\u{27BF}]/gu,
+        ""
+    )
+    .replace(
+        /[\u{2300}-\u{23FF}]/gu,
+        ""
+    )
+    .replace(
+        /[\u{2B00}-\u{2BFF}]/gu,
+        ""
+    )
+    .replace(
+        /[\u{FE0E}\u{FE0F}\u{200D}]/gu,
+        ""
+    )
+    .replace(
+        /[\u{1F3FB}-\u{1F3FF}]/gu,
+        ""
+    )
+    .replace(
+        /[ \t]{2,}/g,
+        " "
+    )
+    .trim();
+
+}
+
+
 async function loadLiveOrderCounter(){
 
     const element =
@@ -5647,6 +5694,11 @@ async function kirimPesanan(){
             );
 
 
+        /* =========================
+        TEKS WHATSAPP
+        SEMUA EMOJI DIHAPUS
+        ========================= */
+
         let quantityText =
             "";
 
@@ -5657,7 +5709,7 @@ async function kirimPesanan(){
         ){
 
             quantityText =
-                "📅 *Quantity:* 1 Paket\n";
+                "Quantity: 1 Paket\n";
 
         }else if(
             selectedType ===
@@ -5665,7 +5717,7 @@ async function kirimPesanan(){
         ){
 
             quantityText =
-                "📅 *Quantity:* " +
+                "Quantity: " +
                 quantity +
                 " Hari\n";
 
@@ -5679,20 +5731,22 @@ async function kirimPesanan(){
         if(order.promo_code){
 
             promoText =
-                "🎟️ *Promo:* " +
-                order.promo_code +
+                "Promo: " +
+                hapusEmoji(
+                    order.promo_code
+                ) +
                 "\n";
 
         }else{
 
             promoText =
-                "🎟️ *Promo:* -\n";
+                "Promo: -\n";
 
         }
 
 
         const discountText =
-            "🏷️ *Diskon:* -" +
+            "Diskon: -" +
             rupiah(
                 finalDiscount
             ) +
@@ -5706,14 +5760,16 @@ async function kirimPesanan(){
         if(orderNote){
 
             noteText =
-                "📝 *Catatan:* " +
-                orderNote +
+                "Catatan: " +
+                hapusEmoji(
+                    orderNote
+                ) +
                 "\n";
 
         }else{
 
             noteText =
-                "📝 *Catatan:* -\n";
+                "Catatan: -\n";
 
         }
 
@@ -5725,45 +5781,76 @@ async function kirimPesanan(){
         if(proofUploaded){
 
             buktiText =
-                "🧾 Bukti pembayaran sudah diupload ke sistem.";
+                "Bukti pembayaran sudah diupload ke sistem.";
 
         }else{
 
             buktiText =
-                "🧾 Bukti pembayaran belum berhasil diupload otomatis.";
+                "Bukti pembayaran belum berhasil diupload otomatis.";
 
         }
 
 
-        /*
-         * ==================================================
-         * FORMAT CHAT WHATSAPP ADMIN
-         * ID ORDERAN PALING ATAS
-         * ==================================================
-         */
+        const namaPaket =
+            hapusEmoji(
+                order.package_name
+            );
+
+
+        const namaGame =
+            hapusEmoji(
+                gameMap
+            );
+
+
+        const usernameBersih =
+            hapusEmoji(
+                username
+            );
+
+
+        const passwordBersih =
+            hapusEmoji(
+                password
+            );
+
+
+        const waBersih =
+            hapusEmoji(
+                customerWA
+            );
+
+
+        const paymentBersih =
+            hapusEmoji(
+                payment
+            );
+
 
         const pesan =
-            "🛒 *ORDER JOKI BARU*\n\n" +
+            "*ORDER JOKI BARU*\n\n" +
 
-            "🆔 *ID ORDERAN:* " +
-            order.order_code +
+            "*ID ORDERAN:* " +
+            hapusEmoji(
+                order.order_code
+            ) +
             "\n\n" +
 
-            "━━━━━━━━━━━━━━━━━━\n\n" +
+            "------------------\n\n" +
 
-            "📦 *Paket:* " +
-            order.package_name +
+            "*Paket:* " +
+            namaPaket +
             "\n" +
 
             quantityText +
 
-            "💰 *Harga Satuan:* " +
+            "*Harga Satuan:* " +
             rupiah(
                 order.unit_price
             ) +
             "\n" +
 
-            "💵 *Subtotal:* " +
+            "*Subtotal:* " +
             rupiah(
                 order.subtotal
             ) +
@@ -5773,32 +5860,32 @@ async function kirimPesanan(){
 
             discountText +
 
-            "💳 *Total Bayar:* " +
+            "*Total Bayar:* " +
             rupiah(
                 finalTotal
             ) +
             "\n\n" +
 
-            "👤 *Username Roblox:* " +
-            username +
+            "*Username Roblox:* " +
+            usernameBersih +
             "\n" +
 
-            "🔐 *Password Roblox:* " +
-            password +
+            "*Password Roblox:* " +
+            passwordBersih +
             "\n" +
 
-            "🎮 *Game / Map:* " +
-            gameMap +
+            "*Game / Map:* " +
+            namaGame +
             "\n" +
 
             noteText +
 
-            "📱 *WA Customer:* " +
-            customerWA +
+            "*WA Customer:* " +
+            waBersih +
             "\n" +
 
-            "💳 *Pembayaran:* " +
-            payment +
+            "*Pembayaran:* " +
+            paymentBersih +
             "\n\n" +
 
             buktiText;
