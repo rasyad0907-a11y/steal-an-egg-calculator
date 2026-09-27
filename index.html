@@ -5672,12 +5672,23 @@ async function kirimPesanan(){
         }
 
 
-        const promoText =
-            order.promo_code
-                ? "🎟️ *Promo:* " +
-                  order.promo_code +
-                  "\n"
-                : "🎟️ *Promo:* -\n";
+        let promoText =
+            "";
+
+
+        if(order.promo_code){
+
+            promoText =
+                "🎟️ *Promo:* " +
+                order.promo_code +
+                "\n";
+
+        }else{
+
+            promoText =
+                "🎟️ *Promo:* -\n";
+
+        }
 
 
         const discountText =
@@ -5688,24 +5699,46 @@ async function kirimPesanan(){
             "\n";
 
 
-        const noteText =
-            orderNote
-                ? "📝 *Catatan:* " +
-                  orderNote +
-                  "\n"
-                : "📝 *Catatan:* -\n";
+        let noteText =
+            "";
 
 
-        const buktiText =
-            proofUploaded
-                ? "🧾 Bukti pembayaran sudah diupload ke sistem."
-                : "🧾 Bukti pembayaran belum berhasil diupload otomatis.";
+        if(orderNote){
+
+            noteText =
+                "📝 *Catatan:* " +
+                orderNote +
+                "\n";
+
+        }else{
+
+            noteText =
+                "📝 *Catatan:* -\n";
+
+        }
+
+
+        let buktiText =
+            "";
+
+
+        if(proofUploaded){
+
+            buktiText =
+                "🧾 Bukti pembayaran sudah diupload ke sistem.";
+
+        }else{
+
+            buktiText =
+                "🧾 Bukti pembayaran belum berhasil diupload otomatis.";
+
+        }
 
 
         /*
          * ==================================================
          * FORMAT CHAT WHATSAPP ADMIN
-         * ID ORDERAN SEKARANG PALING ATAS
+         * ID ORDERAN PALING ATAS
          * ==================================================
          */
 
