@@ -3,16 +3,11 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Admin - SYADZZ STORE</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 
 <style>
 
@@ -24,85 +19,81 @@
 body{
     margin:0;
     min-height:100vh;
-    padding:20px;
-    background:linear-gradient(
-        135deg,
-        #080812,
-        #241044
-    );
+    padding:18px 14px;
+    background:linear-gradient(135deg,#080812,#241044);
     color:#fff;
 }
 
 .container{
     width:100%;
-    max-width:1100px;
+    max-width:1050px;
     margin:auto;
 }
 
 .hidden{
-    display:none !important;
+    display:none!important;
 }
-
-
-/* =========================
-CARD
-========================= */
 
 .card{
     background:#19192d;
     border:1px solid #454565;
-    border-radius:18px;
-    padding:22px;
-    margin-bottom:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    border-radius:14px;
+    padding:12px;
+    margin-bottom:10px;
 }
-
 
 /* =========================
 LOGIN
 ========================= */
 
 .login-box{
-    max-width:450px;
+    max-width:420px;
     margin:50px auto;
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
 .title{
     text-align:center;
     color:#ffd900;
-    margin:0 0 8px;
+    margin:0 0 7px;
     font-size:30px;
 }
 
 .subtitle{
     text-align:center;
     color:#888;
-    margin-bottom:22px;
+    font-size:13px;
+    margin-bottom:20px;
 }
 
 label{
     display:block;
-    margin:14px 0 7px;
+    margin:12px 0 7px;
     font-weight:bold;
 }
 
 input,
-select{
+select,
+textarea{
     width:100%;
-    padding:13px;
+    padding:12px;
     border:1px solid #50506b;
-    border-radius:10px;
+    border-radius:9px;
     background:#11111c;
     color:#fff;
     outline:none;
-    font-size:14px;
+    resize:vertical;
 }
 
 input:focus,
-select:focus{
+select:focus,
+textarea:focus{
     border-color:#ffd900;
 }
-
 
 /* =========================
 BUTTON
@@ -110,23 +101,14 @@ BUTTON
 
 .btn{
     border:0;
-    border-radius:10px;
-    padding:12px 15px;
+    border-radius:9px;
+    padding:10px 13px;
     font-weight:bold;
     cursor:pointer;
-    transition:.2s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
 }
 
 .btn-primary{
-    background:linear-gradient(
-        90deg,
-        #ffd900,
-        #ff9f00
-    );
+    background:linear-gradient(90deg,#ffd900,#ff9f00);
     color:#111;
 }
 
@@ -140,104 +122,113 @@ BUTTON
     color:#fff;
 }
 
-.full{
-    width:100%;
-    margin-top:15px;
+.btn-success{
+    background:#087f46;
+    color:#fff;
 }
 
-
-/* =========================
-LOGIN MESSAGE
-========================= */
+.full{
+    width:100%;
+    margin-top:14px;
+}
 
 .message{
-    margin-top:12px;
+    margin-top:10px;
     text-align:center;
-    min-height:20px;
+    font-size:12px;
     line-height:1.5;
 }
 
-.connection{
-    margin-top:15px;
-    padding:10px;
-    border-radius:9px;
-    text-align:center;
-    font-size:12px;
-    background:#25253b;
-    color:#aaa;
-}
-
-.connection.success{
-    background:rgba(
-        0,
-        255,
-        136,
-        .08
-    );
-    border:1px solid #176b48;
-    color:#00ff88;
-}
-
-.connection.error{
-    background:rgba(
-        255,
-        80,
-        80,
-        .08
-    );
-    border:1px solid #6b2727;
+.error{
     color:#ff7777;
 }
 
+.success{
+    color:#00ff88;
+}
 
 /* =========================
-TOPBAR
+TOP
 ========================= */
 
 .topbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:15px;
-    margin-bottom:20px;
-    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:12px;
 }
 
 .topbar-title{
     color:#ffd900;
-    font-size:24px;
+    font-size:22px;
     font-weight:bold;
 }
 
 .admin-email{
-    color:#888;
-    font-size:12px;
-    margin-top:5px;
+    color:#777;
+    font-size:11px;
+    margin-top:3px;
 }
 
 .topbar-buttons{
     display:flex;
-    gap:8px;
-    flex-wrap:wrap;
+    gap:6px;
 }
 
+.topbar-buttons .btn{
+    font-size:11px;
+    padding:9px 11px;
+}
+
+/* =========================
+STAT
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-bottom:11px;
+}
+
+.stat{
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:11px;
+    padding:11px 7px;
+    text-align:center;
+}
+
+.stat-label{
+    color:#777;
+    font-size:9px;
+}
+
+.stat-number{
+    color:#ffd900;
+    font-size:21px;
+    font-weight:bold;
+    margin-top:3px;
+}
 
 /* =========================
 FILTER
 ========================= */
 
+.filter-card{
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:13px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
 .filter-row{
     display:grid;
-    grid-template-columns:1fr 220px;
-    gap:10px;
+    grid-template-columns:1fr 190px;
+    gap:7px;
 }
-
-.orders-count{
-    margin-top:14px;
-    color:#888;
-    font-size:13px;
-}
-
 
 /* =========================
 ORDER
@@ -246,30 +237,45 @@ ORDER
 .order-card{
     background:#11111c;
     border:1px solid #35354e;
-    border-radius:15px;
-    padding:18px;
-    margin-bottom:15px;
+    border-radius:11px;
+    margin-bottom:8px;
+    overflow:hidden;
+}
+
+.order-main{
+    padding:12px;
 }
 
 .order-header{
     display:flex;
     justify-content:space-between;
-    gap:15px;
-    align-items:flex-start;
-    margin-bottom:15px;
+    align-items:center;
+    gap:10px;
 }
 
 .order-code{
     color:#ffd900;
-    font-size:18px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.order-basic{
+    color:#999;
+    font-size:11px;
+    margin-top:4px;
+    line-height:1.5;
+}
+
+.order-price{
+    color:#ffd900;
     font-weight:bold;
 }
 
 .status{
-    padding:7px 10px;
-    border-radius:8px;
+    padding:5px 7px;
+    border-radius:7px;
     background:#25253b;
-    font-size:12px;
+    font-size:9px;
     font-weight:bold;
     white-space:nowrap;
 }
@@ -286,111 +292,489 @@ ORDER
     color:#00ff88;
 }
 
-
-/* =========================
-ORDER GRID
-========================= */
-
-.order-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.order-item{
-    background:#19192d;
-    border-radius:10px;
-    padding:11px;
-}
-
-.order-label{
-    color:#777;
-    font-size:11px;
-    margin-bottom:5px;
-}
-
-.order-value{
-    font-size:14px;
-    word-break:break-word;
-}
-
-.total{
-    color:#ffd900;
-    font-weight:bold;
-}
-
-
-/* =========================
-ACTIONS
-========================= */
-
-.actions{
+.order-actions{
     display:flex;
-    gap:8px;
-    margin-top:15px;
+    gap:5px;
+    margin-top:8px;
     flex-wrap:wrap;
 }
 
-.actions .btn{
+.order-actions .btn{
     flex:1;
-    min-width:150px;
+    min-width:90px;
+    font-size:10px;
+    padding:8px 6px;
 }
-
 
 /* =========================
-EMPTY / LOADING / ERROR
+DETAIL
 ========================= */
 
-.empty{
-    text-align:center;
-    padding:30px;
-    color:#777;
+.order-details{
+    display:none;
+    padding:10px;
+    border-top:1px solid #303046;
+    background:#151525;
 }
 
-.loading{
-    text-align:center;
-    color:#aaa;
-    padding:25px;
+.order-details.open{
+    display:block;
 }
 
-.error-box{
-    text-align:center;
-    padding:25px;
+.detail-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:6px;
 }
 
-.error-title{
-    color:#ff7777;
+.detail-item{
+    background:#19192d;
+    border-radius:7px;
+    padding:7px;
+}
+
+.detail-label{
+    color:#666;
+    font-size:9px;
+    margin-bottom:3px;
+}
+
+.detail-value{
+    font-size:11px;
+    word-break:break-word;
+}
+
+/* =========================
+COLLAPSIBLE SECTION
+========================= */
+
+.collapse-card{
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:14px;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+
+.collapse-header{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#fff;
+    padding:13px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    text-align:left;
+}
+
+.collapse-header:hover{
+    background:rgba(255,255,255,.02);
+}
+
+.collapse-title{
+    color:#ffd900;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.collapse-arrow{
+    color:#888;
+    font-size:14px;
+    transition:.2s;
+}
+
+.collapse-card.open .collapse-arrow{
+    transform:rotate(90deg);
+    color:#ffd900;
+}
+
+.collapse-content{
+    display:none;
+    padding:0 12px 12px;
+    border-top:1px solid #303046;
+}
+
+.collapse-card.open .collapse-content{
+    display:block;
+}
+
+/* =========================
+SECTION HEAD
+========================= */
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.section-title{
+    color:#ffd900;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.section-button{
+    font-size:10px;
+    padding:8px 10px;
+}
+
+/* =========================
+COMBO
+========================= */
+
+.combo-form{
+    display:none;
+    background:#151525;
+    border:1px solid #454565;
+    border-radius:11px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.combo-form.open{
+    display:block;
+}
+
+.form-title{
+    color:#ffd900;
+    font-size:14px;
     font-weight:bold;
     margin-bottom:10px;
 }
 
-.error-text{
-    color:#aaa;
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.form-actions{
+    display:flex;
+    gap:7px;
+    margin-top:10px;
+}
+
+.form-actions .btn{
+    flex:1;
+}
+
+.form-note{
+    color:#777;
+    font-size:9px;
+    line-height:1.5;
+    margin-top:6px;
+}
+
+.combo-card{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:11px;
+    padding:11px;
+    margin-bottom:8px;
+}
+
+.combo-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.combo-name{
+    color:#fff;
     font-size:13px;
-    line-height:1.6;
+    font-weight:bold;
+}
+
+.combo-description{
+    color:#777;
+    font-size:10px;
+    margin-top:4px;
+    line-height:1.4;
+}
+
+.combo-status{
+    padding:5px 7px;
+    border-radius:7px;
+    font-size:9px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.combo-status.active{
+    color:#00ff88;
+    background:rgba(0,255,136,.08);
+}
+
+.combo-status.inactive{
+    color:#ff7777;
+    background:rgba(255,80,80,.08);
+}
+
+.combo-info{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    margin-top:9px;
+}
+
+.combo-info-item{
+    background:#19192d;
+    border-radius:7px;
+    padding:7px;
+}
+
+.combo-info-label{
+    color:#666;
+    font-size:8px;
+}
+
+.combo-info-value{
+    font-size:11px;
+    margin-top:3px;
+}
+
+.combo-price{
+    color:#ffd900;
+    font-weight:bold;
+}
+
+.combo-actions{
+    display:flex;
+    gap:5px;
+    margin-top:8px;
+    flex-wrap:wrap;
+}
+
+.combo-actions .btn{
+    flex:1;
+    min-width:90px;
+    font-size:9px;
+    padding:8px 6px;
+}
+
+/* =========================
+SLOT
+========================= */
+
+.slot-card{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:11px;
+    padding:11px;
+    margin-bottom:8px;
+}
+
+.slot-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.slot-name{
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.slot-id{
+    color:#666;
+    font-size:9px;
+    margin-top:3px;
+}
+
+.slot-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    margin-top:9px;
+}
+
+.slot-box{
+    background:#19192d;
+    border-radius:7px;
+    padding:7px;
+}
+
+.slot-label{
+    color:#666;
+    font-size:8px;
+}
+
+.slot-value{
+    font-size:11px;
+    margin-top:3px;
+}
+
+.slot-actions{
+    display:flex;
+    gap:5px;
+    margin-top:8px;
+}
+
+.slot-actions .btn{
+    flex:1;
+    font-size:9px;
+    padding:8px 6px;
+}
+
+/* =========================
+PROMO
+========================= */
+
+.promo-form{
+    display:none;
+    background:#151525;
+    border:1px solid #454565;
+    border-radius:11px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.promo-form.open{
+    display:block;
+}
+
+.promo-card{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:11px;
+    padding:11px;
+    margin-bottom:8px;
+}
+
+.promo-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.promo-code{
+    color:#ffd900;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.promo-status{
+    padding:5px 7px;
+    border-radius:7px;
+    font-size:9px;
+    font-weight:bold;
+}
+
+.promo-status.active{
+    color:#00ff88;
+    background:rgba(0,255,136,.08);
+}
+
+.promo-status.inactive{
+    color:#ff7777;
+    background:rgba(255,80,80,.08);
+}
+
+.promo-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    margin-top:9px;
+}
+
+.promo-box-item{
+    background:#19192d;
+    border-radius:7px;
+    padding:7px;
+}
+
+.promo-label{
+    color:#666;
+    font-size:8px;
+}
+
+.promo-value{
+    font-size:10px;
+    margin-top:3px;
     word-break:break-word;
 }
 
-
-/* =========================
-INFO
-========================= */
-
-.info{
-    padding:12px;
-    border-radius:10px;
-    border:1px solid #4c4420;
-    background:rgba(
-        255,
-        217,
-        0,
-        .06
-    );
-    color:#aaa;
-    font-size:12px;
-    line-height:1.6;
+.promo-actions{
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    margin-top:8px;
 }
 
+.promo-actions .btn{
+    flex:1;
+    min-width:80px;
+    font-size:9px;
+    padding:8px 6px;
+}
+
+/* =========================
+WEBSITE
+========================= */
+
+.setting-box{
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:10px;
+    padding:10px;
+    margin-bottom:8px;
+}
+
+.setting-title{
+    color:#aaa;
+    font-size:10px;
+    margin-bottom:8px;
+}
+
+.setting-line{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.setting-line input{
+    width:auto;
+}
+
+.preview{
+    margin-top:10px;
+    padding:10px;
+    border:1px dashed #454565;
+    border-radius:9px;
+    color:#999;
+    font-size:10px;
+    line-height:1.5;
+}
+
+/* =========================
+OTHER
+========================= */
+
+.loading,
+.empty{
+    text-align:center;
+    color:#777;
+    padding:22px;
+}
+
+.info{
+    color:#666;
+    font-size:10px;
+    text-align:center;
+    line-height:1.5;
+    margin-top:10px;
+    margin-bottom:15px;
+}
 
 /* =========================
 MOBILE
@@ -398,24 +782,9 @@ MOBILE
 
 @media(max-width:700px){
 
-    .filter-row{
-        grid-template-columns:1fr;
-    }
-
-    .order-grid{
-        grid-template-columns:1fr;
-    }
-
-    .order-header{
+    .topbar{
         flex-direction:column;
-    }
-
-    .actions{
-        flex-direction:column;
-    }
-
-    .actions .btn{
-        width:100%;
+        align-items:flex-start;
     }
 
     .topbar-buttons{
@@ -426,25 +795,55 @@ MOBILE
         flex:1;
     }
 
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .filter-row{
+        grid-template-columns:1fr;
+    }
+
+    .order-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .combo-info,
+    .promo-grid,
+    .slot-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .combo-top,
+    .promo-top,
+    .slot-top{
+        flex-direction:column;
+    }
+
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 <div class="container">
 
-
-<!-- =====================================================
-LOGIN
-===================================================== -->
-
 <div
     id="loginPage"
-    class="card login-box"
+    class="login-box"
 >
 
     <h1 class="title">
@@ -455,7 +854,6 @@ LOGIN
         ADMIN LOGIN
     </div>
 
-
     <label>
         Email Admin
     </label>
@@ -464,10 +862,8 @@ LOGIN
         type="email"
         id="adminEmail"
         value="rasyad0907@gmail.com"
-        placeholder="Email admin"
         autocomplete="username"
     >
-
 
     <label>
         Password
@@ -480,7 +876,6 @@ LOGIN
         autocomplete="current-password"
     >
 
-
     <button
         class="btn btn-primary full"
         onclick="loginAdmin()"
@@ -488,34 +883,18 @@ LOGIN
         LOGIN ADMIN
     </button>
 
-
     <div
         id="loginMessage"
         class="message"
     ></div>
 
-
-    <div
-        id="connectionStatus"
-        class="connection"
-    >
-        Mengecek koneksi Supabase...
-    </div>
-
 </div>
 
-
-<!-- =====================================================
-DASHBOARD
-===================================================== -->
 
 <div
     id="dashboardPage"
     class="hidden"
 >
-
-
-    <!-- TOPBAR -->
 
     <div class="topbar">
 
@@ -532,16 +911,14 @@ DASHBOARD
 
         </div>
 
-
         <div class="topbar-buttons">
 
             <button
                 class="btn btn-secondary"
-                onclick="loadOrders()"
+                onclick="loadEverything()"
             >
                 REFRESH
             </button>
-
 
             <button
                 class="btn btn-danger"
@@ -555,29 +932,73 @@ DASHBOARD
     </div>
 
 
-    <!-- FILTER -->
+    <div class="stats">
 
-    <div class="card">
+        <div class="stat">
+            <div class="stat-label">
+                TOTAL ORDER
+            </div>
 
-        <h2
-            style="
-                color:#ffd900;
-                margin-top:0;
-            "
-        >
-            DAFTAR PESANAN
-        </h2>
+            <div
+                id="statTotal"
+                class="stat-number"
+            >
+                0
+            </div>
+        </div>
 
+        <div class="stat">
+            <div class="stat-label">
+                MENUNGGU
+            </div>
+
+            <div
+                id="statWaiting"
+                class="stat-number"
+            >
+                0
+            </div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-label">
+                DIPROSES
+            </div>
+
+            <div
+                id="statProcess"
+                class="stat-number"
+            >
+                0
+            </div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-label">
+                SELESAI
+            </div>
+
+            <div
+                id="statDone"
+                class="stat-number"
+            >
+                0
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="filter-card">
 
         <div class="filter-row">
 
             <input
                 type="text"
                 id="searchOrder"
-                placeholder="Cari ID Order / username / game..."
+                placeholder="Cari ID / username / game..."
                 oninput="renderOrders()"
             >
-
 
             <select
                 id="statusFilter"
@@ -588,16 +1009,13 @@ DASHBOARD
                     Semua Status
                 </option>
 
-
                 <option value="Menunggu di Proses">
                     Menunggu di Proses
                 </option>
 
-
                 <option value="Sedang Diproses">
                     Sedang Diproses
                 </option>
-
 
                 <option value="Selesai">
                     Selesai
@@ -607,38 +1025,637 @@ DASHBOARD
 
         </div>
 
+    </div>
 
-        <div
-            id="ordersCount"
-            class="orders-count"
+
+    <div id="ordersContainer"></div>
+
+
+    <div
+        id="comboSection"
+        class="collapse-card"
+    >
+
+        <button
+            type="button"
+            class="collapse-header"
+            onclick="toggleSection('comboSection')"
         >
-            0 pesanan
+
+            <span class="collapse-title">
+                🔥 PAKET COMBO
+            </span>
+
+            <span class="collapse-arrow">
+                ▶
+            </span>
+
+        </button>
+
+
+        <div class="collapse-content">
+
+            <div class="section-head">
+
+                <div></div>
+
+                <button
+                    class="btn btn-primary section-button"
+                    onclick="openComboForm()"
+                >
+                    + TAMBAH COMBO
+                </button>
+
+            </div>
+
+
+            <div
+                id="comboForm"
+                class="combo-form"
+            >
+
+                <div class="form-title">
+                    <span id="comboFormTitle">
+                        TAMBAH PAKET COMBO
+                    </span>
+                </div>
+
+                <input
+                    type="hidden"
+                    id="comboId"
+                >
+
+                <label>
+                    Nama Paket
+                </label>
+
+                <input
+                    type="text"
+                    id="comboName"
+                    placeholder="Contoh: Treadmill 1 Hari + Egg 1 Hari"
+                >
+
+                <label>
+                    Deskripsi / Isi Combo
+                </label>
+
+                <textarea
+                    id="comboDescription"
+                    rows="2"
+                    placeholder="Contoh: Joki Treadmill 1 Hari + Joki Egg 1 Hari"
+                ></textarea>
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Harga
+                        </label>
+
+                        <input
+                            type="number"
+                            id="comboPrice"
+                            min="0"
+                            step="1000"
+                            placeholder="35000"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Durasi (Jam)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="comboDuration"
+                            min="1"
+                            step="1"
+                            placeholder="24"
+                        >
+
+                    </div>
+
+                </div>
+
+                <label>
+                    Kuota
+                </label>
+
+                <input
+                    type="number"
+                    id="comboQuota"
+                    min="0"
+                    step="1"
+                    placeholder="Kosongkan = tidak terbatas"
+                >
+
+                <div class="form-note">
+                    Kosongkan kuota untuk unlimited.
+                </div>
+
+                <label>
+                    Status
+                </label>
+
+                <select id="comboActive">
+
+                    <option value="true">
+                        AKTIF
+                    </option>
+
+                    <option value="false">
+                        NONAKTIF
+                    </option>
+
+                </select>
+
+                <div class="form-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="saveCombo()"
+                    >
+                        SIMPAN
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        onclick="closeComboForm()"
+                    >
+                        BATAL
+                    </button>
+
+                </div>
+
+                <div
+                    id="comboFormMessage"
+                    class="message"
+                ></div>
+
+            </div>
+
+
+            <div id="comboContainer"></div>
+
         </div>
 
     </div>
 
 
-    <!-- DAFTAR PESANAN -->
+    <div
+        id="slotSection"
+        class="collapse-card"
+    >
+
+        <button
+            type="button"
+            class="collapse-header"
+            onclick="toggleSection('slotSection')"
+        >
+
+            <span class="collapse-title">
+                📦 SLOT / STOK JOKI
+            </span>
+
+            <span class="collapse-arrow">
+                ▶
+            </span>
+
+        </button>
+
+
+        <div class="collapse-content">
+
+            <div class="section-head">
+
+                <div></div>
+
+                <button
+                    class="btn btn-secondary section-button"
+                    onclick="loadPackageSlotsAdmin()"
+                >
+                    REFRESH SLOT
+                </button>
+
+            </div>
+
+
+            <div id="packageSlotsContainer"></div>
+
+        </div>
+
+    </div>
+
 
     <div
-        id="ordersContainer"
-    ></div>
+        id="promoSection"
+        class="collapse-card"
+    >
+
+        <button
+            type="button"
+            class="collapse-header"
+            onclick="toggleSection('promoSection')"
+        >
+
+            <span class="collapse-title">
+                🎟️ PROMO
+            </span>
+
+            <span class="collapse-arrow">
+                ▶
+            </span>
+
+        </button>
+
+
+        <div class="collapse-content">
+
+            <div class="section-head">
+
+                <div></div>
+
+                <button
+                    class="btn btn-primary section-button"
+                    onclick="openPromoForm()"
+                >
+                    + TAMBAH PROMO
+                </button>
+
+            </div>
+
+
+            <div
+                id="promoForm"
+                class="promo-form"
+            >
+
+                <div class="form-title">
+                    <span id="promoFormTitle">
+                        TAMBAH PROMO
+                    </span>
+                </div>
+
+                <input
+                    type="hidden"
+                    id="promoId"
+                >
+
+                <label>
+                    Kode Promo
+                </label>
+
+                <input
+                    type="text"
+                    id="promoCode"
+                    maxlength="50"
+                    placeholder="Contoh: SYADZZ01"
+                >
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Tipe Diskon
+                        </label>
+
+                        <select id="promoDiscountType">
+
+                            <option value="percent">
+                                Persen (%)
+                            </option>
+
+                            <option value="fixed">
+                                Nominal (Rp)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Nilai Diskon
+                        </label>
+
+                        <input
+                            type="number"
+                            id="promoDiscountValue"
+                            min="0"
+                            step="1"
+                            placeholder="15"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Minimal Order
+                        </label>
+
+                        <input
+                            type="number"
+                            id="promoMinimumOrder"
+                            min="0"
+                            step="1000"
+                            value="0"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Maksimal Penggunaan
+                        </label>
+
+                        <input
+                            type="number"
+                            id="promoMaxUses"
+                            min="1"
+                            step="1"
+                            value="10"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Mulai
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="promoStartsAt"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label>
+                            Berakhir
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="promoExpiresAt"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <label>
+                    Status
+                </label>
+
+                <select id="promoActive">
+
+                    <option value="true">
+                        AKTIF
+                    </option>
+
+                    <option value="false">
+                        NONAKTIF
+                    </option>
+
+                </select>
+
+
+                <div class="form-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="savePromo()"
+                    >
+                        SIMPAN
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        onclick="closePromoForm()"
+                    >
+                        BATAL
+                    </button>
+
+                </div>
+
+                <div
+                    id="promoFormMessage"
+                    class="message"
+                ></div>
+
+            </div>
+
+
+            <div id="promoContainer"></div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="websiteSection"
+        class="collapse-card"
+    >
+
+        <button
+            type="button"
+            class="collapse-header"
+            onclick="toggleSection('websiteSection')"
+        >
+
+            <span class="collapse-title">
+                ⚙️ WEBSITE
+            </span>
+
+            <span class="collapse-arrow">
+                ▶
+            </span>
+
+        </button>
+
+
+        <div class="collapse-content">
+
+            <div
+                id="settingsMessage"
+                class="message"
+            ></div>
+
+
+            <div class="setting-box">
+
+                <div class="setting-title">
+                    MAINTENANCE
+                </div>
+
+                <div class="setting-line">
+
+                    <input
+                        type="checkbox"
+                        id="maintenanceMode"
+                    >
+
+                    <span style="font-size:11px;">
+                        Aktifkan Maintenance
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <label>
+                Judul Maintenance
+            </label>
+
+            <input
+                type="text"
+                id="maintenanceTitle"
+                placeholder="Website Sedang Maintenance"
+            >
+
+
+            <label>
+                Pesan Maintenance
+            </label>
+
+            <textarea
+                id="maintenanceMessage"
+                rows="2"
+                placeholder="Silakan kembali beberapa saat lagi."
+            ></textarea>
+
+
+            <div class="setting-box">
+
+                <div class="setting-title">
+                    BANNER PROMO
+                </div>
+
+                <div class="setting-line">
+
+                    <input
+                        type="checkbox"
+                        id="bannerActive"
+                    >
+
+                    <span style="font-size:11px;">
+                        Tampilkan Banner
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <label>
+                Judul Banner
+            </label>
+
+            <input
+                type="text"
+                id="bannerTitle"
+                placeholder="🔥 PROMO SPESIAL SYADZZ STORE 🔥"
+            >
+
+
+            <label>
+                Teks Banner
+            </label>
+
+            <textarea
+                id="bannerText"
+                rows="2"
+                placeholder="Dapatkan diskon 15% untuk order joki! Gunakan kode promo SYADZZ01."
+            ></textarea>
+
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Teks Tombol
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bannerButtonText"
+                        placeholder="🎟️ GUNAKAN PROMO"
+                    >
+
+                </div>
+
+                <div>
+
+                    <label>
+                        URL Tombol
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bannerButtonUrl"
+                        placeholder="https://wa.me/6287729174391"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="preview">
+
+                <strong id="bannerPreviewTitle">
+                    Judul Banner
+                </strong>
+
+                <br>
+
+                <span id="bannerPreviewText">
+                    Isi banner
+                </span>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary full"
+                onclick="saveStoreSettings()"
+            >
+                SIMPAN SETTING WEBSITE
+            </button>
+
+        </div>
+
+    </div>
 
 
     <div class="info">
-
-        Order baru akan masuk sebagai
-        <b>Menunggu di Proses</b>.
-
-        Saat admin menekan
-        <b>MULAI JOKI</b>,
-        status berubah menjadi
-        <b>Sedang Diproses</b>.
-
-        Setelah waktu selesai tercapai,
-        status ditampilkan sebagai
-        <b>Selesai</b>.
-
+        Customer tetap menggunakan tampilan index.html seperti biasa.
+        Panel admin di atas bisa dibuka dan ditutup agar dashboard lebih ringkas.
     </div>
 
 </div>
@@ -655,10 +1672,8 @@ SUPABASE
 const SUPABASE_URL =
     "https://oyqdraemxlzqenbsdujh.supabase.co";
 
-
 const SUPABASE_PUBLISHABLE_KEY =
     "sb_publishable_uLjeOGdhxSQUjc4fCrkN9Q_QGabJxzu";
-
 
 const supabaseClient =
     window.supabase.createClient(
@@ -668,106 +1683,186 @@ const supabaseClient =
 
 
 let allOrders = [];
+let allCombos = [];
+let allPromos = [];
+let allPackageSlots = [];
 
 
 /* =====================================================
-TEST SUPABASE
+HELPER
 ===================================================== */
 
-async function testSupabaseConnection(){
+function rupiah(value){
 
-    const status =
-        document.getElementById(
-            "connectionStatus"
+    return "Rp" +
+        Number(
+            value || 0
+        ).toLocaleString(
+            "id-ID"
         );
 
-
-    try{
-
-        const {
-            error
-        } =
-            await supabaseClient
-                .from("orders")
-                .select(
-                    "id",
-                    {
-                        count:"exact",
-                        head:true
-                    }
-                );
+}
 
 
-        if(error){
+function formatDate(value){
 
-            console.error(
-                "Supabase:",
-                error
-            );
-
-
-            status.className =
-                "connection success";
-
-
-            status.innerText =
-                "Supabase terhubung.";
-
-
-            return;
-
-        }
-
-
-        status.className =
-            "connection success";
-
-
-        status.innerText =
-            "Supabase terhubung.";
-
+    if(!value){
+        return "-";
     }
-    catch(error){
 
-        console.error(
-            error
+    return new Date(value).toLocaleString(
+        "id-ID",
+        {
+            timeZone:"Asia/Jakarta",
+            day:"2-digit",
+            month:"2-digit",
+            year:"numeric",
+            hour:"2-digit",
+            minute:"2-digit"
+        }
+    );
+
+}
+
+
+function toLocalDatetime(value){
+
+    if(!value){
+        return "";
+    }
+
+    const date =
+        new Date(value);
+
+    const pad =
+        n => String(n).padStart(2,"0");
+
+    return (
+        date.getFullYear() +
+        "-" +
+        pad(date.getMonth()+1) +
+        "-" +
+        pad(date.getDate()) +
+        "T" +
+        pad(date.getHours()) +
+        ":" +
+        pad(date.getMinutes())
+    );
+
+}
+
+
+function localDatetimeToISO(value){
+
+    if(!value){
+        return null;
+    }
+
+    const date =
+        new Date(value);
+
+    if(
+        Number.isNaN(
+            date.getTime()
+        )
+    ){
+        return null;
+    }
+
+    return date.toISOString();
+
+}
+
+
+function escapeHtml(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+SENSOR KHUSUS UNTUK DATA PUBLIK / TESTIMONI
+===================================================== */
+
+function maskWhatsApp(value){
+
+    const text =
+        String(
+            value || ""
+        ).trim();
+
+
+    if(!text){
+        return "-";
+    }
+
+
+    const clean =
+        text.replace(
+            /\D/g,
+            ""
         );
 
 
-        status.className =
-            "connection error";
+    if(clean.length <= 8){
+        return "****";
+    }
 
 
-        status.innerText =
-            "Gagal terhubung ke Supabase.";
+    const start =
+        clean.slice(0,4);
 
+
+    const end =
+        clean.slice(-4);
+
+
+    return start +
+        "****" +
+        end;
+
+}
+
+
+/* =====================================================
+COLLAPSE
+===================================================== */
+
+function toggleSection(id){
+
+    const section =
+        document.getElementById(id);
+
+    if(section){
+        section.classList.toggle("open");
     }
 
 }
 
 
 /* =====================================================
-LOGIN ADMIN
+LOGIN
 ===================================================== */
 
 async function loginAdmin(){
 
     const email =
-        document
-            .getElementById(
-                "adminEmail"
-            )
-            .value
-            .trim();
-
+        document.getElementById(
+            "adminEmail"
+        ).value.trim();
 
     const password =
-        document
-            .getElementById(
-                "adminPassword"
-            )
-            .value;
-
+        document.getElementById(
+            "adminPassword"
+        ).value;
 
     const message =
         document.getElementById(
@@ -777,125 +1872,63 @@ async function loginAdmin(){
 
     if(!email){
 
-        message.style.color =
-            "#ff7777";
-
+        message.className =
+            "message error";
 
         message.innerText =
             "Masukkan email admin.";
 
-
         return;
-
     }
 
 
     if(!password){
 
-        message.style.color =
-            "#ff7777";
-
+        message.className =
+            "message error";
 
         message.innerText =
             "Masukkan password admin.";
 
-
         return;
-
     }
 
 
-    message.style.color =
-        "#aaa";
-
+    message.className =
+        "message";
 
     message.innerText =
         "Sedang login...";
 
 
-    try{
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-                .auth
-                .signInWithPassword({
-
-                    email:email,
-
-                    password:password
-
-                });
+    const {
+        error
+    } =
+        await supabaseClient
+            .auth
+            .signInWithPassword({
+                email,
+                password
+            });
 
 
-        if(error){
+    if(error){
 
-            console.error(
-                "Login:",
-                error
-            );
-
-
-            message.style.color =
-                "#ff7777";
-
-
-            message.innerText =
-                "Login gagal: " +
-                error.message;
-
-
-            return;
-
-        }
-
-
-        if(
-            !data ||
-            !data.user
-        ){
-
-            message.style.color =
-                "#ff7777";
-
-
-            message.innerText =
-                "Akun tidak ditemukan.";
-
-
-            return;
-
-        }
-
-
-        await checkAdmin();
-
-    }
-    catch(error){
-
-        console.error(
-            error
-        );
-
-
-        message.style.color =
-            "#ff7777";
-
+        message.className =
+            "message error";
 
         message.innerText =
-            "Terjadi kesalahan: " +
+            "Login gagal: " +
             error.message;
 
+        return;
     }
+
+
+    await checkAdmin();
 
 }
 
-
-/* =====================================================
-CHECK ADMIN
-===================================================== */
 
 async function checkAdmin(){
 
@@ -919,17 +1952,7 @@ async function checkAdmin(){
 
         showLogin();
 
-
-        message.style.color =
-            "#ff7777";
-
-
-        message.innerText =
-            "Session login tidak ditemukan.";
-
-
         return;
-
     }
 
 
@@ -944,23 +1967,13 @@ async function checkAdmin(){
 
     if(error){
 
-        console.error(
-            "Admin RPC:",
-            error
-        );
-
-
-        message.style.color =
-            "#ff7777";
-
+        message.className =
+            "message error";
 
         message.innerText =
-            "Gagal mengecek admin: " +
             error.message;
 
-
         return;
-
     }
 
 
@@ -970,87 +1983,56 @@ async function checkAdmin(){
             .auth
             .signOut();
 
-
         showLogin();
 
-
-        message.style.color =
-            "#ff7777";
-
+        message.className =
+            "message error";
 
         message.innerText =
-            "Akun ini belum terdaftar sebagai admin.";
-
+            "Akun ini bukan admin.";
 
         return;
-
     }
 
 
     document
-        .getElementById(
-            "loginPage"
-        )
+        .getElementById("loginPage")
         .classList
-        .add(
-            "hidden"
-        );
+        .add("hidden");
 
 
     document
-        .getElementById(
-            "dashboardPage"
-        )
+        .getElementById("dashboardPage")
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
-    document
-        .getElementById(
-            "adminEmailText"
-        )
-        .innerText =
-            user.email;
+    document.getElementById(
+        "adminEmailText"
+    ).innerText =
+        user.email;
 
 
-    await loadOrders();
+    await loadEverything();
 
 }
 
-
-/* =====================================================
-SHOW LOGIN
-===================================================== */
 
 function showLogin(){
 
     document
-        .getElementById(
-            "loginPage"
-        )
+        .getElementById("loginPage")
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
     document
-        .getElementById(
-            "dashboardPage"
-        )
+        .getElementById("dashboardPage")
         .classList
-        .add(
-            "hidden"
-        );
+        .add("hidden");
 
 }
 
-
-/* =====================================================
-LOGOUT
-===================================================== */
 
 async function logoutAdmin(){
 
@@ -1058,33 +2040,70 @@ async function logoutAdmin(){
         .auth
         .signOut();
 
-
     allOrders = [];
-
+    allCombos = [];
+    allPromos = [];
+    allPackageSlots = [];
 
     showLogin();
 
-
-    document
-        .getElementById(
-            "adminPassword"
-        )
-        .value =
-            "";
-
-
-    document
-        .getElementById(
-            "loginMessage"
-        )
-        .innerText =
-            "";
+    document.getElementById(
+        "adminPassword"
+    ).value = "";
 
 }
 
 
 /* =====================================================
-LOAD ORDERS
+LOAD
+===================================================== */
+
+async function loadEverything(){
+
+    await autoCloseExpiredOrders();
+
+    await Promise.all([
+        loadOrders(),
+        loadCombos(),
+        loadPackageSlotsAdmin(),
+        loadPromos(),
+        loadStoreSettingsAdmin()
+    ]);
+
+}
+
+
+async function autoCloseExpiredOrders(){
+
+    try{
+
+        const {
+            error
+        } =
+            await supabaseClient.rpc(
+                "auto_close_expired_orders_v2"
+            );
+
+        if(error){
+            console.error(
+                "Auto close error:",
+                error
+            );
+        }
+
+    }catch(error){
+
+        console.error(
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+ORDERS
 ===================================================== */
 
 async function loadOrders(){
@@ -1094,141 +2113,66 @@ async function loadOrders(){
             "ordersContainer"
         );
 
-
     container.innerHTML =
         `
-        <div class="card loading">
+        <div class="loading">
             Memuat pesanan...
         </div>
         `;
 
 
-    try{
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-                .from("orders")
-                .select("*")
-                .order(
-                    "created_at",
-                    {
-                        ascending:false
-                    }
-                );
-
-
-        if(error){
-
-            console.error(
-                "LOAD ORDERS:",
-                error
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("orders")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending:false
+                }
             );
 
 
-            container.innerHTML =
-                `
-                <div class="card error-box">
-
-                    <div class="error-title">
-                        GAGAL MEMUAT PESANAN
-                    </div>
-
-                    <div class="error-text">
-                        ${escapeHtml(
-                            error.message
-                        )}
-                    </div>
-
-                    <button
-                        class="btn btn-secondary"
-                        style="margin-top:15px;"
-                        onclick="loadOrders()"
-                    >
-                        COBA LAGI
-                    </button>
-
-                </div>
-                `;
-
-
-            return;
-
-        }
-
-
-        allOrders =
-            data || [];
-
-
-        renderOrders();
-
-    }
-    catch(error){
-
-        console.error(
-            error
-        );
-
+    if(error){
 
         container.innerHTML =
             `
-            <div class="card error-box">
-
-                <div class="error-title">
-                    TERJADI KESALAHAN
+            <div class="card">
+                <div class="error">
+                    Gagal memuat pesanan:<br>
+                    ${escapeHtml(error.message)}
                 </div>
-
-                <div class="error-text">
-                    ${escapeHtml(
-                        error.message ||
-                        "Kesalahan tidak diketahui"
-                    )}
-                </div>
-
-                <button
-                    class="btn btn-secondary"
-                    style="margin-top:15px;"
-                    onclick="loadOrders()"
-                >
-                    COBA LAGI
-                </button>
-
             </div>
             `;
 
+        return;
     }
+
+
+    allOrders =
+        data || [];
+
+
+    updateStats();
+    renderOrders();
 
 }
 
 
-/* =====================================================
-STATUS AKTUAL
-===================================================== */
-
-function getActualStatus(
-    order
-){
+function getActualStatus(order){
 
     if(
         order.status ===
-            "Sedang Diproses" &&
-        order.finish_at
+        "Sedang Diproses" &&
+        order.finish_at &&
+        new Date() >=
+        new Date(order.finish_at)
     ){
 
-        if(
-            new Date() >=
-            new Date(
-                order.finish_at
-            )
-        ){
-
-            return "Selesai";
-
-        }
-
+        return "Selesai";
     }
 
 
@@ -1237,130 +2181,144 @@ function getActualStatus(
 }
 
 
-/* =====================================================
-STATUS CLASS
-===================================================== */
+function getStatusClass(status){
 
-function getStatusClass(
-    status
-){
-
-    if(
-        status ===
-        "Selesai"
-    ){
-
+    if(status === "Selesai"){
         return "done";
-
     }
 
-
-    if(
-        status ===
-        "Sedang Diproses"
-    ){
-
+    if(status === "Sedang Diproses"){
         return "process";
-
     }
-
 
     return "waiting";
 
 }
 
 
-/* =====================================================
-RENDER
-===================================================== */
+function updateStats(){
+
+    let waiting = 0;
+    let process = 0;
+    let done = 0;
+
+
+    allOrders.forEach(
+        function(order){
+
+            const status =
+                getActualStatus(order);
+
+            if(
+                status ===
+                "Menunggu di Proses"
+            ){
+                waiting++;
+            }
+
+            if(
+                status ===
+                "Sedang Diproses"
+            ){
+                process++;
+            }
+
+            if(
+                status ===
+                "Selesai"
+            ){
+                done++;
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "statTotal"
+    ).innerText =
+        allOrders.length;
+
+
+    document.getElementById(
+        "statWaiting"
+    ).innerText =
+        waiting;
+
+
+    document.getElementById(
+        "statProcess"
+    ).innerText =
+        process;
+
+
+    document.getElementById(
+        "statDone"
+    ).innerText =
+        done;
+
+}
+
 
 function renderOrders(){
 
-    const container =
-        document.getElementById(
-            "ordersContainer"
-        );
-
-
     const search =
-        document
-            .getElementById(
-                "searchOrder"
-            )
-            .value
-            .trim()
-            .toLowerCase();
+        document.getElementById(
+            "searchOrder"
+        ).value
+        .trim()
+        .toLowerCase();
 
 
     const filter =
-        document
-            .getElementById(
-                "statusFilter"
-            )
-            .value;
+        document.getElementById(
+            "statusFilter"
+        ).value;
 
 
     const filtered =
         allOrders.filter(
             function(order){
 
-                const actualStatus =
-                    getActualStatus(
-                        order
-                    );
+                const status =
+                    getActualStatus(order);
 
 
-                const searchable = (
-
+                const text = (
                     (order.order_code || "") +
-
                     " " +
-
                     (order.username_roblox || "") +
-
                     " " +
-
                     (order.game_map || "") +
-
                     " " +
-
                     (order.package_name || "") +
-
                     " " +
-
-                    (order.whatsapp_customer || "")
-
+                    (order.whatsapp_customer || "") +
+                    " " +
+                    (order.order_note || "")
                 ).toLowerCase();
 
 
                 return (
-
-                    (!search ||
-                        searchable.includes(
-                            search
-                        )
+                    (
+                        !search ||
+                        text.includes(search)
                     )
-
                     &&
-
-                    (!filter ||
-                        actualStatus ===
-                        filter
+                    (
+                        !filter ||
+                        status === filter
                     )
-
                 );
 
             }
         );
 
 
-    document
-        .getElementById(
-            "ordersCount"
-        )
-        .innerText =
-            filtered.length +
-            " pesanan";
+    const container =
+        document.getElementById(
+            "ordersContainer"
+        );
 
 
     if(
@@ -1369,362 +2327,239 @@ function renderOrders(){
 
         container.innerHTML =
             `
-            <div class="card empty">
-                Belum ada pesanan.
+            <div class="empty">
+                Tidak ada pesanan.
             </div>
             `;
 
-
         return;
-
     }
 
 
     container.innerHTML =
-        filtered
-            .map(
-                createOrderCard
-            )
-            .join("");
+        filtered.map(
+            createOrderCard
+        ).join("");
 
 }
 
 
-/* =====================================================
-ORDER CARD
-===================================================== */
-
-function createOrderCard(
-    order
-){
+function createOrderCard(order){
 
     const status =
-        getActualStatus(
-            order
-        );
+        getActualStatus(order);
 
 
     const statusClass =
-        getStatusClass(
-            status
-        );
-
-
-    let action = "";
-
-
-    if(
-        status ===
-        "Menunggu di Proses"
-    ){
-
-        action +=
-            `
-            <button
-                class="btn btn-primary"
-                onclick="startOrder('${order.id}')"
-            >
-                MULAI JOKI
-            </button>
-            `;
-
-    }
-
-
-    if(
-        status ===
-        "Sedang Diproses"
-    ){
-
-        action +=
-            `
-            <button
-                class="btn btn-secondary"
-                onclick="loadOrders()"
-            >
-                REFRESH STATUS
-            </button>
-            `;
-
-    }
-
-
-    action +=
-        `
-        <button
-            class="btn btn-danger"
-            onclick="deleteOrder('${order.id}')"
-        >
-            HAPUS PESANAN
-        </button>
-        `;
+        getStatusClass(status);
 
 
     return `
 
     <div class="order-card">
 
+        <div class="order-main">
 
-        <div class="order-header">
+            <div class="order-header">
 
-            <div>
+                <div>
 
-                <div class="order-code">
+                    <div class="order-code">
+                        ${escapeHtml(order.order_code)}
+                    </div>
 
-                    ${escapeHtml(
-                        order.order_code
-                    )}
+                    <div class="order-basic">
+
+                        ${escapeHtml(order.package_name)}
+
+                        • ${escapeHtml(order.username_roblox)}
+
+                        •
+
+                        <span class="order-price">
+                            ${rupiah(order.total_amount)}
+                        </span>
+
+                    </div>
 
                 </div>
 
 
-                <div class="admin-email">
-
-                    Dibuat:
-                    ${formatDate(
-                        order.created_at
-                    )}
-
+                <div class="status ${statusClass}">
+                    ${escapeHtml(status)}
                 </div>
 
             </div>
 
 
-            <div
-                class="status ${statusClass}"
-            >
+            <div class="order-actions">
 
-                ${escapeHtml(
-                    status
+                <button
+                    class="btn btn-secondary"
+                    onclick="toggleDetail('${order.id}')"
+                >
+                    DETAIL
+                </button>
+
+
+                ${
+                    status ===
+                    "Menunggu di Proses"
+
+                    ?
+
+                    `
+                    <button
+                        class="btn btn-primary"
+                        onclick="startOrder('${order.id}')"
+                    >
+                        MULAI JOKI
+                    </button>
+                    `
+
+                    :
+
+                    ""
+                }
+
+
+                ${
+                    status ===
+                    "Sedang Diproses"
+
+                    ?
+
+                    `
+                    <button
+                        class="btn btn-success"
+                        onclick="manualFinishOrder('${order.id}')"
+                    >
+                        ✅ SELESAIKAN JOKIAN
+                    </button>
+                    `
+
+                    :
+
+                    ""
+                }
+
+
+                ${
+                    order.proof_path
+
+                    ?
+
+                    `
+                    <button
+                        class="btn btn-secondary"
+                        onclick="viewProof('${order.id}')"
+                    >
+                        LIHAT BUKTI
+                    </button>
+                    `
+
+                    :
+
+                    ""
+                }
+
+
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteOrder('${order.id}')"
+                >
+                    HAPUS
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="detail-${order.id}"
+            class="order-details"
+        >
+
+            <div class="detail-grid">
+
+                <!-- ADMIN MELIHAT NOMOR WA FULL -->
+
+                ${detailItem(
+                    "WhatsApp",
+                    order.whatsapp_customer
+                )}
+
+                ${detailItem(
+                    "Username Roblox",
+                    order.username_roblox
+                )}
+
+                ${detailItem(
+                    "Game / Map",
+                    order.game_map
+                )}
+
+                ${detailItem(
+                    "Catatan",
+                    order.order_note || "-"
+                )}
+
+                ${detailItem(
+                    "Pembayaran",
+                    order.payment_method
+                )}
+
+                ${detailItem(
+                    "Promo",
+                    order.promo_code || "-"
+                )}
+
+                ${detailItem(
+                    "Diskon",
+                    rupiah(order.discount_amount || 0)
+                )}
+
+                ${detailItem(
+                    "Subtotal",
+                    rupiah(order.subtotal)
+                )}
+
+                ${detailItem(
+                    "Total",
+                    rupiah(order.total_amount)
+                )}
+
+                ${detailItem(
+                    "Durasi",
+                    (order.duration_hours || 0) + " jam"
+                )}
+
+                ${detailItem(
+                    "Dibuat",
+                    formatDate(order.created_at)
+                )}
+
+                ${detailItem(
+                    "Mulai Joki",
+                    formatDate(order.started_at)
+                )}
+
+                ${detailItem(
+                    "Selesai",
+                    formatDate(order.finish_at)
+                )}
+
+                ${detailItem(
+                    "Bukti",
+                    order.proof_path
+                        ? "Tersimpan"
+                        : "Belum ada"
                 )}
 
             </div>
 
         </div>
-
-
-        <div class="order-grid">
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Paket
-                </div>
-
-                <div class="order-value">
-                    ${escapeHtml(
-                        order.package_name
-                    )}
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Quantity
-                </div>
-
-                <div class="order-value">
-
-                    ${order.quantity}
-                    Hari
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Username Roblox
-                </div>
-
-                <div class="order-value">
-
-                    ${escapeHtml(
-                        order.username_roblox
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    WhatsApp Customer
-                </div>
-
-                <div class="order-value">
-
-                    ${escapeHtml(
-                        order.whatsapp_customer
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Game / Map
-                </div>
-
-                <div class="order-value">
-
-                    ${escapeHtml(
-                        order.game_map
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Pembayaran
-                </div>
-
-                <div class="order-value">
-
-                    ${escapeHtml(
-                        order.payment_method
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Subtotal
-                </div>
-
-                <div class="order-value">
-
-                    ${rupiah(
-                        order.subtotal
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Promo
-                </div>
-
-                <div class="order-value">
-
-                    ${escapeHtml(
-                        order.promo_code ||
-                        "-"
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Diskon
-                </div>
-
-                <div class="order-value">
-
-                    ${Number(
-                        order.discount_percent ||
-                        0
-                    )}%
-
-                    -
-
-                    ${rupiah(
-                        order.discount_amount ||
-                        0
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    TOTAL BAYAR
-                </div>
-
-                <div class="order-value total">
-
-                    ${rupiah(
-                        order.total_amount
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Mulai Joki
-                </div>
-
-                <div class="order-value">
-
-                    ${formatDate(
-                        order.started_at
-                    )}
-
-                </div>
-
-            </div>
-
-
-            <div class="order-item">
-
-                <div class="order-label">
-                    Selesai Otomatis
-                </div>
-
-                <div class="order-value">
-
-                    ${formatDate(
-                        order.finish_at
-                    )}
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="actions">
-
-            ${action}
-
-        </div>
-
 
     </div>
 
@@ -1733,62 +2568,79 @@ function createOrderCard(
 }
 
 
+function detailItem(label,value){
+
+    return `
+
+    <div class="detail-item">
+
+        <div class="detail-label">
+            ${escapeHtml(label)}
+        </div>
+
+        <div class="detail-value">
+            ${escapeHtml(value)}
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+function toggleDetail(id){
+
+    const element =
+        document.getElementById(
+            "detail-" + id
+        );
+
+    if(element){
+        element.classList.toggle("open");
+    }
+
+}
+
+
 /* =====================================================
-MULAI JOKI
+START ORDER
 ===================================================== */
 
-async function startOrder(
-    orderId
-){
+async function startOrder(orderId){
 
     const order =
         allOrders.find(
-            function(item){
-
-                return item.id ===
-                    orderId;
-
-            }
+            item => item.id === orderId
         );
 
 
     if(!order){
-
-        alert(
-            "Order tidak ditemukan."
-        );
-
         return;
-
     }
 
 
     if(
-        order.status !==
+        getActualStatus(order) !==
         "Menunggu di Proses"
     ){
 
         alert(
-            "Order ini sudah diproses."
+            "Order sudah diproses."
         );
 
         return;
-
     }
 
 
-    const yes =
-        confirm(
+    if(
+        !confirm(
             "Mulai joki " +
             order.order_code +
             " sekarang?"
-        );
-
-
-    if(!yes){
-
+        )
+    ){
         return;
-
     }
 
 
@@ -1798,194 +2650,268 @@ async function startOrder(
 
     const finishAt =
         new Date(
-
             startedAt.getTime() +
-
-            Number(
-                order.duration_hours
-            ) *
-
+            Number(order.duration_hours || 0) *
             60 *
-
             60 *
-
             1000
-
         );
 
 
-    try{
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("orders")
+            .update({
 
-        const {
-            error
-        } =
-            await supabaseClient
-                .from("orders")
-                .update({
+                status:"Sedang Diproses",
 
-                    status:
-                        "Sedang Diproses",
+                started_at:
+                    startedAt.toISOString(),
 
-                    started_at:
-                        startedAt.toISOString(),
+                finish_at:
+                    finishAt.toISOString()
 
-                    finish_at:
-                        finishAt.toISOString()
-
-                })
-                .eq(
-                    "id",
-                    orderId
-                );
-
-
-        if(error){
-
-            console.error(
-                "Start order:",
-                error
+            })
+            .eq(
+                "id",
+                orderId
             );
 
 
-            alert(
-                "Gagal memulai joki:\n" +
-                error.message
-            );
-
-
-            return;
-
-        }
-
+    if(error){
 
         alert(
-            "Joki berhasil dimulai."
-        );
-
-
-        await loadOrders();
-
-    }
-    catch(error){
-
-        console.error(
-            error
-        );
-
-
-        alert(
-            "Terjadi kesalahan:\n" +
+            "Gagal memulai joki:\n" +
             error.message
         );
 
+        return;
     }
+
+
+    await loadOrders();
 
 }
 
 
 /* =====================================================
-HAPUS PESANAN
+MANUAL FINISH ORDER
 ===================================================== */
 
-async function deleteOrder(
-    orderId
-){
+async function manualFinishOrder(orderId){
 
     const order =
         allOrders.find(
-            function(item){
-
-                return item.id ===
-                    orderId;
-
-            }
+            item => item.id === orderId
         );
 
 
     if(!order){
+        return;
+    }
+
+
+    const actualStatus =
+        getActualStatus(order);
+
+
+    if(actualStatus === "Selesai"){
 
         alert(
-            "Pesanan tidak ditemukan."
+            "Order ini sudah selesai."
         );
 
         return;
+    }
 
+
+    if(actualStatus !== "Sedang Diproses"){
+
+        alert(
+            "Order belum masuk proses joki."
+        );
+
+        return;
     }
 
 
     const yakin =
         confirm(
-
-            "Yakin ingin menghapus pesanan " +
-
+            "Yakin ingin menyelesaikan joki " +
             order.order_code +
-
-            "?\n\n" +
-
-            "Pesanan yang dihapus tidak bisa dikembalikan."
-
+            " sekarang?\n\n" +
+            "Status akan langsung berubah menjadi Selesai."
         );
 
 
     if(!yakin){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("orders")
+            .update({
+
+                status:"Selesai",
+
+                finish_at:
+                    new Date().toISOString()
+
+            })
+            .eq(
+                "id",
+                orderId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal menyelesaikan joki:\n" +
+            error.message
+        );
 
         return;
+    }
 
+
+    alert(
+        "Jokian berhasil diselesaikan."
+    );
+
+
+    await loadOrders();
+
+}
+
+
+/* =====================================================
+DELETE ORDER
+===================================================== */
+
+async function deleteOrder(orderId){
+
+    const order =
+        allOrders.find(
+            item => item.id === orderId
+        );
+
+
+    if(!order){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "Hapus order " +
+            order.order_code +
+            "?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("orders")
+            .delete()
+            .eq(
+                "id",
+                orderId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal menghapus:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadOrders();
+
+}
+
+
+/* =====================================================
+VIEW PROOF
+===================================================== */
+
+async function viewProof(orderId){
+
+    const order =
+        allOrders.find(
+            item => item.id === orderId
+        );
+
+
+    if(
+        !order ||
+        !order.proof_path
+    ){
+
+        alert(
+            "Bukti pembayaran belum tersedia."
+        );
+
+        return;
     }
 
 
     try{
 
         const {
+            data,
             error
         } =
             await supabaseClient
-                .from("orders")
-                .delete()
-                .eq(
-                    "id",
-                    orderId
+                .storage
+                .from("payment-proofs")
+                .createSignedUrl(
+                    order.proof_path,
+                    300
                 );
 
 
         if(error){
-
-            console.error(
-                "Delete order:",
-                error
-            );
-
-
-            alert(
-                "Gagal menghapus pesanan:\n" +
-                error.message
-            );
-
-
-            return;
-
+            throw error;
         }
 
 
-        alert(
-            "Pesanan " +
-            order.order_code +
-            " berhasil dihapus."
+        if(
+            !data ||
+            !data.signedUrl
+        ){
+
+            throw new Error(
+                "Signed URL tidak tersedia."
+            );
+        }
+
+
+        window.open(
+            data.signedUrl,
+            "_blank"
         );
 
-
-        await loadOrders();
-
-    }
-    catch(error){
-
-        console.error(
-            error
-        );
-
+    }catch(error){
 
         alert(
-            "Terjadi kesalahan:\n" +
+            "Gagal membuka bukti:\n" +
             error.message
         );
 
@@ -1995,110 +2921,2259 @@ async function deleteOrder(
 
 
 /* =====================================================
-RUPIAH
+COMBO
 ===================================================== */
 
-function rupiah(
-    value
-){
+async function loadCombos(){
 
-    return "Rp" +
-
-        Number(
-            value || 0
-        ).toLocaleString(
-            "id-ID"
+    const container =
+        document.getElementById(
+            "comboContainer"
         );
+
+
+    container.innerHTML =
+        `
+        <div class="loading">
+            Memuat paket combo...
+        </div>
+        `;
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("combo_packages")
+            .select("*")
+            .order(
+                "id",
+                {
+                    ascending:false
+                }
+            );
+
+
+    if(error){
+
+        container.innerHTML =
+            `
+            <div class="error">
+                Gagal memuat combo:<br>
+                ${escapeHtml(error.message)}
+            </div>
+            `;
+
+        return;
+    }
+
+
+    allCombos =
+        data || [];
+
+
+    renderCombos();
 
 }
 
 
-/* =====================================================
-TANGGAL
-===================================================== */
+function renderCombos(){
 
-function formatDate(
-    value
-){
+    const container =
+        document.getElementById(
+            "comboContainer"
+        );
 
-    if(!value){
 
-        return "-";
+    if(allCombos.length === 0){
+
+        container.innerHTML =
+            `
+            <div class="empty">
+                Belum ada paket combo.
+            </div>
+            `;
+
+        return;
+    }
+
+
+    container.innerHTML =
+        allCombos
+            .map(createComboCard)
+            .join("");
+
+}
+
+
+function createComboCard(combo){
+
+    const unlimited =
+        combo.quota_limit === null;
+
+
+    const remaining =
+        unlimited
+            ? "∞"
+            : Math.max(
+                0,
+                Number(combo.quota_limit) -
+                Number(combo.used_count || 0)
+            );
+
+
+    const active =
+        combo.active === true;
+
+
+    return `
+
+    <div class="combo-card">
+
+        <div class="combo-top">
+
+            <div>
+
+                <div class="combo-name">
+                    ${escapeHtml(combo.name)}
+                </div>
+
+                <div class="combo-description">
+                    ${escapeHtml(
+                        combo.description || "-"
+                    )}
+                </div>
+
+            </div>
+
+
+            <div
+                class="combo-status ${
+                    active
+                        ? "active"
+                        : "inactive"
+                }"
+            >
+                ${
+                    active
+                        ? "AKTIF"
+                        : "NONAKTIF"
+                }
+            </div>
+
+        </div>
+
+
+        <div class="combo-info">
+
+            <div class="combo-info-item">
+
+                <div class="combo-info-label">
+                    HARGA
+                </div>
+
+                <div class="combo-info-value combo-price">
+                    ${rupiah(combo.price)}
+                </div>
+
+            </div>
+
+
+            <div class="combo-info-item">
+
+                <div class="combo-info-label">
+                    KUOTA
+                </div>
+
+                <div class="combo-info-value">
+                    ${
+                        unlimited
+                            ? "∞"
+                            : combo.quota_limit
+                    }
+                </div>
+
+            </div>
+
+
+            <div class="combo-info-item">
+
+                <div class="combo-info-label">
+                    TERPAKAI
+                </div>
+
+                <div class="combo-info-value">
+                    ${combo.used_count || 0}
+                </div>
+
+            </div>
+
+
+            <div class="combo-info-item">
+
+                <div class="combo-info-label">
+                    SISA
+                </div>
+
+                <div class="combo-info-value">
+                    ${remaining}
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            style="
+                color:#666;
+                margin-top:7px;
+                font-size:9px;
+            "
+        >
+            Durasi:
+            ${combo.duration_hours}
+            jam
+        </div>
+
+
+        <div class="combo-actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="editCombo(${combo.id})"
+            >
+                EDIT
+            </button>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="toggleCombo(${combo.id})"
+            >
+                ${
+                    active
+                        ? "NONAKTIFKAN"
+                        : "AKTIFKAN"
+                }
+            </button>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="resetComboQuota(${combo.id})"
+            >
+                RESET KUOTA
+            </button>
+
+
+            <button
+                class="btn btn-danger"
+                onclick="deleteCombo(${combo.id})"
+            >
+                HAPUS
+            </button>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+function openComboForm(){
+
+    document.getElementById(
+        "comboForm"
+    ).classList.add("open");
+
+
+    document.getElementById(
+        "comboFormTitle"
+    ).innerText =
+        "TAMBAH PAKET COMBO";
+
+
+    document.getElementById(
+        "comboId"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "comboName"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "comboDescription"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "comboPrice"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "comboDuration"
+    ).value =
+        "24";
+
+
+    document.getElementById(
+        "comboQuota"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "comboActive"
+    ).value =
+        "true";
+
+
+    document.getElementById(
+        "comboFormMessage"
+    ).innerText =
+        "";
+
+}
+
+
+function closeComboForm(){
+
+    document.getElementById(
+        "comboForm"
+    ).classList.remove("open");
+
+}
+
+
+function editCombo(comboId){
+
+    const combo =
+        allCombos.find(
+            item =>
+                Number(item.id) ===
+                Number(comboId)
+        );
+
+
+    if(!combo){
+        return;
+    }
+
+
+    openComboForm();
+
+
+    document.getElementById(
+        "comboFormTitle"
+    ).innerText =
+        "EDIT PAKET COMBO";
+
+
+    document.getElementById(
+        "comboId"
+    ).value =
+        combo.id;
+
+
+    document.getElementById(
+        "comboName"
+    ).value =
+        combo.name;
+
+
+    document.getElementById(
+        "comboDescription"
+    ).value =
+        combo.description || "";
+
+
+    document.getElementById(
+        "comboPrice"
+    ).value =
+        combo.price;
+
+
+    document.getElementById(
+        "comboDuration"
+    ).value =
+        combo.duration_hours;
+
+
+    document.getElementById(
+        "comboQuota"
+    ).value =
+        combo.quota_limit === null
+            ? ""
+            : combo.quota_limit;
+
+
+    document.getElementById(
+        "comboActive"
+    ).value =
+        combo.active
+            ? "true"
+            : "false";
+
+}
+
+
+async function saveCombo(){
+
+    const id =
+        document.getElementById(
+            "comboId"
+        ).value;
+
+
+    const name =
+        document.getElementById(
+            "comboName"
+        ).value.trim();
+
+
+    const description =
+        document.getElementById(
+            "comboDescription"
+        ).value.trim();
+
+
+    const price =
+        Number(
+            document.getElementById(
+                "comboPrice"
+            ).value
+        );
+
+
+    const duration =
+        Number(
+            document.getElementById(
+                "comboDuration"
+            ).value
+        );
+
+
+    const quotaInput =
+        document.getElementById(
+            "comboQuota"
+        ).value.trim();
+
+
+    const active =
+        document.getElementById(
+            "comboActive"
+        ).value === "true";
+
+
+    const message =
+        document.getElementById(
+            "comboFormMessage"
+        );
+
+
+    if(!name){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Nama combo wajib diisi.";
+
+        return;
+    }
+
+
+    if(
+        !Number.isFinite(price) ||
+        price < 0
+    ){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Harga tidak valid.";
+
+        return;
+    }
+
+
+    if(
+        !Number.isInteger(duration) ||
+        duration < 1
+    ){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Durasi minimal 1 jam.";
+
+        return;
+    }
+
+
+    let quota =
+        null;
+
+
+    if(quotaInput !== ""){
+
+        quota =
+            Number(quotaInput);
+
+
+        if(
+            !Number.isInteger(quota) ||
+            quota < 0
+        ){
+
+            message.className =
+                "message error";
+
+            message.innerText =
+                "Kuota tidak valid.";
+
+            return;
+        }
 
     }
 
 
-    return new Date(
-        value
-    ).toLocaleString(
-        "id-ID",
-        {
+    const payload = {
 
-            timeZone:
-                "Asia/Jakarta",
+        name,
+        description,
+        price,
+        quota_limit:quota,
+        active,
+        duration_hours:duration
 
-            day:
-                "2-digit",
+    };
 
-            month:
-                "2-digit",
 
-            year:
-                "numeric",
+    message.className =
+        "message success";
 
-            hour:
-                "2-digit",
+    message.innerText =
+        "Menyimpan...";
 
-            minute:
-                "2-digit",
 
-            second:
-                "2-digit"
+    const result =
+        id
 
-        }
-    );
+        ?
+
+        await supabaseClient
+            .from("combo_packages")
+            .update(payload)
+            .eq("id",id)
+
+        :
+
+        await supabaseClient
+            .from("combo_packages")
+            .insert({
+                ...payload,
+                used_count:0
+            });
+
+
+    if(result.error){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            result.error.message;
+
+        return;
+    }
+
+
+    closeComboForm();
+
+    await loadCombos();
+
+}
+
+
+async function toggleCombo(comboId){
+
+    const combo =
+        allCombos.find(
+            item =>
+                Number(item.id) ===
+                Number(comboId)
+        );
+
+
+    if(!combo){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("combo_packages")
+            .update({
+                active:
+                    !combo.active
+            })
+            .eq(
+                "id",
+                comboId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal mengubah status:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadCombos();
+
+}
+
+
+async function resetComboQuota(comboId){
+
+    const combo =
+        allCombos.find(
+            item =>
+                Number(item.id) ===
+                Number(comboId)
+        );
+
+
+    if(!combo){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "Reset kuota " +
+            combo.name +
+            "?\n\nTerpakai akan kembali menjadi 0."
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("combo_packages")
+            .update({
+                used_count:0
+            })
+            .eq(
+                "id",
+                comboId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal reset kuota:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadCombos();
+
+}
+
+
+async function deleteCombo(comboId){
+
+    const combo =
+        allCombos.find(
+            item =>
+                Number(item.id) ===
+                Number(comboId)
+        );
+
+
+    if(!combo){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "Hapus paket combo:\n" +
+            combo.name +
+            "?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("combo_packages")
+            .delete()
+            .eq(
+                "id",
+                comboId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal menghapus combo:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadCombos();
 
 }
 
 
 /* =====================================================
-ESCAPE
+SLOT
 ===================================================== */
 
-function escapeHtml(
-    value
-){
+async function loadPackageSlotsAdmin(){
 
-    return String(
-        value ?? ""
-    )
+    const container =
+        document.getElementById(
+            "packageSlotsContainer"
+        );
 
-    .replace(
-        /&/g,
-        "&amp;"
-    )
 
-    .replace(
-        /</g,
-        "&lt;"
-    )
+    container.innerHTML =
+        `
+        <div class="loading">
+            Memuat slot...
+        </div>
+        `;
 
-    .replace(
-        />/g,
-        "&gt;"
-    )
 
-    .replace(
-        /"/g,
-        "&quot;"
-    )
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("joki_package_slots")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending:true
+                }
+            );
 
-    .replace(
-        /'/g,
-        "&#039;"
-    );
+
+    if(error){
+
+        container.innerHTML =
+            `
+            <div class="error">
+                Gagal memuat slot:<br>
+                ${escapeHtml(error.message)}
+            </div>
+            `;
+
+        return;
+    }
+
+
+    allPackageSlots =
+        data || [];
+
+
+    if(allPackageSlots.length === 0){
+
+        container.innerHTML =
+            `
+            <div class="empty">
+                Belum ada paket slot.
+            </div>
+            `;
+
+        return;
+    }
+
+
+    container.innerHTML =
+        allPackageSlots
+            .map(createSlotCard)
+            .join("");
 
 }
+
+
+function createSlotCard(item){
+
+    const unlimited =
+        item.slot_limit === null;
+
+
+    const remaining =
+        unlimited
+            ? "∞"
+            : Math.max(
+                0,
+                Number(item.slot_limit) -
+                Number(item.used_count || 0)
+            );
+
+
+    return `
+
+    <div class="slot-card">
+
+        <div class="slot-top">
+
+            <div>
+
+                <div class="slot-name">
+                    ${escapeHtml(item.package_name)}
+                </div>
+
+                <div class="slot-id">
+                    ID: ${escapeHtml(item.package_id)}
+                </div>
+
+            </div>
+
+
+            <div
+                class="
+                    combo-status
+                    ${
+                        item.active
+                            ? "active"
+                            : "inactive"
+                    }
+                "
+            >
+                ${
+                    item.active
+                        ? "AKTIF"
+                        : "NONAKTIF"
+                }
+            </div>
+
+        </div>
+
+
+        <div class="slot-grid">
+
+            <div class="slot-box">
+                <div class="slot-label">
+                    SLOT
+                </div>
+                <div class="slot-value">
+                    ${
+                        unlimited
+                            ? "∞"
+                            : item.slot_limit
+                    }
+                </div>
+            </div>
+
+
+            <div class="slot-box">
+                <div class="slot-label">
+                    TERPAKAI
+                </div>
+                <div class="slot-value">
+                    ${item.used_count || 0}
+                </div>
+            </div>
+
+
+            <div class="slot-box">
+                <div class="slot-label">
+                    SISA
+                </div>
+                <div class="slot-value">
+                    ${remaining}
+                </div>
+            </div>
+
+
+            <div class="slot-box">
+                <div class="slot-label">
+                    DURASI
+                </div>
+                <div class="slot-value">
+                    ${item.duration_hours} jam
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-grid" style="margin-top:9px;">
+
+            <div>
+
+                <label style="font-size:10px;">
+                    Batas Slot
+                </label>
+
+                <input
+                    type="number"
+                    min="0"
+                    step="1"
+                    id="slot-limit-${escapeHtml(item.package_id)}"
+                    value="${
+                        unlimited
+                            ? ""
+                            : item.slot_limit
+                    }"
+                    placeholder="Kosong = unlimited"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label style="font-size:10px;">
+                    Status
+                </label>
+
+                <select
+                    id="slot-active-${escapeHtml(item.package_id)}"
+                >
+
+                    <option
+                        value="true"
+                        ${
+                            item.active
+                                ? "selected"
+                                : ""
+                        }
+                    >
+                        AKTIF
+                    </option>
+
+                    <option
+                        value="false"
+                        ${
+                            !item.active
+                                ? "selected"
+                                : ""
+                        }
+                    >
+                        NONAKTIF
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="slot-actions">
+
+            <button
+                class="btn btn-primary"
+                onclick="saveSlot('${escapeHtml(item.package_id)}')"
+            >
+                SIMPAN
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                onclick="resetSlot('${escapeHtml(item.package_id)}')"
+            >
+                RESET TERPAKAI
+            </button>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+async function saveSlot(packageId){
+
+    const limitInput =
+        document.getElementById(
+            "slot-limit-" +
+            packageId
+        );
+
+
+    const activeInput =
+        document.getElementById(
+            "slot-active-" +
+            packageId
+        );
+
+
+    const limitText =
+        limitInput.value.trim();
+
+
+    let slotLimit =
+        null;
+
+
+    if(limitText !== ""){
+
+        slotLimit =
+            Number(limitText);
+
+
+        if(
+            !Number.isInteger(slotLimit) ||
+            slotLimit < 0
+        ){
+
+            alert(
+                "Batas slot tidak valid."
+            );
+
+            return;
+        }
+
+    }
+
+
+    const active =
+        activeInput.value === "true";
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("joki_package_slots")
+            .update({
+                slot_limit:
+                    slotLimit,
+                active:
+                    active,
+                updated_at:
+                    new Date().toISOString()
+            })
+            .eq(
+                "package_id",
+                packageId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal menyimpan slot:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadPackageSlotsAdmin();
+
+}
+
+
+async function resetSlot(packageId){
+
+    const item =
+        allPackageSlots.find(
+            row =>
+                row.package_id === packageId
+        );
+
+
+    if(!item){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "Reset jumlah terpakai paket " +
+            item.package_name +
+            " menjadi 0?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("joki_package_slots")
+            .update({
+                used_count:0,
+                updated_at:
+                    new Date().toISOString()
+            })
+            .eq(
+                "package_id",
+                packageId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal reset slot:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadPackageSlotsAdmin();
+
+}
+
+
+/* =====================================================
+PROMO
+===================================================== */
+
+async function loadPromos(){
+
+    const container =
+        document.getElementById(
+            "promoContainer"
+        );
+
+
+    container.innerHTML =
+        `
+        <div class="loading">
+            Memuat promo...
+        </div>
+        `;
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("promos")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending:false
+                }
+            );
+
+
+    if(error){
+
+        container.innerHTML =
+            `
+            <div class="error">
+                Gagal memuat promo:<br>
+                ${escapeHtml(error.message)}
+            </div>
+            `;
+
+        return;
+    }
+
+
+    allPromos =
+        data || [];
+
+
+    renderPromos();
+
+}
+
+
+function renderPromos(){
+
+    const container =
+        document.getElementById(
+            "promoContainer"
+        );
+
+
+    if(allPromos.length === 0){
+
+        container.innerHTML =
+            `
+            <div class="empty">
+                Belum ada promo.
+            </div>
+            `;
+
+        return;
+    }
+
+
+    container.innerHTML =
+        allPromos
+            .map(createPromoCard)
+            .join("");
+
+}
+
+
+function createPromoCard(promo){
+
+    const type =
+        promo.discount_type === "fixed"
+            ? "fixed"
+            : "percent";
+
+
+    const value =
+        type === "fixed"
+            ? rupiah(promo.discount_value)
+            : Number(
+                promo.discount_value || 0
+              ) + "%";
+
+
+    const remaining =
+        Math.max(
+            Number(promo.max_uses || 0) -
+            Number(promo.used_count || 0),
+            0
+        );
+
+
+    return `
+
+    <div class="promo-card">
+
+        <div class="promo-top">
+
+            <div>
+
+                <div class="promo-code">
+                    ${escapeHtml(promo.code)}
+                </div>
+
+                <div
+                    style="
+                        color:#777;
+                        font-size:9px;
+                        margin-top:3px;
+                    "
+                >
+                    Dibuat:
+                    ${formatDate(promo.created_at)}
+                </div>
+
+            </div>
+
+
+            <div
+                class="promo-status ${
+                    promo.active
+                        ? "active"
+                        : "inactive"
+                }"
+            >
+                ${
+                    promo.active
+                        ? "AKTIF"
+                        : "NONAKTIF"
+                }
+            </div>
+
+        </div>
+
+
+        <div class="promo-grid">
+
+            <div class="promo-box-item">
+
+                <div class="promo-label">
+                    DISKON
+                </div>
+
+                <div class="promo-value">
+                    ${value}
+                </div>
+
+            </div>
+
+
+            <div class="promo-box-item">
+
+                <div class="promo-label">
+                    MINIMUM
+                </div>
+
+                <div class="promo-value">
+                    ${rupiah(promo.minimum_order)}
+                </div>
+
+            </div>
+
+
+            <div class="promo-box-item">
+
+                <div class="promo-label">
+                    TERPAKAI
+                </div>
+
+                <div class="promo-value">
+                    ${promo.used_count || 0}
+                </div>
+
+            </div>
+
+
+            <div class="promo-box-item">
+
+                <div class="promo-label">
+                    SISA
+                </div>
+
+                <div class="promo-value">
+                    ${remaining} / ${promo.max_uses}
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            style="
+                color:#666;
+                font-size:9px;
+                margin-top:8px;
+                line-height:1.5;
+            "
+        >
+            Mulai:
+            ${formatDate(promo.starts_at)}
+            <br>
+
+            Berakhir:
+            ${formatDate(promo.expires_at)}
+        </div>
+
+
+        <div class="promo-actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="editPromo(${promo.id})"
+            >
+                EDIT
+            </button>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="togglePromo(${promo.id})"
+            >
+                ${
+                    promo.active
+                        ? "NONAKTIFKAN"
+                        : "AKTIFKAN"
+                }
+            </button>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="resetPromoUses(${promo.id})"
+            >
+                RESET PAKAI
+            </button>
+
+
+            <button
+                class="btn btn-danger"
+                onclick="deletePromo(${promo.id})"
+            >
+                HAPUS
+            </button>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+function openPromoForm(){
+
+    document.getElementById(
+        "promoForm"
+    ).classList.add("open");
+
+
+    document.getElementById(
+        "promoFormTitle"
+    ).innerText =
+        "TAMBAH PROMO";
+
+
+    document.getElementById(
+        "promoId"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "promoCode"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "promoDiscountType"
+    ).value =
+        "percent";
+
+
+    document.getElementById(
+        "promoDiscountValue"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "promoMinimumOrder"
+    ).value =
+        "0";
+
+
+    document.getElementById(
+        "promoMaxUses"
+    ).value =
+        "10";
+
+
+    document.getElementById(
+        "promoStartsAt"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "promoExpiresAt"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "promoActive"
+    ).value =
+        "true";
+
+
+    document.getElementById(
+        "promoFormMessage"
+    ).innerText =
+        "";
+
+}
+
+
+function closePromoForm(){
+
+    document.getElementById(
+        "promoForm"
+    ).classList.remove("open");
+
+}
+
+
+function editPromo(promoId){
+
+    const promo =
+        allPromos.find(
+            item =>
+                Number(item.id) ===
+                Number(promoId)
+        );
+
+
+    if(!promo){
+        return;
+    }
+
+
+    openPromoForm();
+
+
+    document.getElementById(
+        "promoFormTitle"
+    ).innerText =
+        "EDIT PROMO";
+
+
+    document.getElementById(
+        "promoId"
+    ).value =
+        promo.id;
+
+
+    document.getElementById(
+        "promoCode"
+    ).value =
+        promo.code;
+
+
+    document.getElementById(
+        "promoDiscountType"
+    ).value =
+        promo.discount_type ||
+        "percent";
+
+
+    document.getElementById(
+        "promoDiscountValue"
+    ).value =
+        promo.discount_value ||
+        0;
+
+
+    document.getElementById(
+        "promoMinimumOrder"
+    ).value =
+        promo.minimum_order ||
+        0;
+
+
+    document.getElementById(
+        "promoMaxUses"
+    ).value =
+        promo.max_uses ||
+        10;
+
+
+    document.getElementById(
+        "promoStartsAt"
+    ).value =
+        toLocalDatetime(
+            promo.starts_at
+        );
+
+
+    document.getElementById(
+        "promoExpiresAt"
+    ).value =
+        toLocalDatetime(
+            promo.expires_at
+        );
+
+
+    document.getElementById(
+        "promoActive"
+    ).value =
+        promo.active
+            ? "true"
+            : "false";
+
+}
+
+
+async function savePromo(){
+
+    const id =
+        document.getElementById(
+            "promoId"
+        ).value;
+
+
+    const code =
+        document.getElementById(
+            "promoCode"
+        ).value
+        .trim()
+        .toUpperCase();
+
+
+    const discountType =
+        document.getElementById(
+            "promoDiscountType"
+        ).value;
+
+
+    const discountValue =
+        Number(
+            document.getElementById(
+                "promoDiscountValue"
+            ).value
+        );
+
+
+    const minimumOrder =
+        Number(
+            document.getElementById(
+                "promoMinimumOrder"
+            ).value
+        );
+
+
+    const maxUses =
+        Number(
+            document.getElementById(
+                "promoMaxUses"
+            ).value
+        );
+
+
+    const startsAt =
+        document.getElementById(
+            "promoStartsAt"
+        ).value;
+
+
+    const expiresAt =
+        document.getElementById(
+            "promoExpiresAt"
+        ).value;
+
+
+    const active =
+        document.getElementById(
+            "promoActive"
+        ).value === "true";
+
+
+    const message =
+        document.getElementById(
+            "promoFormMessage"
+        );
+
+
+    if(!code){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Kode promo wajib diisi.";
+
+        return;
+    }
+
+
+    if(
+        !Number.isFinite(discountValue) ||
+        discountValue < 0
+    ){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Nilai diskon tidak valid.";
+
+        return;
+    }
+
+
+    if(
+        discountType === "percent" &&
+        discountValue > 100
+    ){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Diskon persen maksimal 100%.";
+
+        return;
+    }
+
+
+    if(
+        !Number.isFinite(minimumOrder) ||
+        minimumOrder < 0
+    ){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Minimal order tidak valid.";
+
+        return;
+    }
+
+
+    if(
+        !Number.isInteger(maxUses) ||
+        maxUses < 1
+    ){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Maksimal penggunaan minimal 1.";
+
+        return;
+    }
+
+
+    const payload = {
+
+        code,
+
+        discount_type:
+            discountType,
+
+        discount_value:
+            discountValue,
+
+        minimum_order:
+            Math.round(
+                minimumOrder
+            ),
+
+        max_uses:
+            maxUses,
+
+        starts_at:
+            localDatetimeToISO(
+                startsAt
+            ),
+
+        expires_at:
+            localDatetimeToISO(
+                expiresAt
+            ),
+
+        active,
+
+        discount_percent:
+            discountType === "percent"
+                ? discountValue
+                : 0,
+
+        updated_at:
+            new Date().toISOString()
+
+    };
+
+
+    message.className =
+        "message success";
+
+    message.innerText =
+        "Menyimpan...";
+
+
+    const result =
+        id
+
+        ?
+
+        await supabaseClient
+            .from("promos")
+            .update(payload)
+            .eq("id",id)
+
+        :
+
+        await supabaseClient
+            .from("promos")
+            .insert({
+                ...payload,
+                used_count:0
+            });
+
+
+    if(result.error){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            result.error.message;
+
+        return;
+    }
+
+
+    closePromoForm();
+
+    await loadPromos();
+
+}
+
+
+async function togglePromo(promoId){
+
+    const promo =
+        allPromos.find(
+            item =>
+                Number(item.id) ===
+                Number(promoId)
+        );
+
+
+    if(!promo){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("promos")
+            .update({
+                active:
+                    !promo.active,
+
+                updated_at:
+                    new Date().toISOString()
+            })
+            .eq(
+                "id",
+                promoId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal mengubah promo:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadPromos();
+
+}
+
+
+async function resetPromoUses(promoId){
+
+    const promo =
+        allPromos.find(
+            item =>
+                Number(item.id) ===
+                Number(promoId)
+        );
+
+
+    if(!promo){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "Reset penggunaan promo " +
+            promo.code +
+            " menjadi 0?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("promos")
+            .update({
+                used_count:0,
+
+                updated_at:
+                    new Date().toISOString()
+            })
+            .eq(
+                "id",
+                promoId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal reset promo:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadPromos();
+
+}
+
+
+async function deletePromo(promoId){
+
+    const promo =
+        allPromos.find(
+            item =>
+                Number(item.id) ===
+                Number(promoId)
+        );
+
+
+    if(!promo){
+        return;
+    }
+
+
+    if(
+        !confirm(
+            "Hapus promo:\n" +
+            promo.code +
+            "?"
+        )
+    ){
+        return;
+    }
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("promos")
+            .delete()
+            .eq(
+                "id",
+                promoId
+            );
+
+
+    if(error){
+
+        alert(
+            "Gagal menghapus promo:\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    await loadPromos();
+
+}
+
+
+/* =====================================================
+WEBSITE SETTINGS
+===================================================== */
+
+async function loadStoreSettingsAdmin(){
+
+    const message =
+        document.getElementById(
+            "settingsMessage"
+        );
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("store_settings")
+            .select("*")
+            .eq(
+                "id",
+                1
+            )
+            .maybeSingle();
+
+
+    if(error){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Gagal memuat setting: " +
+            error.message;
+
+        return;
+    }
+
+
+    if(!data){
+        return;
+    }
+
+
+    document.getElementById(
+        "maintenanceMode"
+    ).checked =
+        data.maintenance_mode === true;
+
+
+    document.getElementById(
+        "maintenanceTitle"
+    ).value =
+        data.maintenance_title || "";
+
+
+    document.getElementById(
+        "maintenanceMessage"
+    ).value =
+        data.maintenance_message || "";
+
+
+    document.getElementById(
+        "bannerActive"
+    ).checked =
+        data.promo_banner_active === true;
+
+
+    document.getElementById(
+        "bannerTitle"
+    ).value =
+        data.promo_banner_title || "";
+
+
+    document.getElementById(
+        "bannerText"
+    ).value =
+        data.promo_banner_text || "";
+
+
+    document.getElementById(
+        "bannerButtonText"
+    ).value =
+        data.promo_banner_button_text || "";
+
+
+    document.getElementById(
+        "bannerButtonUrl"
+    ).value =
+        data.promo_banner_button_url || "";
+
+
+    updateBannerPreview();
+
+
+    message.className =
+        "message success";
+
+    message.innerText =
+        "Setting berhasil dimuat.";
+
+}
+
+
+async function saveStoreSettings(){
+
+    const message =
+        document.getElementById(
+            "settingsMessage"
+        );
+
+
+    const payload = {
+
+        maintenance_mode:
+            document.getElementById(
+                "maintenanceMode"
+            ).checked,
+
+        maintenance_title:
+            document.getElementById(
+                "maintenanceTitle"
+            ).value.trim(),
+
+        maintenance_message:
+            document.getElementById(
+                "maintenanceMessage"
+            ).value.trim(),
+
+        promo_banner_active:
+            document.getElementById(
+                "bannerActive"
+            ).checked,
+
+        promo_banner_title:
+            document.getElementById(
+                "bannerTitle"
+            ).value.trim(),
+
+        promo_banner_text:
+            document.getElementById(
+                "bannerText"
+            ).value.trim(),
+
+        promo_banner_button_text:
+            document.getElementById(
+                "bannerButtonText"
+            ).value.trim(),
+
+        promo_banner_button_url:
+            document.getElementById(
+                "bannerButtonUrl"
+            ).value.trim(),
+
+        updated_at:
+            new Date().toISOString()
+
+    };
+
+
+    message.className =
+        "message";
+
+    message.innerText =
+        "Menyimpan setting...";
+
+
+    const {
+        error
+    } =
+        await supabaseClient
+            .from("store_settings")
+            .update(payload)
+            .eq(
+                "id",
+                1
+            );
+
+
+    if(error){
+
+        message.className =
+            "message error";
+
+        message.innerText =
+            "Gagal menyimpan setting: " +
+            error.message;
+
+        return;
+    }
+
+
+    message.className =
+        "message success";
+
+    message.innerText =
+        "Setting website berhasil disimpan.";
+
+}
+
+
+function updateBannerPreview(){
+
+    document.getElementById(
+        "bannerPreviewTitle"
+    ).innerText =
+        document.getElementById(
+            "bannerTitle"
+        ).value ||
+        "Judul Banner";
+
+
+    document.getElementById(
+        "bannerPreviewText"
+    ).innerText =
+        document.getElementById(
+            "bannerText"
+        ).value ||
+        "Isi banner";
+
+}
+
+
+/* =====================================================
+EVENT
+===================================================== */
+
+document
+    .getElementById(
+        "adminPassword"
+    )
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(
+                event.key === "Enter"
+            ){
+
+                loginAdmin();
+
+            }
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "bannerTitle"
+    )
+    .addEventListener(
+        "input",
+        updateBannerPreview
+    );
+
+
+document
+    .getElementById(
+        "bannerText"
+    )
+    .addEventListener(
+        "input",
+        updateBannerPreview
+    );
 
 
 /* =====================================================
@@ -2106,9 +5181,6 @@ INIT
 ===================================================== */
 
 async function init(){
-
-    await testSupabaseConnection();
-
 
     const {
         data:{
@@ -2123,11 +5195,6 @@ async function init(){
     if(session){
 
         await checkAdmin();
-
-    }
-    else{
-
-        showLogin();
 
     }
 
