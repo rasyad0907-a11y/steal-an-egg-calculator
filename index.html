@@ -6,6 +6,8 @@
 
 <title>SYADZZ STORE</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 *{
     box-sizing:border-box;
@@ -35,7 +37,7 @@ body{
 }
 
 /* =========================
-   HOME
+HOME
 ========================= */
 
 .home-card{
@@ -98,81 +100,85 @@ body{
 }
 
 /* =========================
-   CONTACT
+CONTACT
 ========================= */
 
 .contact-section{
-    margin-top:22px;
-    background:#19192d;
-    border:1px solid #454565;
-    border-radius:18px;
-    padding:18px;
+    margin-top:28px;
+    padding:10px 5px 5px;
     text-align:center;
+    background:transparent;
+    border:0;
+    box-shadow:none;
 }
 
 .contact-section h2{
-    color:#ffd900;
-    font-size:18px;
-    margin:0 0 15px;
+    color:#777;
+    font-size:12px;
+    font-weight:500;
+    margin:0 0 8px;
 }
 
 .contact-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+    display:flex;
+    justify-content:center;
+    gap:8px;
 }
 
 .contact-item{
     display:flex;
     align-items:center;
-    gap:12px;
-    padding:14px;
-    background:#11111c;
-    border:1px solid #35354e;
-    border-radius:12px;
+    gap:6px;
+    padding:7px 10px;
+    background:transparent;
+    border:1px solid #29293b;
+    border-radius:8px;
     text-decoration:none;
-    color:#fff;
+    color:#999;
     transition:.2s;
 }
 
 .contact-item:hover{
-    transform:translateY(-3px);
-    border-color:#ffd900;
+    border-color:#555;
+    transform:none;
 }
 
 .contact-logo{
-    width:48px;
-    height:48px;
-    border-radius:12px;
+    width:25px;
+    height:25px;
+    border-radius:6px;
     display:flex;
     align-items:center;
     justify-content:center;
+    font-size:9px;
     font-weight:bold;
     flex-shrink:0;
 }
 
 .wa-logo{
     background:#25D366;
+    color:#fff;
 }
 
 .tiktok-logo{
     background:#000;
     border:1px solid #555;
+    color:#fff;
 }
 
 .contact-title{
+    font-size:10px;
     font-weight:bold;
-    font-size:14px;
-    margin-bottom:4px;
+    margin-bottom:1px;
 }
 
 .contact-value{
-    color:#aaa;
-    font-size:13px;
+    color:#666;
+    font-size:9px;
 }
 
 /* =========================
-   CARD
+CARD
 ========================= */
 
 .card{
@@ -192,7 +198,7 @@ body{
 }
 
 /* =========================
-   FORM
+FORM
 ========================= */
 
 label{
@@ -219,7 +225,7 @@ select:focus{
 }
 
 /* =========================
-   BUTTON
+BUTTON
 ========================= */
 
 .btn{
@@ -250,7 +256,7 @@ select:focus{
 }
 
 /* =========================
-   CALCULATOR
+CALCULATOR
 ========================= */
 
 .result-grid{
@@ -300,7 +306,7 @@ select:focus{
 }
 
 /* =========================
-   PAKET JOKI
+PAKET JOKI
 ========================= */
 
 .package-grid{
@@ -353,7 +359,7 @@ select:focus{
 }
 
 /* =========================
-   QUANTITY
+QUANTITY
 ========================= */
 
 .quantity-box{
@@ -377,7 +383,7 @@ select:focus{
 }
 
 /* =========================
-   TOTAL PAYMENT
+PAYMENT
 ========================= */
 
 .pay-total{
@@ -406,10 +412,6 @@ select:focus{
     font-weight:800;
 }
 
-/* =========================
-   PAYMENT
-========================= */
-
 .payment-box{
     display:none;
     margin-top:15px;
@@ -425,7 +427,7 @@ select:focus{
 }
 
 /* =========================
-   QRIS
+QRIS
 ========================= */
 
 .qris-image{
@@ -439,7 +441,7 @@ select:focus{
 }
 
 /* =========================
-   DANA
+DANA
 ========================= */
 
 .dana-card{
@@ -461,7 +463,6 @@ select:focus{
     font-size:28px;
     font-weight:800;
     letter-spacing:1px;
-    box-shadow:0 8px 20px rgba(18,136,255,.25);
 }
 
 .dana-name{
@@ -476,7 +477,93 @@ select:focus{
 }
 
 /* =========================
-   FILE
+PROMO
+========================= */
+
+.promo-box{
+    margin-top:18px;
+    padding:15px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+}
+
+.promo-row{
+    display:flex;
+    gap:8px;
+}
+
+.promo-row input{
+    flex:1;
+}
+
+.promo-btn{
+    width:110px;
+    margin:0;
+    padding:12px;
+}
+
+.promo-message{
+    margin-top:9px;
+    font-size:13px;
+    min-height:18px;
+}
+
+.promo-success{
+    color:#00ff88;
+}
+
+.promo-error{
+    color:#ff7777;
+}
+
+/* =========================
+RINGKASAN
+========================= */
+
+.summary-box{
+    margin-top:18px;
+    padding:18px;
+    border:1px solid #ffd900;
+    border-radius:14px;
+    background:rgba(255,217,0,.06);
+}
+
+.summary-title{
+    color:#ffd900;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:12px;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:10px 0;
+    border-bottom:1px solid #303046;
+}
+
+.summary-row:last-child{
+    border-bottom:0;
+}
+
+.summary-row span:first-child{
+    color:#aaa;
+}
+
+.summary-row span:last-child{
+    font-weight:bold;
+    text-align:right;
+}
+
+.summary-total{
+    color:#ffd900 !important;
+    font-size:20px;
+}
+
+/* =========================
+FILE
 ========================= */
 
 .file-preview{
@@ -502,8 +589,46 @@ select:focus{
 }
 
 /* =========================
-   NOTICE
+CEK ORDER
 ========================= */
+
+.check-box{
+    margin-top:22px;
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:18px;
+    padding:18px;
+}
+
+.check-title{
+    color:#ffd900;
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.order-result{
+    margin-top:15px;
+    background:#11111c;
+    border:1px solid #35354e;
+    border-radius:12px;
+    padding:15px;
+    display:none;
+}
+
+.order-result.active{
+    display:block;
+}
+
+.order-status{
+    margin-top:12px;
+    padding:12px;
+    border-radius:10px;
+    background:#222238;
+    text-align:center;
+    font-weight:bold;
+    color:#00ff88;
+}
 
 .notice{
     margin-top:15px;
@@ -530,20 +655,98 @@ select:focus{
 }
 
 /* =========================
-   MOBILE
+ADMIN LINK
+========================= */
+
+.admin-link{
+    text-align:center;
+    margin-top:18px;
+}
+
+.admin-link a{
+    display:inline-block;
+    color:#aaa;
+    font-size:12px;
+    text-decoration:none;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+.admin-link a:hover{
+    color:#fff;
+}
+
+/* =========================
+ID ORDER
+========================= */
+
+.order-code-box{
+    margin-top:12px;
+    padding:12px;
+    background:#11111c;
+    border:1px solid #ffd900;
+    border-radius:10px;
+}
+
+.order-code-input{
+    width:100%;
+    padding:11px;
+    background:#19192d;
+    border:1px solid #454565;
+    border-radius:8px;
+    color:#ffd900;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    outline:none;
+}
+
+.order-code-input:focus{
+    border-color:#ffd900;
+}
+
+.copy-order-btn{
+    width:100%;
+    margin-top:8px;
+    padding:11px;
+    border:0;
+    border-radius:8px;
+    background:#303047;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.copy-order-btn:hover{
+    background:#454565;
+}
+
+/* =========================
+MOBILE
 ========================= */
 
 @media(max-width:650px){
 
     .choice-grid,
     .package-grid,
-    .result-grid,
-    .contact-grid{
+    .result-grid{
         grid-template-columns:1fr;
     }
 
     .main-title{
         font-size:28px;
+    }
+
+    .promo-row{
+        flex-direction:column;
+    }
+
+    .promo-btn{
+        width:100%;
+    }
+
+    .summary-row{
+        font-size:14px;
     }
 }
 </style>
@@ -568,6 +771,7 @@ HOME
         <div class="subtitle">
             Joki & Calculator Speed Steal An Egg
         </div>
+
 
         <div class="choice-grid">
 
@@ -617,6 +821,53 @@ HOME
         </div>
 
 
+        <!-- CEK PESANAN -->
+
+        <div class="check-box">
+
+            <div class="check-title">
+                CEK PESANAN
+            </div>
+
+            <input
+                type="text"
+                id="checkOrderCode"
+                placeholder="Masukkan ID Order, contoh: SS-ABC123"
+                autocomplete="off"
+            >
+
+            <button
+                class="btn btn-primary"
+                type="button"
+                onclick="cekPesanan()"
+            >
+                CEK STATUS
+            </button>
+
+            <div
+                id="checkResult"
+                class="order-result"
+            ></div>
+
+        </div>
+
+
+        <!-- ADMIN LOGIN -->
+
+        <div class="admin-link">
+
+            <a
+                href="./admin.html"
+                target="_self"
+            >
+                Admin Login
+            </a>
+
+        </div>
+
+
+        <!-- HUBUNGI / BANTUAN PALING BAWAH -->
+
         <div class="contact-section">
 
             <h2>
@@ -637,6 +888,7 @@ HOME
                     </div>
 
                     <div>
+
                         <div class="contact-title">
                             WhatsApp
                         </div>
@@ -644,6 +896,7 @@ HOME
                         <div class="contact-value">
                             087729174391
                         </div>
+
                     </div>
 
                 </a>
@@ -661,13 +914,15 @@ HOME
                     </div>
 
                     <div>
+
                         <div class="contact-title">
                             TikTok
                         </div>
 
                         <div class="contact-value">
-                            syadzz011
+                            @syadzz011
                         </div>
+
                     </div>
 
                 </a>
@@ -813,80 +1068,98 @@ CALCULATOR
         <div class="result-grid">
 
             <div class="result-item">
+
                 <div class="result-label">
                     Speed Sekarang
                 </div>
+
                 <div
                     class="result-value"
                     id="resultCurrentSpeed"
                 >
                     0
                 </div>
+
             </div>
 
 
             <div class="result-item">
+
                 <div class="result-label">
                     Gain / Step
                 </div>
+
                 <div
                     class="result-value"
                     id="resultGainStep"
                 >
                     0
                 </div>
+
             </div>
 
 
             <div class="result-item">
+
                 <div class="result-label">
                     Gain / Detik
                 </div>
+
                 <div
                     class="result-value"
                     id="resultGainSecond"
                 >
                     0
                 </div>
+
             </div>
 
 
             <div class="result-item">
+
                 <div class="result-label">
                     Gain / Menit
                 </div>
+
                 <div
                     class="result-value"
                     id="resultGainMinute"
                 >
                     0
                 </div>
+
             </div>
 
 
             <div class="result-item">
+
                 <div class="result-label">
                     Gain / Jam
                 </div>
+
                 <div
                     class="result-value"
                     id="resultGainHour"
                 >
                     0
                 </div>
+
             </div>
 
 
             <div class="result-item">
+
                 <div class="result-label">
                     Yang Didapat Saat AFK
                 </div>
+
                 <div
                     class="result-value"
                     id="resultAFK"
                 >
                     0
                 </div>
+
             </div>
 
         </div>
@@ -941,15 +1214,14 @@ JOKI
         <div class="package-grid">
 
 
-            <!-- AFK 1 HARI -->
-
             <div
                 class="package-card selected"
                 onclick="selectPackage(
                     this,
                     'Joki AFK 1 Hari',
                     7000,
-                    'speed1'
+                    'speed1',
+                    'afk_1d'
                 )"
             >
 
@@ -972,15 +1244,14 @@ JOKI
             </div>
 
 
-            <!-- AFK 7 HARI -->
-
             <div
                 class="package-card"
                 onclick="selectPackage(
                     this,
                     'Joki AFK 7 Hari',
                     25000,
-                    'fixed'
+                    'fixed',
+                    'afk_7d'
                 )"
             >
 
@@ -1003,15 +1274,14 @@ JOKI
             </div>
 
 
-            <!-- EGG 1 HARI -->
-
             <div
                 class="package-card"
                 onclick="selectPackage(
                     this,
                     'Joki Egg 1 Hari',
                     30000,
-                    'fixed'
+                    'fixed',
+                    'egg_1d'
                 )"
             >
 
@@ -1034,15 +1304,14 @@ JOKI
             </div>
 
 
-            <!-- EGG 12 JAM -->
-
             <div
                 class="package-card"
                 onclick="selectPackage(
                     this,
                     'Joki Egg 12 Jam',
                     20000,
-                    'fixed'
+                    'fixed',
+                    'egg_12h'
                 )"
             >
 
@@ -1067,8 +1336,6 @@ JOKI
         </div>
 
 
-        <!-- QUANTITY KHUSUS AFK 1 HARI -->
-
         <div
             id="quantityBox"
             class="quantity-box active"
@@ -1080,7 +1347,7 @@ JOKI
 
             <select
                 id="quantity"
-                onchange="updateTotal()"
+                onchange="updateSummary()"
             >
 
                 <option value="1">
@@ -1100,8 +1367,6 @@ JOKI
         </div>
 
 
-        <!-- USERNAME -->
-
         <label>
             👤 Username Roblox
         </label>
@@ -1113,8 +1378,6 @@ JOKI
             autocomplete="off"
         >
 
-
-        <!-- PASSWORD -->
 
         <label>
             🔐 Password Roblox
@@ -1128,8 +1391,6 @@ JOKI
         >
 
 
-        <!-- GAME / MAP -->
-
         <label>
             🎮 Game / Map
         </label>
@@ -1142,8 +1403,6 @@ JOKI
         >
 
 
-        <!-- NOMOR CUSTOMER -->
-
         <label>
             📱 Nomor WhatsApp Customer
         </label>
@@ -1152,10 +1411,9 @@ JOKI
             type="tel"
             id="customerWA"
             placeholder="Contoh: 081234567890"
+            autocomplete="off"
         >
 
-
-        <!-- PAYMENT -->
 
         <label>
             💳 Metode Pembayaran
@@ -1181,8 +1439,6 @@ JOKI
         </select>
 
 
-        <!-- TOTAL BAYAR -->
-
         <div
             id="payTotal"
             class="pay-total"
@@ -1201,8 +1457,6 @@ JOKI
 
         </div>
 
-
-        <!-- QRIS -->
 
         <div
             id="qrisBox"
@@ -1244,15 +1498,13 @@ JOKI
                 style="display:none;color:#ff7777;"
             >
                 QRIS tidak ditemukan.
-                Pastikan file bernama
-                qris.jpeg dan berada di folder
-                yang sama dengan index.html.
+                Pastikan file bernama qris.jpeg
+                dan berada di folder yang sama
+                dengan index.html.
             </div>
 
         </div>
 
-
-        <!-- DANA -->
 
         <div
             id="danaBox"
@@ -1297,7 +1549,109 @@ JOKI
         </div>
 
 
-        <!-- BUKTI -->
+        <!-- PROMO -->
+
+        <div class="promo-box">
+
+            <label style="margin-top:0;">
+                Kode Promo
+            </label>
+
+            <div class="promo-row">
+
+                <input
+                    type="text"
+                    id="promoCode"
+                    placeholder="Masukkan kode promo"
+                    autocomplete="off"
+                    maxlength="30"
+                >
+
+                <button
+                    type="button"
+                    class="btn btn-primary promo-btn"
+                    onclick="gunakanPromo()"
+                >
+                    GUNAKAN
+                </button>
+
+            </div>
+
+            <div
+                id="promoMessage"
+                class="promo-message"
+            ></div>
+
+        </div>
+
+
+        <!-- RINGKASAN -->
+
+        <div class="summary-box">
+
+            <div class="summary-title">
+                RINGKASAN PESANAN
+            </div>
+
+            <div class="summary-row">
+                <span>Paket</span>
+                <span id="sumPackage">
+                    Joki AFK 1 Hari
+                </span>
+            </div>
+
+            <div class="summary-row">
+                <span>Quantity</span>
+                <span id="sumQuantity">
+                    1 Hari
+                </span>
+            </div>
+
+            <div class="summary-row">
+                <span>Harga Satuan</span>
+                <span id="sumUnitPrice">
+                    Rp7.000
+                </span>
+            </div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="sumSubtotal">
+                    Rp7.000
+                </span>
+            </div>
+
+            <div class="summary-row">
+                <span>Promo</span>
+                <span id="sumPromo">
+                    -
+                </span>
+            </div>
+
+            <div class="summary-row">
+                <span>Diskon</span>
+                <span id="sumDiscount">
+                    Rp0
+                </span>
+            </div>
+
+            <div class="summary-row">
+
+                <span>
+                    Total Bayar
+                </span>
+
+                <span
+                    id="sumTotal"
+                    class="summary-total"
+                >
+                    Rp7.000
+                </span>
+
+            </div>
+
+        </div>
+
 
         <label>
             🧾 Upload Bukti Pembayaran
@@ -1330,11 +1684,12 @@ JOKI
 
         <div class="notice">
 
-            Total pembayaran dihitung otomatis
-            berdasarkan paket dan quantity.
-
-            Foto bukti pembayaran tetap perlu
-            dikirim di chat WhatsApp secara manual.
+            Setelah pembayaran selesai, upload bukti
+            pembayaran lalu klik tombol order.
+            Website akan membuat ID Order dan membuka
+            WhatsApp admin dengan data pesanan.
+            Foto bukti pembayaran tetap dikirim manual
+            di chat WhatsApp.
 
         </div>
 
@@ -1370,17 +1725,74 @@ JOKI
 <script>
 
 /* =====================================================
-   DATA PAKET
+SUPABASE
 ===================================================== */
 
-let selectedPackage = "Joki AFK 1 Hari";
-let selectedPrice = 7000;
-let selectedType = "speed1";
-let quantity = 1;
+const SUPABASE_URL =
+    "https://oyqdraemxlzqenbsdujh.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_uLjeOGdhxSQUjc4fCrkN9Q_QGabJxzu";
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
 
 
 /* =====================================================
-   PINDAH HALAMAN
+WHATSAPP
+===================================================== */
+
+const ADMIN_WA =
+    "6287729174391";
+
+
+/* =====================================================
+ORDER
+===================================================== */
+
+let selectedPackage =
+    "Joki AFK 1 Hari";
+
+let selectedPrice =
+    7000;
+
+let selectedType =
+    "speed1";
+
+let selectedPackageId =
+    "afk_1d";
+
+let quantity =
+    1;
+
+let promoApplied =
+    false;
+
+let promoCodeApplied =
+    "";
+
+let latestOrderCode =
+    "";
+
+
+/* =====================================================
+RUPIAH
+===================================================== */
+
+function rupiah(number){
+
+    return "Rp" +
+        Number(number || 0)
+        .toLocaleString("id-ID");
+
+}
+
+
+/* =====================================================
+PAGE
 ===================================================== */
 
 function showPage(pageId){
@@ -1393,147 +1805,364 @@ function showPage(pageId){
 
         });
 
-    document
-        .getElementById(pageId)
-        .classList.add("active");
+
+    const page =
+        document.getElementById(pageId);
+
+
+    if(page){
+
+        page.classList.add("active");
+
+    }
+
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
+
 }
 
 
 /* =====================================================
-   PILIH PAKET
+PAKET
 ===================================================== */
 
 function selectPackage(
     element,
     packageName,
     price,
-    type
+    type,
+    packageId
 ){
 
     document
         .querySelectorAll(".package-card")
         .forEach(function(card){
 
-            card.classList.remove("selected");
+            card.classList.remove(
+                "selected"
+            );
 
         });
 
-    element.classList.add("selected");
 
-    selectedPackage = packageName;
-    selectedPrice = price;
-    selectedType = type;
+    element.classList.add(
+        "selected"
+    );
+
+
+    selectedPackage =
+        packageName;
+
+    selectedPrice =
+        price;
+
+    selectedType =
+        type;
+
+    selectedPackageId =
+        packageId;
+
 
     const quantityBox =
         document.getElementById(
             "quantityBox"
         );
 
+
     if(type === "speed1"){
 
-        quantityBox.classList.add("active");
-
-        quantity = Number(
-            document.getElementById(
-                "quantity"
-            ).value
+        quantityBox.classList.add(
+            "active"
         );
+
+        quantity =
+            Number(
+                document.getElementById(
+                    "quantity"
+                ).value
+            );
 
     }else{
 
-        quantityBox.classList.remove("active");
+        quantityBox.classList.remove(
+            "active"
+        );
 
-        quantity = 1;
+        quantity =
+            1;
 
     }
 
-    updateTotal();
+
+    updateSummary();
+
 }
 
 
 /* =====================================================
-   HITUNG TOTAL JOKI
+SUBTOTAL
 ===================================================== */
 
-function getTotal(){
+function getSubtotal(){
 
-    if(selectedType === "speed1"){
+    if(
+        selectedType ===
+        "speed1"
+    ){
 
-        const qty =
+        quantity =
             Number(
-                document
-                    .getElementById(
-                        "quantity"
-                    )
-                    .value
+                document.getElementById(
+                    "quantity"
+                ).value
             );
 
-        quantity = qty;
 
-        return selectedPrice * qty;
+        if(
+            !Number.isInteger(
+                quantity
+            ) ||
+            quantity < 1 ||
+            quantity > 3
+        ){
+
+            quantity =
+                1;
+
+        }
+
+
+        return (
+            selectedPrice *
+            quantity
+        );
 
     }
 
-    quantity = 1;
+
+    quantity =
+        1;
+
 
     return selectedPrice;
+
 }
 
 
 /* =====================================================
-   UPDATE TOTAL
+PROMO
 ===================================================== */
 
-function updateTotal(){
+function getPromoDiscount(
+    subtotal
+){
 
-    const total = getTotal();
+    if(
+        promoApplied &&
+        promoCodeApplied ===
+            "SYADZZ01"
+    ){
 
-    const totalText =
-        "Rp" +
-        total.toLocaleString("id-ID");
+        return Math.round(
+            subtotal *
+            15 /
+            100
+        );
 
-
-    document
-        .getElementById(
-            "payTotalValue"
-        )
-        .innerText =
-            totalText;
-
-
-    document
-        .getElementById(
-            "qrisTotal"
-        )
-        .innerText =
-            totalText;
+    }
 
 
-    document
-        .getElementById(
-            "danaTotal"
-        )
-        .innerText =
-            totalText;
+    return 0;
+
+}
 
 
-    /*
-        Total pembayaran hanya
-        ditampilkan setelah customer
-        memilih metode pembayaran.
-    */
+function gunakanPromo(){
+
+    const input =
+        document.getElementById(
+            "promoCode"
+        );
+
+
+    const message =
+        document.getElementById(
+            "promoMessage"
+        );
+
+
+    const code =
+        input.value
+            .trim()
+            .toUpperCase();
+
+
+    promoApplied =
+        false;
+
+    promoCodeApplied =
+        "";
+
+
+    if(
+        code === ""
+    ){
+
+        message.className =
+            "promo-message promo-error";
+
+        message.innerText =
+            "Masukkan kode promo.";
+
+        updateSummary();
+
+        return;
+
+    }
+
+
+    if(
+        code !==
+        "SYADZZ01"
+    ){
+
+        message.className =
+            "promo-message promo-error";
+
+        message.innerText =
+            "Kode promo tidak valid.";
+
+        updateSummary();
+
+        return;
+
+    }
+
+
+    promoApplied =
+        true;
+
+    promoCodeApplied =
+        "SYADZZ01";
+
+
+    message.className =
+        "promo-message promo-success";
+
+    message.innerText =
+        "Promo SYADZZ01 aktif. Diskon 15%.";
+
+
+    updateSummary();
+
+}
+
+
+/* =====================================================
+SUMMARY
+===================================================== */
+
+function updateSummary(){
+
+    const subtotal =
+        getSubtotal();
+
+
+    const discount =
+        getPromoDiscount(
+            subtotal
+        );
+
+
+    const total =
+        subtotal -
+        discount;
+
+
+    document.getElementById(
+        "sumPackage"
+    ).innerText =
+        selectedPackage;
+
+
+    document.getElementById(
+        "sumQuantity"
+    ).innerText =
+        quantity +
+        " Hari";
+
+
+    document.getElementById(
+        "sumUnitPrice"
+    ).innerText =
+        rupiah(
+            selectedPrice
+        );
+
+
+    document.getElementById(
+        "sumSubtotal"
+    ).innerText =
+        rupiah(
+            subtotal
+        );
+
+
+    document.getElementById(
+        "sumPromo"
+    ).innerText =
+        promoApplied
+            ? "SYADZZ01"
+            : "-";
+
+
+    document.getElementById(
+        "sumDiscount"
+    ).innerText =
+        rupiah(
+            discount
+        );
+
+
+    document.getElementById(
+        "sumTotal"
+    ).innerText =
+        rupiah(
+            total
+        );
+
+
+    document.getElementById(
+        "payTotalValue"
+    ).innerText =
+        rupiah(
+            total
+        );
+
+
+    document.getElementById(
+        "qrisTotal"
+    ).innerText =
+        rupiah(
+            total
+        );
+
+
+    document.getElementById(
+        "danaTotal"
+    ).innerText =
+        rupiah(
+            total
+        );
+
 
     const payment =
-        document
-            .getElementById(
-                "paymentMethod"
-            )
-            .value;
+        document.getElementById(
+            "paymentMethod"
+        ).value;
 
 
     document
@@ -1545,14 +2174,17 @@ function updateTotal(){
             "active",
             payment !== ""
         );
+
 }
 
 
 /* =====================================================
-   PARSE SPEED
+PARSE SPEED
 ===================================================== */
 
-function parseSpeed(input){
+function parseSpeed(
+    input
+){
 
     if(
         input === null ||
@@ -1563,17 +2195,23 @@ function parseSpeed(input){
 
     }
 
+
     let text =
         String(input)
-        .trim()
-        .toUpperCase()
-        .replace(/,/g,"");
+            .trim()
+            .toUpperCase()
+            .replace(/,/g,"")
+            .replace(/\s+/g,"");
 
-    if(text === ""){
+
+    if(
+        text === ""
+    ){
 
         return NaN;
 
     }
+
 
     const units = {
 
@@ -1591,32 +2229,45 @@ function parseSpeed(input){
 
     };
 
-    for(
-        const suffix
-        of Object.keys(units)
-    ){
 
-        if(text.endsWith(suffix)){
+    const match =
+        text.match(
+            /^([+-]?(?:\d+(?:\.\d*)?|\.\d+))(K|M|B|T|QA|QI|SX|SP|OC|NO|DC)?$/
+        );
 
-            const number =
-                Number(
-                    text.slice(
-                        0,
-                        -suffix.length
-                    )
-                );
 
-            return Number.isFinite(number)
-                ? number * units[suffix]
-                : NaN;
-        }
+    if(!match){
+
+        return NaN;
+
     }
 
-    const number = Number(text);
 
-    return Number.isFinite(number)
-        ? number
-        : NaN;
+    const number =
+        Number(
+            match[1]
+        );
+
+
+    const suffix =
+        match[2] || "";
+
+
+    if(
+        !Number.isFinite(
+            number
+        ) ||
+        number < 0
+    ){
+
+        return NaN;
+
+    }
+
+
+    return number *
+        (units[suffix] || 1);
+
 }
 
 
@@ -1624,17 +2275,32 @@ function parseSpeed(input){
 FORMAT NUMBER
 ===================================================== */
 
-function formatNumber(number){
+function formatNumber(
+    number
+){
 
-    if(!Number.isFinite(number)){
+    if(
+        !Number.isFinite(
+            number
+        )
+    ){
+
         return "0";
+
     }
 
-    if(number === 0){
+
+    if(
+        number === 0
+    ){
+
         return "0";
+
     }
+
 
     const units = [
+
         ["DC",1e33],
         ["NO",1e30],
         ["OC",1e27],
@@ -1646,34 +2312,75 @@ function formatNumber(number){
         ["B",1e9],
         ["M",1e6],
         ["K",1e3]
+
     ];
+
 
     for(
         const [name,value]
         of units
     ){
 
-        if(Math.abs(number) >= value){
+        if(
+            Math.abs(number) >=
+            value
+        ){
 
             const result =
-                number / value;
+                number /
+                value;
+
+
+            let decimals =
+                2;
+
+
+            if(
+                Math.abs(result) >=
+                100
+            ){
+
+                decimals =
+                    0;
+
+            }else if(
+                Math.abs(result) >=
+                10
+            ){
+
+                decimals =
+                    1;
+
+            }
+
 
             return result
-                .toFixed(
-                    Math.abs(result) >= 100
-                        ? 0
-                        : 2
+                .toFixed(decimals)
+                .replace(
+                    /\.00$/,
+                    ""
                 )
-                .replace(/\.00$/,"")
-                .replace(/(\.\d)0$/,"")
-                + name;
+                .replace(
+                    /(\.\d)0$/,
+                    ""
+                ) +
+                name;
+
         }
+
     }
 
-    return number
-        .toFixed(2)
-        .replace(/\.00$/,"")
-        .replace(/(\.\d)0$/,"");
+
+    return Number(
+        number
+    ).toLocaleString(
+        "id-ID",
+        {
+            maximumFractionDigits:
+                2
+        }
+    );
+
 }
 
 
@@ -1685,46 +2392,54 @@ function hitung(){
 
     const treadmill =
         Number(
-            document
-                .getElementById("treadmill")
-                .value
+            document.getElementById(
+                "treadmill"
+            ).value
         );
+
 
     const trail =
         Number(
-            document
-                .getElementById("trail")
-                .value
+            document.getElementById(
+                "trail"
+            ).value
         );
+
 
     const multiplier =
         Number(
-            document
-                .getElementById("multiplier")
-                .value
+            document.getElementById(
+                "multiplier"
+            ).value
         );
+
 
     const currentSpeed =
         parseSpeed(
-            document
-                .getElementById("currentSpeed")
-                .value
+            document.getElementById(
+                "currentSpeed"
+            ).value
         );
+
 
     const hours =
         Number(
-            document
-                .getElementById("hours")
-                .value
+            document.getElementById(
+                "hours"
+            ).value
         );
 
+
     const status =
-        document
-            .getElementById("dataStatus");
+        document.getElementById(
+            "dataStatus"
+        );
 
 
     if(
-        !Number.isFinite(currentSpeed) ||
+        !Number.isFinite(
+            currentSpeed
+        ) ||
         currentSpeed < 0
     ){
 
@@ -1732,11 +2447,14 @@ function hitung(){
             "Speed sekarang tidak valid.";
 
         return;
+
     }
 
 
     if(
-        !Number.isFinite(hours) ||
+        !Number.isFinite(
+            hours
+        ) ||
         hours < 0
     ){
 
@@ -1744,10 +2462,12 @@ function hitung(){
             "Waktu AFK tidak valid.";
 
         return;
+
     }
 
 
-    const STEPS_PER_SECOND = 22;
+    const STEPS_PER_SECOND =
+        22;
 
 
     const gainPerStep =
@@ -1784,64 +2504,65 @@ function hitung(){
         gainFromAFK;
 
 
-    document
-        .getElementById(
-            "resultCurrentSpeed"
-        )
-        .innerText =
-            formatNumber(currentSpeed);
+    document.getElementById(
+        "resultCurrentSpeed"
+    ).innerText =
+        formatNumber(
+            currentSpeed
+        );
 
 
-    document
-        .getElementById(
-            "resultGainStep"
-        )
-        .innerText =
-            formatNumber(gainPerStep);
+    document.getElementById(
+        "resultGainStep"
+    ).innerText =
+        formatNumber(
+            gainPerStep
+        );
 
 
-    document
-        .getElementById(
-            "resultGainSecond"
-        )
-        .innerText =
-            formatNumber(gainPerSecond);
+    document.getElementById(
+        "resultGainSecond"
+    ).innerText =
+        formatNumber(
+            gainPerSecond
+        );
 
 
-    document
-        .getElementById(
-            "resultGainMinute"
-        )
-        .innerText =
-            formatNumber(gainPerMinute);
+    document.getElementById(
+        "resultGainMinute"
+    ).innerText =
+        formatNumber(
+            gainPerMinute
+        );
 
 
-    document
-        .getElementById(
-            "resultGainHour"
-        )
-        .innerText =
-            formatNumber(gainPerHour);
+    document.getElementById(
+        "resultGainHour"
+    ).innerText =
+        formatNumber(
+            gainPerHour
+        );
 
 
-    document
-        .getElementById(
-            "resultAFK"
-        )
-        .innerText =
-            formatNumber(gainFromAFK);
+    document.getElementById(
+        "resultAFK"
+    ).innerText =
+        formatNumber(
+            gainFromAFK
+        );
 
 
-    document
-        .getElementById(
-            "resultTotal"
-        )
-        .innerText =
-            formatNumber(totalAfterAFK);
+    document.getElementById(
+        "resultTotal"
+    ).innerText =
+        formatNumber(
+            totalAfterAFK
+        );
 
 
     status.innerText =
         "Perhitungan berhasil.";
+
 }
 
 
@@ -1852,11 +2573,9 @@ PEMBAYARAN
 function changePayment(){
 
     const method =
-        document
-            .getElementById(
-                "paymentMethod"
-            )
-            .value;
+        document.getElementById(
+            "paymentMethod"
+        ).value;
 
 
     document
@@ -1881,36 +2600,33 @@ function changePayment(){
         );
 
 
-    updateTotal();
+    updateSummary();
+
 }
 
 
 /* =====================================================
-PREVIEW BUKTI
+PREVIEW
 ===================================================== */
 
 function previewProof(){
 
     const file =
-        document
-            .getElementById(
-                "proofFile"
-            )
-            .files[0];
+        document.getElementById(
+            "proofFile"
+        ).files[0];
 
 
     const box =
-        document
-            .getElementById(
-                "filePreview"
-            );
+        document.getElementById(
+            "filePreview"
+        );
 
 
     const image =
-        document
-            .getElementById(
-                "proofPreviewImage"
-            );
+        document.getElementById(
+            "proofPreviewImage"
+        );
 
 
     if(!file){
@@ -1919,9 +2635,31 @@ function previewProof(){
             "active"
         );
 
-        image.src = "";
+        image.src =
+            "";
 
         return;
+
+    }
+
+
+    if(
+        !file.type.startsWith(
+            "image/"
+        )
+    ){
+
+        alert(
+            "Bukti pembayaran harus berupa gambar."
+        );
+
+        document.getElementById(
+            "proofFile"
+        ).value =
+            "";
+
+        return;
+
     }
 
 
@@ -1938,10 +2676,14 @@ function previewProof(){
             box.classList.add(
                 "active"
             );
+
         };
 
 
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(
+        file
+    );
+
 }
 
 
@@ -1949,65 +2691,56 @@ function previewProof(){
 KIRIM ORDER
 ===================================================== */
 
-function kirimPesanan(){
+async function kirimPesanan(){
 
     const username =
-        document
-            .getElementById(
-                "robloxUsername"
-            )
-            .value
-            .trim();
+        document.getElementById(
+            "robloxUsername"
+        ).value.trim();
 
 
     const password =
-        document
-            .getElementById(
-                "robloxPassword"
-            )
-            .value
-            .trim();
+        document.getElementById(
+            "robloxPassword"
+        ).value.trim();
 
 
     const gameMap =
-        document
-            .getElementById(
-                "gameMap"
-            )
-            .value
-            .trim();
+        document.getElementById(
+            "gameMap"
+        ).value.trim();
 
 
     const customerWA =
-        document
-            .getElementById(
-                "customerWA"
-            )
-            .value
-            .trim();
+        document.getElementById(
+            "customerWA"
+        ).value.trim();
 
 
     const payment =
-        document
-            .getElementById(
-                "paymentMethod"
-            )
-            .value;
+        document.getElementById(
+            "paymentMethod"
+        ).value;
 
 
     const proof =
-        document
-            .getElementById(
-                "proofFile"
-            )
-            .files[0];
+        document.getElementById(
+            "proofFile"
+        ).files[0];
 
 
     const status =
-        document
-            .getElementById(
-                "jokiStatus"
-            );
+        document.getElementById(
+            "jokiStatus"
+        );
+
+
+    const promoInput =
+        document.getElementById(
+            "promoCode"
+        ).value
+        .trim()
+        .toUpperCase();
 
 
     if(!username){
@@ -2017,6 +2750,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -2027,6 +2761,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -2037,6 +2772,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -2047,6 +2783,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -2057,6 +2794,7 @@ function kirimPesanan(){
         );
 
         return;
+
     }
 
 
@@ -2067,104 +2805,712 @@ function kirimPesanan(){
         );
 
         return;
-    }
-
-
-    const total =
-        getTotal();
-
-
-    const totalText =
-        "Rp" +
-        total.toLocaleString(
-            "id-ID"
-        );
-
-
-    const nomorAdmin =
-        "6287729174391";
-
-
-    let quantityText;
-
-
-    if(selectedType === "speed1"){
-
-        quantityText =
-            "Quantity: " +
-            quantity +
-            " Hari\n";
-
-    }else{
-
-        quantityText =
-            "";
 
     }
 
 
-    const pesan =
+    if(
+        promoInput !== "" &&
+        promoInput !== "SYADZZ01"
+    ){
 
-        "ORDER JOKI BARU\n\n" +
-
-        "Paket: " +
-        selectedPackage +
-        "\n" +
-
-        quantityText +
-
-        "Harga Satuan: Rp" +
-        selectedPrice.toLocaleString(
-            "id-ID"
-        ) +
-        "\n" +
-
-        "Total Bayar: " +
-        totalText +
-        "\n" +
-
-        "Username Roblox: " +
-        username +
-        "\n" +
-
-        "Password Roblox: " +
-        password +
-        "\n" +
-
-        "Game / Map: " +
-        gameMap +
-        "\n" +
-
-        "WA Customer: " +
-        customerWA +
-        "\n" +
-
-        "Pembayaran: " +
-        payment;
-
-
-    const url =
-        "https://wa.me/" +
-        nomorAdmin +
-        "?text=" +
-        encodeURIComponent(
-            pesan
+        alert(
+            "Kode promo tidak valid."
         );
 
+        return;
 
-    window.open(
-        url,
-        "_blank"
-    );
+    }
+
+
+    const waWindow =
+        window.open(
+            "",
+            "_blank"
+        );
 
 
     status.innerText =
-        "WhatsApp admin dibuka. Kirim foto bukti pembayaran di chat.";
+        "Menyimpan order ke database...";
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "create_joki_order",
+                {
+                    p_roblox_username:
+                        username,
+
+                    p_whatsapp:
+                        customerWA,
+
+                    p_package_id:
+                        selectedPackageId,
+
+                    p_quantity:
+                        quantity,
+
+                    p_game_map:
+                        gameMap,
+
+                    p_payment_method:
+                        payment,
+
+                    p_payment_reference:
+                        null,
+
+                    p_promo_code:
+                        promoInput ||
+                        null
+                }
+            );
+
+
+        if(error){
+
+            if(waWindow){
+                waWindow.close();
+            }
+
+
+            console.error(
+                error
+            );
+
+
+            alert(
+                error.message ||
+                "Gagal membuat order."
+            );
+
+
+            status.innerText =
+                "Order gagal dibuat.";
+
+            return;
+
+        }
+
+
+        const order =
+            Array.isArray(data)
+                ? data[0]
+                : data;
+
+
+        if(!order){
+
+            if(waWindow){
+                waWindow.close();
+            }
+
+
+            alert(
+                "Database tidak mengembalikan ID Order."
+            );
+
+            return;
+
+        }
+
+
+        latestOrderCode =
+            order.order_code;
+
+
+        const finalTotal =
+            Number(
+                order.total_amount
+            );
+
+
+        const finalDiscount =
+            Number(
+                order.discount_amount ||
+                0
+            );
+
+
+        let quantityText =
+            "";
+
+
+        if(
+            selectedType ===
+            "speed1"
+        ){
+
+            quantityText =
+                "Quantity: " +
+                quantity +
+                " Hari\n";
+
+        }
+
+
+        let promoText =
+            "Promo: -\n";
+
+
+        let discountText =
+            "Diskon: Rp0\n";
+
+
+        if(
+            order.promo_code
+        ){
+
+            promoText =
+                "Promo: " +
+                order.promo_code +
+                "\n";
+
+
+            discountText =
+                "Diskon: " +
+                Number(
+                    order.discount_percent
+                ) +
+                "% (-" +
+                rupiah(
+                    finalDiscount
+                ) +
+                ")\n";
+
+        }
+
+
+        const pesan =
+
+            "ORDER JOKI BARU\n\n" +
+
+            "ID Order: " +
+            order.order_code +
+            "\n\n" +
+
+            "Paket: " +
+            order.package_name +
+            "\n" +
+
+            quantityText +
+
+            "Harga Satuan: " +
+            rupiah(
+                selectedPrice
+            ) +
+            "\n" +
+
+            "Subtotal: " +
+            rupiah(
+                order.subtotal
+            ) +
+            "\n" +
+
+            promoText +
+
+            discountText +
+
+            "Total Bayar: " +
+            rupiah(
+                finalTotal
+            ) +
+            "\n\n" +
+
+            "Username Roblox: " +
+            username +
+            "\n" +
+
+            "Password Roblox: " +
+            password +
+            "\n" +
+
+            "Game / Map: " +
+            gameMap +
+            "\n" +
+
+            "WA Customer: " +
+            customerWA +
+            "\n" +
+
+            "Pembayaran: " +
+            payment +
+            "\n\n" +
+
+            "Bukti pembayaran akan dikirim di chat WhatsApp.";
+
+
+        const url =
+            "https://wa.me/" +
+            ADMIN_WA +
+            "?text=" +
+            encodeURIComponent(
+                pesan
+            );
+
+
+        if(waWindow){
+
+            waWindow.location.href =
+                url;
+
+        }else{
+
+            window.location.href =
+                url;
+
+        }
+
+
+        /* =========================
+           HASIL + SALIN ID
+        ========================= */
+
+        status.innerHTML =
+
+            "Order berhasil dibuat." +
+
+            "<div class='order-code-box'>" +
+
+                "<input " +
+                    "type='text' " +
+                    "class='order-code-input' " +
+                    "id='latestOrderCodeInput' " +
+                    "value='" +
+                        escapeAttribute(
+                            order.order_code
+                        ) +
+                    "' " +
+                    "readonly " +
+                    "onclick='this.select()'" +
+                ">" +
+
+                "<button " +
+                    "type='button' " +
+                    "class='copy-order-btn' " +
+                    "onclick='salinOrderId()'>" +
+                    "SALIN ID ORDER" +
+                "</button>" +
+
+            "</div>" +
+
+            "<div style='margin-top:10px;'>" +
+
+                "WhatsApp admin sudah dibuka. " +
+
+                "Kirim foto bukti pembayaran di chat." +
+
+            "</div>";
+
+
+        /*
+          Password tidak disimpan ke database.
+        */
+
+        document.getElementById(
+            "robloxPassword"
+        ).value =
+            "";
+
+
+    }catch(error){
+
+        if(waWindow){
+            waWindow.close();
+        }
+
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            "Terjadi kesalahan saat membuat order:\n" +
+            error.message
+        );
+
+
+        status.innerText =
+            "Order gagal dibuat.";
+
+    }
+
 }
 
 
 /* =====================================================
-ENTER = HITUNG
+SALIN ID
+===================================================== */
+
+async function salinOrderId(){
+
+    const input =
+        document.getElementById(
+            "latestOrderCodeInput"
+        );
+
+
+    if(!input){
+
+        alert(
+            "ID Order belum tersedia."
+        );
+
+        return;
+
+    }
+
+
+    const text =
+        input.value;
+
+
+    input.focus();
+    input.select();
+    input.setSelectionRange(
+        0,
+        text.length
+    );
+
+
+    let berhasil =
+        false;
+
+
+    /*
+      Cara modern
+    */
+
+    try{
+
+        if(
+            navigator.clipboard &&
+            window.isSecureContext
+        ){
+
+            await navigator.clipboard.writeText(
+                text
+            );
+
+            berhasil =
+                true;
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Clipboard modern gagal",
+            error
+        );
+
+    }
+
+
+    /*
+      Cara lama untuk file://
+    */
+
+    if(!berhasil){
+
+        try{
+
+            berhasil =
+                document.execCommand(
+                    "copy"
+                );
+
+        }catch(error){
+
+            console.log(
+                "Fallback copy gagal",
+                error
+            );
+
+        }
+
+    }
+
+
+    if(berhasil){
+
+        alert(
+            "ID Order berhasil disalin:\n" +
+            text
+        );
+
+    }else{
+
+        alert(
+            "ID Order sudah dipilih.\n\n" +
+            "Tekan Ctrl+C untuk menyalinnya."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+ESCAPE ATTRIBUTE
+===================================================== */
+
+function escapeAttribute(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    );
+
+}
+
+
+/* =====================================================
+ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+/* =====================================================
+CEK ORDER
+===================================================== */
+
+async function cekPesanan(){
+
+    const code =
+        document.getElementById(
+            "checkOrderCode"
+        ).value
+        .trim()
+        .toUpperCase();
+
+
+    const result =
+        document.getElementById(
+            "checkResult"
+        );
+
+
+    if(!code){
+
+        result.className =
+            "order-result active";
+
+        result.innerHTML =
+            "Masukkan ID Order terlebih dahulu.";
+
+        return;
+
+    }
+
+
+    result.className =
+        "order-result active";
+
+    result.innerHTML =
+        "Mengecek pesanan...";
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "get_order_status",
+                {
+                    p_order_code:
+                        code
+                }
+            );
+
+
+        if(error){
+
+            console.error(
+                error
+            );
+
+
+            result.innerHTML =
+                "Gagal mengecek pesanan:<br>" +
+                escapeHtml(
+                    error.message
+                );
+
+            return;
+
+        }
+
+
+        const order =
+            Array.isArray(data)
+                ? data[0]
+                : data;
+
+
+        if(!order){
+
+            result.innerHTML =
+                "ID Order tidak ditemukan.";
+
+            return;
+
+        }
+
+
+        const mulai =
+            order.started_at
+                ? new Date(
+                    order.started_at
+                  ).toLocaleString(
+                    "id-ID",
+                    {
+                        timeZone:
+                            "Asia/Jakarta"
+                    }
+                  )
+                : "-";
+
+
+        const selesai =
+            order.finish_at
+                ? new Date(
+                    order.finish_at
+                  ).toLocaleString(
+                    "id-ID",
+                    {
+                        timeZone:
+                            "Asia/Jakarta"
+                    }
+                  )
+                : "-";
+
+
+        result.innerHTML =
+
+            "<div>" +
+                "<b>ID Order:</b> " +
+                escapeHtml(
+                    order.order_code
+                ) +
+            "</div>" +
+
+            "<div style='margin-top:8px'>" +
+                "<b>Paket:</b> " +
+                escapeHtml(
+                    order.package_name
+                ) +
+            "</div>" +
+
+            "<div style='margin-top:8px'>" +
+                "<b>Quantity:</b> " +
+                order.quantity +
+                " Hari" +
+            "</div>" +
+
+            "<div style='margin-top:8px'>" +
+                "<b>Game / Map:</b> " +
+                escapeHtml(
+                    order.game_map
+                ) +
+            "</div>" +
+
+            "<div style='margin-top:8px'>" +
+                "<b>Total:</b> " +
+                rupiah(
+                    order.total_amount
+                ) +
+            "</div>" +
+
+            "<div style='margin-top:8px'>" +
+                "<b>Mulai:</b> " +
+                mulai +
+            "</div>" +
+
+            "<div style='margin-top:8px'>" +
+                "<b>Selesai otomatis:</b> " +
+                selesai +
+            "</div>" +
+
+            "<div class='order-status'>" +
+                escapeHtml(
+                    order.status
+                ) +
+            "</div>";
+
+    }catch(error){
+
+        console.error(
+            error
+        );
+
+
+        result.innerHTML =
+            "Terjadi kesalahan:<br>" +
+            escapeHtml(
+                error.message
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+ENTER
 ===================================================== */
 
 document.addEventListener(
@@ -2190,10 +3536,28 @@ document.addEventListener(
 
 
 /* =====================================================
-TOTAL AWAL
+QUANTITY
 ===================================================== */
 
-updateTotal();
+document
+    .getElementById(
+        "quantity"
+    )
+    .addEventListener(
+        "change",
+        function(){
+
+            updateSummary();
+
+        }
+    );
+
+
+/* =====================================================
+AWAL
+===================================================== */
+
+updateSummary();
 
 </script>
 
